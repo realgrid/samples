@@ -10,6 +10,10 @@
 
 RealGrid 샘플코드 저장소는 RealGrid를 사용하시는 모든 개발자 분들께 공개된 저장소입니다. 깃허브 데스크탑 등을 이용해 저장소를 클론하시면 코드 저장소에 참여할 수 있습니다.
 
+### 온라인 샘플 실행 확인
+
+http://help.realgrid.com/samples/에 접속하면 RealGrid 샘플의 실행모습을 확인 할 수 있습니다.
+
 ---
 * 리얼그리드 홈페이지: http://www.realgrid.com
 * API Reference 및 Quick Guide: http://help.realgrid.com
