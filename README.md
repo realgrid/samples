@@ -12,8 +12,8 @@ RealGrid 샘플코드 저장소는 RealGrid를 사용하시는 모든 개발자 
 
 ---
 * 리얼그리드 홈페이지: http://www.realgrid.com
-* API Reference 및 Quick Guide: http://doc.realgrid.net
-* Sample Source: https://github.com/realgrid/codes/samples
+* API Reference 및 Quick Guide: http://help.realgrid.com
+* Sample Source: https://github.com/realgrid/samples
 
 ---
 > 기술 지원팀
