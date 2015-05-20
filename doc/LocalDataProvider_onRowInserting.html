@@ -1,0 +1,52 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowInserting</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>LocalDataProvider에 데이터행이 추가되기 직전에 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowInserting (provider, row)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='APIReference#LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>number</p>
+<p class='line'>추가되려는 행의 인덱스.</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowInserting = function (provider, row) {
+if ($("#chkAllow").is(":checked")) {
+// 그리드 콜백을 종료한 후 메시지를 표시되도록 해야 한다.
+RealGrids.alert('추가할 수 없습니다!');
+return false;
+}
+return true;
+};
+</pre>
+</div>
+
+</body>
+</html>

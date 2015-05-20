@@ -1,0 +1,109 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>FixedOptions Class</h1>
+
+<div class='content'>
+<p class='line'>그리드의 고정 행 및 컬럼 영역에 대한 설정 모델이다. 그리드 위쪽에 하나 이상의 행을 수직 스크롤링에서 제외 시킬 수 있다. 또한, 하나 이상의 최상위 컬럼을 수평 스크롤에서 제외 시킬 수 있다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>colCount</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>고정 컬럼의 개수를 최상위 컬럼 단위로 지정한다. 고정 컬럼은 그리드의 왼쪽에 지정된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowCount</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>고정 행의 개수를 지정한다. 고정 행은 그리드 위쪽에 지정된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>exceptFromFiltering</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 고정 행들이 참조하고 있는 데이터 행들을 필터링에서 제외 시킨다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>exceptFromSorting</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 고정 행들이 참조하고 있는 데이터 행을 정렬에서 제외 시킨다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>editable</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>false면 다른 속성들과 상관 없이 편집기가 표시되지 않는다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>resizable</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>false면 다른 속성들과 상관 없이 사용자가 컬럼의 너비를 변경할 수 없다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>movable</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>false면 다른 속성들과 상관 없이 사용자가 고정 컬럼의 위치를 변경할 수 없다. 최상위 컬럼에만 해당된다. 고정 컬럼 그룹에 포함된 컬럼들은 그룹 내에서 이동 가능하다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>colBarWidth</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 3</p>
+<p class='line'>수직 고정 Bar의 너비를 픽셀 단위로 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowBarHeight</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 3</p>
+<p class='line'>수평 고정 Bar의 높이를 픽셀 단위로 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>ignoreColumnStyles</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 고정 컬럼의 스타일들을 무시하고 고정 영역 스타일만으로 셀들을 렌더링한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>ignoreDynamicStyles</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>true면 고정 컬럼 셀들에 대한 모든 동적 스타일들을 무시한다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.setOptions({
+fixed: {
+rowCount: 2,
+colCount: 2
+}
+});
+</pre>
+</div>
+
+<h2>See Also</h2>
+<div class='content'>
+<p class='line'><a href='http://demo.realgrid.net/Demo/ColumnFixing,' target='_blank'>Fixed Columns Demo</a> <a href='http://demo.realgrid.net/Demo/FixedRows' target='_blank'>Fixed Rows Demo</a> 참조</p>
+
+</div>
+
+</body>
+</html>

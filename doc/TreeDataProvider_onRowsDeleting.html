@@ -1,0 +1,57 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider onRowsDeleting</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>TreeDataProvider에서 데이터행들이 삭제되기 직전에 호출된다.</p>
+<p class='line'>삭제를 취소하려는 경우 false를 return한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowsDeleting(provider, rowIds);</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: TreeDataProvider</p>
+<p class='line'>TreeDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowIds</strong></p>
+<p class='line'>Type: Array of Number</p>
+<p class='line'>삭제되는 데이터행들의 id</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>삭제하려면 true, 삭제를 취소하려면 false 를 리턴한다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+provider.onRowsDeleting = function (provider, rowIds) {
+if (rowIds.length >= 10) {
+RealGrids.alert("10행 이상 삭제할 수 없습니다. 삭제를 취소 합니다.");
+return false;
+} else {
+return true;
+};
+};
+</pre>
+</div>
+
+</body>
+</html>

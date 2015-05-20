@@ -1,0 +1,45 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider getRowStateCount</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정된 rowStates에 해당하는 Row의 건수를 가져온다.</p>
+</div>
+
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getRowStateCount(rowStates)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rowStates</strong></p>
+<p class='line'>Type: RealGrids.rowState</p>
+<p class='line'>가져올려는 rowState를 지정한다.</p>
+</div>
+
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Number</p>
+<p class='line'>지정된 rowStates에 해당하는 Row의 건수를 이다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var cnt = provider.getRowStateCount("created");
+var cnt = provider.getRowStateCount(RealGrids.rowState.CREATED);
+</pre>
+</div>
+
+</body>
+</html>

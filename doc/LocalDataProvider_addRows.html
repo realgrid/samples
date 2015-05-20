@@ -1,0 +1,60 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider addRows</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>마지막 데이터행 다음 부터 하나 이상의 행을 추가한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addRows(rows, start, count, rowEvents)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rows</strong></p>
+<p class='line'>Type: Array of (Array | Object)</p>
+<p class='line'>행들의 배열. 각 행의 값은 배열이나 json 객체.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>start</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>rows에 지정된 배열 중에서 시작 위치. 지정하지 않으면 0.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>count</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>rows에 지정된 배열 중 추가할 행의 개수. -1이면 모든 행. 지정하지 않으면 -1.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowEvents</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>true면 행 단위로 추가 이벤트가 발생하고, false면 복수행 추가 이벤트가 한 번 발생한다. 지정하지 않으면 false다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var rows = [[], {}, []...];
+dataProvider.addRows(rows, 0, -1);
+</pre>
+</div>
+
+</body>
+</html>

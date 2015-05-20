@@ -1,0 +1,51 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getRowData</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='Grid_Item'  >Grid Item</a>이 참조하는 데이터 행의 ,필드 값들을 Json 객체로 반환한다.</p>
+<p class='line'>필드 값들 외에 "<u>rowId" 속성에 데이터 행의 인덱스를 같이 반환한다.</p></u>
+<p class='line'>더 이상 사용되지 않습니다. <a href='GridBase_getValues'  >getValues</a>를 대신 사용하세요.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getRowData(itemIndex)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>아이템 인덱스</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Object</p>
+<p class='line'>아이템에 연결된 데이터 행의 필드 값들과 "<u>rowId" 속성에 데이터행 번호가 담겨있다.</p></u>
+<p class='line'>데이터 행이 아닌경우 null을 반환한다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var itemIndex = grid.getCurrent().itemIndex;
+var data = grid.getRowData(itemIndex);
+alert(JSON.stringify(data));
+</pre>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase columnsByTag</h1>
+
+<h2>Description</h2>
+
+>컬럼 생성시 지정했던 tag 값으로 컬럼들의 설정 정보를 가져온다.
+>같은 tag를 갖는 컬럼이 하나 이상 존재할 수 있으므로 배열로 반환한다.
+>해당하는 컬럼이 존재하지 않으면 null을 반환한다.
+
+<h2>Syntax</h2>
+
+>function columnsByTag(tag)
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>tag</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>컬럼 tag</p>
+</div>
+
+<h2>Return value</h2>
+
+>Type: array of Object
+>컬럼 설정 정보 배열.
+>컬럼이 존재하지 않는 경우 null.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var tag= "column1";
+var columns = grid.columnByTag(tag);
+</pre>
+</div>
+
+
+
+</body>
+</html>

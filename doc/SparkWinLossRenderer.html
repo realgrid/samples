@@ -1,0 +1,42 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>SparkWinLossRenderer Class</h1>
+
+<div class='content'>
+<p class='line'>기간 등 일정 범위 내의 데이터 흐름을 간략하고 직관적으로 표시하는 데 사용될 수 있다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>baseValue</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: null</p>
+<p class='line'>기준값을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>belowFill</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>Fill 타입의 속성값. baseValue에서 지정한 값보다 작은 값들에게 적용된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>barWidth</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0.8</p>
+<p class='line'>하나의 Spark WinLoss 막대그래프가 차지하는 비율. 최대 1을 넘지 않는다.</p>
+<p class='line'>ex) Spark WinLoss 막대그래프의 비율 = RealGrid.column.width / 그려지는 Spark WinLoss의 개수 * barWidth</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>belowHeight</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0.4</p>
+<p class='line'>전체 높이 중 Loss일 경우의 비율</p>
+</div>
+
+</body>
+</html>

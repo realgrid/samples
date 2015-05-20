@@ -1,0 +1,60 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowMoved</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>LocalDataProvider에서 데이터행이 이동된후에 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowMoved(provider, row, newRow)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='APIReference#LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>Number</p>
+<p class='line'>이동되기전의 데이터행 Index</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>newRow</strong></p>
+<p class='line'>Number</p>
+<p class='line'>이동된 후의 데이터행 Index</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowMoved = function (provider, row, newRow) {
+var values = provider.getRow(newRow);
+
+$("#txtUserId2").val(values.UserId);
+$("#txtUserName2").val(values.UserName);
+$("#txtAge2").val(values.Age);
+$("#txtGender2").val(values.Gender);
+$("#txtPhone2").val(values.MobilePhone);
+$("#txtMail2").val(values.Email);
+};
+</pre>
+</div>
+
+</body>
+</html>

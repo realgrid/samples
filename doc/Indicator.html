@@ -1,0 +1,76 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>Indicator Class</h1>
+
+<div class='content'>
+<p class='line'>그리드 Indicator에 대한 설정 모델이다. Indicator는 행 번호를 표시하거나, 포커스 된 행의 위치 등을 표시한다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>displayValue</strong></p>
+<p class='line'>Type: <a href='IndicatorValue'  >IndicatorValue</a></p>
+<p class='line'>Default: IndicatorValue.INDEX</p>
+<p class='line'>인디케이터 셀들에 표시할 내용을 지정한다. 아이템 index나 데이터 행 번호를 표시할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>minWidth</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 40</p>
+<p class='line'>Indicator의 최소 너비를 픽셀 단위로 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>maxWidth</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>Indicator의 최대 너비를 픽셀 단위로 지정한다</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>width</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>Indicator의 너비를 픽셀 단위로 지정한다. 이 값이 0보다 크면 minWidth, maxWidth는 무시된다. 0이면 표시할 내용과 minWidth, maxWidth에 맞춰 너비가 자동 조정된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>selectable</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>선택가능 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>visible</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 Indicator를 표시한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>zeroBase</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>인디케이터의 숫자가 0부터 시작할것인지의 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>indexOffset</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>인디케이터에 표시될 숫자와 아이템 index와의 간격을 지정한다. (인디케이터 숫자 = 아이템 index + indexOffset)</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowOffset</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>인디케이터에 표시될 숫자와 데이터 행 번호와의 간격을 지정한다. (인디케이터 숫자 = 데이터 행 번호 + rowOffset)</p>
+</div>
+
+</body>
+</html>

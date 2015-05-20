@@ -1,0 +1,64 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider loadData</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 설정에 따라 원격 데이터셋을 로드해서 DataProvider 로컬 저장소에 저장한다.. 이 함수는 비동기로 실행된다. 즉, 호출하면 데이터 로드가 완료될 때까지 기다리지 않고 바로 리턴한다. 완료되는 시점에 매개변수로 지정하는 성공, 실패 콜백이 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function loadData(options, onCompleted, onFailed)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>options</strong></p>
+<p class='line'>Type: object</p>
+<p class='line'><a href='DataLoadOptions'  >DataLoadOptions</a>와 같은 내용의 설정 object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>onCompleted</strong></p>
+<p class='line'>Type: Function</p>
+<p class='line'>데이터 로드가 성공적으로 완료됐을 때 호출된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>onFailed</strong></p>
+<p class='line'>Type: Function</p>
+<p class='line'>데이터 로드가 실패 했을 때 호출된다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: string</p>
+<p class='line'>Data load token.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+provider.loadData({
+type: "json",
+url: "http://" + location.host + "/Demo/GetCustomOrders",
+progress: true,
+count: 10
+}, function (provider) {
+var count = provider.getRowCount();
+$("#loadResult").css("color", "green").text(parseInt(count).toLocaleString() + " rows loaded.").show();
+}, function (provider, message) {
+$("#loadResult").css("color", "red").text("Load failed: " + message).show();
+});
+</pre>
+</div>
+
+</body>
+</html>

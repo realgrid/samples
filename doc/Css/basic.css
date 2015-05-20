@@ -1,0 +1,65 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*공통요소(객체)***************************************************************************/
+
+/*폰트설정*/
+/*@font-face{
+ font-family:"NanumGothic";
+ src:url(http://doc.realgrid.com/fonts/NanumGothic.eott");
+ src:local("※"), url(http://doc.realgrid.com/fonts/NanumGothic.wofff") format("woff"), url(http://doc.realgrid.com/fonts/NanumGothic.ttff") format("truetype");
+}*/
+
+/*객체설정*/
+html
+{width:100%; height:100%}
+body 
+{width:100%; height:100%; margin:0px; background:;}
+
+/*html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, hr 
+{margin:0px; padding:0px; border:0px}*/
+
+/*body, table, th, td, form, input, textarea, select 
+{font-family:"맑은 고딕", "돋움", Verdana, Tahoma; font-size:16px; color:#444444}*/
+
+html, body, div, span, applet, object, iframe, p, 
+blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, font, 
+img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var, 
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, hr,
+table, th, td, form, input, textarea, select 
+{font-family:"맑은 고딕", "돋움", Verdana, Tahoma; font-size:14px; line-height:1.5em}
+
+h1, h2, h3, h4, h5, h6
+{font-family:"맑은 고딕", "돋움", Verdana, Tahoma}
+
+ul, li 
+{list-style:none; padding:0; margin:0}
+
+img 
+{border:0px}
+
+/*앵커요소***************************************************************************/
+/*a:link {
+	color:#06C; text-decoration:underline
+}
+a:visited {
+	color:#06C; text-decoration:underline
+}
+a:hover {
+	color:#F60; text-decoration:underline
+}
+a:active {
+	color:#444; color:#F60
+}*/
+
+/*
+pre.code
+{
+    margin: 10px 0px 10px 0px;
+    padding: 6px;
+    border: thin dotted #888888;
+    font-family: Lucida Console, Consolas;
+    font-size: 0.9em;
+    background-color: #F4F4F4;
+}
+*/

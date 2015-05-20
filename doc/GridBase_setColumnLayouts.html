@@ -1,0 +1,52 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase setColumnLayouts</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>컬럼 레이아웃들을 미리 설정한다. <a href='GridBase_registerColumnLayouts'  >registerColumnLayouts</a>을 사용하도록 한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setColumnLayouts(layout)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>layouts</strong></p>
+<p class='line'>Type: Objects</p>
+<p class='line'>컬럼 레이아웃 세트들.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>none</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var layouts = [{
+name: "layout_1",
+columns: [
+"OrderID"
+]
+}, {
+name: "layout_2",
+columns: [
+"CustomerID"
+]
+}];
+grid.setColumnLayouts(layouts);
+</pre>
+</div>
+
+</body>
+</html>

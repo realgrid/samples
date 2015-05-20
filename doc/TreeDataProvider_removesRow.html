@@ -1,0 +1,43 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider removesRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정된 데이타행들을 삭제한다.</p>
+<p class='line'>TreeDataProvider의 softDeleting이 true인 경우 실제로 삭제되지않고 rowState만 변경된다.</p>
+<p class='line'>삭제할 데이터행들이 부모인 경우에는 자식까지 같이 삭제 된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function removeRows(rowIds)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rowIds</strong></p>
+<p class='line'>Type: Array of number</p>
+<p class='line'>삭제하려는 dataRow의 배열이다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+provider.removeRows([0,1,2]);
+</pre>
+</div>
+
+</body>
+</html>

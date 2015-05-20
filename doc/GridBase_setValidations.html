@@ -1,0 +1,47 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase setValidations</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>행(row) 수준의 편집 <a href='EditValidation'  >EditValidation</a> 목록을 설정한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setValidations(validations)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>options</strong></p>
+<p class='line'>Type: Array of <a href='EditValidation'  >EditValidation</a></p>
+<p class='line'><a href='EditValidation'  >EditValidation</a> 모델과 같은 설정 정보들의 배열.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.setValidations([{
+criteria: "value > 100",
+message: "Quantity는 100보다 커야 합니다!",
+mode: "always",
+level: "error"
+}, {
+]);
+</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider onRowsDeleted</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>TreeDataProvider에 데이터행들이 삭제된 후 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowsDeleted (provider, rowIds)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: TreeDataProvider</p>
+<p class='line'>TreeDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowIds</strong></p>
+<p class='line'>Array of number</p>
+<p class='line'>삭제된 행들의 인덱스.</p>
+<p class='line'>이미 삭제가 되었기 때문에 더이상 참조할수 없다.</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowsDeleted = function (provider, rowIds) {
+console.log("Rows deleted: " + rowIds.length);
+};
+</pre>
+</div>
+
+</body>
+</html>

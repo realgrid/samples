@@ -1,0 +1,43 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>SubDataType</h1>
+
+<div class='content'>
+<p class='line'>DataProvider <a href='DataField'  >DataField</a>의 네 가지 자료형을 제한된 범위로 사용할때 사용한다.</p>
+</div>
+
+<h2>Members</h2>
+
+<div class='content'>
+<p class='line'><strong>CHAR</strong></p>
+<p class='line'>Value: "char"</p>
+<p class='line'>0 보다 큰 "length" 속성과 더불어 길이가 제한된 문자열로 저장된다. "length"를 0 이하로 지정하면 "text" 기본 자료형과 동일하다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>UNUM</strong></p>
+<p class='line'>Value: "unum"</p>
+<p class='line'>0 이상의 숫자로 저장된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>INT</strong></p>
+<p class='line'>Value: "int"</p>
+<p class='line'>정수형 값으로 저장된다. i = v >= 0 ? Math.floor(v) : Math.ceil(v); 와 같은 방식으로 저장된다. 즉, 1.1 이면 1 로, -1.1 이면 -1 로 저장된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>UINT</strong></p>
+<p class='line'>Value: "uint"</p>
+<p class='line'>0 이상의 정수형 값으로 저장된다. i = Math.floor(v); 와 같은 방식으로 저장된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>DATE</strong></p>
+<p class='line'>Value: "date"</p>
+<p class='line'>시간 부분이 제거된 날짜값으로 저장된다.</p>
+</div>
+
+</body>
+</html>

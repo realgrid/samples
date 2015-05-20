@@ -1,0 +1,51 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider removeRows</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>rows에 지정된 데이타행들을 삭제한다.</p>
+<p class='line'>dataProvider의 softDeleting이 true인 경우 실제로 삭제되지않고 rowState만 변경된다.</p>
+<p class='line'>이 경우 onRowDeleted나 onRowsDeleted가 발생하지 않고 onRowStateChanged나 onRowStatesChanged가 발생한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function removeRows(rows, rowEvents)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rows</strong></p>
+<p class='line'>Type: Array of number</p>
+<p class='line'>삭제하려는 dataRow의 배열이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowEvents</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>true인경우 삭제되는 건별로 <a href='LocalDataProvider_onRowDeleted'  >onRowDeleted</a>가 호출된다.</p>
+<p class='line'>false인경우 삭제가 완료된후 <a href='LocalDataProvider_onRowsDeleted'  >onRowsDeleted</a>가 한번만 호출된다.</p>
+<p class='line'>지정되지 않으면 false이다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+provider.removeRows([0,1,2], false);
+</pre>
+</div>
+
+</body>
+</html>

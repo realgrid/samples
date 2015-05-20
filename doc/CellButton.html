@@ -1,0 +1,47 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1> CellButton Type</h1>
+
+<div class='content'>
+<p class='line'>데이터셀의 우측에 어떤 종류의 버튼을 표시할 지를 지정하는 상수다.</p>
+</div>
+
+<h2>Members</h2>
+
+<div class='content'>
+<p class='line'><strong>NONE</strong></p>
+<p class='line'>Value: "none"</p>
+<p class='line'>버튼을 표시하지 않는다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>ACTION</strong></p>
+<p class='line'>Value: "action"</p>
+<p class='line'>사용자가 마우스 클릭할 수 있는 버튼을 표시한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>POPUP</strong></p>
+<p class='line'>Value: "popup"</p>
+<p class='line'>사용자가 마우스 클릭 시 팝업 메뉴가 실행되는 버튼을 표시한다.</p>
+</div>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>ACTION의 경우 버튼 클릭시 <a href='onCellButtonClicked'  >onCellButtonClicked</a> Callback 함수가 호출된다.</p>
+
+<p class='line'>POPUP의 경우 컬럼에 popupMenu 속성 값이 정의 되어야 하고 (<a href='DataColumn'  >DataColumn</a> 참조)</p>
+<p class='line'>이 popupMenu 값과 <a href='addPopupMenu'  >addPopupMenu</a> 호출시 name 값과 일치 해야 한다.</p>
+<p class='line'>팝업 메뉴의 메뉴 항목 클릭시 <a href='onMenuItemClicked'  >onMenuItemClicked</a> Callback 함수가 호출된다.</p>
+</div>
+
+<h2>See Also</h2>
+<div class='content'>
+
+<p class='line'><a href='http://demo.realgrid.net/Demo/EditButtons' target='_blank'>Edit Button Demo</a> 참조</p>
+</div>
+
+</body>
+</html>

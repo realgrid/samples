@@ -1,0 +1,54 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView collapseGroup</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 그룹을 접는다(collapse).</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function collapseGroup(itemIndex, recursive)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Grid상의 인덱스</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>recursive</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>그룹에 포함된 자손 그룹의 접힘 여부.</p>
+<p class='line'>true 일때 이미 collapsed된 상태라면 아무일도 하지 않는다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>NONE</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var recursive = $("#chkCollapseRecursive").is(":checked");
+var itemIndex = grdMain.getCurrent().itemIndex;
+if (grdMain.isGroupItem(itemIndex)) {
+grdMain.collapseGroup(itemIndex, recursive);
+}
+</pre>
+</div>
+
+
+
+</body>
+</html>

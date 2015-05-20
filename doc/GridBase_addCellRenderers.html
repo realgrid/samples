@@ -1,0 +1,73 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase addCellRenderers</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>데이터셀 렌더러 정보들을 미리 추가한다.</p>
+<p class='line'>컬럼 동적 스타일에 추가한 renderer 값을 이용하면, 같은 컬럼에서 값에 따라 다른 렌더러를 사용하여 셀을 표시할 수 있다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addCellRenderers(renderers)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>renderers</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>계층적 구조로 구성되는 렌더러 데이터</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grdMain.addCellRenderers([{
+"id": "bar01",
+"type": "bar"
+}, {
+"id": "bar02",
+"type": "bar",
+"maximum": 100000,
+"showLabel": false
+}, {
+"id": "check01",
+"type": "check",
+"editable": true,
+"startEditOnClick": true,
+"trueValues": "True",
+"falseValues": "False",
+"labelPosition": "right"
+}, {
+"id": "shape01",
+"type": "shape"
+}, {
+"id": "signal01",
+"type": "signal",
+"barCount": 10,
+"minimum": 0,
+"maximum": 100
+}, {
+"id": "signal02",
+"type": "signal",
+"barCount": 10,
+"minimum": 0,
+"maximum": 100000
+}]);
+</pre>
+</div>
+
+</body>
+</html>

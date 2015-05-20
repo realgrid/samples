@@ -1,0 +1,50 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView getGroupLevel</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 필드의 그룹 레벨을 반환한다.</p>
+<p class='line'>첫번째 그룹 레벨은 1이다. 그 필드로 그룹핑되지 않았다면 0을 리턴 한다.</p>
+<p class='line'>없는 필드명이 지정됐을 경우 -1이 반환된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getGroupLevel(field)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>field</strong></p>
+<p class='line'>Type: string or number</p>
+<p class='line'>그리드의 필드명 이거나 그리드의 필드 인덱스</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: number</p>
+<p class='line'>그룹의 레벨</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var idx = grdMain.getCurrent();
+if (idx.fieldIndex >= 0) {
+var level = grdMain.getGroupLevel(idx.fieldIndex);
+alert("Group level of " + idx.fieldName + ": " + level);
+}
+</pre>
+</div>
+
+
+
+</body>
+</html>

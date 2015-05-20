@@ -1,0 +1,50 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1> RowState Type</h1>
+
+<div class='content'>
+<p class='line'>DataProvider 각 행의 변경 상태를 나타내는 상수 값이다.</p>
+</div>
+
+<h2>Members</h2>
+
+<div class='content'>
+<p class='line'><strong>NONE</strong></p>
+<p class='line'>Value: "none"</p>
+<p class='line'>로드된 후 변경이 없는 상태.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>CREATED</strong></p>
+<p class='line'>Type: "created"</p>
+<p class='line'>새로 추가된 행의 상태.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>UPDATED</strong></p>
+<p class='line'>Type: "updated"</p>
+<p class='line'>로드된 후 하나 이상의 필드 값이 변경된 상태. CREATE인 행은 값이 변경 되어도 UPDATED로 변경되지 않는다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>DELETED</strong></p>
+<p class='line'>Value: "deleted"</p>
+<p class='line'>삭제된 행의 상태. DataProvider의 softDeleting이 true면 사용자가 삭제를 요청할 때 실제 삭제하지 않고 상태만 이 값으로 변경한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>CREATE_AND_DELETED</strong></p>
+<p class='line'>Type: "createAndDeleted"</p>
+<p class='line'>새로 추가된 후에 다시 삭제된 행의 상태.</p>
+</div>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>loadData나 setRows로 처음 데이터가 로드되면 각 행은 NONE상태를 갖는다.</p>
+<p class='line'>상태가 CREATED인 행은 수정이 되어도 UPDATED로 변경되지 않는다.</p>
+</div>
+
+</body>
+</html>

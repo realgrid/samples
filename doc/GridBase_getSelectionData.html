@@ -1,0 +1,43 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getSelectionData</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>현재 선택 영역에 포함된 셀들의 값을 가져온다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getSelectionData(maxRows)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>maxRows</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>반환할 최대 행의 개수. 지정하지 않으면 -1. 0보다 작은 값이면 제한 없이 모든 행을 가져온다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: object</p>
+<p class='line'>셀 데이터들.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var data = grid.getSelectionData(10);
+$("#txtTitle").text("selected values :").show();
+</pre>
+</div>
+
+</body>
+</html>

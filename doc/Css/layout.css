@@ -1,0 +1,130 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+body {background:url(http://doc.realgrid.com/Css/~/img/common/bg_leftmenu.gif) repeat-y}
+
+/*heading text setup*/
+h1 {font-size:2em; font-weight:bold; color:#000}
+h2 {font-size:1.5em; font-weight:bold; color:#000}
+h3 {font-size:1.1em; font-weight:bold}
+h4 {font-size:0.9em; font-weight:bold}
+h5 {font-size:0.7em; font-weight:bold}
+h6 {font-size:0.7em; font-weight:normal}
+
+/*heading text layout*/
+h1, h2, h3, h4, h5, h6 {margin:0; padding:0}
+h1 {margin-bottom:10px; padding-bottom:5px; border-bottom:1px solid #ccc}
+
+
+.wrap_all_content {width:1024px; height:100%}
+
+/*left menu*/
+.wrap_index {
+    width: 240px;
+    float: left;
+    padding: 20px 20px 30px 20px;
+    position: relative;
+    word-break: breakall;
+    word-wrap: break-word;
+    border-right:1px solid #dde3ea;
+    background: #eff2f6;
+    z-index: 100;
+    height: 100%;
+    overflow-y: auto;
+}
+.wrap_index .logo {margin-bottom:0px}
+/*.wrap_index > a {color:#000 !important; font-weight:bold}*/
+.wrap_index * {font-size:12px; font-family:Tahoma, Verdana; font-weight:normal}
+
+.wrap_body 
+{
+    width:770px;
+    float: left;
+    padding:30px;
+    height: 100%;
+    overflow-y: auto;
+}
+.index_phrase 
+{
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+/*content setup*/
+.wrap_all {}
+.content
+{
+    background:#f5f5f5;
+    margin-top:10px;
+    margin-left:20px;
+    margin-bottom:12px;
+    padding:7px;
+    border:1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 0px #eee;
+    -moz-box-shadow: 2px 2px 0px #eee;
+    box-shadow: 2px 2px 0px #eee;
+}
+.content > .content 
+{
+    background:#fcfcfc;
+}
+.content:last-child {margin-bottom:0}
+.content table, tr, th, td {border-collapse:collapse; border:1px solid #ddd; padding:3px; background:#fff}
+.content table thead * {background:#847b74; color:#fff}
+
+/*syntax code text setup*/
+pre.syntax * {font-family:"Lucida Console", Monaco, monospace !important; font-size:11px !important; line-height:16px !important; font-weight:normal !important}
+pre.syntax {margin:0}
+.file {border:none; margin-bottom:10px}
+
+/*util menu(language, backButton....)*/
+.wrap_util{text-align:right; padding-right:3px}
+.wrap_util span {vertical-align:middle}
+.icoBack {display:inline-block; position:fixed; z-index:100; padding-left:5px}
+.icoBack i 
+{
+    color:#aaa;
+    filter: alpha(opacity=90);
+    -moz-opacity: 0.9;
+    -khtml-opacity: 0.9;
+    opacity: 0.9;
+} 
+
+p.line 
+{
+    margin-bottom:1px;    
+}
+
+
+/*anchor setup*/
+a:link {
+	color:#06C; text-decoration:underline
+}
+a:visited {
+	color:#06C; text-decoration:underline
+}
+a:hover {
+	color:#F60; text-decoration:underline
+}
+a:active {
+	color:#F60; text-decoration:underline
+}
+/*
+a.disable:link {
+	color:#999; text-decoration:none
+}
+a.disable:visited {
+	color:#999; text-decoration:none
+}
+a.disable:hover {
+	color:#999; text-decoration:none; cursor:text
+}
+a.disable:active {
+	color:#999; text-decoration:none
+}
+*/

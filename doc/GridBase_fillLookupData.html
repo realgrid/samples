@@ -1,0 +1,53 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase fillLookupData</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>lookupSource에 lookupData를 추가한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function fillLookupData (sourceId, data)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>sourceId</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>LookupSource Id</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>data</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>LookupData Object</p>
+</div>
+
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grdMain.fillLookupData("empLookup", {
+rows: [
+["TOMSP", 5, "TOMSP_5X"],
+["TOMSP", 6, "TOMSP_6X"]
+]});
+</pre>
+</div>
+
+</body>
+</html>

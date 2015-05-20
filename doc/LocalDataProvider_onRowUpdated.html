@@ -1,0 +1,56 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowUpdated</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='LocalDataProvider'  >LocalDataProvider</a>에 데이터행이 수정된 후에 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowUpdated(provider, row)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>수정된 데이터행이다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowUpdated = function (provider, row) {
+var values = provider.getRow(row);
+
+$("#txtUserId2").val(values.UserId);
+$("#txtUserName2").val(values.UserName);
+$("#txtAge2").val(values.Age);
+$("#txtGender2").val(values.Gender);
+$("#txtPhone2").val(values.MobilePhone);
+$("#txtMail2").val(values.Email);
+}
+</pre>
+</div>
+
+</body>
+</html>

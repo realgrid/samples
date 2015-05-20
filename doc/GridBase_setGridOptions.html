@@ -1,0 +1,72 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase setGridOptions</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드 옵션 정보를 재설정합니다.</p>
+<p class='line'>그리드 수준의 정보만을 반환하는 <a href='GridBase_getGridOptions'  >getGridOptions</a>와 달리 이 메쏘드를 통해</p>
+<p class='line'>하위 구성 요소 및 다른 실행 정보들을 동시에 재설정할 수 있습니다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setGridOptions(options)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>options</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>설정 정보</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var options =  {
+panel: {
+visible: true
+},
+footer: {
+visible: true
+},
+checkBar: {
+visible: true
+},
+statesBar: {
+visible: true
+},
+edit: {
+enterToTab:true,
+insertable: true,
+appendable: true,
+updatable: true,
+deletable: true,
+deleteRowsConfirm: true,
+deleteRowsMessage: "삭제하시겠습니까 ?"
+},
+displayOptions:{
+columnWidth : 200
+},
+};
+grid.setGridOptions(options);
+</pre>
+</div>
+
+
+
+
+</body>
+</html>

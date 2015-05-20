@@ -1,0 +1,49 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>SortingOptions Class</h1>
+
+<div class='content'>
+<p class='line'>컬럼 정렬과 관련된 설정 모델이다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>enabled</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>사용자가 컬럼 헤더를 클릭해서 컬럼을 정렬시킬 수 있도록 할 것인지를 지정한다. GridView.orderBy()는 이 속성 값과 상관없이 실행된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>style</strong></p>
+<p class='line'>Type: <a href='SortStyle'  >SortStyle</a></p>
+<p class='line'>Default: SortStyle.EXCLUSIVE</p>
+<p class='line'>그리드의 여러 컬럼에 대해 정렬 상태를 지정하는 방식을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>toast</strong></p>
+<p class='line'>Type: <a href='ToastOptions'  >ToastOptions</a></p>
+<p class='line'>Default: none</p>
+<p class='line'>ToastOptions 참조</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var options = {};
+options.style = "exclusive";
+grdMain.sortingOptions(options);
+</pre>
+</div>
+
+<h2>See Also</h2>
+<div class='content'>
+<p class='line'><a href='http://demo.realgrid.net/Demo/ColumnSorting' target='_blank'>Column Sorting</a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase onScrollToBottom</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>사용자가 키보드나 스크롤 바 등을 통해 그리드에 마지막 행이 표시되는 시점에 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onScrollToBottom (grid)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>grid</strong></p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onScrollToBottom =  function (grid) {
+dataProvider.loadData({
+type: "json",
+url: "http://" + location.host + "/DemoData/LargeDataSet.json?__time__=" + new Date().getTime(),
+progress: true,
+append: true,
+count: 1000
+}, function (provider) {
+}, function (provider, message) {
+});
+</pre>
+</div>
+
+</body>
+</html>

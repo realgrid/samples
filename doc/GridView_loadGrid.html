@@ -1,0 +1,162 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView loadGrid</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드의 필드 및 컬럼 정보 등 모든 설정 정보 및 데이터를 한번에 설정한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getPage()</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'>Type: Objects</p>
+<p class='line'>필드 및 컬럼 정보 등 모든 설정 정보 및 데이터</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var data =
+{
+"data": {
+"source": {
+"type": "csv",
+"url": "http://demo.realgrid.net/DemoData/booltest.csv?__time__=${tick}",
+"progress": true
+},
+"fields": [{
+"fieldName": "Case"
+}, {
+"fieldName": "Boolean0",
+"dataType": "bool",
+"boolFormat": "False,N,0:True,Y,1:0"
+}, {
+"fieldName": "BooleanCase0",
+"dataType": "bool",
+"boolFormat": "False,N,0:True,Y,1:1"
+}, {
+"fieldName": "Boolean1",
+"dataType": "bool",
+"boolFormat": "False,N,0:True,Y,1:0"
+}, {
+"fieldName": "Boolean2",
+"dataType": "bool",
+"boolFormat": "False,N,0:True,Y,1:0"
+}, {
+"fieldName": "BooleanCase2",
+"dataType": "bool",
+"boolFormat": "False,N,0:True,Y,1:1"
+}]
+},
+"columns": [{
+"name": "Case",
+"fieldName": "Case",
+"type": "data",
+"width": "200",
+"equalBlank": true,
+"header": {
+"text": "Case Name"
+}
+}, {
+"name": "FieldLoad",
+"fieldName": "Boolean0",
+"type": "data",
+"width": "100",
+"header": {
+"text": "Data Load"
+}
+}, {
+"name": "FieldLoadCase",
+"fieldName": "BooleanCase0",
+"type": "data",
+"width": "100",
+"header": {
+"text": "Data Load \rCase-sensitive"
+}
+}, {
+"name": "RenderingTest",
+"fieldName": "Boolean1",
+"type": "data",
+"width": "120",
+"header": {
+"text": "Data Rendering"
+},
+"styles": {
+"boolFormat": "거짓:참"
+}
+}, {
+"name": "EditorTest",
+"fieldName": "Boolean2",
+"type": "data",
+"width": "100",
+"header": {
+"text": "Data Editing \r(Yes or No)"
+},
+"editor": {
+"boolFormat": "No:Yes:0"
+}
+}, {
+"name": "EditorTestCase",
+"fieldName": "BooleanCase2",
+"type": "data",
+"width": "100",
+"header": {
+"text": "Data Editing \rCase-sensitive \r(Yes or No)"
+},
+"editor": {
+"boolFormat": "No:Yes:1"
+}
+}],
+"grid": {
+"display": {
+},
+"editing": {
+},
+"selection": {
+"style": "rows",
+"styles": {
+"background": "#11000000",
+"border": "#88000000,1"
+}
+},
+"fixed": {
+}
+},
+"header": {
+"minHeight": 50,
+"resizable": true,
+"styles": {
+}
+},
+"stateBar": {
+"visible": false
+},
+"footer": {
+"visible": true,
+"resizable": true
+},
+"checkBar": {
+}
+}
+grdMain.loadGrid(data);
+</pre>
+</div>
+
+</body>
+</html>

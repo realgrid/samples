@@ -1,0 +1,50 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getActiveColumnFilters</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>입력된 <a href='dataColumn'  >dataColumn</a>에 등록된 <a href='columnFilter'  >columnFilter</a> 중 적용된 필터 또는 해제된 필터의 이름을 가져온다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getActiveColumnFilters(column, active)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>column</strong></p>
+<p class='line'>Type: String|object</p>
+<p class='line'>ColumnName 또는 <a href='DataColumn'  >DataColumn</a> Object</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>active</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true를 입력하면 등록된 filter 중 적용된 filter를 가져온다. false를 입력하면 해제된 filter를 가져온다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: array of Object</p>
+<p class='line'>입력된 active상태에 해당하는 <a href='columnFilter'  >columnFitler</a>의 배열이 반환된다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var aColumn = grdMain.columnByField("customerId");
+var arr = grdMain.getActiveColumnFilters(aColumn, true);
+</pre>
+</div>
+
+</body>
+</html>

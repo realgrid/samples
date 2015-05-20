@@ -1,0 +1,55 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider updateRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 데이터행의 필드 값들을 수정한다. values 매개변수로 넘겨지는 값은 Array이거나 Json 객체일 수 있다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function updateRow(row, values)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>수정할 데이터행 인덱스.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: Array|object</p>
+<p class='line'>필드값의 배열이거나 object.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var values = {
+UserId: $("#txtUserId").val(),
+UserName: $("#txtUserName").val(),
+Age: $("#txtAge").val(),
+Gender: $("#txtGender").val(),
+MobilePhone: $("#txtPhone").val(),
+Email: $("#txtMail").val()
+};
+dataProvider.updateRow(row, values);
+</pre>
+</div>
+
+</body>
+</html>

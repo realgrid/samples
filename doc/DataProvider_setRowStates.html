@@ -1,0 +1,61 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider setRowStates</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>복수개의 rowState를 변경한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setRowStates(rows, state, force, rowEvents)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rows</strong></p>
+<p class='line'>Type: Array</p>
+<p class='line'>상태를 변경하려는 dataRow 배열이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>state</strong></p>
+<p class='line'>Type: RealGrids.RowState</p>
+<p class='line'>변경하려는 rowState를 지정한다. 지정하지 않으면 "none"이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>force</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>지정하지 않으면 "false"이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowEvents</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>true이면 상태가 변경되는 횟수만큼 onRowStateChanged 이 호출되고</p>
+<p class='line'>false이면 onRowStatesChanged 가 한번 호출된다. 지정하지 않으면 false다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var rows = grid.getCheckedRows();
+provider.setRowStates(rows, "none", false, false);
+</pre>
+</div>
+
+</body>
+</html>

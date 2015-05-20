@@ -1,0 +1,44 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getItemState</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드 Item의 상태값을 가져온다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getItemState(itemIndex)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>상태를 가져오려는 itemIndex를 입력한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: String</p>
+<p class='line'>그리드 item의 상태값. 편집중이거나,추가,입력중이 아닌경우 "normal"이 출력된다.</p>
+<p class='line'>편집:"updating", 추가:"appending", 삽입:"inseting"이 출력된다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+idx = grdMain.getCurrent().itemindex;
+consloe.log(grdMain.getItemState(idx));
+</pre>
+</div>
+
+</body>
+</html>

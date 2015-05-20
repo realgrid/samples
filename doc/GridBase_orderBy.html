@@ -1,0 +1,55 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase orderBy</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>하나 이상의 데이터 필드를 기준으로 <a href='Grid_Item'  >Grid Item</a>들을 정렬한다.</p>
+<p class='line'>정렬은 <a href='Item_Model'  >Item Model</a> 수준에서 실행되고, <a href='Data_Provider'  >Data Provider</a> 행들의 실제 위치는 변경되지 않는다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function orderBy(fieldNames, sortDirs)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>fieldNames</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>정렬할 필드 이름 목록</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>sortDirs</strong></p>
+<p class='line'>Type: Array of <a href='SortDirection'  >SortDirection</a></p>
+<p class='line'>각 필드에 대한 정렬 방식 목록</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var fields = ["field1", "field2"];
+var dirs = [RealGrids.SortDirection.ASCENDING, RealGrids.SortDirection.DESCENDING];
+grid.orderBy(fields, dirs);
+
+// 정렬을 해제하는 경우
+grid.orderBy([],[]);
+</pre>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataColumn Class</h1>
+
+<div class='content'>
+<p class='line'>DataProvider 필드들 중 하나의 값을 표시하는 컬럼이다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>name</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default:  null</p>
+<p class='line'>컬럼 이름. 많은 곳에서 컬럼을 이 이름으로 참조하므로 반드시 지정해야 하며, 그리드 내에서 유일해야 한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>tag</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: true</p>
+<p class='line'>이름과 다르게 지정하지 않아도 되고 중복되어도 상관없다. 컬럼들을 업무 요구에 따라 분류하고 싶을 때 사용할 수 있다. <a href='GridBase_columnByTag'  >columnByTag</a> 나 <a href='GridBase_columnsByTag'  >columnsByTag</a>로 이 값과 관련된 컬럼들을 찾을 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>width</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 100</p>
+<p class='line'>컬럼의 시작 너비를 pixel 단위로 지정한다. 컬럼의 실제 표시 너비는 상황에 따라 이 값과 다를 수 있다. 또한 실행 중 사용자에 의해 변경될 수도 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>displayWidth</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: undefined</p>
+<p class='line'>컬럼이 속한 컬럼그룹내에서 컬럼의 표시 너비를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>height</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>컬럼그룹 내에서 이 컬럼의 높이를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>fillHeight</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>컬럼그룹 내에서 이 컬럼의 높이를 비율로 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>fillWidth</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>컬럼그룹 내에서 이 컬럼의 ?폭을 비율로 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>fieldName</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>이 컬럼이 표시하는 <a href='DataField'  >DataField</a>의 이름을 지정한다. 존재하지 않는 필드 이름을 지정하거나 지정하지 않으면 이 컬럼에 해당하는 셀은 아무것도 표시하지 않는다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>visible</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 이 컬럼의 셀들을 표시한다. false면 셀들을 표시하지 않는다. 컬럼 객체가 제거되는 것은 아니다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>editable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 readOnly 설정과 상관없이 셀에 편집기를 표시할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>readOnly</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>이 컬럼 셀들의 값을 사용자가 수정할 수 있게 할 것인 지를 지정한다. true로 설정하면 편집기가 표시되도 값을 입력할 수 없다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>resizable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default:  true</p>
+<p class='line'>true로 지정하면 사용자 컬럼 헤더의 오른쪽 경계를 마우스로 드래깅해서 컬럼의 너비를 변경할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>movable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true로 지정하면 사용자 컬럼 헤더를 마우스로 드래깅해서 컬럼의 위치를 변경할 수 있다. 현재 같은 컬럼 그룹내에서만 이동이 가능하다. 최상위 컬럼이나 그룹은 최상위 레벨에서만 이동 가능하다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>displayIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default:  undefined</p>
+<p class='line'>컬럼이 속한 컬럼그룹내에서  컬럼의 표시 순서를 나타낸다. 읽기만 가능한 값이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>sortable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default:  null</p>
+<p class='line'>헤더에 sort handle을 표시하고, 사용자가 그 handle을 클릭해서 컬럼 셀들을 정렬할 수 있도록 할 것인 지를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>button</strong></p>
+<p class='line'>Type: <a href='CellButton'  >CellButton</a></p>
+<p class='line'>Default:  <a href='CellButton'  >CellButton</a>.NONE</p>
+<p class='line'>데이터셀 우측에 표시할 버튼의 종류를 지정한다. <a href='CellButton'  >CellButton</a>을 참조한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>popupMenu</strong></p>
+<p class='line'>Type: array of <a href='MenuItem'  >MenuItem</a></p>
+<p class='line'>Default: null</p>
+<p class='line'>컬럼 <a href='Popup_Menu'  >Popup Menu</a>를 지정한다. 메뉴가 지정되면 데이터셀위로 마우스가 진입하거나 포커스를 가질 때 메뉴 버튼이 활성화된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>alwaysShowButton</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'> 이 값이 true면 데이터셀 위에 마우스가 진입하거나 셀이 포커스된 상태가 아니더라도 button으로 지정한 버튼을 항상 표시한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>alwaysShowEditButton</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'> 이 값이 true면 데이터셀 위에 마우스가 진입하거나 셀이 포커스된 상태가 아니더라도 <a href='Cell_Editor'  >Cell Editor</a>가 버튼을 표시하는 것일 때 그 버튼을 항상 표시한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>mergeRule</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>Default: null</p>
+<p class='line'>컬럼에 속한 셀들을 묶어서 표시할 수 있다. criteria 속성에 이전 행의 셀과 병합할 것인 지를 판단할 수식을 설정한다.</p>
+<p class='line'>ex) criteria = "value", criteria = "row div 10"</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>equalBlank</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>같은 컬럼의 이전 행의 셀과 값이 동일할때 셀의 묶음 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>labelField</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>labelField가 다른 필드로 지정되면, 해당 컬럼 셀에는 실제 값 대신 이 필드의 셀과 같은 행에 있는 labelField의 값을 표시한다. values, labels 속성보다 labelField 속성이 우선한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>labels</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>Default: Empty Array</p>
+<p class='line'>컬럼 셀에 표시될 값의 목록. values에 셀 값에 해당하는 항목이 없으면 셀 값이 그대로 표시된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>Default: Empty Array</p>
+<p class='line'>컬럼 셀에 실제 값의 목록. values에 셀 값에 해당하는 항목이 없으면 셀 값이 그대로 표시된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>lookupDisplay</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>컬럼셀에 values 목록 중 셀의 값에 해당하는 위치에 있는 labels 항목의 값의 표시 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>lookupKeyFields</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>Default: null</p>
+<p class='line'>룩업트리에서 사용할 참조 키필드를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>lookupSourceId</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>Default: null</p>
+<p class='line'><a href='GridBase_setLookups'  >setLookups</a>에서 지정한 트리의 id를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>defaultValue</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: undefined;</p>
+<p class='line'>초기값을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>required</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>필수 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>imeMode</strong></p>
+<p class='line'>Type: <a href='ImeMode'  >ImeMode</a></p>
+<p class='line'>Default: <a href='ImeMode'  >ImeMode</a>.DONT_CARE</p>
+<p class='line'>기본 IME 상태를 정의한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>textInputCase</strong></p>
+<p class='line'>Type: <a href='TextInputCase'  >TextInputCase</a></p>
+<p class='line'>Default: <a href='TextInputCase'  >TextInputCase</a>.NORMAL</p>
+
+</div>
+
+<div class='content'>
+<p class='line'><strong>nanText</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>셀의 값이 nan일때 표시할 값을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>imageList</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>이 컬럼에 지정된 <a href='Cell_Renderer'  >Cell Renderer</a>가 참조할 <a href='ImageList'  >ImageList</a>의 이름을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>header</strong></p>
+<p class='line'>Type: <a href='ColumnHeader'  >ColumnHeader</a></p>
+<p class='line'>Default: null</p>
+<p class='line'>이 컬럼의 헤더 영역과 관련된 속성들을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>styles</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>Default:  null</p>
+<p class='line'>컬럼 데이터셀들에게 적용할 스타일들을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>dynamicStyles</strong></p>
+<p class='line'>Type: Array of <a href='DynamicStyle'  >DynamicStyle</a></p>
+<p class='line'>Default:  null</p>
+<p class='line'>컬럼 데이터셀들에게 적용할 동적 스타일들을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>ignoreDefaultDynamicStyles</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>기본 다이나믹 스타일의 무시 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>footer</strong></p>
+<p class='line'>Type: <a href='ColumnFooter'  >ColumnFooter</a></p>
+<p class='line'>Default: null</p>
+<p class='line'>이 컬럼의 푸터 영역과 관련된 속성들을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>editor</strong></p>
+<p class='line'>Type: <a href='CellEditor'  >CellEditor</a></p>
+<p class='line'>Default:  null</p>
+<p class='line'>컬럼 데이터셀들의 값을 입력하는 <a href='CellEditor'  >CellEditor</a>의 종류를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>renderer</strong></p>
+<p class='line'>Type: <a href='CellRenderer'  >CellRenderer</a></p>
+<p class='line'>Default:  null</p>
+<p class='line'>컬럼 데이터셀들의 값을 rendering하는 <a href='CellRenderer'  >CellRenderer</a>의 종류를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>filters</strong></p>
+<p class='line'>Type: Array of <a href='ColumnFilter'  >ColumnFilter</a></p>
+<p class='line'>Default:  null</p>
+<p class='line'>이 컬럼에 적용할 <a href='ColumnFilter'  >ColumnFilter</a> 목록을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>validations</strong></p>
+<p class='line'>Type: Array of <a href='EditValidation'  >EditValidation</a></p>
+<p class='line'>Default:  null</p>
+<p class='line'>이 컬럼에 적용할 <a href='EditValidation'  >EditValidation</a> 목록을 지정한다.</p>
+</div>
+
+</body>
+</html>

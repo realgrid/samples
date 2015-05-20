@@ -1,0 +1,45 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider rollback</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>savePoint로 저장한 데이터복사본을 이용하여 DataProvider를 복원한다.</p>
+<p class='line'>지정된 savePoint 이후의 <a href='DataProvider_savePoint'  >savePoint</a>들은 삭제된다.</p>
+<p class='line'>최초복제된 데이터셋은 rollBack을 이용해서 복원은 할수 있지만 삭제를 할수 없기 때문에 <a href='DataProvider_clearSavePoints'  >clearSavePoints</a> 를 이용하여 삭제한다.</p>
+<p class='line'>savePoint를 지정하지 않으면 최초복제로 복원된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function rollback(savePoint)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>savePoint</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>savePoint를 사용하여 복제한 데이터셋의 id</p>
+</div>
+
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+provider.rollback(0);
+</pre>
+</div>
+
+</body>
+</html>

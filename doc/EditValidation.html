@@ -1,0 +1,62 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>EditValidation Class</h1>
+
+<div class='content'>
+<p class='line'>컬럼 단위 혹은, 행 단위 데이터 검증 조건과 방식을 지정한다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>name</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>이름. 현재는 Validation 실패 시 message나 description이 설정되지 않을 때 메시지로 사용된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>active</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default:  true</p>
+<p class='line'>검증을 진행할 것인 지를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>mode</strong></p>
+<p class='line'>Type: <a href='ValidationMode'  >ValidationMode</a></p>
+<p class='line'>Default: ValidationMode.ALWAYS</p>
+<p class='line'>Insert 시, Update 시, 혹은 두 경우 모두 실행한다. <a href='ValidationMode'  >ValidationMode</a>를 참조한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>level</strong></p>
+<p class='line'>Type: <a href='ValidationLevel'  >ValidationLevel</a></p>
+<p class='line'>Default: ValidationLevel.ERROR</p>
+<p class='line'>행 편집을 완료할 때, 이 값이 그리드 <a href='EditOptions'  >EditOptions</a>.commitLevel로 지정한 보다 심각한 수준인 경우이면 예외가 발생되고, 편집을 완료할 수 없게된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>criteria</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>검증식을 설정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>message</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>에러 메시지를 설정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>description</strong></p>
+<p class='line'>Type: Text</p>
+<p class='line'>Default: null</p>
+<p class='line'>설명. 현재는 Validation 실패 시 message가 설정되지 않을 때 메시지로 사용된다.</p>
+</div>
+
+</body>
+</html>

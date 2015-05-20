@@ -1,0 +1,56 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider updateStrictRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>row로 지정된 기존 데이터행의 값을 수정.</p>
+<p class='line'>undefined로 지정하거나 명시되지 않은 경우 기존의 값을 유지한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function updateStrictRow(row, values)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>수정할 행을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: array|object</p>
+<p class='line'>필드값의 배열이거나 object.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var values = {
+UserId: $("#txtUserId").val(),
+UserName: $("#txtUserName").val(),
+Age: $("#txtAge").val(),
+Gender: $("#txtGender").val(),
+MobilePhone: $("#txtPhone").val(),
+Email: $("#txtMail").val()
+};
+dataProvider.updateStrictRow(row, values);
+</pre>
+</div>
+
+</body>
+</html>

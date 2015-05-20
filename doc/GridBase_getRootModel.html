@@ -1,0 +1,56 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getRootModel</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>아이템 모델의 최상위 조상 아이템 모델을 리턴합니다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getRootModel(model, extended)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>model</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>아이템 모델</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>extended</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>확장정보 포함 여부</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Object</p>
+<p class='line'>Item Model 객체</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var extended = $("#chkExtendedModel").is(":checked");
+var idx = grdMain.getCurrent();
+var item = grdMain.getModel(idx.itemIndex);
+var root = grdMain.getRootModel(item, extended);
+console.log(JSON.stringify(root));
+if (root) {
+idx.itemIndex = root.itemIndex;
+grdMain.setCurrent(idx);
+}
+</pre>
+</div>
+
+</body>
+</html>

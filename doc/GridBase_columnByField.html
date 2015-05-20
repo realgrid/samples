@@ -1,0 +1,52 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h2>GridBase columnByField</h2>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>필드 이름으로 지정되는 데이터필드에 연결되어 있는 첫 번째 컬럼 정보를 반환한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function columnByField(fieldName)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>fieldName</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>데이터필드 이름</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Object</p>
+<p class='line'>컬럼 설정 정보나 컬럼이 존재하지 않는 경우 null.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var field = "fldName";
+var column = grid.columnByField(field );
+if (column) {
+alert(JSON.stringify(column));
+} else {
+alert("Column is not exists: " + field );
+}
+</pre>
+</div>
+
+
+
+
+
+</body>
+</html>

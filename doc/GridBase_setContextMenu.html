@@ -1,0 +1,53 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase setContextMenu</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>Flash player 컨텍스트 메뉴에 추가할 메뉴 항목들을 지정한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setContextMenu(menuItems)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>menuItems</strong></p>
+<p class='line'>Type: Array</p>
+<p class='line'>메뉴 정보 배열.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.setContextMenu([{
+label: "Menu1"
+}, {
+label: "Menu2"
+}, {
+label: "-" // menu separator
+}, {
+label: "Menu3"
+}]);
+
+grid.onContextMenuItemClicked = function (grid, label, index) {
+alert("Context menu가 클릭됐습니다: " + label + "\n" + JSON.stringify(index));
+};
+</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowStatesCleared</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='DataProvider_clearRowStates'  >DataProvider.clearRowStates</a>를 호출하여 rowState가 deleted이거나 createAndDeleted인 데이터를 삭제하고 rowState를 초기화 한 후 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowStatesCleared(provider)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='APIReference#LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowStatesCleared = function (provider) {
+console.log("RowStatesCleared");
+};
+</pre>
+</div>
+
+</body>
+</html>

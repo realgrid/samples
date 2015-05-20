@@ -1,0 +1,55 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase checkRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정된 rowId의 데이터행을 체크하거나 해제한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function checkRow(rowId, checked, exclusive)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rowId</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>데이터행의 Index</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>checked</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true를 입력하면 지정된 rowId에 연결된 데이터행을 체크한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>exclusive</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>true로 입력하면 체크된 다른아이템이 있는 경우 모두 해제하고 rowId에 연결된 데이터행만 체크한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+gridMain.checkRow(0,true,false);
+</pre>
+</div>
+
+</body>
+</html>

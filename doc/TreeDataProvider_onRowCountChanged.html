@@ -1,0 +1,48 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider onRowCountChanged</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>행 추가 및 삭제 등으로 행의 개수가 변경됐을 때 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+<div class='content'>
+<p class='line'>function onRowCountChanged(provider, count)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='TreeDataProvider'  >TreeDataProvider</a></p>
+<p class='line'>TreeDataProvider object</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>count</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>변경된 행의 갯수</p>
+</div>
+
+<h2>Return</h2>
+
+<div class='content'>
+<p class='line'>none</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+treeProvider.onRowCountChanged = function (provider, count) {
+console.log("TreeProvider changed.");
+};
+</pre>
+</div>
+
+</body>
+</html>

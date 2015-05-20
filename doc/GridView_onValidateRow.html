@@ -1,0 +1,76 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase onValidateRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>Javascript를 통한 행 단위 사용자 validation을 실행한다. 해당 행의 값들에 문제가 있다면 검증 에러와 에러 메시지를 그리드에 리턴값으로 전달한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onValidateRow (grid, itemIndex, dataRow, inserting, values)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>grid</strong></p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>검증하는 행의 아이템 인덱스</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>dataRow</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>검증하는 행의 데이터 행 번호.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>inserting</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>행 추가 중이면 true. 행 수정 중이면 false.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: array</p>
+<p class='line'>입력된 필드들의 값이 순서대로 들어 있다.</p>
+</div>
+
+<h2>Return</h2>
+
+<div class='content'>
+<p class='line'>Type: object</p>
+<p class='line'>errorLevel과 errorMesage 값을 포함하는 object를 그리드에 전달하면 검증에 실패한 것으로 판단한다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onValidateRow = function (grid, itemIndex, dataRow, inserting, values) {
+console.log("onValidateRow:" + itemIndex + "," + dataRow + "," + inserting + "," + values.Quantity + "," + values.UnitPrice);
+
+var error = {};
+//validate Quantity
+if (values.Quantity < 100) {
+error.level = RealGrids.ValidationLevel.ERROR;
+error.message = "onValidateRow Event: if Quantity < 100, validation level 'ERROR!!'";
+}
+return error;
+}
+</pre>
+</div>
+
+</body>
+</html>

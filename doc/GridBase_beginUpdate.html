@@ -1,0 +1,52 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase beginUpdate</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드와 관련된 속성들이 변경될 때마다 내부적인 변경 처리 호출을 요청하게 되는 데,</p>
+<p class='line'>beginUpdate() 를 호출하면 endUpdate()가 호출되기 전 까지는 변경 처리 호출이 지연됩니다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function beginUpdate()</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.beginUpdate();
+try {
+grid.displayOptions( { ... });
+grid.selectOptions( { ... });
+...
+} finally {
+grid.endUpdate();
+}
+
+</pre>
+</div>
+
+
+
+
+
+</body>
+</html>

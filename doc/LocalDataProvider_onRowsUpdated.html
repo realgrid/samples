@@ -1,0 +1,59 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowsUpdated</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>LocalDataProvider에 데이터행들이 수정된 후에 호출된다.</p>
+<p class='line'><a href='LocalDataProvider_updateRows'  >updateRows</a> 또는 <a href='LocalDataProvider_updateStrictRows'  >updateStrictRows</a>에서 rowEvents를 false로 입력하고 실행하는 경우에만 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowsUpdated(provider, row, count)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='APIReference#LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>Type:number</p>
+<p class='line'>수정이 시작된 행의 인덱스.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>count</strong></p>
+<p class='line'>Type:Number</p>
+<p class='line'>수정된 행의 건수</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+rows = [{"no":"1","title":"title1","content":"content1"},{"no":"2","title":"title2"}];
+dataProvider.updateRows(0,rows,0,-1,false);
+
+....
+
+dataProvider.onRowsUpdated = function (provider, row,count) {
+console.log("row ==>",row, "count==>",count);
+};
+</pre>
+</div>
+
+</body>
+</html>

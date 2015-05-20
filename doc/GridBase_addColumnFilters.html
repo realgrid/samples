@@ -1,0 +1,59 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase addColumnFilters</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='DataColumn'  >DataColumn</a>에 하나 이상의 <a href='ColumnFilter'  >ColumnFilter</a>를 등록한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addColumnFilters(column, filters)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>column</strong></p>
+<p class='line'>Type: String | Object</p>
+<p class='line'>fieldName 또는 <a href='DataColumn'  >DataColumn</a> Object</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>filters</strong></p>
+<p class='line'>Type: Array of Object | Object</p>
+<p class='line'><a href='ColumnFilter'  >ColumnFilter</a> 배열 혹은 <a href='ColumnFilter'  >ColumnFilter</a> 개체.</p>
+</div>
+
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var filters = [
+{name:"filter1",criteria:"value='data1'",active:false},
+{name:"filter2",criteria:"value='data2'",active:true}
+];
+aColumn = grdMain.columnByField("content");
+grdMain.addColumnFilters(aColumn, filters);
+....
+grdMain.addColumnFilters("content", {
+name: "filter1",
+criteria: "value='data1'",
+active: false
+});
+</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView setPage</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='Paging'  >Paging</a> 모드일 때 표시할 페이지 번호를 지정한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setPage(page, startRow)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>page</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>페이지 번호.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>startRow</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>이 페이지에 표시할 첫번째 행의 인덱스. -1이면 <a href='setPaging'  >setPaging</a>에 지정한 페이지 크기에 따라 결정된다. 지정하지 않으면 -1이다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var count = grid.getPageCount();
+grid.setPage(count - 1);
+</pre>
+</div>
+
+</body>
+</html>

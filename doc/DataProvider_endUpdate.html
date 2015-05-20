@@ -1,0 +1,49 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider endUpdate</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='DataProvider_beginUpdate'  >beginUpdate</a>()를 호출하면 endUpdate()가 호출될 때까지 DataProvider에 변경이 이루어질 때마다 관련 이벤트들이 발생하지 않고, endUpdate() 내에서 갱신 요구 이벤트가 한 번 발생하게 된다.. 예를 들어 <a href='LocalDataProvider_addRow'  >addRow</a>, <a href='DataProvider_updateRow'  >updateRow</a>등을 연속해서 많이 호출한다거나, <a href='LocalDataProvider_addRows'  >addRows</a>, <a href='LocalDataProvider_updateRows'  >updateRows</a>등으로 수백건 이상의 많은 행을 전달할 때, beginUpdate()와 endUpdate()로 감싸서 호출하면 개별 행 처리에 대한 이벤트가 발생하지 않게된다. beginUpdate/endUpdate는 중첩될 수 있는데 쌍으로 개수를 맞춰야 한다. 가장 바깥의 endUpdate()가 호출될 때 갱신 요구 이벤트가 그리드 등에 전달된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function endUpdate(reset)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>reset</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>true로 지정하면 이 Provider에 연결된 그리드 등에 갱신 요구를 전달한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+provider.beginUpdate();
+try {
+for (var i = 0; i < 1000; i++) {
+var values = getValues();
+provider.addRow(values);
+}
+} finally {
+provider.endUpdate();
+}
+</pre>
+</div>
+
+</body>
+</html>

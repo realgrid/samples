@@ -1,0 +1,47 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase onItemAllChecked</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>사용자가 checkBar의 Header를 클릭하여 전체선택,해제를 하거나 또는 <a href='GridView_checkAll'  >grid.checkAll</a>(true)을 입력하여 전체선택,해제를 하면 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onItemAllChecked(grid, checked)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>grid</strong></p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>checked</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>체크가 되었으면 true, 해제가 되었으면 false가 출력된다.</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onItemAllChecked =  function (grid, checked) {
+console.log(grid.id," onItemAllChecked:",checked);
+};
+</pre>
+</div>
+
+</body>
+</html>

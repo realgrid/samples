@@ -1,0 +1,68 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase fillEditSearchItems</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>입력값과 관련된 항목을 조회하여 list에 표시한다. 부분검색 용도로 사용된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function fillEditSearchItems (column, searchKey, values, labels)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>column</strong></p>
+<p class='line'>Type: String|Object</p>
+<p class='line'>list가 표시될 컬럼의 name 또는 Column객체이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>searchKey</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>검색 키값이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>검색된 value값들</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>labels</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>검색된 label값들</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var CustomerNames = ["ALFKI", "ANATR", "ANTON", "AROUT", "BERGS", "BLAUS"];
+grdMain.onEditSearch = function (grid, index, text) {
+console.log("onEditSearch:" + index.itemIndex + "," + index.column + ", " + text);
+var items = CustomerNames.filter(function (str) {
+return str.indexOf(text) == 0;
+});
+console.log(items);
+grdMain.fillEditSearchItems(index.column, text, items);
+};
+</pre>
+</div>
+
+</body>
+</html>

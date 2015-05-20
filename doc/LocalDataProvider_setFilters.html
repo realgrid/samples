@@ -1,0 +1,53 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider setFilters</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>DataProvider에 필터를 적용한다. 필터에 부합하지 않은 행은 DataProvider에 존재하지 않게 된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setFilters: function (filters, filterMode)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>filters</strong></p>
+<p class='line'>Type: Array of Object</p>
+<p class='line'>filter객체의 배열이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>filterMode</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>filter의 동작 모드이다. 'and', 'or' 가 있다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>none</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var filters = [
+"value['company'] = 'Mynte'",
+"value['gender'] = 'Female'"
+];
+var filterMode = 'and';
+
+dataProvider.setFilters(filters, filterMode);
+</pre>
+</div>
+
+</body>
+</html>

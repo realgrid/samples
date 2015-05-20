@@ -1,0 +1,47 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase columnsByField</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드에는 동일한 데이터필드를 참조하는 여러 컬럼이 존재할 수 있다.</p>
+<p class='line'>이 메쏘드는 필드명에 해당하는 컬럼 정보의 목록을 배열로 반환한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function columnsByField(fieldName)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>fieldName</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>데이터필드 이름</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: array of Object</p>
+<p class='line'>컬럼 정보 배열이거나 존재하지 않는 경우 null.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var field = "field1";
+var columns = grid.columnsByField(field);
+</pre>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getGroupSummary</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 그룹아이템 모델의 합계 정보를 리턴한다. "number"형 필드에 대해서만 의미있는 값을 리턴한다. 현재 TreeView에서는 지원하지 않습니다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getGroupSummary (model, field, statistical)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>model</strong></p>
+<p class='line'>Type: object</p>
+<p class='line'>ItemModel Object</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>field</strong></p>
+<p class='line'>Type: number | stirng</p>
+<p class='line'>field Index 이거나 field Name.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>statistical</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'><a href='SummaryMode'  >SummaryMode</a>를 statistical로 할 경우 true, aggregate으로 할 경우 false로 한다.</p>
+</div>
+
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var idx = grdMain.getCurrent();
+var item = grdMain.getModelAs(idx.itemIndex, RealGrids.ItemType.ROW);
+if (item) {
+var group = grdMain.getParentModel(item);
+if (group && idx.fieldIndex >= 0) {
+var summary = grdMain.getGroupSummary(group, idx.fieldIndex);
+if (summary) {
+console.log(JSON.stringify(summary));
+}
+}
+}
+</pre>
+</div>
+
+</body>
+</html>

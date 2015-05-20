@@ -1,0 +1,59 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView expandModel</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 그룹아이템 모델을 펼친다. recursive를 true로 하면 그룹에 포함된 자손 그룹도 펼친 상태가 된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function expandModel(model, recursive, force)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>model</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>펼치려는 그룹아이템 모델을 입력한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>recursive</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>true로 하면 그룹에 포함된 자손 그룹도 펼친 상태가 된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>force</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>true로 하면 이미 expanded 상태라도 recursive가 true일 때 자손들을 펼친다.</p>
+</div>
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var recursive = $("#chkExpandRecursive").is(":checked");
+var force = $("#chkExpandForce").is(":checked");
+var itemIndex = grdMain.getCurrent().itemIndex;
+var group = grdMain.getModelAs(itemIndex, RealGrids.ItemType.GROUP);
+if (group) {
+grdMain.expandModel(group, recursive, force);
+</pre>
+</div>
+
+</body>
+</html>

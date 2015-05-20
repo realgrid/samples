@@ -1,0 +1,53 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider addRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>LocalDataProvider의 마지막 행 다음에 새로운 행을 추가한다. 추가하기 직전에 <a href='LocalDataProvider_onRowInserting'  >onRowInserting</a>, 호출된 후 <a href='LocalDataProvider_onRowInserted'  >onRowInserted</a>, <a href='LocalDataProvider_onRowCountChanged'  >onRowCountChanged</a> 이벤트가 순서대로 발생한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addRow(values)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: Array | Object</p>
+<p class='line'>필드값의 배열이나 필드들을 속성으로 하는 json 객체.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var values = {
+UserId: $("#txtUserId").val(),
+UserName: $("#txtUserName").val(),
+Age: $("#txtAge").val(),
+Gender: $("#txtGender").val(),
+MobilePhone: $("#txtPhone").val(),
+Email: $("#txtMail").val()
+};
+try {
+dataProvider.addRow(values);
+} catch(err) {
+alert(err);
+}
+</pre>
+</div>
+
+</body>
+</html>

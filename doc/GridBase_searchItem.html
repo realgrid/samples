@@ -1,0 +1,46 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase searchItem</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 필드들의 값에 해당하는 첫번째 행을 찾아 행의 번호를 반환한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function searchItem(options)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>options</strong></p>
+<p class='line'>Type: object</p>
+<p class='line'><a href='SearchOptions'  >SearchOptions</a> 모델로 지정한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Number</p>
+<p class='line'>검색된 행 번호. 검색되지 않으면 -1.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var options = {
+fields = ['field1', 'field2'],
+values = ['value1', 'value2']
+}
+var itemindex = grid.searchItem(options);
+</pre>
+</div>
+
+</body>
+</html>

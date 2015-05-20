@@ -1,0 +1,56 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase expandModel</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 그룹아이템 모델을 확장한다. recursive를 true로 하면 그룹에 포함된 자손그룹들도 확장된다. recursive와 force를 모두 true로 입력하면 이미 확장된 그룹아이템모델의 자손그룹을 확장한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function expandModel(model, recursive, force)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>model</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>확장하려는 그룹아이템 모델을 입력한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>recursive</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>true로 입력하면 자손그룹들도 모두 확장된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>force</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default : false</p>
+<p class='line'>true로 입력하면 이미 확장된 그룹아이템의 자손그룹들을 모두 확장한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var aModel = grdMain.getModel(0);
+grdMain.expandModel(aModel, true, true);
+</pre>
+</div>
+
+</body>
+</html>

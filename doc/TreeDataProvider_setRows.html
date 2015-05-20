@@ -1,0 +1,65 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider setRows</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>트리의 기존 데이터행들을 모두 삭제하고 매개변수로 전달되는 배열의 배열을 데이터 행들로 추가한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setRows(rows, treeField, needSorting, childrenField, iconField)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rows</strong></p>
+<p class='line'>Type: Array of Array</p>
+<p class='line'>추가할 행들.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>treeField</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>계층 정보로 사용할 필드의 이름.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>needSorting</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>트리를 구성하기 전에 treeField를 기준으로 정렬을 먼저 해야 하는 지를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>childrenField</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>자식 행이 있는 지를 지시하는 필드.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>iconField</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>트리 노드에 표시할 아이콘 경로를 값으로 가지고 있는 필드 이름.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+provider.setDataRows(rows, "tree", true, "", "icon");
+</pre>
+</div>
+
+</body>
+</html>

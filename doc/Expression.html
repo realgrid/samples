@@ -1,0 +1,62 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>Expression</h1>
+
+리얼그리드는 동적 스타일 Criteria, 편집 Validation 등 여러 영역에서 사용되는 수식 모델을 제공한다. RealGrid Expression은 Pascal 언어의 수식 문법 일부를 기반으로 하고 Data를 다루는데 필요한 몇가지 연산자 등을 추가한다. 또, 리얼그리드는 실행 시간에 그리드가 관리하고 표시하고 있는 값들에 접근할 수 있는 몇 개의 내장 변수들을 자동으로 생성해서 Expression에서 사용할 수 있도록 한다.
+사용자 코드를 최대한 억제하고 그리드 스타일이나 Expression으로 그리드를 표현하게 되면 재사용 가능한 UI가 가능해질 수 있다.
+
+<h2>Syntax</h2>
+
+<div class='content'>
+Expression ::= SimpleExpression # (RelationalOperator SimpleExpression)
+SimpleExpression ::= Term # (AddingOperator Term)
+Term ::= Factor # (MultiplyingOperator Factor)
+Factor ::= (Expression) | Variable | Unsigned Constant | ConvertingOperator Factor | UnaryOperator Factor
+Unsigned Constant ::= Unsigned Number | Charactor String | null
+</pre>
+</div>
+
+<h2>Operators</h2>
+
+우선 순위가 높은 것들부터 표시한 연산자들입니다.
+
+<div class='content'>
+Converting Operator ::= str | num | bool
+Unary Operator ::= not | - | + | len
+Multiplying Operator ::= * | / | div | mod | and
+Adding Operator ::= + | - | or | xor
+Relational Operator ::= = | <> | < | > | <= | >= | is | is not | match | not match | imatch | not imatch | like | not like | ilike | not ilike
+</pre>
+</div>
+
+
+<h2>Runtimes</h2>
+
+리얼그리드는 Expression이 실행되는 상황에 맞게 필요한 값을 리턴하는 변수들이 생성되는 실행 환경을 제공한다. 이 변수들의 이름은 대소문자를 구분하지 않는다.
+
+<h3>Cell Validation</h3>
+
+
+<h3>Row Validation</h3>
+
+
+<h3>Colum Filter</h3>
+
+
+<h3>Column Summary</h3>
+
+
+var/varp/stdev/stdevp는 그리드 summaryMode가 SummaryMode.STATISTICS 일 때만 계산된다.
+
+<h3>RowGroup Summary</h3>
+
+
+<h3>Column Dynamic Styles</h3>
+
+
+<h3>Row Dynamic Styles</h3>
+
+
+</body>
+</html>

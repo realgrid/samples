@@ -1,0 +1,60 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider addChildRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 트리 행의 자식 행을 추가한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addChildRow(rowId, values, iconIndex, hasChildren)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rowId</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Parent 행의 아이디.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: Array|Object</p>
+<p class='line'>추가할 행의 필드 값 배열 또는 Object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>iconIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>트리 행에 표시할 아이콘 인덱스.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>hasChildren</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>true면 자식이 있는 것으로 표시.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Number</p>
+<p class='line'>새로 추가된 행의 트리 아이디.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var childId = dataProvider.addChildRow(rowId, values, iconIndex, true);
+</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridExportOptions Class</h1>
+
+<div class='content'>
+<p class='line'>화면에 표시되는 그리드를 엑셀 등의 외부 문서로 내보기할 때 지정하는 설정 모델.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>type</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: "excel"</p>
+<p class='line'>내보내기 문서 타입.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>target</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: "remote"</p>
+<p class='line'>문서를 로컬에 직접 저장할 지 혹은, 서버를 경유해서 저장할 지를 지정한다. "remote"와 "local"을 지정할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>url</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: null</p>
+<p class='line'>그리드가 내보내는 문서 스트림을 전송 받은 후 다시 사용자 컴퓨터에 내려 주는 서버의 url.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>indicator</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: "default"</p>
+<p class='line'>그리드 <a href='Indicator'  >Indicator</a> 영역을 문서에 포함할 것인 지를 지정한다. "default"이면 현재 그리드에 표시된 상태를 따르고, "visible"이면 무조건 포함하고, "hidden"이면 무조건 포함시키지 않는다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>header</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: "default"</p>
+<p class='line'>그리드 <a href='Header'  >Header</a> 영역을 문서에 포함할 것인 지를 지정한다. "default"이면 현재 그리드에 표시된 상태를 따르고, "visible"이면 무조건 포함하고, "hidden"이면 무조건 포함시키지 않는다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>footer</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: "default"</p>
+<p class='line'>그리드 <a href='Footer'  >Footer</a> 영역을 문서에 포함할 것인 지를 지정한다. "default"이면 현재 그리드에 표시된 상태를 따르고, "visible"이면 무조건 포함하고, "hidden"이면 무조건 포함시키지 않는다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>showConfirm</strong></p>
+<p class='line'>Type:Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>메세지 상자를 표시한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>confirmMessage</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>메세지 상자에 표시될 문자열을 입력한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>confirmTitle</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>메세지 상자에 표시될 Title을 입력한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>lookupDisplay</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>column의 lookupDisplay 값을 표시된 값으로의 저장 여부</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>allItems</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>감춰진 모든 행을 출력할것인지의 여</p>
+</div>
+
+</body>
+</html>

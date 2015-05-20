@@ -1,0 +1,89 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase addPopupMenu</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드에 Popup Menu를 추가한다. 추가된 메뉴는 데이터셀 등에 연결할 수 있다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addPopupMenu(name, menuItems)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>name</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>메뉴 이름.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>menuItems</strong></p>
+<p class='line'>Type: Array</p>
+<p class='line'>계층적 구조의 메뉴 정보.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var menu = [{
+label: "menu1 입니다.",
+enabled: true,
+children: [{
+label: "submenu1 입니다."
+}, {
+label: "submenu2 입니다."
+}]
+}, {
+label: "menu2 입니다",
+enabled: false
+}, {
+label: "-"
+}, {
+label: "menu3 입니다",
+type: "check",
+checked: true,
+tag: "check_menu"
+}, {
+label: "group menu",
+children: [{
+label: "group1 - 첫번째",
+type: "radio",
+group: "group1",
+checked: true
+}, {
+....
+}]
+}];
+grid.addPopupMenu("menu1", menu);
+
+// 그리드에 등록된 메뉴를 column에 연결한다.
+var aColumn = grid.columnByField("column1");
+aColumn.button = "popup";
+aColumn.popupMenu = "menu1";
+grid.setColumn(aColumn);
+
+grid.onMenuItemClicked = function (grid, data) {
+var s = data.label + (data.checked ? " checked" : "");
+if (data.tag)
+s += "\n" + "tag: " + data.tag;
+alert(s);
+};
+</pre>
+</div>
+
+</body>
+</html>

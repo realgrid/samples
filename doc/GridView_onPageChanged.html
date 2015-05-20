@@ -1,0 +1,47 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView onPageChanged</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드가 <a href='Paging'  >Paging</a> 상태일 때, 다른 페이지로 이동한 후 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onPageChanged(grid, page)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>grid</strong></p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>page</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>새로 이동한 페이지 인덱스.</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onPageChanged =  function (grid, page) {
+alert("Page moved to " + page);
+}
+</pre>
+</div>
+
+</body>
+</html>

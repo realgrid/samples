@@ -1,0 +1,50 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase activateAllColumnFilters</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='DataColumn'  >DataColumn</a>에 등록된 <a href='ColumnFilter'  >ColumnFilter</a>들을 모두 적용시키거나 해제시킨다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function activateAllColumnFilters(column, active)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>column</strong></p>
+<p class='line'>Type: String|Object</p>
+<p class='line'>ColumnName, FieldName 또는 <a href='DataColumn'  >DataColumn</a> Object</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>active</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>true를 입력하면 column의 filter들을 적용시키고, false면 모두 해제.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var aColumn = grdMain.columnByField("content");
+grdMain.activateAllColumnFilters(aColumn,true);
+....
+grdMain.activateAllColumnFilters("content",false);
+</pre>
+</div>
+
+</body>
+</html>

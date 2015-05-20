@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <row icon='0' Col0='남자' Col1='6787' Col2='5699' Col3='2601' Col4='4309' Col5='5804' Col6='11120' Col7='5204' Col8='3066'>
+    <row icon='-1' Col0='유럽' Col1='3864' Col2='3668' Col3='1682' Col4='1767' Col5='864' Col6='6484' Col7='2983' Col8='1784'>
+      "
+      <row icon='2' Col0='독일' Col1='3285' Col2='3254' Col3='1464' Col4='1188' Col5='491' Col6='5185' Col7='2324' Col8='1524'></row>
+      <row icon='3' Col0='그리스' Col1='332' Col2='201' Col3='199' Col4='287' Col5='292' Col6='630' Col7='302' Col8='128'></row>
+      <row icon='4' Col0='헝가리' Col1='232' Col2='202' Col3='20' Col4='278' Col5='75' Col6='650' Col7='348' Col8='124'></row>
+      <row icon='5' Col0='아이슬란드' Col1='15' Col2='11' Col3='2' Col4='14' Col5='6' Col6='19' Col7='9' Col8='8'></row>
+    </row>
+    <row icon='-1' Col0='아프리카' Col1='1868' Col2='1296' Col3='478' Col4='1858' Col5='4592' Col6='3219' Col7='1482' Col8='693'>
+      <row icon='6' Col0='이집트' Col1='1868' Col2='1296' Col3='478' Col4='1858' Col5='4592' Col6='3219' Col7='1482' Col8='693'></row>
+    </row>
+    <row icon='-1' Col0='오세아니아' Col1='1055' Col2='735' Col3='441' Col4='684' Col5='348' Col6='1417' Col7='739' Col8='589'>
+      <row icon='7' Col0='오스트레일리아' Col1='891' Col2='621' Col3='382' Col4='574' Col5='240' Col6='1204' Col7='589' Col8='516'></row>
+      <row icon='8' Col0='뉴질랜드' Col1='164' Col2='114' Col3='59' Col4='110' Col5='108' Col6='213' Col7='150' Col8='73'></row>
+    </row>
+  </row>
+  <row icon='1' Col0='여자' Col1='23131' Col2='5512' Col3='21523' Col4='35267' Col5='10938' Col6='9184' Col7='2499' Col8='14253'>
+    <row icon='-1' Col0='아시아' Col1='2474' Col2='1831' Col3='2715' Col4='5644' Col5='9076' Col6='2242' Col7='1424' Col8='7613'>
+      <row icon='9' Col0='필리핀' Col1='1007' Col2='465' Col3='1043' Col4='1665' Col5='930' Col6='690' Col7='241' Col8='4677'></row>
+      <row icon='10' Col0='싱가포르' Col1='112' Col2='116' Col3='192' Col4='95' Col5='0' Col6='10' Col7='35' Col8='74'></row>
+      <row icon='11' Col0='태국' Col1='840' Col2='787' Col3='923' Col4='3360' Col5='6359' Col6='1258' Col7='918' Col8='1973'></row>
+      <row icon='12' Col0='터키' Col1='515' Col2='413' Col3='557' Col4='524' Col5='1787' Col6='284' Col7='230' Col8='889'></row>
+    </row>
+    <row icon='-1' Col0='북아메리카' Col1='19862' Col2='3155' Col3='18231' Col4='27803' Col5='961' Col6='6395' Col7='988' Col8='4376'>
+      <row icon='13' Col0='캐나다' Col1='1530' Col2='1562' Col3='1749' Col4='1556' Col5='96' Col6='143' Col7='297' Col8='470'></row>
+      <row icon='14' Col0='멕시코' Col1='1340' Col2='1593' Col3='1809' Col4='4172' Col5='664' Col6='1605' Col7='691' Col8='3906'></row>
+      <row icon='15' Col0='미국' Col1='16992' Col2='-' Col3='14673' Col4='22075' Col5='201' Col6='4647' Col7='-' Col8='-'></row>
+    </row>
+    <row icon='-1' Col0='남아메리카' Col1='795' Col2='526' Col3='577' Col4='1820' Col5='901' Col6='547' Col7='87' Col8='2264'>
+      <row icon='16' Col0='볼리비아' Col1='143' Col2='93' Col3='86' Col4='473' Col5='785' Col6='167' Col7='2' Col8='321'></row>
+      <row icon='17' Col0='코스타리카' Col1='101' Col2='79' Col3='93' Col4='153' Col5='8' Col6='30' Col7='23' Col8='199'></row>
+      <row icon='18' Col0='페루' Col1='463' Col2='320' Col3='289' Col4='1060' Col5='96' Col6='314' Col7='49' Col8='1577'></row>
+      <row icon='19' Col0='우루과이' Col1='88' Col2='34' Col3='109' Col4='134' Col5='12' Col6='36' Col7='13' Col8='167'></row>
+    </row>
+  </row>
+</rows>

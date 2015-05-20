@@ -1,0 +1,150 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DisplayOptions Class</h1>
+
+<div class='content'>
+<p class='line'>그리드 수준에서 관리되는 표시 정보들에 대한 설정 모델이다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>columnResizable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 사용자가 컬럼 헤더셀 우측을 마우스 드래깅해서 컬럼의 너비를 변경할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>columnMovable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 사용자가 컬럼 헤더셀을 마우스 드래깅해서 그룹 내에서 컬럼의 위치를 변경할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>parentChangable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+
+</div>
+
+<div class='content'>
+<p class='line'><strong>defaultColumnWidth</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 120</p>
+<p class='line'>기본 컬럼 폭을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>fitStyle</strong></p>
+<p class='line'>Type: <a href='GridFitStyle'  >GridFitStyle</a></p>
+<p class='line'>Default: GridFitStyle.NONE</p>
+<p class='line'>그리드의 너비에 맞춰 컬럼들의 너비를 조정한다. <a href='GridFitStyle'  >GridFitStyle</a>을 참조한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowResizable</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>true면 사용자가 첫 번째 행의 Indicator나 첫 번째 컬럼 셀의 아래쪽을 마우스 드래깅해서 행의 높이를 변경할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>defaultRowHeight</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>@@Deprecated rowHeight를 대신 사용할 것.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowHeight</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>0 이면 그리드의 폰트와 Padding 스타일들을 고려해서 적절한 값으로 행들의 높이를 찾는다. 0보다 큰 값이면 지정한 값이 행들의 높이가 된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>minRowHeight</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 4</p>
+<p class='line'>최소 행 높이를 픽셀 단위로 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>hscrollBar</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 필요한 경우 수평 스크롤바를 표시한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>vscrollBar</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true면 필요한 경우 수직 스크롤바를 표시한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>horzScrollStep</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 8</p>
+<p class='line'>최소 수평 스크롤 크기를 픽셀 단위로 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>emptyMessage</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: "Load data..."</p>
+<p class='line'>그리드에 표시되는 컬럼이 하나도 없을 때 표시되는 문자열을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>heightMeasurer</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: null</p>
+<p class='line'>defaultRowHeight가 0일 때 행 높이를 결정하는 방법, null이면 데이터에 따라 자동으로 결정된다. "fixed", "simple"</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>fitWhenResized</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+
+</div>
+
+<div class='content'>
+<p class='line'><strong>liveScroll</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>false이면 스크롤이 끝날때 표시되고 true이면 스크롤되는중에도 표시된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>focusVisible</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>포커스의 보임 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>focusColor</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: "0x555555"</p>
+<p class='line'>포커스의 색상을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>focusActiveColor</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: NaN</p>
+<p class='line'>포커스가 활성화 되었을때 색상을 지정한다.</p>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase addLookupSource</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>lookup tree에서 사용할 lookup source를 추가 등록한다.</p>
+<p class='line'>추가등록되는 lookup source가 기존것과 중복되는경우 overwrite된다.</p>
+<p class='line'>※ 기존id에 추가를 원하는 경우는 fillLookupData()를 사용한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addLookupSource(source)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>source</strong></p>
+<p class='line'>Type: Object</p>
+<p class='line'>LookupSource Object</p>
+</div>
+
+
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var source = {
+"id": "empLookup",
+"levels": 2,
+"keys": [
+["VINET", 5], ["VINET", 4], ["VINET", 3],
+["CHOPS", 5], ["CHOPS", 4], ["CHOPS", 3],
+["VICTE", 3], ["VICTE", 2],
+["HANAR", 3], ["HANAR", 2],
+["WELLI", 3], ["WELLI", 2]
+],
+"values": [
+"VINET_5", "VINET_4", "VINET_3",
+"CHOPS_5", "CHOPS_4", "CHOPS_3",
+"VICTE_3", "VICTE_2",
+"HANAR_3", "HANAR_2",
+"WELLI_3", "WELLI_2"
+]
+};
+grdMain.addLookupSource(source);
+</pre>
+</div>
+
+</body>
+</html>

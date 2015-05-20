@@ -1,0 +1,74 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>RowGroupOptions Class</h1>
+
+<div class='content'>
+<p class='line'>Row Grouping과 관련된 영역들의 표시 방법 등에 대한 설정 모델이다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>expandedAdornments</strong></p>
+<p class='line'>Type: <a href='RowGroupAdornments'  >RowGroupAdornments</a></p>
+<p class='line'>Default: RowGroupAdornments.BOTH</p>
+<p class='line'>Row group이 펼쳐진 상태일 때, 그룹 header, footer의 표시 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>collapsedAdornments</strong></p>
+<p class='line'>Type: <a href='RowGroupAdornments'  >RowGroupAdornments</a></p>
+<p class='line'>Default: RowGroupAdornments.HEADER</p>
+<p class='line'>Row group이 펼쳐지지 않은 상태일 때, 그룹 header, footer의 표시 여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>summaryMode</strong></p>
+<p class='line'>Type: <a href='SummaryMode'  >SummaryMode</a></p>
+<p class='line'>Default: SummaryMode.AGGREGATE</p>
+<p class='line'>각 행 그룹의 합계를 구하는 방식이다. <a href='SummaryMode'  >SummaryMode</a>를 참조한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>cellDisplay</strong></p>
+<p class='line'>Type: <a href='RowGroupCellDisplay'  >RowGroupCellDisplay</a></p>
+<p class='line'>Default: RowGroupCellDisplay.MERGE</p>
+
+</div>
+
+<div class='content'>
+<p class='line'><strong>headerStatement</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: "${groupField}: ${groupValue} - ${rowCount} rows"</p>
+<p class='line'>RowGroup 헤더에 표시할 문자열 format을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>levelIndent</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 20</p>
+<p class='line'>그룹레벨간 들여쓰기 여백을 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>mergeExpander</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>expander 표시여부를 지정한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>mergeMode</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>행 그룹핑시 그룹핑된 컬럼의 merge 표현 여부를 지정한다.</p>
+</div>
+
+<h2>See Also</h2>
+<div class='content'>
+<p class='line'><a href='http://demo.realgrid.net/Demo/RowGrouping' target='_blank'>Row Grouping</a></p>
+</div>
+
+</body>
+</html>

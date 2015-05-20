@@ -1,0 +1,64 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase fitColumnWidth</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>컬럼의 폭을 데이터에 따라 자동으로 조절한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function fitColumnWidth (column, maxWidth, minWidth, visibleOnly)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>column</strong></p>
+<p class='line'>Type: Object|String</p>
+<p class='line'>Data Column, 폭을 지정할 컬럼을 지정한다.</p>
+<p class='line'>null을 입력하면 전체 컬럼에 적용된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>maxWidth</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>조절되는 최대 폭을 지정한다. 0을 입력하면 데이터의 길이에 따라 변경된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>minWidth</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: 0</p>
+<p class='line'>조절되는 최소 폭을 지정한다. 0을 입력하면 데이터의 길이에 따라 변경된다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>visibleOnly</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>현재 그리드에 보이는 데이터만 가지고 폭을 결정한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grdMain.fitColumnWidth('CustomerID', 200, 10, true);
+</pre>
+</div>
+
+</body>
+</html>

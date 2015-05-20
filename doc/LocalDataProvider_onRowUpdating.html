@@ -1,0 +1,56 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowUpdating</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>localDataProvider에 데이터를 수정하기 직전에 호출된다.</p>
+<p class='line'>결과값으로 false를 돌려주면 grid에서 편집중이던 내용이 무시되고 편집이전으로 돌아간다.</p>
+<p class='line'><a href='LocalDataProvider_setValue'  >localDataProvider.setValue</a>(row, field, value)로 수정되는 경우에는 호출되지 않는다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowUpdating(provider, row);</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>편집중인 데이터행이다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowUpdating = function (provider, row) {
+if ($("#chkAllow").is(":checked")) {
+// 그리드 콜백을 종료한 후 메시지를 표시되도록 해야 한다.
+RealGrids.alert('수정할 수 없습니다!');
+return false;
+}
+return true;
+};
+</pre>
+</div>
+
+</body>
+</html>

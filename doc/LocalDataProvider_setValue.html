@@ -1,0 +1,56 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider setValue</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>row 인덱스와 데이터 필드 인덱스로 지정되는 데이터셀의 값을 변경한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setValue(row, field, value)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>아이템 인덱스</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>field</strong></p>
+<p class='line'>Type: Number|String</p>
+<p class='line'>필드 인덱스또는 FieldName</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>value</strong></p>
+<p class='line'>Type: *</p>
+<p class='line'>필드에 설정할 값</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var dataRow = grid.getCurrent().dataRow;
+var value = $("#name").val();
+dataProvider.setValue(dataRow, 1, value);
+
+</pre>
+</div>
+
+</body>
+</html>

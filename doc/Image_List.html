@@ -1,0 +1,42 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>Image List</h1>
+
+그리드의 <a href='Cell_Renderer'  >Cell Renderer</a> 등이 렌더링할 때 사용되는 관련된 아이콘 이미지들을 <a href='ImageList'  >ImageList</a> 객체에 지정하고, 각 이미지를 실제 url 대신 리스트 내의 인덱스로 참조할 수 있다. 예를 들어 아이콘 셀렌더러는 컬럼에 지정한 <strong>ImageList의 이름</strong> 과 스타일의 <strong>iconIndex</strong> 에 지정된 이미지 인덱스를 이용해 해당 이미지를 셀에 렌더링한다.
+
+<div class='content'>
+var imgs = new RealGrids.ImageList("images1");
+imgs.rootUrl = "http://" + location.host + "/img/demo/smallflag/";
+imgs.images = [
+"ar.png",
+"at.png",
+"be.png",
+...
+];
+grid.addImageList(imgs);
+
+var columns = [{
+name: "col1",
+imageList: "images1"
+renderer: {
+type: "icon"
+}
+styles: {
+iconIndex: 2
+}
+}];
+</pre>
+</div>
+
+물론, iconIndex 값은 동적 스타일을 이용해 셀 값에 따라 다르게 지정할 수 있다.
+
+<h2>See Also</h2>
+<div class='content'>
+<ul>
+<li><a href='ImageList'  >ImageList</a>, <a href='addImageList'  >addImageList</a></li>
+</ul>
+</div>
+
+</body>
+</html>

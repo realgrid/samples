@@ -1,0 +1,49 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider getJsonRows</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 범위 내의 데이터행들을 JSON 객체의 배열로 가져온다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getJsonRows(startRow, endRow)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>startRow</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>시작 행 번호</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>endRow</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>끝 행 번호. 0보다 작은 값이면 마지막 행까지 가져온다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Array of object.</p>
+<p class='line'>JSON 객체로 만들어진 데이터행들의 목록.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var rows = provider.getJsonRows(10, 19);
+</pre>
+</div>
+
+
+</body>
+</html>

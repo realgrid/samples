@@ -1,0 +1,68 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider setRowCount</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>데이터행의 개수를 매개변수로 지정한 새로운 개수로 맞춘다. 기존 개수보다 적게 지정하면 기존 행에서 남는 부분을 삭제한다.</p>
+</div>
+>기존 행 개수보다 큰 경우에는 필요한 만큼의 빈 데이터 행들을 추가합니다.
+>새로 추가된 행들은 DataProvider 내에 자리만 존재할 뿐 각 필드의 값이 할당되지는 않은 상태로 존재한다.
+>이런 행들에 대해 <a href='LocalDataProvider_hasData'  >hasdata</a>(row) 함수가 false를 리턴한다.
+>하지만, 기본값을 매개변수로 지정한 경우 그 값들로 채운다.
+>*fillFieldDefaults*가 true이면 각 <a href='DataField'  >DataField</a>의 defaultValue로 값을 초기화하고,
+>*defaultValues*에 값이 설정되면 이 값들로 새로운 행의 값들을 초기화 한다.
+>이 함수를 통해 행의 개수가 변경되는 경우 추가/삭제 이벤트는 발생하지 않고 <a href='LocalDataProvider_onRowCountChanged'  >onRowCountChanged</a> 이벤트만 발생한다.
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setRowCount(newCount, fillFieldDefaults, defaultValues, rowState)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>newCount</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>새로운 행의 개수.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>fillFieldDefaults</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>true면 <a href='DataField'  >DataField</a>.defaultValue로 새로 추가되는 행들의 값을 초기화한다.</p>
+<p class='line'>지정하지 않으면 false이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>defaultValues</strong></p>
+<p class='line'>Type: Array</p>
+<p class='line'>null이 아닌 배열을 지정하면 이 값들로 새로 추가되는 행들의 값을 초기화 한다.</p>
+<p class='line'>지정하지 않으면 null이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'>rowState</p>
+<p class='line'>Type: <a href='RowState'  >RowState</a></p>
+<p class='line'>새로 추가되는 행들의 rowState이다. 지정하지 않으면 "none"이다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.setRowCount(100, false, null,"none");
+</pre>
+</div>
+
+</body>
+</html>

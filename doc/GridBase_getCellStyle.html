@@ -1,0 +1,57 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getCellStyle</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>dataRow 행의 field 셀에 지정된 DataCellStyle을 가져온다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getCellStyle(dataRow, field)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>dataRow</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>셀 스타일을 가져올 데이터 행의 번호</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>field</strong></p>
+<p class='line'>Type: string | number</p>
+<p class='line'>셀 스타일을 가져올 필드명이나 필드순서</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: string</p>
+<p class='line'>셀 스타일 id가 반환된다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grdMain.addCellStyle("style02", {
+"paddingLeft": 15,
+"background": "#000000",
+"foreground": "#ffffff"
+}, true);
+grdMain.setCellStyle(4, 1, "style02");
+grdMain.setCellStyle(4, 3, "style02");
+grdMain.setCellStyle(3, 2, "style02");
+
+grdMain.getCellStyle(4, 1);
+</pre>
+</div>
+
+</body>
+</html>

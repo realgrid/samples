@@ -1,0 +1,64 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getModelAs</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>아이템 index와 itemType에 해당하는 아이템모델을 리턴한다.</p>
+<p class='line'>지정한 itemIndex에 해당하는 모델이 지정한 itemType과 맞지 않으면 null을 리턴한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getModelAs(itemIndex, itemType, extended)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>아이템의 index</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>itemType</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>아이템의 type. "row", "group", "footer", "tree"를 지정할 수 있다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>extended</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>확장정보 포함 여부</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Object</p>
+<p class='line'>Item Model 객체</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var extended = $("#chkExtendedModel").is(":checked");
+var itemIndex = grdMain.getCurrent().itemIndex;
+var group = grdMain.getModelAs(itemIndex, RealGrids.ItemType.GROUP);
+if (group && group.count > 0) {
+var item = grdMain.getChildModel(group, 0, extended);
+console.log(JSON.stringify(item));
+}
+</pre>
+</div>
+
+
+
+
+</body>
+</html>

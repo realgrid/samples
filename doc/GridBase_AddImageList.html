@@ -1,0 +1,61 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase addImageList</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='ImageList'  >ImageList</a>는 셀 렌더러나 트리뷰의 아이콘으로 사용될 이미지 url 목록이다. 이 목록을 그리드에 추가한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function addImageList(imageList)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>imageList</strong></p>
+<p class='line'>Type: object</p>
+<p class='line'>이미지리스트의 이름과 이미지 url 목록을 포함한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var imgList = new RealGrids.ImageList("images1");
+imgList .rootUrl = "http://" + location.host + "/imgs/";
+imgList .images = [
+"ar.png",
+"at.png",
+...
+];
+grid.addImageList(imgList);
+</pre>
+</div>
+<div class='content'>
+<pre  class='syntax'>
+grid.addImageList({
+name: "images2",
+rootUrl: "http://www.aaa.com/images/",
+images: [
+"aaa.png",
+"bbb.png",
+...
+]
+});
+</pre>
+</div>
+
+</body>
+</html>

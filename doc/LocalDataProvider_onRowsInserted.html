@@ -1,0 +1,61 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowsInserted</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>LocalDataProvider에 여러행이 추가된 경우 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowsInserted = function (provider, row, count)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='APIReference#LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>row</strong></p>
+<p class='line'>number</p>
+<p class='line'>추가된 행의 인덱스.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>count</strong></p>
+<p class='line'>number</p>
+<p class='line'>추가된 행의 개수.</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowsInserted = function (provider, row, count) {
+alert("OK -> row = " + row + ", count = " + count);
+}
+
+
+var datas = [
+{userid:"2", company:"3", first_name: "4", last_name: "5", gender: "6", id:"*1"},
+{userid:"2", company:"3", first_name: "4", last_name: "5", gender: "6", id:"*2"},
+{userid:"2", company:"3", first_name: "4", last_name: "5", gender: "6", id:"*3"}
+]
+dataProvider.insertRows(7, datas, 0, 2);
+</pre>
+</div>
+
+</body>
+</html>

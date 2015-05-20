@@ -1,0 +1,57 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase onCurrentChanging</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드의 포커스 셀의 위치가 변경되기 직전에 호출되는 callback 이다. 변경된 후에는 <a href='GridView_onCurrentChanged'  >onCurrentChanged</a>가 호출된다.</p>
+</div>
+
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onCurrentChanging (grid, oldIndex, newIndex)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>grid</strong></p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>oldIndex</strong></p>
+<p class='line'>Type: <a href='CellIndex'  >CellIndex</a>과 같은 구조의 object.</p>
+<p class='line'>변경 전 인덱스</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>newIndex</strong></p>
+<p class='line'>Type: <a href='CellIndex'  >CellIndex</a>과 같은 구조의 object.</p>
+<p class='line'>변경 되는 인텍스</p>
+</div>
+
+<h2>Return</h2>
+
+<div class='content'>
+<p class='line'>callback 함수에서 명시적으로 false를 리턴하면 current가 변경되지 않는다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onCurrentChanging =  function (grid, oldIndex, newIndex) {
+console.log(oldIndex);
+console.log(newIndex);
+};
+</pre>
+</div>
+
+</body>
+</html>

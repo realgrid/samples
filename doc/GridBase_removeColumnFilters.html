@@ -1,0 +1,51 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase removeColumnFilters</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>그리드 컬럼에 설정되어있는 fllter중 filterNames에 포함된 filter를 제거한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function removeColumnFilters(column, filterNames);</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>column</strong></p>
+<p class='line'>Type: String|Object</p>
+<p class='line'>columnName 또는 <a href='DataColumn'  >column객체</a></p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>filterNames</strong></p>
+<p class='line'>Type: Array of String</p>
+<p class='line'>필터명의 배열이다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>none</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var aColumn = grdMain.columnByField("title");
+var filters = [{name:"filter1",criteria:"value='1'"},{name:"filter2",criteria:"value='2'"}];
+grdMain.setColumnFilters(aColumn,filters);
+...
+grdMain.removeColumnFilters(aColumn,["filter1"]);
+</pre>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider onRowUpdated</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowUpdated (provider, rowId)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='APIReference#TreeDataProvider'  >TreeDataProvider</a></p>
+<p class='line'>TreeDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowId</strong></p>
+<p class='line'>number</p>
+<p class='line'>변경된 데이터행의 id</p>
+</div>
+
+<h2>Return</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowUpdated = function (provider, rowId) {
+console.log("onRowUpdated: "+rowId);
+};
+</pre>
+</div>
+
+</body>
+</html>

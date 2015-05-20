@@ -1,0 +1,62 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeView checkChildren</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>입력된 행의 자식 행들을 체크하거나 해제한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function checkChildren(itemIndex, checked, recursive, visibleOnly)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>부모행의 Index이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>checked</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true이면 체크하고 false이면 해제한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>recursive</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>자식행에 자식이 있는 경우 체크 또는 해제한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>visibleOnly</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true로 입력하면 화면에 펼쳐진 자식행을 체크또는 해제하고 false로 입력하면 전체 자식행을 체크또는 해제한다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+treeMain.checkChildren(0,true,true,false); // 0번째 부모행의 모든 자식행을 체크한다.
+</pre>
+</div>
+
+</body>
+</html>

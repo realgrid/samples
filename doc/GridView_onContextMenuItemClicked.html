@@ -1,0 +1,56 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase onContextMenuItemClicked</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='GridBase_setContextMenu'  >setContextMenu</a>를 통해 추가한 Flash 컨텍스트 메뉴 항목을 오른쪽 마우스로 클릭했을 때 호출된다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onContextMenuItemClicked (grid, label, index)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>grid</strong></p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>label</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>메뉴 항목의 label.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>index</strong></p>
+<p class='line'>Type: object</p>
+<p class='line'>마우스가 클릭된 위치의 셀 인덱스. <a href='CellIndex'  >CellIndex</a> 모델과 같은 구조의 object.</p>
+</div>
+
+<h2>Return</h2>
+
+None
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onContextMenuItemClicked = function (grid, label, index) {
+alert("Context menu가 클릭됐습니다: " + label + "\n" + JSON.stringify(index));
+
+var selRow = dataProvider.getRow(index.dataRow);
+console && console.log(selRow);
+};
+</pre>
+</div>
+
+</body>
+</html>

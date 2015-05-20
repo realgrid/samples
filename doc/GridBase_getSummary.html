@@ -1,0 +1,52 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getSummary</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>Field의 합계값을 가져온다. <a href='summaryMode'  >summaryMode</a>에 따라서 가져올수 있는 값이 다르다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getSummary(field,summary)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>field</strong></p>
+<p class='line'>Type: String|integer</p>
+<p class='line'>필드명 또는 fieldIndex</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>summary</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>Default: "sum"</p>
+<p class='line'>sum, avg등을 입력한다.</p>
+<p class='line'>summaryMode가 none인 경우 미리 계산을 해 놓지 않는다.</p>
+<p class='line'>summaryMode가 aggregate인 경우 "sum","avg","min",'max","count"를 가져올수 있다.</p>
+<p class='line'>statistical인 경우 "var","varp","stdev","stdevp"을 추가적으로 가져올수 있다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Number</p>
+<p class='line'>컬럼 이름 배열.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var sum = grdMain.getSummary("field","sum");
+</pre>
+</div>
+
+</body>
+</html>

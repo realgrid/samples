@@ -1,0 +1,62 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase setCellStyleRows</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>필드별 스타일 id 값을 가지고 있는 하나 이상의 행을 적용해서 DataCellStyle을 일괄적으로 지정할 수 있다</p>
+<p class='line'>rows 매개변수는 DataProvider의 setRows에 전달하는 것과 똑 같은 형식이면 된다. Json 객체 배열의 배열이거나, 배열의 배열일 수 있다. 즉, ajax 호출로 전달받은 데이터셋 등에 데이터와 스타일id 값이 동시에 포함될 수도 있다.</p>
+<p class='line'>fieldMap 매개변수에는 style id를 갖는 rows의 필드 위치나 속성명을 DataProvider의 필드 인덱스나 필드명과 매핑하는 정보가 들어가야 한다. rows가 Json 객체 배열의 배열이라면 { 속성명:필드명 or 속성:fieldIndex, ... } 로 구성되는 Json 객체로 매핑 정보를 전달하고, 배열의 배열이라면 [11, 12...]와 같은 배열 구조로 매핑 정보를 전달해야 한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function setCellStyleRows(rows, fieldMap)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rows</strong></p>
+<p class='line'>Type: array of object</p>
+<p class='line'>셀 스타일을 적용할 데이터 행들</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>fieldMap</strong></p>
+<p class='line'>Type: array of object</p>
+<p class='line'>셀 스타일을 적용할 맵핑 정보들</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.addCellStyle("style01", {
+"foreground": "#ffffffff",
+...
+});
+// with json objects
+var rows = [
+{"id":1,"userid":"jwagner","company":"Mynte","first_name":"Theresa","last_name":"Reynolds","col1style":"style01"},
+{"id":2,"userid":"tphillips","company":"Zazio","first_name":"Raymond","last_name":"Tucker","col1style":"style02"},
+{"id":3,"userid":"bmendoza","company":"Edgeify","first_name":"Emily","last_name":"Flores","col1style":"style03"},
+{"id":4,"userid":"phicks","company":"Nlounge","first_name":"Johnny","last_name":"Reed","col1style":"style01"},
+{"id":5,"userid":"tbanks","company":"Yodoo","first_name":"David","last_name":"Miller","col1style":"style03"},
+...
+];
+grid.setCellStyleRows(rows, {"col1style": 1});
+</pre>
+</div>
+
+</body>
+</html>

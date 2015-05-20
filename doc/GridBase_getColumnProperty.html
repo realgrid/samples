@@ -1,0 +1,50 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getColumnProperty</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='dataColumn'  >dataColumn</a> 또는 <a href='columnGroup'  >columnGroup</a>의 속성을 가져온다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getColumnProperty(column, prop)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>column</strong></p>
+<p class='line'>Type: String|Object</p>
+<p class='line'>칼럼의 name 또는 Column객체이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>prop</strong></p>
+<p class='line'>Type: String</p>
+<p class='line'>속성이름</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Object</p>
+<p class='line'>prop에 입력된 속성명의 값이다.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+aHeader = grdMain.getColumnProperty("column","header");
+aHeader.text = "new Text";
+grdMain.setColumnProperty("column","header",aHeader);
+</pre>
+</div>
+
+</body>
+</html>

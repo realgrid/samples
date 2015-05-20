@@ -1,0 +1,61 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView expandGroup</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 그룹을 펼친다(expand).</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function expandGroup(itemIndex, recursive, force)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Grid상의 인덱스</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>recursive</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>그룹에 포함된 데이터 행들의 표시여부.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>force</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>이미 expanded 상태라도 recursive가 true일 때 자손들의 펼침여부.</p>
+</div>
+
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>NONE</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+var recursive = $("#chkExpandRecursive").is(":checked");
+var force = $("#chkExpandForce").is(":checked");
+var itemIndex = grdMain.getCurrent().itemIndex;
+if (grdMain.isGroupItem(itemIndex)) {
+grdMain.expandGroup(itemIndex, recursive, force);
+}
+</pre>
+</div>
+
+
+
+</body>
+</html>

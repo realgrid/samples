@@ -1,0 +1,97 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProviderOptions Class</h1>
+
+<div class='content'>
+<p class='line'>LocalDataProvider 동작에 관한 설정 모델이다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>booleanFormat</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: null</p>
+<p class='line'>데이터셋을 로드할 때 boolean값으로 변환하기 위한 포맷. null이면 내부에 설정된 기본값을 따른다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>datetimeFormat</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: true</p>
+<p class='line'>데이터셋을 로드할 때 datetime 값으로 변환하기 위한 포맷. null이면 내부에 설정된 기본값을 따른다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>amText</strong></p>
+<p class='line'>Type: string</p>
+<p class='line'>Default: true</p>
+<p class='line'>오전을 나타내는 문자열</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>pmText</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>오후를 나타내는 문자열</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>baseYear</strong></p>
+<p class='line'>Type: number</p>
+<p class='line'>Default: 2000</p>
+<p class='line'>데이터셋을 로드할 때 년도의 값이 100보다 작은 경우 자동으로 추가할 기준 년도.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>insertable</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>행을 추가할 수 있으면 true.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>updatable</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>행을 수정할 수 있으면 true.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>deletable</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>행을 삭제할 수 있으면 true.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>softDeleting</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>checkStates가 true이고 이 값도 true면 행 삭제 요청 시 실제로 삭제하지 않고 상태만 "deleted"나 "createAndDeleted"로 바꾼다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>deleteCreated</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>checkStates가 true이고 softDeleting이 true일 때 "created" 상태의 행을 삭제하면 "createAndDeleted"로 상태가 변경되는데, 이 값을 true로 지정하면 실제로 삭제한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>checkStates</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>true이면 행 상태를 관리한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>subtypeEnabled</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>Default: true</p>
+<p class='line'>subType기능의 활성화 여부를 지정한다.</p>
+</div>
+
+</body>
+</html>

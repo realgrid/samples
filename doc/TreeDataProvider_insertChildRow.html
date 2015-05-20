@@ -1,0 +1,68 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>TreeDataProvider insertChildRow</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>지정한 행에 자식 행을 추가한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function insertChildRow(rowId, index, values, iconIndex, hasChildren)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>rowId</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Row Id</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>index</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>지정한 부모 행의 자식들 중 삽입하려는 행이 들어갈 위치(순서)</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>values</strong></p>
+<p class='line'>Type: Object|Array of String</p>
+<p class='line'>필드값의 배열이나 필드들을 속성으로 하는 json 객체.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>iconIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>Default: -1</p>
+<p class='line'>표시하려는 아이콘의 인덱스</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>hasChildren</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>Default: false</p>
+<p class='line'>추가된 자식행의 tree expander 표시 여부</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Number.</p>
+<p class='line'>추가된 자식 행의 Row Id.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.insertChildRow(9, 0, [], 2, false)
+</pre>
+</div>
+
+</body>
+</html>

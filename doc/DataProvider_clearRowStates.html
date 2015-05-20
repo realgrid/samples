@@ -1,0 +1,47 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>DataProvider clearRowStates</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>RowState가 "none"이 아닌 행들의 RowState를 모두 제거한다.</p>
+<p class='line'>이 때 deleteRows 매개변수를 true로 지정하면 "deleted"나 "createAndDeleted" 상태를 갖는 행들을 실제로 삭제한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function clearRowStates(deleteRows, rowEvents)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>deleteRows</strong></p>
+<p class='line'>Type: boolean</p>
+<p class='line'>true면 "deleted"나 "createAndDeleted" 상태를 갖는 행들을 실제로 삭제한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rowEvents</strong></p>
+<p class='line'>Type: Boolean</p>
+<p class='line'>false면 상태 변경 이벤트를 발생시키지 않는다. 지정하지 않으면 false다.</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>None.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+provider.clearRowStates(true, false);
+</pre>
+</div>
+
+</body>
+</html>

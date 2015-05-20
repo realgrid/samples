@@ -1,0 +1,237 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*공통요소(클래스)***************************************************************************/
+
+/*bg관련*/
+.bg_none {background:none !important}
+
+/*border관련*/
+.bord_none {border:none !important}
+.bord_none_t {border-top:none !important}
+.bord_none_r {border-right:none !important}
+.bord_none_b {border-bottom:none !important}
+.bord_none_l {border-left:none !important}
+.bord_b_1_eee {border-bottom:1px solid #eee}
+.bord_r_1_ddd {border-right:1px solid #ddd}
+.bord_1_eee {border:1px solid #eee}
+.bord_6_333{border:6px solid #333}
+.bord_6_666{border:6px solid #666}
+.bord_6_777{border:6px solid #777}
+.bord_6_ddd{border:6px solid #ddd}
+.bord_6_eee{border:6px solid #eee}
+.bord_10_ddd{border:10px solid #DDD}
+
+/*text;align관련*/
+.super {vertical-align:super}
+.text_align_left {text-align:left !important}
+.text_align_right {text-align:right !important}
+.text_align_center {text-align:center !important}
+.valign_t {vertical-align:top !important}
+.valign_m {vertical-align:middle !important}
+.valign_b {vertical-align:bottom !important}
+
+/*font관련*/
+.color_em1 {color:#F60 !important}
+.font_bold {font-weight:bold !important}
+.font_fam_01 {font-family:"돋움", Verdana, Tahoma, "나눔고딕"}
+.font_size_11 {font-size:11px !important}
+.font_size_12 {font-size:12px !important}
+.font_size_13 {font-size:13px !important}
+.font_size_14 {font-size:14px !important}
+.font_size_16 {font-size:16px !important}
+.font_size_18 {font-size:18px !important}
+.font_size_24 {font-size:24px !important}
+
+/*float관련*/
+.float_l {float:left}
+.float_r {float:right}
+.clear_both {clear:both}
+
+/*float_clear*/
+/*.clearfix:after { contnt:"."; display: block; visibility: hidden; height: 0; clear: both; }
+.clearfix { display: inline-block; }*/
+/*.clearfix {*zoom:1}
+.clearfix:before, .clearfix:after {display:table; content:""; line-height:0}
+.clearfix:after {clear:both}*/
+
+
+/*word-break,white-space관련*/
+.word_break_all {word-break:break-all}
+
+/*width*/
+.w50 {width:50px !important}
+.w60 {width:60px !important}
+.w70 {width:70px !important}
+.w80 {width:80px !important}
+.w90 {width:90px !important}
+.w100 {width:100px !important}
+.w110 {width:110px !important}
+.w120 {width:120px !important}
+.w130 {width:130px !important}
+.w140 {width:140px !important}
+.w150 {width:150px !important}
+.w160 {width:160px !important}
+.w170 {width:170px !important}
+.w180 {width:180px !important}
+.w190 {width:190px !important}
+.w200 {width:200px !important}
+.w210 {width:210px !important}
+.w220 {width:220px !important}
+.w230 {width:230px !important}
+.w240 {width:240px !important}
+.w250 {width:250px !important}
+.w260 {width:260px !important}
+.w270 {width:270px !important}
+.w280 {width:280px !important}
+.w290 {width:290px !important}
+.w300 {width:300px !important}
+.w350 {width:350px !important}
+.w400 {width:400px !important}
+.w450 {width:450px !important}
+.w500 {width:500px !important}
+.w510 {width:510px !important}
+.w520 {width:520px !important}
+.w530 {width:530px !important}
+.w540 {width:540px !important}
+.w550 {width:550px !important}
+.w600 {width:600px !important}
+.w100p {width:100% !important}
+
+/*height*/
+.h1 {height:1px !important; margin:0px !important}
+.h2 {height:2px !important; margin:0px !important}
+.h3 {height:3px !important; margin:0px !important}
+.h4 {height:4px !important; margin:0px !important}
+.h5 {height:5px !important; margin:0px !important}
+.h6 {height:6px !important; margin:0px !important}
+.h7 {height:7px !important; margin:0px !important}
+.h8 {height:8px !important; margin:0px !important}
+.h9 {height:9px !important; margin:0px !important}
+.h10 {height:10px !important; margin:0px !important}
+.h11 {height:11px !important; margin:0px !important}
+.h12 {height:12px !important; margin:0px !important}
+.h13 {height:13px !important; margin:0px !important}
+.h14 {height:14px !important; margin:0px !important}
+.h15 {height:15px !important; margin:0px !important}
+.h16 {height:16px !important; margin:0px !important}
+.h17 {height:17px !important; margin:0px !important}
+.h18 {height:18px !important; margin:0px !important}
+.h19 {height:19px !important; margin:0px !important}
+.h20 {height:20px !important; margin:0px !important}
+.h21 {height:21px !important; margin:0px !important}
+.h22 {height:22px !important; margin:0px !important}
+.h23 {height:23px !important; margin:0px !important}
+.h24 {height:24px !important; margin:0px !important}
+.h25 {height:25px !important; margin:0px !important}
+.h26 {height:26px !important; margin:0px !important}
+.h27 {height:27px !important; margin:0px !important}
+.h28 {height:28px !important; margin:0px !important}
+.h29 {height:29px !important; margin:0px !important}
+.h30 {height:30px !important; margin:0px !important}
+.h40 {height:40px !important; margin:0px !important}
+.h50 {height:50px !important; margin:0px !important}
+
+/*margin_auto*/
+.margin_auto {margin:auto}
+
+/*margin_top*/
+.margin_t_10 {margin-top:10px !important}
+.margin_t_20 {margin-top:20px !important}
+.margin_t_30 {margin-top:30px !important}
+.margin_t_35 {margin-top:35px !important}
+.margin_t_40 {margin-top:40px !important}
+.margin_t_50 {margin-top:50px !important}
+
+/*margin_right*/
+.margin_r_5 {margin-right:5px !important}
+.margin_r_10 {margin-right:10px !important}
+.margin_r_20 {margin-right:20px !important}
+.margin_r_30 {margin-right:30px !important}
+.margin_r_40 {margin-right:40px !important}
+.margin_r_50 {margin-right:50px !important}
+
+/*margin_bottom*/
+.margin_b_1 {margin-bottom:1px !important}
+.margin_b_2 {margin-bottom:2px !important}
+.margin_b_3 {margin-bottom:3px !important}
+.margin_b_4 {margin-bottom:4px !important}
+.margin_b_5 {margin-bottom:5px !important}
+.margin_b_10 {margin-bottom:10px !important}
+.margin_b_15 {margin-bottom:15px !important}
+.margin_b_20 {margin-bottom:20px !important}
+.margin_b_30 {margin-bottom:30px !important}
+.margin_b_40 {margin-bottom:40px !important}
+.margin_b_50 {margin-bottom:50px !important}
+
+/*margin_left*/
+.margin_l_10 {margin-left:10px !important}
+.margin_l_15 {margin-left:15px !important}
+.margin_l_20 {margin-left:20px !important}
+.margin_l_30 {margin-left:30px !important}
+.margin_l_40 {margin-left:40px !important}
+.margin_l_50 {margin-left:50px !important}
+
+/*padding*/
+.padding_10 {padding:10px !important}
+.padding_15 {padding:15px !important}
+.padding_20 {padding:20px !important}
+.padding_30 {padding:30px !important}
+.padding_40 {padding:40px !important}
+.padding_50 {padding:50px !important}
+
+/*padding_bottom*/
+.padding_b_10 {padding-bottom:10px}
+.padding_b_20 {padding-bottom:20px}
+
+/*padding_right*/
+.padding_r_0 {padding-right:0px}
+.padding_r_15 {padding-right:15px}
+
+/*padding_left*/
+.padding_l_0 {padding-left:0px !important}
+.padding_l_10 {padding-left:10px !important}
+.padding_l_15 {padding-left:15px !important}
+.padding_l_20 {padding-left:20px !important}
+.padding_l_100 {padding-left:100px !important}
+
+/*visibility관련*/
+.vis_hidden {visibility:hidden; font-size:0px}
+
+/*anchor관련*/
+.anchorNone a:link {text-decoration:none}
+.anchorNone a:visited {text-decoration:none}
+.anchorNone a:hover {text-decoration:none}
+.anchorNone a:active {text-decoration:none}
+
+/*cursor관련*/
+.cur_pointer {cursor:pointer}
+
+/*list-style관련*/
+.list_disc {list-style:disc}
+
+/*display관련*/
+.display_none {display:none}
+.display_block {display:block}
+.display_iblock {display:inline-block}
+.display_inline {display:inline}
+
+/* demo 관련 : onlydel 2013/04/20 */
+.description {display:none}
+.example {display:none}
+.demoform
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.demoform * {vertical-align:middle}
+.questionBoard {display:none}
+
+.abstract 
+{
+    /*font-family:"맑은 고딕", "돋움", Verdana, Tahoma; 
+    font-size:10pt; 
+    color:#444444;*/
+    padding-top:4px;
+    padding-bottom:4px;
+}

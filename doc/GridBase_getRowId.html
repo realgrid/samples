@@ -1,0 +1,49 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase getRowId</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'><a href='Grid_Item'  >Grid Item</a>에 연결된 Data 행의 인덱스를 반환한다.</p>
+<p class='line'>getRowId는 더이상 사용되지 않습니다. <a href='GridBase_getDataRow'  >getDataRow</a>를 사용하세요</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function getRowId(itemIndex)</p>
+</div>
+
+<h2>Parameters</h2>
+
+<div class='content'>
+<p class='line'><strong>itemIndex</strong></p>
+<p class='line'>Type: Number</p>
+<p class='line'>아이템 인덱스</p>
+</div>
+
+<h2>Return value</h2>
+
+<div class='content'>
+<p class='line'>Type: Number</p>
+<p class='line'>아이템에 연결된 데이터 행의 인덱스.</p>
+</div>
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+
+var itemIndex = grid.getCurrent().itemIndex;
+var dataRow = grid.getRowId(itemIndex);
+
+</pre>
+</div>
+
+
+
+
+</body>
+</html>

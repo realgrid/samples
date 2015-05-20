@@ -1,0 +1,53 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LocalDataProvider onRowStatesChanged</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>LocalDataProvider에서 여러건의 데이터행의 rowState가 변경되는 경우 호출된다.</p>
+<p class='line'><a href='LocalDataProvider_updateRows'  >updateRows</a>, <a href='LocalDataProvider_updateStrictRows'  >updateStrictRows</a>, <a href='LocalDataProvider_removeRows'  >removeRows</a>등의 method에서 rowEvents를 false로 실행하는 경우 호출된다.</p>
+</div>
+
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onRowStatesChanged(provider, rows)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>provider</strong></p>
+<p class='line'>Type: <a href='APIReference#LocalDataProvider'  >LocalDataProvider</a></p>
+<p class='line'>LocalDataProvider object.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>rows</strong></p>
+<p class='line'>Array of Number</p>
+<p class='line'>변경된 행 Index의 배열</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+dataProvider.onRowStatesChanged = function (provider, rows) {
+if (rows.length > 0) {
+for (idx in rows) {
+console.log("row ==>", rows[idx], "rowState ==>", provider.getRowState(rows[idx]));
+}
+}
+};
+</pre>
+</div>
+
+</body>
+</html>

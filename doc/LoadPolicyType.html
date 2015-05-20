@@ -1,0 +1,38 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>LoadPolicyType</h1>
+
+<div class='content'>
+<p class='line'>loadData()에서 사용하는 clientPolicy의 타입. 데이터 로드 정책을 결정한다.</p>
+</div>
+
+<h2>Properties</h2>
+
+<div class='content'>
+<p class='line'><strong>ERROR</strong></p>
+<p class='line'>Value: "error"</p>
+<p class='line'>편집 중에 데이터 로딩이 완료되면 에러를 표시하고 내려받은 데이터셋은 무시된다. 기본값 이다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>CANCEL</strong></p>
+<p class='line'>Value: "cancel"</p>
+<p class='line'>편집을 취소 시키고 데이터셋을 Data Provider에 저장한다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>COMMIT</strong></p>
+<p class='line'>Value: "commit"</p>
+<p class='line'>편집을 완료 시키고 데이터셋을 Data Provider에 저장한다. 편집 완료 중 에러가 발생하면 Cancel 시킨다.</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>DELAY</strong></p>
+<p class='line'>Value: "delay"</p>
+<p class='line'>로딩이 완료된 데이터셋을 보관한 후 사용자 편집이 완료된 후 가능한 시점에 Data Provider에 저장한다. 저장될 때 Data Provider의 onDataSaved 콜백이 호출된다.</p>
+</div>
+
+
+</body>
+</html>

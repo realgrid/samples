@@ -1,0 +1,60 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridBase onEditCommit</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>사용자 입력이 행에 반영될때 발생한다.</p>
+<p class='line'>setValue 등 사용자 코드로 변경될때는 발생하지 않는다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onEditCommit(grid, index, oldValue, newValue)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'><strong>grid</strong></p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>index</strong></p>
+<p class='line'>Type:  <a href='CellIndex'  >CellIndex</a></p>
+<p class='line'>변경된 CellIndex</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>oldValue</strong></p>
+<p class='line'>Type: *</p>
+<p class='line'>편집전 셀의 데이터 값</p>
+</div>
+
+<div class='content'>
+<p class='line'><strong>newValue</strong></p>
+<p class='line'>Type: *</p>
+<p class='line'>편집후 셀의 데이터 값</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onEditCommit = function (id, index, oldValue, newValue) {
+console.log("onEditCommit:" + index.itemIndex + "," + index.column + ", " + oldValue + " => " + newValue);        }
+};
+</pre>
+</div>
+
+</body>
+</html>

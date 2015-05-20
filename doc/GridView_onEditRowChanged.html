@@ -1,0 +1,72 @@
+﻿<html>
+<body><link href="Css/bootstrap.min.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-extensions.css" rel="stylesheet" type="text/css" /><link href="Css/bootflat-square.css" rel="stylesheet" type="text/css" /><link href="Css/font-awesome.min.css" rel="stylesheet" type="text/css" /><link href="Css/basic.css" rel="stylesheet" type="text/css" /><link href="Css/basic_class.css" rel="stylesheet" type="text/css" /><link href="Css/button.css" rel="stylesheet" type="text/css" /><link href="Css/layout.css" rel="stylesheet" type="text/css" /><link href="Css/jquery.snippet.css" rel="stylesheet" type="text/css" />
+
+<h1>GridView onEditRowChanged</h1>
+
+<h2>Description</h2>
+
+<div class='content'>
+<p class='line'>setValue나 사용자의 입력에 의해 행의 값이 변경될때 발생한다.</p>
+</div>
+
+<h2>Syntax</h2>
+
+<div class='content'>
+<p class='line'>function onEditRowChange(grid, itemIndex, dataRow, field, oldValue, newValue)</p>
+</div>
+
+<h2>Arguments</h2>
+
+<div class='content'>
+<p class='line'>grid</p>
+<p class='line'>Type: <a href='APIReference#GridView'  >GridView</a></p>
+<p class='line'>GridView 컨트롤</p>
+</div>
+
+<div class='content'>
+<p class='line'>itemIndex</p>
+<p class='line'>Type: number</p>
+<p class='line'>Grid상의 인덱스</p>
+</div>
+
+<div class='content'>
+<p class='line'>dataRow</p>
+<p class='line'>Type: number</p>
+<p class='line'>provider에서의 고유 번호</p>
+</div>
+
+<div class='content'>
+<p class='line'>field</p>
+<p class='line'>Type: string</p>
+<p class='line'>편집이된 필드의 이름</p>
+</div>
+
+<div class='content'>
+<p class='line'>oldValue</p>
+<p class='line'>Type: *</p>
+<p class='line'>편집전 셀의 데이터 값</p>
+</div>
+
+<div class='content'>
+<p class='line'>newValue</p>
+<p class='line'>Type: *</p>
+<p class='line'>편집후 셀의 데이터 값</p>
+</div>
+
+<h2>Return</h2>
+
+None.
+
+<h2>Example</h2>
+
+<div class='content'>
+<pre  class='syntax'>
+grid.onEditRowChanged = function (grid, itemIndex, dataRow, field, oldValue, newValue){
+console.log(grid, itemIndex, dataRow, field, oldValue, newValue);
+}
+};
+</pre>
+</div>
+
+</body>
+</html>
