@@ -16,7 +16,7 @@ $(document).ready(function () {
   grdMain.onSelectionChanged = onSelectionChanged;
 
 	loadData(dataProvider);
-    
+
   setTests("actions", "ActualTargetRenderer");
 });
 
@@ -128,7 +128,9 @@ function loadData(provider) {
         type: "GET",
         url: "data/co2data.json",
         success: function (data) {
-            data = JSON.parse(data);
+            if (typeof data != "object") {
+                data = JSON.parse(data);
+            }
             for (var i = 0; i <= data.records.length - 1; i++) {
                 if (!data.records[i]["대상기관명"]) {
                     data.records[i]["단위"] = data.records[i]["A01월"];
@@ -195,15 +197,15 @@ function setOptions(grid) {
         sorting: {
             handleVisibility: "hidden"
         },
-        sort: { 
-            style: "inclusive" 
+        sort: {
+            style: "inclusive"
         },
-        select: { 
-            style: "block" 
+        select: {
+            style: "block"
         },
-        edit: { 
-            editable: false 
-        }        
+        edit: {
+            editable: false
+        }
     });
 }
 
@@ -373,5 +375,5 @@ var tests = {
 
 function setTests(container, title) {
     if (title) document.title = "RealGrid - " + title;
-	createButtons(container, tests);
+//	createButtons(container, tests);
 }
