@@ -12,7 +12,7 @@ RealGrid 샘플코드 저장소는 RealGrid를 사용하는 모든 개발자 분
 
 ### 온라인 샘플 실행 확인
 
-http://help.realgrid.com/samples/에서 접속하면 RealGrid 샘플의 실행을 확인 할 수 있습니다.
+http://help.realgrid.com/samples/ 에서 접속하면 RealGrid 샘플의 실행을 확인 할 수 있습니다.
 
 ---
 * 리얼그리드 홈페이지: http://www.realgrid.com
