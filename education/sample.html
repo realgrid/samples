@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>RealGridJS sample page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+  	<script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../lib/dlgrids_eval.js"></script>
+  	<script type="text/javascript" src="../lib/realgridjs.js"></script>
+  	<script type="text/javascript" src="../lib/jszip.min.js"></script>
+	
+	<style>
+		html, body {
+			width:100%;
+			height:100%;
+			margin:0;
+			padding:0
+		}	
+	</style>
+    
+	<script type="text/javascript">
+		// variables
+		var gridView;
+		var dataProvider;
+
+		window.onload = function () {
+            dataProvider = new RealGridJS.LocalDataProvider();
+            gridView = new RealGridJS.GridView("gridView");
+            gridView.setDataSource(dataProvider);
+			
+			setFields(dataProvider);
+			setColumns(gridView);
+			setOptions(gridView);
+			
+			loadData(dataProvider);
+		};
+	    
+		function setFields(provider) {
+			// Json array for data fields
+			var fields = [{
+				fieldName: "ItemId",
+				datType: "text"
+			}, {
+				fieldName: "ItemName"
+			}, {
+				fieldName: "RequestType"
+			}, {
+				fieldName: "ServiceName"
+			}, {
+				fieldName: "ServiceCode"
+			}, {
+				fieldName: "Standard"
+			}, {
+				fieldName: "LowBounds"
+			}, {
+				fieldName: "LowSign"
+			}, {
+				fieldName: "HighSign"
+			}, {
+				fieldName: "HighBounds"
+			}, {
+				fieldName: "CheckUnit"
+			}, {
+				fieldName: "CheckPrice",
+				dataType: "number"
+			}];
+
+	    	provider.setFields(fields);
+		}	
+		
+		function setColumns(grid) {
+			// Json array for grid columns
+			// fieldName is must exists data provider fields
+			var columns = [{
+				fieldName: "ItemId",
+				width: 80,
+				header: { text: "ItemId" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "ItemName",
+				width: 100,
+				header: { text: "항목명" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "RequestType",
+				width: 80,
+				header: { text: "분야" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "ServiceName",
+				width: 150,
+				header: { text: "유형명" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "ServiceCode",
+				width: 250,
+				header: { text: "서비스코드" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "Standard",
+				width: 150,
+				header: { text: "표준" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "LowBounds",
+				width: 80,
+				header: { text: "하위 값" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "HighBounds",
+				width: 80,
+				header: { text: "상위 값" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "CheckUnit",
+				width: 80,
+				header: { text: "단위" },
+				styles: { textAlignment: "near" }
+			}, {
+				fieldName: "CheckPrice",
+				width: 90,
+				header: { text: "수수료" },
+				styles: { textAlignment: "far" }
+			}];
+
+			grid.setColumns(columns);
+		}		
+		
+		function setOptions(grid) {
+		    grid.setOptions({
+	            panel: {
+	                visible: true
+	            },
+	            footer: {
+	                visible: true
+	            },
+	            checkBar: {
+	                visible: true
+	            },
+	            statesBar: {
+	                visible: true
+	            },
+		        edit: {
+		            insertable: true,
+		            appendable: true,
+		            updatable: true,
+		            deletable: true,
+		            deleteRowsConfirm: true,
+		            deleteRowsMessage: "Are you sure?"		    
+		        }
+		    });
+		}
+		
+		function loadData(provider) {
+			var sampleData = [
+				 {"ItemId":"22586","ItemName":"성상","RequestType":"식품","ServiceName":"중력밀가루(1등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(1등급)/","Standard":"고유의 색택을 가진 분말로 이미,이취가 없어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"","CheckUnit":""}
+				,{"ItemId":"22587","ItemName":"수분","RequestType":"식품","ServiceName":"중력밀가루(1등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(1등급)/","Standard":"15.5 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"15.5","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22588","ItemName":"회분","RequestType":"식품","ServiceName":"중력밀가루(1등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(1등급)/","Standard":"0.6 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.6","CheckPrice":"22000","CheckUnit":"%"}
+				,{"ItemId":"22589","ItemName":"사분","RequestType":"식품","ServiceName":"중력밀가루(1등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(1등급)/","Standard":"0.03 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.03","CheckPrice":"16500","CheckUnit":"%"}
+				,{"ItemId":"86247","ItemName":"납","RequestType":"식품","ServiceName":"중력밀가루(1등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(1등급)/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"60500","CheckUnit":"mg/kg"}
+				,{"ItemId":"86248","ItemName":"카드뮴","RequestType":"식품","ServiceName":"중력밀가루(1등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(1등급)/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"71500","CheckUnit":"mg/kg"}
+				,{"ItemId":"22590","ItemName":"성상","RequestType":"식품","ServiceName":"중력밀가루(2등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(2등급)/","Standard":"고유의 색택을 가진 분말로 이미,이취가 없어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"","CheckUnit":""}
+				,{"ItemId":"22591","ItemName":"수분","RequestType":"식품","ServiceName":"중력밀가루(2등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(2등급)/","Standard":"15.5 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"15.5","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22592","ItemName":"회분","RequestType":"식품","ServiceName":"중력밀가루(2등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(2등급)/","Standard":"0.9 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.9","CheckPrice":"22000","CheckUnit":"%"}
+				,{"ItemId":"22593","ItemName":"사분","RequestType":"식품","ServiceName":"중력밀가루(2등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(2등급)/","Standard":"0.03 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.03","CheckPrice":"16500","CheckUnit":"%"}
+				,{"ItemId":"86249","ItemName":"납","RequestType":"식품","ServiceName":"중력밀가루(2등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(2등급)/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"60500","CheckUnit":"mg/kg"}
+				,{"ItemId":"86250","ItemName":"카드뮴","RequestType":"식품","ServiceName":"중력밀가루(2등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(2등급)/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"71500","CheckUnit":"mg/kg"}
+				,{"ItemId":"22594","ItemName":"성상","RequestType":"식품","ServiceName":"중력밀가루(3등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(3등급)/","Standard":"고유의 색택을 가진 분말로 이미,이취가 없어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"0","CheckUnit":""}
+				,{"ItemId":"22595","ItemName":"수분","RequestType":"식품","ServiceName":"중력밀가루(3등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(3등급)/","Standard":"15.5 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"15.5","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22596","ItemName":"회분","RequestType":"식품","ServiceName":"중력밀가루(3등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(3등급)/","Standard":"1.6 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"1.6","CheckPrice":"22000","CheckUnit":"%"}
+				,{"ItemId":"22597","ItemName":"사분","RequestType":"식품","ServiceName":"중력밀가루(3등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(3등급)/","Standard":"0.03 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.03","CheckPrice":"16500","CheckUnit":"%"}
+				,{"ItemId":"86251","ItemName":"납","RequestType":"식품","ServiceName":"중력밀가루(3등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(3등급)/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"60500","CheckUnit":"mg/kg"}
+				,{"ItemId":"86252","ItemName":"카드뮴","RequestType":"식품","ServiceName":"중력밀가루(3등급)","ServiceCode":"식품/기타식품류/밀가루/밀가루/중력밀가루(3등급)/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"71500","CheckUnit":"mg/kg"}
+				,{"ItemId":"22598","ItemName":"성상","RequestType":"식품","ServiceName":"영양강화밀가루","ServiceCode":"식품/기타식품류/밀가루/영양강화밀가루/","Standard":"고유의 색택을 가진 분말로 이미,이취가 없어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"","CheckUnit":""}
+				,{"ItemId":"22599","ItemName":"수분","RequestType":"식품","ServiceName":"영양강화밀가루","ServiceCode":"식품/기타식품류/밀가루/영양강화밀가루/","Standard":"15.5 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"15.5","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22600","ItemName":"회분","RequestType":"식품","ServiceName":"영양강화밀가루","ServiceCode":"식품/기타식품류/밀가루/영양강화밀가루/","Standard":"2.0 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"2","CheckPrice":"22000","CheckUnit":"%"}
+				,{"ItemId":"22601","ItemName":"사분","RequestType":"식품","ServiceName":"영양강화밀가루","ServiceCode":"식품/기타식품류/밀가루/영양강화밀가루/","Standard":"0.03 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.03","CheckPrice":"16500","CheckUnit":"%"}
+				,{"ItemId":"86253","ItemName":"납","RequestType":"식품","ServiceName":"영양강화밀가루","ServiceCode":"식품/기타식품류/밀가루/영양강화밀가루/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"60500","CheckUnit":"mg/kg"}
+				,{"ItemId":"86254","ItemName":"카드뮴","RequestType":"식품","ServiceName":"영양강화밀가루","ServiceCode":"식품/기타식품류/밀가루/영양강화밀가루/","Standard":"0.2 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.2","CheckPrice":"71500","CheckUnit":"mg/kg"}
+				,{"ItemId":"22602","ItemName":"물불용물","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"0.5 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"0.5","CheckPrice":"16500","CheckUnit":"%"}
+				,{"ItemId":"22603","ItemName":"산도","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"40.0 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"40","CheckPrice":"12100","CheckUnit":"meq/kg"}
+				,{"ItemId":"22604","ItemName":"수분","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"21.0 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"21","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22605","ItemName":"이성화당","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"음성이어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"","CheckUnit":""}
+				,{"ItemId":"22606","ItemName":"인공감미료","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"검출되어서는 아니된다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"34100","CheckUnit":""}
+				,{"ItemId":"22607","ItemName":"자당","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"7.0 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"7","CheckPrice":"66000","CheckUnit":"%"}
+				,{"ItemId":"22608","ItemName":"전화당","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"65.0 이상","LowBounds":"65","LowSign":"<=","HighSign":"NA","HighBounds":"","CheckPrice":"","CheckUnit":"%"}
+				,{"ItemId":"22609","ItemName":"타르색소","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"검출되어서는 아니된다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"39600","CheckUnit":""}
+				,{"ItemId":"22610","ItemName":"히드록시메틸푸르푸랄","RequestType":"식품","ServiceName":"벌꿀","ServiceCode":"식품/기타식품류/벌꿀/","Standard":"80.0 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"80","CheckPrice":"","CheckUnit":"mg/kg"}
+				,{"ItemId":"22611","ItemName":"수분","RequestType":"식품","ServiceName":"생식제품","ServiceCode":"식품/기타식품류/생식류/생식제품/","Standard":"8.0 이하 (페이스트, 액상, 겔 제외)","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"8","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22612","ItemName":"클로스트리디움 퍼프린젠스","RequestType":"식품","ServiceName":"생식제품","ServiceCode":"식품/기타식품류/생식류/생식제품/","Standard":"1g당 100 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"100","CheckPrice":"49500","CheckUnit":"CFU/g"}
+				,{"ItemId":"22613","ItemName":"바실러스  세레우스","RequestType":"식품","ServiceName":"생식제품","ServiceCode":"식품/기타식품류/생식류/생식제품/","Standard":"1g당 1,000 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"1000","CheckPrice":"99000","CheckUnit":"CFU/g"}
+				,{"ItemId":"22614","ItemName":"대장균","RequestType":"식품","ServiceName":"생식제품","ServiceCode":"식품/기타식품류/생식류/생식제품/","Standard":"음성이어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"27500","CheckUnit":""}
+				,{"ItemId":"22615","ItemName":"수분","RequestType":"식품","ServiceName":"생식함유제품","ServiceCode":"식품/기타식품류/생식류/생식함유제품/","Standard":"8.0 이하 (페이스트, 액상, 겔 제외)","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"8","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22616","ItemName":"클로스트리디움 퍼프린젠스","RequestType":"식품","ServiceName":"생식함유제품","ServiceCode":"식품/기타식품류/생식류/생식함유제품/","Standard":"1g당 100 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"100","CheckPrice":"49500","CheckUnit":"CFU/g"}
+				,{"ItemId":"22617","ItemName":"바실러스  세레우스","RequestType":"식품","ServiceName":"생식함유제품","ServiceCode":"식품/기타식품류/생식류/생식함유제품/","Standard":"1g당 1,000 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"1000","CheckPrice":"99000","CheckUnit":"CFU/g"}
+				,{"ItemId":"22618","ItemName":"대장균","RequestType":"식품","ServiceName":"생식함유제품","ServiceCode":"식품/기타식품류/생식류/생식함유제품/","Standard":"음성이어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"27500","CheckUnit":""}
+				,{"ItemId":"22619","ItemName":"대장균군","RequestType":"식품","ServiceName":"시리얼류","ServiceCode":"식품/기타식품류/시리얼류/","Standard":"음성이어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"27500","CheckUnit":""}
+				,{"ItemId":"22620","ItemName":"무기질류","RequestType":"식품","ServiceName":"시리얼류","ServiceCode":"식품/기타식품류/시리얼류/","Standard":"표시량 이상이어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"","CheckUnit":""}
+				,{"ItemId":"22621","ItemName":"비타민류","RequestType":"식품","ServiceName":"시리얼류","ServiceCode":"식품/기타식품류/시리얼류/","Standard":"표시량 이상이어야 한다","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"","CheckUnit":""}
+				,{"ItemId":"22622","ItemName":"수분","RequestType":"식품","ServiceName":"식물성크림","ServiceCode":"식품/기타식품류/식물성크림/","Standard":"8.0 이하 (분말제품에 한한다)","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"8","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22623","ItemName":"대장균군","RequestType":"식품","ServiceName":"식물성크림","ServiceCode":"식품/기타식품류/식물성크림/","Standard":"음성이어야 한다 (단, 건조제품은 제외한다)","LowBounds":"0","LowSign":"<=","HighSign":"<=","HighBounds":"0","CheckPrice":"27500","CheckUnit":""}
+				,{"ItemId":"22624","ItemName":"염화나트륨","RequestType":"식품","ServiceName":"가공소금","ServiceCode":"식품/기타식품류/식염/가공소금/","Standard":"35.0 이상","LowBounds":"35","LowSign":"<=","HighSign":"NA","HighBounds":"","CheckPrice":"16500","CheckUnit":"%"}
+				,{"ItemId":"22625","ItemName":"총염소","RequestType":"식품","ServiceName":"가공소금","ServiceCode":"식품/기타식품류/식염/가공소금/","Standard":"20.0 이상","LowBounds":"20","LowSign":"<=","HighSign":"NA","HighBounds":"","CheckPrice":"27500","CheckUnit":"%"}
+				,{"ItemId":"22626","ItemName":"수분","RequestType":"식품","ServiceName":"가공소금","ServiceCode":"식품/기타식품류/식염/가공소금/","Standard":"5.5 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"5.5","CheckPrice":"12100","CheckUnit":"%"}
+				,{"ItemId":"22627","ItemName":"황산이온","RequestType":"식품","ServiceName":"가공소금","ServiceCode":"식품/기타식품류/식염/가공소금/","Standard":"2.5 이하","LowBounds":"","LowSign":"NA","HighSign":"<=","HighBounds":"2.5","CheckPrice":"29700","CheckUnit":"%"}];
+
+			provider.fillJsonData(sampleData,{});		
+		}
+		
+	</script>
+</head>
+<body>
+	<div id="gridView" style="width:100%;height:100%;"></div>
+</body>
+</html>
