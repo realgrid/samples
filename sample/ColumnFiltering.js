@@ -325,7 +325,7 @@ var tests = {
 	setFilters2: function () {
 		var acol = grdMain.columnByName("Quantity");
 		 var filters = [{
-              criteria:"value > 1000 ", name:"filter1", text:"XXXXXXXXXX", active:true
+              criteria:"value > 1000 ", name:"filter1", text:"Quantity가 1000보다 큰것", active:true
          }];
 		 grdMain.setColumnFilters(acol, filters);	
 	},
