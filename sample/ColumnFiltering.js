@@ -24,7 +24,7 @@ $(document).ready(function () {
   };
   grdMain.onFiltering = function (grid) {
       console.log("$$$$$$$$$$$$$$$$$$$ filtering.");
-      return false;
+//      return false;
   };
   grdMain.onFilteringChanged = function (grid) {
       console.log("$$$$$$$$$$$$$$$$$$$ filtering changed.");
