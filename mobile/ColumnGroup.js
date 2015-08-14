@@ -61,20 +61,6 @@ function setFields(provider) {
 		dataType : "datetime"
 	}, {
 		fieldName : "CompanyName"
-	}, {
-		fieldName : "Country"
-	}, {
-		fieldName : "Phone"
-	}, {
-		fieldName : "ProductName"
-	}, {
-		fieldName : "QuantityPerUnit"
-	}, {
-		fieldName : "Quantity",
-		dataType : "number"
-	}, {
-		fieldName : "UnitPrice",
-		dataType : "number"
 	} ];
 
 	provider.setFields(fields);
@@ -142,81 +128,6 @@ function setColumns(grid) {
 		header : {
 			text : "Company Name"
 		}
-	}, {
-		name : "Country",
-		fieldName : "Country",
-		width : 70 * 2,
-		styles : {
-			textAlignment : "center"
-		},
-		header : {
-			text : "Country"
-		}
-	}, {
-		name : "Phone",
-		fieldName : "Phone",
-		width : 80 * 2,
-		styles : {
-			textAlignment : "near"
-		},
-		header : {
-			text : "Phone"
-		}
-	}, {
-		type : "group",
-		name : "GroupSales",
-		width : 300 * 2,
-		columns : [ {
-			type : "group",
-			name : "GroupProduct",
-			orientation : "vertical",
-			columns : [ {
-				name : "ProductName",
-				fieldName : "ProductName",
-				width : 200 * 2,
-				styles : {
-					textAlignment : "near"
-				},
-				header : {
-					text : "Product Name"
-				}
-			}, {
-				name : "QuantityPerUnit",
-				fieldName : "QuantityPerUnit",
-				width : 100 * 2,
-				styles : {
-					textAlignment : "near"
-				},
-				header : {
-					text : "Quantity / Unit"
-				}
-			} ]
-		}, {
-			type : "group",
-			name : "GroupUnit",
-			orientation : "vertical",
-			columns : [ {
-				name : "Quantity",
-				fieldName : "Quantity",
-				width : 100 * 2,
-				styles : {
-					textAlignment : "far"
-				},
-				header : {
-					text : "Quantity"
-				}
-			}, {
-				name : "UnitPrice",
-				fieldName : "UnitPrice",
-				width : 100 * 2,
-				styles : {
-					textAlignment : "far"
-				},
-				header : {
-					text : "Unit Price"
-				}
-			} ]
-		} ]
 	} ];
 
 	grid.setColumns(columns);

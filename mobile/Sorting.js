@@ -40,20 +40,6 @@ function setFields(provider) {
 		dataType : "datetime"
 	}, {
 		fieldName : "CompanyName"
-	}, {
-		fieldName : "Country"
-	}, {
-		fieldName : "Phone"
-	}, {
-		fieldName : "ProductName"
-	}, {
-		fieldName : "QuantityPerUnit"
-	}, {
-		fieldName : "Quantity",
-		dataType : "number"
-	}, {
-		fieldName : "UnitPrice",
-		dataType : "number"
 	} ];
 
 	provider.setFields(fields);
