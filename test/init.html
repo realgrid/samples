@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>RealGridJS</title>
+    <script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../lib/realgridjs-lic.js"></script>
+    <script type="text/javascript" src="../lib/realgridjs_eval.1.0.13.min.js"></script>
+    <script type="text/javascript" src="../lib/realgridjs-api.1.0.13.js"></script>
+</head>
+<body>
+<div id="realgrid" style="width: 100%; height: 200px;"></div>
+<script>
+    var gridView;
+    var dataProvider;
+
+    $(document).ready( function(){
+        RealGridJS.setRootContext("/lib");
+
+        dataProvider = new RealGridJS.LocalDataProvider();
+        gridView = new RealGridJS.GridView("realgrid");
+        gridView.setDataSource(dataProvider);
+
+        var columns = [
+            {
+                name: "col1",
+                fieldName: "field1",
+                header : { text: "컬럼1"},
+                width: 300
+            },
+            {
+                name: "col2",
+                fieldName: "field2",
+                header : { text: "컬럼1"},
+                width: 300
+            }
+        ];
+
+        var fields = [
+            { fieldName: "field1"},
+            { fieldName: "field2"}
+        ];
+
+        dataProvider.setFields(fields);
+        gridView.setColumns(columns);
+
+        dataProvider.fillJsonData([
+            {field1: 'dataA1', field2: 'dataA2'},
+            {field1: 'dataB1', field2: 'dataB2'}
+        ]);
+    });
+</script>
+</body>
+</html>
