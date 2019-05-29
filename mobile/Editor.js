@@ -22,7 +22,7 @@ $(document).ready(function() {
     
     grdMain.setStyles(generalBlueSkin);
     
-    cfnOrientationGrid(grdMain);
+    //cfnOrientationGrid(grdMain);
     grdMain.setEditorOptions({applyCellFont:true})
     
     setMobileOptions();
