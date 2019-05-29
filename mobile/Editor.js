@@ -16,6 +16,7 @@ $(document).ready(function() {
     grdMain.setDataSource(dataProvider);
 
     setFields(dataProvider);
+    loadData(dataProvider);
     setColumns(grdMain);
     setOptions(grdMain, dataProvider);
     
@@ -23,7 +24,6 @@ $(document).ready(function() {
     
     cfnOrientationGrid(grdMain);
     
-    loadData(dataProvider);
     setMobileOptions();
 });
 
@@ -36,7 +36,8 @@ function setFields(provider) {
         fieldName : "EmployeeID"
     }, {
         fieldName : "OrderDate",
-        dataType : "datetime"
+        dataType : "datetime",
+        datetimeFormat: "yyyy.MM.dd"
     }, {
         fieldName : "CompanyName"
     }, {
@@ -48,6 +49,12 @@ function setFields(provider) {
 }
 
 function setColumns(grid) {
+    var values = dataProvider.getDistinctValues("CustomerID");
+    var labels = [];
+    for(var i = 0; i < values.length; i++){
+        labels.push("<" + values[i] + ">")
+    }
+
     var columns = [{
         name : "OrderID",
         fieldName : "OrderID",
@@ -64,24 +71,8 @@ function setColumns(grid) {
         fieldName : "CustomerID",
         width : 130*2,
         lookupDisplay: true,
-        values: [
-            "VINET",
-            "HANAR",
-            "SUPRD",
-            "VICTE",
-            "THREE",
-            "SEVEN",
-            "TOMSP"
-        ],
-        labels: [
-            "<VINET>",
-            "<HANAR>",
-            "<SUPRD>",
-            "<VICTE>",
-            "<THREE>",
-            "<SEVEN>",
-            "<TOMSP>"
-        ],
+        values: values,
+        labels: labels,
         editor: {
             type: "dropDown",
             dropDownCount: 4
