@@ -6,7 +6,7 @@ $(document).ready(function() {
         height : "100%"
     });
     $("#grdMain").css({
-        width : "100%",
+        width : "98%",
         height : "95%"
     });
     RealGridJS.setRootContext("../lib");
@@ -23,6 +23,7 @@ $(document).ready(function() {
     grdMain.setStyles(generalBlueSkin);
     
     cfnOrientationGrid(grdMain);
+    grdMain.setEditorOptions({applyCellFont:true})
     
     setMobileOptions();
 });
