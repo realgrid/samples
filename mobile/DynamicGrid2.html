@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<style>
+    {margin: 0; padding: 0;}
+    #area1 {height:100vh;}
+</style>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8; width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <title>RealGridJS</title>
+  	<script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+  	<script type="text/javascript" src="../jquery/jquery-ui.js"></script>
+  	<link rel="stylesheet" href="../jquery/jquery-ui.css">
+    <script type="text/javascript" src="../lib/dlgrids_eval.js"></script>
+  	<script type="text/javascript" src="../lib/realgridjs_eval.1.1.32.min.js"></script>
+    <script type="text/javascript" src="../lib/realgridjs-api.1.1.32.js"></script>
+  	<script type="text/javascript" src="../lib/jszip.min.js"></script>
+  	<script type="text/javascript" src="common.js"></script>
+    <script type="text/javascript" src="generalBlue.js"></script>
+    <script type="text/javascript" src="data/mobileData.js"></script>
+    <script type="text/javascript" src="DynamicGrid2.js"></script>
+</head>
+<body>
+	<div id="actions" style="margin-bottom:4px">
+        <a href="../index.html">Home</a>
+        <span id="spanVer"></span>
+    </div>
+    <script type="text/javascript">
+        $("#spanVer").text("v." + RealGridJS.getVersion());
+    </script>
+    <section id = "area1"> 
+    <div id="realgrid" style="width: 95%; height: 88%"></div>
+    </section>
+</body>
+</html>
