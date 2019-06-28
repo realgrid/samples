@@ -56,8 +56,8 @@ window.onload = function () {
                         textAlignment: "far"
                     }
                 },{
-                    name: "column5",
-                    fieldName: "field5",
+                    name: "column8",
+                    fieldName: "field8",
                     styles: {
                         textAlignment: "far"
                     }
@@ -76,8 +76,8 @@ window.onload = function () {
                         textAlignment: "far"
                     }
                 },{
-                    name: "column7",
-                    fieldName: "field7",
+                    name: "column10",
+                    fieldName: "field10",
                     styles: {
                         textAlignment: "far"
                     }
@@ -90,8 +90,8 @@ window.onload = function () {
                 hideChildHeaders: true,
                 orientation: "vertical",
                 columns: [{
-                    name: "column8",
-                    fieldName: "field8",
+                    name: "column5",
+                    fieldName: "field5",
                     styles: {
                         textAlignment: "far"
                     }
@@ -110,8 +110,8 @@ window.onload = function () {
                 hideChildHeaders: true,
                 orientation: "vertical",
                 columns: [{
-                    name: "column10",
-                    fieldName: "field10",
+                    name: "column7",
+                    fieldName: "field7",
                     styles: {
                         textAlignment: "far"
                     }
