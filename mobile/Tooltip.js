@@ -3,7 +3,7 @@ var gridView, dataProvider;
 
 $(document).ready( function() {
     RealGridJS.setTrace(false);
-    RealGridJS.setRootContext("/scripts/");
+    RealGridJS.setRootContext("../lib");
 
     gridView = new RealGridJS.GridView('realgrid');
     dataProvider = new RealGridJS.LocalDataProvider();
