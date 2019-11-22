@@ -1,5 +1,5 @@
 var grdMain, dataProvider;
-var doit;
+var gridWidth;
 
 window.onload = function () {
     console.log("==> RealGrid loaded.");
@@ -275,6 +275,7 @@ window.onload = function () {
         
     loadData(dataProvider);
 
+    gridWidth = $("#realgrid").width();
     var width = $("#realgrid").width();
 
     if (width > 1000) {
@@ -284,20 +285,23 @@ window.onload = function () {
     } else {
         grdMain.setColumns(columns3);
     }
-/*
+
     $(window).resize(function () {
         var width = $("#realgrid").width();
 
-        if (width > 1000) {
-            //grdMain.linearizeColumns();
-        } else if (width > 600) { 
-            grdMain.setColumns(columns2);
-        } else {
-            grdMain.setColumns(columns3);
+        if(width != gridWidth){
+            if (width > 1000) {
+                //grdMain.linearizeColumns();
+            } else if (width > 600) { 
+                grdMain.setColumns(columns2);
+            } else {
+                grdMain.setColumns(columns3);
+            }
         }
+        gridWidth = $("#realgrid").width();
     });
-*/
 
+/*
     function resizedw(appwidth){
         var window_changed = $(window).width() != appwidth;
         if ($(window).width() != appwidth){
@@ -317,12 +321,13 @@ window.onload = function () {
             if (width > 1000) {
                 //grdMain.linearizeColumns();
             } else if (width > 600) { 
-                //grdMain.setColumns(columns2);
+                grdMain.setColumns(columns2);
             } else {
-                //grdMain.setColumns(columns3);
+                grdMain.setColumns(columns3);
             }
-        }, 100);
+        }, 2000);
     };
+*/
 };
 
 function setFields(provider) {
