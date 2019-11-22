@@ -1,7 +1,7 @@
 var grdMain, dataProvider;
 var newGrid = true;
 
-if(load){
+if(newGrid){
 $(document).ready( function() {
     load = false
     console.log("==> RealGrid loaded.");
