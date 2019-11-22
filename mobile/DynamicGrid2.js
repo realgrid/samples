@@ -497,7 +497,8 @@ function setOptions(grid) {
         },
         display: {
             fitStyle: "even"
-        }
+        },
+        resizeDelay:1000000
     });
 }
 
