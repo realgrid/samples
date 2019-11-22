@@ -1,6 +1,6 @@
 var grdMain, dataProvider;
 
-window.onload = function () {
+$(document).ready( function() {
     console.log("==> RealGrid loaded.");
 
     var columns2 = [{
@@ -295,7 +295,7 @@ window.onload = function () {
             grdMain.setColumns(columns3);
         }
     });
-};
+});
 
 function setFields(provider) {
     var fields = [{
