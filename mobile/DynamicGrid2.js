@@ -1,4 +1,5 @@
 var grdMain, dataProvider;
+var doit;
 
 window.onload = function () {
     console.log("==> RealGrid loaded.");
@@ -283,9 +284,8 @@ window.onload = function () {
     } else {
         grdMain.setColumns(columns3);
     }
-
+/*
     $(window).resize(function () {
-        alert("브라우저 사이즈 변경")
         var width = $("#realgrid").width();
 
         if (width > 1000) {
@@ -296,6 +296,33 @@ window.onload = function () {
             grdMain.setColumns(columns3);
         }
     });
+*/
+
+    function resizedw(appwidth){
+        var window_changed = $(window).width() != appwidth;
+        if ($(window).width() != appwidth){
+            ("body").append("did it"+appwidth+" ");
+        }
+        past_width = $(window).width();
+    }
+
+    var past_width = $(window).width();
+    window.onresize = function() {
+        clearTimeout(doit);
+        doit = setTimeout(function() {
+            resizedw(past_width);
+            alert("브라우저 사이즈 변경");
+            var width = $("#realgrid").width();
+
+            if (width > 1000) {
+                //grdMain.linearizeColumns();
+            } else if (width > 600) { 
+                grdMain.setColumns(columns2);
+            } else {
+                grdMain.setColumns(columns3);
+            }
+        }, 100);
+    };
 };
 
 function setFields(provider) {
