@@ -317,9 +317,9 @@ window.onload = function () {
             if (width > 1000) {
                 //grdMain.linearizeColumns();
             } else if (width > 600) { 
-                grdMain.setColumns(columns2);
+                //grdMain.setColumns(columns2);
             } else {
-                grdMain.setColumns(columns3);
+                //grdMain.setColumns(columns3);
             }
         }, 100);
     };
