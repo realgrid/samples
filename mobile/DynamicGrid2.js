@@ -311,7 +311,7 @@ window.onload = function () {
         clearTimeout(doit);
         doit = setTimeout(function() {
             resizedw(past_width);
-            alert("브라우저 사이즈 변경");
+            //alert("브라우저 사이즈 변경");
             var width = $("#realgrid").width();
 
             if (width > 1000) {
