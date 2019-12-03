@@ -1,5 +1,6 @@
 var gridView;
 var dataProvider;
+var createNum = 101;
 RealGridJS.setRootContext("../lib");
 
 $().ready(function () {
@@ -20,7 +21,7 @@ function setFields() {
     var fields = [];
 
     for(var i = 1; i < createNum; i++){
-        fields.push({fieldName: "field" + i})
+        fields.push({fieldName: "field" + i});
     }
 
     dataProvider.setFields(fields);
@@ -30,7 +31,7 @@ function setColumns() {
     var columns = [];
 
     for(var i = 1; i < createNum; i++){
-        columns.push({name: "column" + i, header:{text: "column" + i}, fieldName: "field" + i, width: 110})
+        columns.push({name: "column" + i, header:{text: "column" + i}, fieldName: "field" + i, width: 110});
     }
 
     gridView.setColumns(columns);
