@@ -18,17 +18,10 @@
     <script type="text/javascript" src="LargeCSVDataSet.js"></script>
 </head>
 <body>
-  <h3 style="padding-left: 20px;text-decoration: underline">LazyCSVDataSet<span id="spanVer" style="font-size:8pt;color:gray;padding-left:20px"></span></h3>
+  <h3 style="padding-left: 20px;text-decoration: underline">LargeCSVDataSet<span id="spanVer" style="font-size:8pt;color:gray;padding-left:20px"></span></h3>
 	<div id="scripts"></div>
-	<div id="actions" style="margin-bottom:4px">
-        <span id="loadResult" style="display:none"></span>
-        <a href="../index.html">Home</a>
-        <input id="txtMain" style="width: 100px;"/>
-        <input id="txtSub" style="width: 80px;display: none"/>
-        <input id="txtMin" style="width: 60px;display: none"/>
-    </div>
     <input type="button" style="width: 150px; height: 30px" onclick="loadData(dataProvider)" value="데이터 조회" /><br/><br/>
-    <div id="container" style="height:600px;width:100%;position:absolute;">
+    <div id="container" style="height:600px;width:99%;position:absolute;">
     </div>
     <script type="text/javascript">
         $("#spanVer").text("v." + RealGridJS.getVersion());
