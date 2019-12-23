@@ -27,7 +27,7 @@ $(document).ready(function () {
       alert(column.name);
   };
 
-  gridView.setEditOptions({editable: true})
+  grdMain.setEditOptions({editable: true})
 });
  
 function setFields(provider) {
