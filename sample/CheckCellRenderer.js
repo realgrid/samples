@@ -26,8 +26,6 @@ $(document).ready(function () {
   grdMain.onColumnHeaderDblClicked = function (grid, column) {
       alert(column.name);
   };
-
-  grdMain.setEditOptions({editable: true})
 });
  
 function setFields(provider) {
