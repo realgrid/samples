@@ -265,7 +265,7 @@
 	function loadNext() {
 	  var newStart = dataProvider.getRowCount();
 	  $.ajax({
-	    url: "./scripts/json-array.json",
+	    url: "/mobile2/datas/json-array.json",
 	    success: function(data) {
 	      dataProvider.fillJsonData(data,
 	        {fillMode: "append", start: newStart, count: 100});
