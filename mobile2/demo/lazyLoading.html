@@ -246,6 +246,7 @@
 	    gridView.setDataSource(dataProvider);
 	    gridView.setColumns(columns_01);
 
+	    dataProvider.setRows(testJsonRows);
 		setTimeout(function(){
 			    gridView.refresh();
 		},200);
@@ -257,9 +258,6 @@
 		gridView.displayOptions.rowHeight = 36;
 		gridView.footer.height = 40;
 		gridView.stateBar.width = 10;
-
-		loadNext();
-
 	});
 
 	function loadNext() {
