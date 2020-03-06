@@ -274,9 +274,9 @@ window.onload = function () {
     //grdMain.linearizeColumns();
         
     loadData(dataProvider);
-
     gridWidth = $("#realgrid").width();
     var width = $("#realgrid").width();
+
 
     if (width > 1000) {
         //grdMain.linearizeColumns();
@@ -305,11 +305,9 @@ window.onload = function () {
     function resizedw(appwidth){
         var window_changed = $(window).width() != appwidth;
         if ($(window).width() != appwidth){
-            ("body").append("did it"+appwidth+" ");
+            ("body").append("did it"+appwwidth+" ");
         }
         past_width = $(window).width();
-    }
-
     var past_width = $(window).width();
     window.onresize = function() {
         clearTimeout(doit);
@@ -320,6 +318,8 @@ window.onload = function () {
 
             if (width > 1000) {
                 //grdMain.linearizeColumns();
+    }
+
             } else if (width > 600) { 
                 grdMain.setColumns(columns2);
             } else {
@@ -328,6 +328,8 @@ window.onload = function () {
         }, 2000);
     };
 */
+
+
 };
 
 function setFields(provider) {

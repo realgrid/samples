@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RealGrid Mobile</title>
+		<link href="/css/realgrid_style.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
+	<link rel="stylesheet"  href="css/default/jquery.mobile.css" />
+
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/jquery.mobile.js"></script>
+
+	<script type="text/javascript" src="/scripts/domutils.js"></script>
+	<script type="text/javascript" src="/scripts/realgrid_debug.js"></script>
+	<script type="text/javascript" src="/scripts/json-array.js"></script>
+
+
+
+	<!-- bellow scripts are not needed in your code. This is a syntax highliher -->
+<script language="javascript">
+</script>
+</head>
+<body> 
+
+	<div data-role="page" id="main">
+
+		<div data-role="header" data-theme="a">
+		<h1>RealGrid Mobile Demo</h1>
+		</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<!--- <div class="content-primary"> -->
+		<ul data-role="listview" data-inset="true">
+			<li>
+				<a href="#paging">
+					<h2>페이징</h2>
+				</a>
+			</li>
+			<li>
+				<a href="#functionality">
+					<h2>기능</h2>
+				</a>
+			</li>
+			<li>
+				<a href="#searching">
+					<h2>검색</h2>
+				</a>
+			</li>
+		</ul>
+		<!--/ </div> content-primary -->	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+			<p>&copy; WOORITECH</p>
+	</div>
+
+	</div><!-- /page -->
+	<div id="paging" data-role="page" data-theme="a">
+		<div data-role="header">
+			<a href="#main" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+			<h2>그리드 페이징</h2>
+		</div><!-- /header -->
+		<div role="main" >
+				<ul data-role="listview" data-inset="true">
+					<li><a href="demo/paging.html">페이징</a></li>
+					<li><a href="demo/lazyLoading.html">레이지로딩</a></li>
+				</ul>
+		</div>
+		<div data-role="footer" >
+			<p>&copy; WOORITECH</p>
+		</div>
+	</div>
+	<div id="functionality" data-role="page" data-theme="a">
+		<div data-role="header">
+			<a href="#main" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+			<h2>기능</h2>
+		</div><!-- /header -->
+		<div role="main" >
+				<ul data-role="listview" data-inset="true">
+				</ul>
+		</div>
+		<div data-role="footer" >
+			<p>&copy; WOORITECH</p>
+		</div>
+	</div>
+	<div id="searching" data-role="page" data-theme="a">
+		<div data-role="header">
+			<a href="#main" class="ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all">No text</a>
+			<h2>Searching</h2>
+		</div><!-- /header -->
+		<div role="main" >
+				<ul data-role="listview" data-inset="true">
+				</ul>
+		</div>
+		<div data-role="footer" >
+			<p>&copy; WOORITECH</p>
+		</div>
+	</div>
+	</body>
+</html>
+			

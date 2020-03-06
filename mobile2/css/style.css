@@ -1,0 +1,47 @@
+a {
+  color: #4374d9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0000;
+}
+
+.alternate-row {
+  background: #f8f8f8;
+}
+
+.blue-column {
+  color: blue;
+}
+
+.bold-cell {
+  font-weight: bold;
+  background-color: greenyellow;
+}
+
+html {
+  height: 100%;
+  margin: 5px 5px 0px 5px;
+  overflow: hidden;
+}
+body {
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  overflow: hidden;
+}
+#actions {
+  height: 50px;
+}
+#realgrid {
+  width: 100%;
+  height: 250px
+}
+
+.test-style {
+  background: linear-gradient(to right, #96f58f, red);
+}
+
+.right-column {
+  text-align: right;
+}

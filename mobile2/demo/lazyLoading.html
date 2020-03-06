@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>레이지로딩</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	</head>
+<body>
+	<div id="page" data-role="page" data-theme="a" >
+		<div data-role="header"  style="margin-bottom: 10px">
+			<h1>레이지로딩</h1>
+			<a href="../indexdemo.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		</div>
+		<!-- HTML table Definition -->
+		
+			<div id="realgrid"></div>
+		
+		<!-- Java Scruipt Code -->
+
+	<script>
+	var dataProvider, gridView;
+	var rows;
+	var fields_01 = [{
+	    "fieldName": "OrderID",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "CustomerID",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "EmployeeID",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "OrderDate",
+	    "dataType": "datetime",
+	    "datetimeFormat": "yyyy-MM-dd",
+	    "amText": "오전",
+	    "pmText": "오후"
+	},
+	{
+	    "fieldName": "CompanyName",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "Country",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "Phone",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "ProductName",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "QuantityPerUnit",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "Quantity",
+	    "dataType": "number"
+	},
+	{
+	    "fieldName": "UnitPrice",
+	    "dataType": "number"
+	}];
+
+	var columns_01 = [{
+	    "name": "Country",
+	    "fieldName": "Country",
+	    "type": "data",
+	    "width": "100",
+	    "header": {
+	        "text": "Country"
+	    }
+	}, {
+	    "name": "CompanyName",
+	    "fieldName": "CompanyName",
+	    "type": "data",
+	    "width": "120",
+	    "styleName": "blue-column",
+	    "header": {
+	        "text": "Company Name"
+	    }
+	}, {
+	    "name": "UnitPrice2",
+	    "fieldName": "UnitPrice",
+	    "type": "data",
+	    "width": "100",
+	    "renderer": {
+	        "type": "bar",
+	        "origin": "left",
+	        "barWidth": "80%"
+	    },
+	    "suffix": " $",
+	    "header": {
+	        "text": "Bar"
+	    },
+	    "footer": {
+	        "expression": "sum"
+	    },
+	    "visible": false
+	}, {
+	    "name": "CustomerID",
+	    "fieldName": "CustomerID",
+	    "type": "data",
+	    "width": "70",
+	    "header": {
+	        "text": "CustomerID"
+	    },
+	    "visible": false
+	}, {
+	    "name": "CustomerID",
+	    "fieldName": "CustomerID",
+	    "type": "data",
+	    "width": "150",
+	    "renderer": {
+	        "type": "code39"
+	    },
+	    "header": {
+	        "text": "Code 39"
+	    },
+	    "visible":false,
+	    "footer": {
+	        "expression": "max",
+	        "groupExpression": "max"
+	    }
+	}, {
+	    "name": "CustomerID",
+	    "fieldName": "CustomerID",
+	    "type": "data",
+	    "width": "200",
+	    "renderer": {
+	        "type": "code128"
+	    },
+	    "header": {
+	        "text": "Code 128"
+	    },
+	    "visible": false
+	}, {
+	    "name": "EmployeeID",
+	    "fieldName": "EmployeeID",
+	    "type": "data",
+	    "width": "110",
+	    "header": {
+	        "text": "Employee ID"
+	    },
+	    "footer": {
+	        "expression": "min",
+	        "groupExpression": "min"
+	    },
+	    "visible": false
+	}, {
+	    "name": "OrderDate",
+	    "fieldName": "OrderDate",
+	    "type": "data",
+	    "width": "130",
+	    "styles": {
+	        "textAlignment": "center"
+	    },
+	    "header": {
+	        "text": "Order Date"
+	    }
+	}, {
+	    "name": "Phone",
+	    "fieldName": "Phone",
+	    "type": "data",
+	    "width": "120",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Phone"
+	    }
+	}, {
+	    "name": "ProductName",
+	    "fieldName": "ProductName",
+	    "type": "data",
+	    "width": "200",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Product Name"
+	    },
+	    "visible": false
+	}, {
+	    "name": "QuantityPerUnit",
+	    "fieldName": "QuantityPerUnit",
+	    "type": "data",
+	    "width": "100",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Quantity / Unit"
+	    },
+	    "visible": false
+	}, {
+	    "name": "Quantity",
+	    "fieldName": "Quantity",
+	    "type": "data",
+	    "width": "100",
+	    "styles": {
+	        "textAlignment": "far"
+	    },
+	    "header": {
+	        "text": "Quantity"
+	    },
+	    "footer": {
+	        "expression": "sum",
+	    },
+	    "numberFormat": "#,##0"
+	}, {
+	    "name": "UnitPrice",
+	    "fieldName": "UnitPrice",
+	    "type": "data",
+	    "width": "100",
+	    "styles": {
+	        "textAlignment": "far"
+	    },
+	    "header": {
+	        "text": "Unit Price"
+	    },
+	    "footer": {
+	        "expression": "avg",
+	        "groupExpression": "max",
+	        "styles": {
+	            "textAlignment": "far",
+	            "numberFormat": "0.00",
+	            "prefix": "AVG = "
+	        }
+	    },
+	    "visible": false
+	}]
+
+	$(document).ready( function() {
+	    dataProvider = new RealGrid.LocalDataProvider();
+	    dataProvider.setFields(fields_01);
+	    
+	    gridView = new RealGrid.GridView("realgrid");
+	    gridView.setDataSource(dataProvider);
+	    gridView.setColumns(columns_01);
+
+		setTimeout(function(){
+			    gridView.refresh();
+		},500);
+
+		gridView.displayOptions.fitStyle = "evenFill";
+
+		gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+		gridView.header.height = 40;
+		gridView.displayOptions.rowHeight = 36;
+		gridView.footer.height = 40;
+		gridView.stateBar.width = 10;
+
+		loadNext();
+
+	});
+
+	function loadNext() {
+	  var newStart = dataProvider.getRowCount();
+	  $.ajax({
+	    url: "/scripts/json-array.json",
+	    success: function(data) {
+	      dataProvider.fillJsonData(data,
+	        {fillMode: "append", start: newStart, count: 100});
+	    }
+	  });
+	}
+
+	gridView.onScrollToBottom = function() {
+	  loadNext();
+	}
+
+</script>
+		
+	</div>
+</body>
+</html>
