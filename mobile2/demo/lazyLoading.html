@@ -248,7 +248,7 @@
 
 		setTimeout(function(){
 			    gridView.refresh();
-		},500);
+		},200);
 
 		gridView.displayOptions.fitStyle = "evenFill";
 
@@ -265,7 +265,7 @@
 	function loadNext() {
 	  var newStart = dataProvider.getRowCount();
 	  $.ajax({
-	    url: "/scripts/json-array.json",
+	    url: "./scripts/json-array.json",
 	    success: function(data) {
 	      dataProvider.fillJsonData(data,
 	        {fillMode: "append", start: newStart, count: 100});
