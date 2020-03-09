@@ -269,6 +269,10 @@
 	    gridView = new RealGrid.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);
 	    gridView.setColumns(columns_01);
+	    gridView.header.height = 40;
+	    gridView.displayOptions.rowHeight = 36;
+	    gridView.footer.height = 40;
+	    gridView.stateBar.width = 10;
 
 	    dataProvider.setRows(testJsonRows);
 		setTimeout(function(){
