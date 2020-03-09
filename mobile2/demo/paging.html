@@ -13,8 +13,9 @@
 			<a href="../indexdemo.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
 		</div>
 		<!-- HTML table Definition -->
-		
-			<div id="realgrid"></div>
+		<div data-role="content">
+			<div id="realgrid" style="height:100%;"></div>
+		</div>
 			<div id="pager" class="ui-jqgrid-pager ui-corner-bottom ui-footer ui-bar-inherit" style="width: 100%;" dir="ltr" data-role="footer" role="contentinfo">
 				<div id="pg_pager" class="ui-pager-control ui-footer ui-bar-a" role="contentinfo" data-role="footer" data-theme="a">
 					<table class="ui-pg-table ui-common-table" style="width:100%;table-layout:fixed;height:100%;">
@@ -254,6 +255,14 @@
 	}]
 
 	$(document).ready( function() {
+		$(document).on( "pagecontainershow", function(){
+            ScaleContentToDevice();        
+        });
+
+        $(window).on("resize orientationchange", function(){
+            ScaleContentToDevice();
+        });
+
 	    dataProvider = new RealGrid.LocalDataProvider();
 	    dataProvider.setFields(fields_01);
 	    
@@ -289,6 +298,18 @@
 		gridView.footer.height = 40;
 		gridView.stateBar.width = 10;
 
+		function ScaleContentToDevice(){
+			var url = window.location.href
+			if(url.indexOf("indexdemo.html") == -1){
+		        scroll(0, 0);
+		        var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height() -97;
+		        $(".ui-content").height(content);
+		        gridView.refresh();
+		    }else {
+		    	var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+		        $(".ui-content").height(content);
+		    }
+	    }
 
 	});
 
