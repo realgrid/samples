@@ -257,13 +257,11 @@
 	    gridView.setDataSource(dataProvider);
 	    gridView.setColumns(columns_01);
 
-        gridView.displayOptions.fitStyle = "evenFill";
-
         gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
         gridView.groupingOptions.enabled = true;
-        gridView.header.height = 40;
-        gridView.displayOptions.rowHeight = 36;
-        gridView.footer.height = 40;
+        gridView.header.height = 50;
+        gridView.displayOptions.rowHeight = 40;
+        gridView.footer.height = 50;
         gridView.stateBar.width = 10;
 
 	    dataProvider.setRows(testJsonRows);
