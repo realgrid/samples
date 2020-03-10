@@ -325,7 +325,14 @@
             grid._view.setFocusedItem(0);
 
             createButton("actions", "Mode Change", function (e) {
-                grid._view.container.formView.visible = !grid._view.container.formView.visible;
+		        if (grid._view.container.formView.visible ) { // form -> grid
+			  grid.setCurrent({itemIndex: form.currentRow});
+			  //grid.currentRow = form.currentRow;
+			  grid._view.container.formView.visible = false;
+			} else {
+			  form.currentRow = grid.currentRow;
+			  grid._view.container.formView.visible = true;
+			};
             });
         
             function ScaleContentToDevice(){
