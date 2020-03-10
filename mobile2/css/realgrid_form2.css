@@ -1,7 +1,8 @@
 @charset "UTF-8";
+
 .rg-form-root {
   font-family: 'Malgun Gothic', '맑은 고딕', AppleSDGothicNeo-Light,	sans-serif;
-  font-size: 18px;
+  font-size: 12px;
   color: #575757;
   background: white;
   -webkit-appearance: none;
@@ -13,49 +14,58 @@
   -ms-user-select: none;
   user-select: none;
   touch-action: none;
-  -ms-touch-action: none; }
+  -ms-touch-action: none; 
+}
 
 .rg-form-root .rg-form-table, .rg-form-root .rg-form-table tr, .rg-form-root .rg-form-table td {
   position: relative;
   margin: 0 !important;
-  padding: 5px 5px !important;
+  padding: 0 !important;
   border-spacing: 0 !important;
   border-collapse: separate !important;
   box-sizing: border-box !important;
-  line-height: 1.5em; }
+  line-height: 1.5em; 
+}
 
 .rg-form {
   position: relative;
   margin: 0 !important;
   padding: 0 !important;
-  overflow: hidden; }
+  overflow: hidden; 
+}
 
 .rg-form-cell {
   overflow: hidden;
   border-top: none;
   border-right: 1px solid #BDBDBD;
   border-bottom: 1px solid #BDBDBD;
-  border-left: none; }
+  border-left: none; 
+}
 
 .rg-form-cell-right {
-  border-right: none; }
+  border-right: none; 
+}
 
 .rg-form-header {
-  background: #eeeeee; }
+  background: #eeeeee; 
+}
 
 .rg-form-header-cell {
   height: 50%;
   transform: translate(0px, 50%);
-  text-align: center; }
+  text-align: center; 
+}
 
 .rg-form-footer {
   border-top: 1px solid #BDBDBD;
-  background: #eeeeee; }
+  background: #eeeeee; 
+}
 
 .rg-form-body .rg-table tr td {
   overflow: hidden;
   text-align: center;
-  height: 0px; }
+  height: 0px; 
+}
 
 .rg-form-label-cell {
   border-top: none;
@@ -64,104 +74,142 @@
   border-left: none;
   word-wrap: break-word;
   font-weight: bold;
-  background: #F3F3F3; }
+  background: #F3F3F3; 
+}
 
 .rg-form-label-focused {
-  background-color: #BDBDBD; }
+  background-color: #BDBDBD; 
+}
 
 .rg-form-value-cell {
   border-top: none;
   border-right: none;
   border-bottom: 1px solid #BDBDBD;
-  border-left: none; }
+  border-left: none; 
+}
 
 .rg-form-position {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #242424; }
+  font-size: 16px;
+  line-height: 1.6;
+  color: #242424; 
+}
 
 .rg-form-position-slash {
   padding-left: 4px;
-  padding-right: 4px; }
+  padding-right: 4px; 
+}
 
 .rg-footer-form-head {
-  margin-left: 6px; }
+  margin-left: 6px; 
+}
 
 .rg-form-menu {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-menu.svg") no-repeat center center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-footer-form-foot {
-  margin-right: 6px; }
+  margin-right: 6px; 
+}
 
 .rg-form-check {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-check.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-cancel {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-cancel.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-commit {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-commit.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-delete {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-delete.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-edit {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-edit.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-add {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-add.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-first {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-first.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-last {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-last.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-prev {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-prev.svg") no-repeat center;
-  background-size: contain; }
+  background-size: contain; 
+}
 
 .rg-form-next {
   width: 14px;
   height: 14px;
   background: url("./images/form/form-next.svg") no-repeat center;
-  background-size: contain; }
-  
-  .rg-form-swipe-left {
+  background-size: contain; 
+}
+
+.rg-form-label {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ff2500;
+}
+    
+.rg-form-swipe-left {
     opacity: 0.5;
     background: url("./images/form/swipe-to-left-black.svg") no-repeat center;
-    background-size: contain; }
+    background-size: contain; 
+}
   
-  .rg-form-swipe-right {
+.rg-form-swipe-right {
     opacity: 0.5;
     background: url("./images/form/swipe-to-right-black.svg") no-repeat center;
-    background-size: contain; }
+    background-size: contain; 
+}
+  
+.rg-form-end-left {
+    opacity: 0.2;
+    background: url("./images/form/form-end-left.png") no-repeat center;
+    background-size: cover; 
+}
+  
+.rg-form-end-right {
+    opacity: 0.2;
+    background: url("./images/form/form-end-right.png") no-repeat center;
+    background-size: cover;
+}
