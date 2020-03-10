@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>폼 그리드</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	</head>
+<body>
+	<div id="page" data-role="page" data-theme="a" >
+		<div data-role="header"  style="margin-bottom: 10px">
+			<h1>폼 그리드</h1>
+			<a href="../indexdemo.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		</div>
+		<!-- HTML table Definition -->
+		<div data-role="content">
+			<div id="realgrid" style="height:100%;"></div>
+		</div>
+			<div id="pager" class="ui-jqgrid-pager ui-corner-bottom ui-footer ui-bar-inherit" style="width: 100%;" dir="ltr" data-role="footer" role="contentinfo">
+				<div id="pg_pager" class="ui-pager-control ui-footer ui-bar-a" role="contentinfo" data-role="footer" data-theme="a">
+					<table class="ui-pg-table ui-common-table" style="width:100%;table-layout:fixed;height:100%;">
+						<tbody>
+							<tr>
+								<div id="actions"></div>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		
+		<!-- Java Scruipt Code -->
+
+	<script>
+
+        var ds, gridContainer, grid, form;
+        var rows;
+
+        var fields = [
+        { fieldName: "KorName",             dataType: "text"   },
+        { fieldName: "SexLabel",            dataType: "text"   },
+        { fieldName: "Age",                 dataType: "number" },
+        { fieldName: "Phone",               dataType: "text"   },
+        { fieldName: "StartDate",           dataType: "datetime", datetimeFormat: "yyyy-MM-dd", amText: "오전", pmText: "오후" },
+        { fieldName: "KorCountry",          dataType: "text"   },
+        { fieldName: "Rating",              dataType: "number" },
+        { fieldName: "BusinessProficiency", dataType: "number" },
+        { fieldName: "Address",             dataType: "text"   },
+        { fieldName: "SaveCost",            dataType: "number" },
+        { fieldName: "Email",               dataType: "text"   },
+        { fieldName: "InterestRate",        dataType: "number" },
+        { fieldName: "Button",              dataType: "text"   }    
+        ];
+
+        var columns = [
+        {
+            name: "KorName",
+            fieldName: "KorName",
+            type: "data",
+            width: "100",
+            header: {
+            text: "직원 명"
+            },
+            renderer: {
+            type: "text"
+            }
+        },
+        {
+            name: "SexLabel",
+            fieldName: "SexLabel",
+            type: "data",
+            width: "60",     
+            header: {
+            text: "성별"
+            },
+            renderer: {
+            type: "image",
+            imageMap: {
+                "남": "../css/images/man.png",
+                "여": "../css/images/woman.png"
+            },
+            titleField: "SexLabel",
+            imageHeight: 24
+            }
+        },    
+        {
+            name: "Email",
+            fieldName: "Email",
+            width: "250",
+            styleName: "left-column",
+            header: {
+            text: "이메일"
+            },
+            renderer: { 
+            type: "link",
+            urlCallback: function (grid, cell) {
+                return "mailto:"+cell.value;
+            },
+            titleField: "Email"
+            }
+        },  
+        {
+            name: "Phone",
+            fieldName: "Phone",
+            type: "data",
+            width: "150",
+            header: {
+            text: "전화번호"
+            },
+        },    
+        {
+            name: "StartDate",
+            fieldName: "StartDate",
+            type: "data",
+            width: "100",
+            header: {
+            text: "입사일",
+            showTooltip: true,
+            tooltip: "회사 입사일"
+            }
+        },    
+        { name: "SaveCost",
+            fieldName: "SaveCost",
+            type: "data",      
+            width: "100",      
+            prefix: "$",
+            styleName: "right-column",
+            footer: {
+            prefix: "$",
+            styleName: "right-column bold-column",
+            expression: "sum",
+            groupExpression: "sum"
+            },
+            header: {
+            text: "계약 급여"
+            }
+        },    
+        {
+            name: "Rating",
+            fieldName: "Rating",
+            type: "data",
+            width: "100",
+            renderer: {
+            type: "signalbar",
+            barCount: 5,
+            startRate: 50,
+            endRate: 50
+            },
+            header: {
+            text: "고객 평가"
+            }
+        },
+        { 
+            name: "KorCountry",
+            fieldName: "KorCountry",
+            type: "data",
+            width: "200",
+            styleName: "left-column",      
+            header: {
+            text: "담당 국가"
+            }
+        },
+        {
+            name: "BusinessProficiency",
+            fieldName: "BusinessProficiency",
+            type: "data",
+            width: "120",
+            suffix:"%",
+            numberFormat: "#,##0",
+            renderer: {
+            type: "bar",
+            origin: "left",
+            barWidth: "50%"
+            },
+            header: {
+            text: "업무 숙련도"
+            }
+        },
+        {
+            name: "Address",
+            fieldName: "Address",
+            type: "data",
+            width: "300",
+            styleName: "left-column",
+            renderer: {
+            type: "icon",
+            iconCallback: function (grid, cell) {
+                return "../css/images/location.png";
+            },
+            iconHeight: 14
+            },
+            header: {
+            text: "소재지"
+            }
+        },
+        {
+            name: "Button",
+            fieldName: "Button",
+            type: "data",
+            width: "100",
+            renderer: {
+            type: "button"
+            },
+            header: {
+            text: "데이타 관리"
+            }
+        }
+        ];
+
+        $(document).ready( function() {
+            $(document).on( "pagecontainershow", function(){
+                ScaleContentToDevice();        
+            });
+
+            $(window).on("resize orientationchange", function(){
+                ScaleContentToDevice();
+            });
+            ds = new RealGrid.LocalDataProvider();
+            ds.setFields(fields);
+            
+            grid = new RealGrid.GridView("realgrid");
+            grid.setDataSource(ds);
+            grid.setColumns(columns);//(columns_02);
+            ds.setRows(simpleData);
+
+            grid.setRowIndicator({
+                popupMenu: "menu1"
+            });
+            grid.addPopupMenu("menu1", [
+                {
+                    label: "Form",
+                    menuItemClick: function () {
+                        grid._view.container.formView.visible = true;
+                    }
+                }
+            ]);
+
+            form = grid._view.container.formView;
+            form.visible = false;
+            form.form.load({
+                items: [
+                    {
+                        header: "직원 명",
+                        column: "KorName"
+                    },
+                    {
+                        header: "직원 휴대폰",
+                        column: "Phone"
+                    },
+                    {
+                        header: "입사일",
+                        column: "StartDate"
+                    },
+                    {
+                        header: "직원 이메일",
+                        column: "Email"
+                    },
+                    {
+                        header: "직원 주소",
+                        column: "Address"
+                    },
+                    {
+                        header: "직원 평가",
+                        column: "Rating"
+                    },
+                    {
+                        header: "계약 급여",
+                        column: "SaveCost"
+                    },
+                    {
+                        header: "담당 국가",
+                        column: "KorCountry"
+                    },
+                    {
+                        header: "업무 숙련도",
+                        column: "BusinessProficiency"
+                    }
+                ]
+            });
+            form.focusedIndex = 0;    
+
+            grid.setFocus();
+
+            grid.displayOptions.rowHoverType = "row";
+
+            grid.setEditOptions({
+                insertable: true,
+                appendable : true
+            });
+
+            grid.setHeader({
+                showTooltip: true
+            })
+            // grid.header.showTooltip = true;
+
+            grid.setRowStyleCallback(function (grid, item) {
+                if (item.index % 2 == 0) {
+                    return "alternate-row";
+                }
+            });
+
+            grid.setButtonClickCallback(function (grid, index) {
+                alert("Cell Button: " + index.getValue());    
+            });
+
+            grid.onShowTooltip = function(grid, index, value) {
+                return value;
+            };
+            grid.onShowHeaderTooltip = function (grid, column, value) {
+                return value;
+            };
+
+            grid.setGroupingOptions({
+                enabled:true,
+                toast: {
+                    visible : true
+                }
+            });
+
+            grid._view.setFocusedItem(0);
+
+            createButton("actions", "Mode Change", function (e) {
+                grid._view.container.formView.visible = !grid._view.container.formView.visible;
+            });
+
+            createButton("actions", "Home", function (e) {
+                form.currentRow = grid._view.getItem(0);
+            });
+            createButton("actions", "Prev", function (e) {
+                var item = form.currentRow;
+                if (item && item.index > 0) {
+                    form.current
+
+                    item = grid._view.getItem(item.index - 1);
+                    form.currentRow = item;
+                }
+            });
+            createButton("actions", "Next", function (e) {
+                var item = form.currentRow;
+                if (item && item.index < grid._view.itemCount - 1) {
+                    item = grid._view.getItem(item.index + 1);
+                    form.currentRow = item;
+                }
+            });
+            createButton("actions", "End", function (e) {
+                form.currentRow = grid._view.getItem(grid._view.itemCount - 1);
+            });
+        
+            function ScaleContentToDevice(){
+                var url = window.location.href
+                if(url.indexOf("indexdemo.html") == -1){
+                    scroll(0, 0);
+                    var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height() -97;
+                    $(".ui-content").height(content);
+                    grid.refresh();
+                }else {
+                    var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+                    $(".ui-content").height(content);
+                }
+            }
+            
+        });
+</script>
+		
+	</div>
+</body>
+</html>

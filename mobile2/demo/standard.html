@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>기본</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	</head>
+<body>
+	<div id="page" data-role="page" data-theme="a" >
+		<div data-role="header"  style="margin-bottom: 10px">
+			<h1>기본</h1>
+			<a href="../indexdemo.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		</div>
+		<!-- HTML table Definition -->
+		<div data-role="content">
+			<div id="realgrid" style="height:100%;"></div>
+		</div>
+			<div id="pager" class="ui-jqgrid-pager ui-corner-bottom ui-footer ui-bar-inherit" style="width: 100%;" dir="ltr" data-role="footer" role="contentinfo">
+				<div id="pg_pager" class="ui-pager-control ui-footer ui-bar-a" role="contentinfo" data-role="footer" data-theme="a">
+					<table class="ui-pg-table ui-common-table" style="width:100%;table-layout:fixed;height:100%;">
+						<tbody>
+							<tr>
+								<td id="pager_left" align="left">
+                                    <button id="formgrid" class="ui-btn ui-btn-inline">Grid<->Form</button>
+                                </td>
+								<td id="pager_center" align="center" style="white-space:pre;"><table style="table-layout:auto;height:100%;" class="ui-pg-table ui-common-table"><tbody><tr><td id="prev_pager" style="text-align:center" class="ui-state-disabled"><a href="#" class=" ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all ui-btn-inline" style="margin-top:0;margin-bottom:0;"></a></td><td class="ui-pg-button"></td><td dir="ltr" style="text-align:center"></td><td class="ui-pg-button"></td><td id="next_pager" style="text-align:center" class=""><a href="#" class=" ui-btn ui-icon-arrow-r ui-btn-icon-notext ui-corner-all ui-btn-inline" style="margin-top:0;margin-bottom:0"></a></td></tr></tbody></table></td>
+								<td id="pager_right" align="right">
+									<div dir="ltr" style="text-align:right" class="ui-paging-info"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		
+		<!-- Java Scruipt Code -->
+
+	<script>
+    $( "#formgrid" ).click(function() {
+        gridView._view.container.formView.visible = !gridView._view.container.formView.visible
+    });
+
+	var dataProvider, gridView, form;
+	var rows;
+
+	var columns_01 = [{
+	    "name": "Country",
+	    "fieldName": "Country",
+	    "type": "data",
+	    "width": "100",
+	    "header": {
+	        "text": "Country"
+	    }
+	}, {
+	    "name": "CompanyName",
+	    "fieldName": "CompanyName",
+	    "type": "data",
+	    "width": "120",
+	    "styleName": "blue-column",
+	    "header": {
+	        "text": "Company Name"
+	    }
+	}, {
+	    "name": "CustomerID",
+	    "fieldName": "CustomerID",
+	    "type": "data",
+	    "width": "70",
+	    "header": {
+	        "text": "CustomerID"
+	    }
+	}, {
+	    "name": "OrderDate",
+	    "fieldName": "OrderDate",
+	    "type": "data",
+	    "width": "130",
+	    "styles": {
+	        "textAlignment": "center"
+	    },
+	    "header": {
+	        "text": "Order Date"
+	    }
+	}, {
+	    "name": "Phone",
+	    "fieldName": "Phone",
+	    "type": "data",
+	    "width": "120",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Phone"
+	    }
+	}, {
+	    "name": "ProductName",
+	    "fieldName": "ProductName",
+	    "type": "data",
+	    "width": "200",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Product Name"
+	    }
+	}, {
+	    "name": "Quantity",
+	    "fieldName": "Quantity",
+	    "type": "data",
+	    "width": "100",
+        "tag": {"dataType": "number"},
+	    "styles": {
+	        "textAlignment": "far"
+	    },
+	    "header": {
+	        "text": "Quantity"
+	    },
+	    "footer": {
+	        "expression": "sum",
+	    },
+	    "numberFormat": "#,##0"
+	}, {
+	    "name": "UnitPrice",
+	    "fieldName": "UnitPrice",
+	    "type": "data",
+	    "width": "100",
+        "tag": {"dataType": "number"},
+	    "styles": {
+	        "textAlignment": "far"
+	    },
+	    "header": {
+	        "text": "Unit Price"
+	    },
+	    "numberFormat": "#,##0"
+	}]
+
+	$(document).ready( function() {
+		$(document).on( "pagecontainershow", function(){
+            ScaleContentToDevice();        
+        });
+
+        $(window).on("resize orientationchange", function(){
+            ScaleContentToDevice();
+        });
+
+	    dataProvider = new RealGrid.LocalDataProvider();
+	    
+	    gridView = new RealGrid.GridView("realgrid");
+	    gridView.setDataSource(dataProvider);
+	    
+        setFieldsNColumns(dataProvider, gridView, columns_01, form);
+
+	    dataProvider.setRows(testJsonRows);
+		setTimeout(function(){
+			    gridView.refresh();
+		},200);
+
+		gridView.setPaging(true, 20);
+		setPage();
+
+		$("#prev_pager").click(function(){
+			var page = gridView.getPage();
+			gridView.setPage(page-1);
+			setPage();
+		});
+
+		$("#next_pager").click(function(){
+			var page = gridView.getPage();
+			gridView.setPage(page+1);
+			setPage();
+		});
+
+		//gridView.displayOptions.fitStyle = "evenFill";
+
+		gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+		gridView.header.height = 50;
+		gridView.displayOptions.rowHeight = 40;
+		gridView.footer.height = 50;
+		gridView.stateBar.width = 20;
+
+		function ScaleContentToDevice(){
+			var url = window.location.href
+			if(url.indexOf("indexdemo.html") == -1){
+		        scroll(0, 0);
+		        var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height() -97;
+		        $(".ui-content").height(content);
+		        gridView.refresh();
+		    }else {
+		    	var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+		        $(".ui-content").height(content);
+		    }
+	    }
+
+	});
+
+	function setPage(){
+		var page = gridView.getPage();
+		var pageCount = gridView.getPageCount();
+		$(".ui-paging-info").text(page+1 + " / " + pageCount);
+
+		if((page+1) == pageCount){
+			$("#next_pager").attr('class','ui-state-disabled');
+		}else {
+			$("#next_pager").attr('class','');
+		}
+
+		if(page == 0){
+			$("#prev_pager").attr('class','ui-state-disabled');
+		}else {
+			$("#prev_pager").attr('class','');
+		}
+	}
+
+    //필드,컬럼 동적 생성
+    //form field 추가
+    function setFieldsNColumns(provider, grid, columnInfo, form) {
+        grid.setColumns(columnInfo);
+
+        var columnNames = grid.getColumnNames();
+        var fields = [];
+        var formFields = [];
+
+        columnNames.forEach(function (obj, idx, objs) {
+            var col = grid.columnByName(obj);
+            if (col && (!col.items)) {
+                //field 구성
+                var f = {};
+                f.fieldName = col.name;
+                if (col.tag && col.tag.dataType) f.dataType = col.tag.dataType;
+
+                fields
+                fields.push(f);
+
+                //formField구성
+                var fField = {};
+                fField.header = col.header.text;
+                fField.column = col.name;
+                formFields.push(fField);
+            };
+        });
+
+        provider.setFields(fields);
+        grid.setColumns(columnInfo);
+
+
+        console.log("aaasdfaksdjhflaksdjflasfalksdjfhaldsfa");
+        console.log(formFields);
+        //폼그리드 처리.
+        if (arguments.length > 3) {
+            form = grid._view.container.formView;
+            form.Visible = true;
+            form.form.load({
+                items: formFields
+            });
+
+            /*
+            form.focusedIndex = 0;
+            grid.setFocus();
+            */
+        }
+    };
+
+</script>
+		
+	</div>
+</body>
+</html>
