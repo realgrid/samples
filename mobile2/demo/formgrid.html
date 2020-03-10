@@ -321,29 +321,6 @@
             createButton("actions", "Mode Change", function (e) {
                 grid._view.container.formView.visible = !grid._view.container.formView.visible;
             });
-
-            createButton("actions", "Home", function (e) {
-                form.currentRow = grid._view.getItem(0);
-            });
-            createButton("actions", "Prev", function (e) {
-                var item = form.currentRow;
-                if (item && item.index > 0) {
-                    form.current
-
-                    item = grid._view.getItem(item.index - 1);
-                    form.currentRow = item;
-                }
-            });
-            createButton("actions", "Next", function (e) {
-                var item = form.currentRow;
-                if (item && item.index < grid._view.itemCount - 1) {
-                    item = grid._view.getItem(item.index + 1);
-                    form.currentRow = item;
-                }
-            });
-            createButton("actions", "End", function (e) {
-                form.currentRow = grid._view.getItem(grid._view.itemCount - 1);
-            });
         
             function ScaleContentToDevice(){
                 var url = window.location.href
