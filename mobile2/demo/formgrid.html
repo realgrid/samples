@@ -221,6 +221,12 @@
             grid.setDataSource(ds);
             grid.setColumns(columns);//(columns_02);
             ds.setRows(simpleData);
+		
+	    grid.header.height = 50;
+	    grid.displayOptions.rowHeight = 50;
+	    grid.footer.height = 50;
+	    grid.stateBar.width = 10;
+
 
             grid.setRowIndicator({
                 popupMenu: "menu1"
