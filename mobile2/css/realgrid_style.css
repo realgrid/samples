@@ -65,13 +65,13 @@
 
 .rg-hscrollbar .rg-scroll-left {
 	box-sizing: border-box;
-	background: #eaeaea url("./css/images/scroll-left.png") no-repeat 50% 50%;
+	background: #eaeaea url("./images/scroll-left.png") no-repeat 50% 50%;
 	border: 1px solid #eaeaea;
 }
 
 .rg-hscrollbar .rg-scroll-right {
 	box-sizing: border-box;
-	background: #eaeaea url("./css/images/scroll-right.png") no-repeat 50% 50%;
+	background: #eaeaea url("./images/scroll-right.png") no-repeat 50% 50%;
 	border: 1px solid #eaeaea;
 }
 
@@ -90,13 +90,13 @@
 
 .rg-vscrollbar .rg-scroll-up {
 	box-sizing: border-box;
-	background: #eaeaea url("./css/images/scroll-up.png") no-repeat 50% 50%;
+	background: #eaeaea url("./images/scroll-up.png") no-repeat 50% 50%;
 	border: 1px solid #eaeaea;
 }
 
 .rg-vscrollbar .rg-scroll-down {
 	box-sizing: border-box;
-	background: #eaeaea url("./css/images/scroll-down.png") no-repeat 50% 50%;
+	background: #eaeaea url("./images/scroll-down.png") no-repeat 50% 50%;
 	border: 1px solid #eaeaea;
 }
 
@@ -137,15 +137,6 @@
 	text-align: center;
 }
 
-.rg-header-group-cell {
-    background: #e8e8e8;
-	text-align: center;
-}
-
-.rg-header-renderer {
-	padding: 0px 4px;
-}
-
 .rg-header-focus {
     background: #dadada;
 	background: -webkit-linear-gradient(top, #f8f8f8, #d0d0d0);
@@ -156,29 +147,24 @@
 }
 
 .rg-header-sort-ascending {
-	background: url(./css/images/ascending.png) no-repeat center;
+	background: url("./images/ascending.png") no-repeat center;
 	font-size: 8px;
     vertical-align: middle;
 }
 
 .rg-header-sort-descending {
-	background: url(./css/images/descending.png) no-repeat center;
+	background: url("./images/descending.png") no-repeat center;
 	font-size: 8px;
     vertical-align: middle;
 }
 
 .rg-header-sort-none {
-	background: url(./css/images/sortnone.png) no-repeat center;
+	background: url("./images/sortnone.png") no-repeat center;
 	vertical-align: middle;
 }
 
 .rg-header-filtering {
-	background: url(./css/images/filter.png) no-repeat center;
-    vertical-align: middle;
-}
-
-.rg-header-popup {
-	background: url(./css/images/header-popup.png) no-repeat center;
+	background: url("./images/filter.png") no-repeat center;
     vertical-align: middle;
 }
 
@@ -222,7 +208,7 @@
 }
 
 .rg-fixed-header-summary .rg-table tr td {
-    background: #eee;
+	background: #fffff4;
 	border-top:none;
 	border-right: 1px solid #DCDCDC;
 	border-bottom: 1px solid #bdbdbd;
@@ -231,11 +217,6 @@
 
 .rg-header-summary-cell {
 	text-align: right;
-}
-
-.rg-header-summary-renderer {
-	padding: 0px 4px;
-
 }
 
 .rg-sum {
@@ -275,10 +256,6 @@
 
 .rg-footer-cell {
 	text-align: right;
-}
-
-.rg-footer-renderer {
-	padding: 0px 4px;
 }
 
 .rg-foot {
@@ -321,28 +298,27 @@
 	font-weight: bold;
 	color: red;
 }
-
 .rg-rowindicator-focus {
     background-color: #dadada;
 }
 
 .rg-rowindicator .rg-table tr td.rg-rowindicator-editing {
-	background:  #dadada url(./css/images/item-editing.png) no-repeat center;
+	background:  #dadada url("./images/item-editing.png") no-repeat center;
     vertical-align: middle;
 }
 
 .rg-rowindicator .rg-table tr td.rg-rowindicator-editing:hover {
-	background: #dadada url(./css/images/item-editing.png) no-repeat center;
+	background: #dadada url("./images/item-editing.png") no-repeat center;
     vertical-align: middle;
 }
 
 .rg-rowindicator .rg-table tr td.rg-rowindicator-inserting {
-	background:  #dadada url(./css/images/item-inserting.png) no-repeat center;
+	background:  #dadada url("./images/item-inserting.png") no-repeat center;
     vertical-align: middle;
 }
 
 .rg-rowindicator .rg-table tr td.rg-rowindicator-inserting:hover {
-	background:  #dadada url(./css/images/item-inserting.png) no-repeat center;
+	background:  #dadada url("./images/item-inserting.png") no-repeat center;
     vertical-align: middle;
 }
 
@@ -362,22 +338,22 @@
 }
 
 .rg-statebar-created {
-	background: rgba(0, 128, 255, 0.2) url(./css/images/row-created.png) no-repeat center;
+	background: rgba(0, 128, 255, 0.2) url("./images/row-created.png") no-repeat center;
     vertical-align: middle;
 }
 
 .rg-statebar-create-and-deleted {
-	background: rgba(128, 0, 0, 0.2) url(./css/images/row-create-and-deleted.png) no-repeat center;
+	background: rgba(128, 0, 0, 0.2) url("./images/row-create-and-deleted.png") no-repeat center;
     vertical-align: middle;
 }
 
 .rg-statebar-deleted {
-	background: rgba(255, 0, 0, 0.2) url(./css/images/row-deleted.png) no-repeat center;
+	background: rgba(255, 0, 0, 0.2) url("./images/row-deleted.png") no-repeat center;
     vertical-align: middle;
 }
 
 .rg-statebar-updated {
-	background: #eee url(./css/images/row-updated.png) no-repeat center;
+	background: #eee url("./images/row-updated.png") no-repeat center;
     vertical-align: middle;
 }
 
@@ -417,18 +393,6 @@
     height: 0px;
 }
 
-.rg-fixed-row {
-    background: #eee;
-}
-
-.rg-fixed-row td {
-	border-top:none;
-	border-right: 1px solid #bdbdbd;
-	border-bottom: 1px solid #bdbdbd;
-	border-left:none;
-    height: 0px;
-}
-
 .rg-data-row {
     background: none;
 }
@@ -450,58 +414,54 @@
 }
 
 .rg-button-action {
-    background: url(/images/action.png) no-repeat center;
+    background: url("./images/action.png") no-repeat center;
 }
 
 .rg-button-action:hover {
-	background: url(/images/action-hover.png) no-repeat center;
+	background: url("./images/action-hover.png") no-repeat center;
 }
 
 .rg-button-action:active:hover {
-	background: url(/images/action-down.png) no-repeat center;
+	background: url("./images/action-down.png") no-repeat center;
 }
 
 .rg-button-popup {
-    background: url(./css/images/popup.png) no-repeat center;
+    background: url("./images/popup.png") no-repeat center;
 }
 
 .rg-button-popup:hover {
-	background: url(./css/images/popup-hover.png) no-repeat center;
+	background: url("./images/popup-hover.png") no-repeat center;
 }
 
 .rg-button-popup:active:hover {
-	background: url(./css/images/popup-down.png) no-repeat center;
+	background: url("./images/popup-down.png") no-repeat center;
 }
 
 .rg-button-list {
-    background: url(./css/images/dropdown-up.png) no-repeat center left;
+    background: url("./images/dropdown-up.png") no-repeat center left;
 }
 
 .rg-button-list:hover {
-	background: url(./css/images/dropdown-hover.png) no-repeat center left;
+	background: url("./images/dropdown-hover.png") no-repeat center left;
 }
 
 .rg-button-list:active:hover {
-	background: url(./css/images/dropdown-down.png) no-repeat center left;
+	background: url("./images/dropdown-down.png") no-repeat center left;
 }
 
 .rg-button-calendar {
-    background: url(./css/images/calendar-up.png) no-repeat center left;
+    background: url("./images/calendar-up.png") no-repeat center left;
 }
 
 .rg-button-calendar:hover {
-	background: url(./css/images/calendar-hover.png) no-repeat center left;
+	background: url("./images/calendar-hover.png") no-repeat center left;
 }
 
 .rg-button-calendar:active:hover {
-	background: url(./css/images/calendar-down.png) no-repeat center left;
+	background: url("./images/calendar-down.png") no-repeat center left;
 }
 
 .rg-fixed-body .rg-table .rg-fixed-row-bar td, .rg-body .rg-table .rg-fixed-row-bar td {
-    background: red;
-}
-
-.rg-fixed-row-bar {
     background: red;
 }
 
@@ -634,7 +594,7 @@
 .rg-group-panel-item-close {
     display: inline-block;
     position: absolute;
-    background-image: url("./css/images/grouping-close.png");
+    background-image: url("./images/grouping-close.png");
     width: 16px;
     height: 16px;
 }
@@ -646,7 +606,7 @@
 .rg-group-panel-no-mark {
     display: inline-block;
     position: absolute;
-    background-image: url("./css/images/grouping-no.png");
+    background-image: url("./images/grouping-no.png");
     width: 40px;
     height: 20px;
 }
@@ -656,7 +616,7 @@
 	width: 16px;
 	height: 16px;
 	border: none;
-	background: url(./css/images/tree-expanded.png) no-repeat center;
+	background: url("./images/tree-expanded.png") no-repeat center;
     vertical-align: middle;
 }
 
@@ -665,7 +625,7 @@
 	width: 16px;
 	height: 16px;
 	border: none;
-    background: url(./css/images/tree-collapsed.png) no-repeat center;
+    background: url("./images/tree-collapsed.png") no-repeat center;
     vertical-align: middle;
 }
 
@@ -691,10 +651,6 @@
 
 .rg-focus-editing {
     border: 2px solid rgb(82, 146, 247);
-}
-
-.rg-focus-inner {
-    border: 1px dotted rgba(51, 51, 51, 0.8);
 }
 
 .rg-rowhover {
@@ -754,12 +710,14 @@
 }
 
 .rg-bar-renderer-bar {
-    background: #2F8D27;
+	background: rgb(33, 189, 33);
+/* 	
 	background: -webkit-linear-gradient(right, #96f58F, #2F8D27);
 	background: -moz-linear-gradient(right, #96f58F, #2F8D27);
 	background: -ms-linear-gradient(right, #96f58F, #2F8D27);
 	background: -o-linear-gradient(right, #96f58F, #2F8D27);
     background: linear-gradient(to left, #96f58F, #2F8D27);
+ */
 }
 
 .rg-bar-renderer-bar-right {
@@ -799,6 +757,7 @@
 
 .rg-check-renderer {
     position: relative;
+
 }
 
 .rg-button-renderer {
@@ -835,7 +794,7 @@
 }
 
 .rg-signalbar-renderer-bar {
-    fill: darkgreen;
+    fill: #ffa600;
 }
 
 .rg-signalbar-renderer-inactive {
@@ -966,16 +925,17 @@
 	margin-top:10px;
 }
 .rg-popup-expander {
-	background:url("./css/images/menu_expander.png") no-repeat center center;
+	background-image:url("./images/menu_expander.png") no-repeat center center;
+
 }
 .rg-popup-check {
-	background:url("./css/images/menu_expander.png") no-repeat center center;
+	background-image:url("./images/menu_expander.png") no-repeat center center;
 }
 .rg-popup-check-checked {
-	background:url("./css/images/menu_check.png") no-repeat center center;
+	background-image:url("./images/menu_check.png") no-repeat center center;
 }
 .rg-popup-radio-checked {
-	background:url("./css/images/menu_radio.png") no-repeat center center;
+	background-image:url("./images/menu_radio.png") no-repeat center center;
 }
 .rg-popup-group1 {
 	background : #ff4488
@@ -983,7 +943,7 @@
 
 .rg-waiting {
 	text-align: center;
-	background: rgba(255,255,255,0.8) url("./css/images/loading1.gif") no-repeat center center
+	background: rgba(255,255,255,0.8) url("./images/loading1.gif") no-repeat center center
 }
 
 /** filter */
@@ -1011,14 +971,12 @@
 	cursor: pointer;
 	font-size: 12px;
 	width: 100%;
-	padding-left: 5px;
-	/* overflow: auto; */
+	overflow: auto;
 }
 
 .rg-filter-list-viewport {
     height: 100px;
-	overflow-y: auto;
-	overflow-x: hidden;
+	overflow: auto;
 	border-top: #bababa solid 1px;
 	border-bottom: #bababa solid 1px;
 }
@@ -1032,72 +990,13 @@
 	font-size: 12px;
 	overflow: hidden;
 	width: 100%;
-	/* padding-left: 5px; */
 }
 
 .rg-filter-checkbox {
     cursor: pointer;
 	display: inline;
-	margin-right: 6px;
-	margin-top: 6px;
-	margin-bottom: 6px;
-	margin-left: 0px;
+	margin: 6px;
 }
-
-.rg-filter-item-indent-none {
-	padding-left: 5px;
-	cursor: pointer;
-	display: inline;
-}
-
-.rg-filter-item-indent-0 {
-	padding-left: 20px;
-	cursor: pointer;
-	display: inline;
-}
-.rg-filter-item-indent-1 {
-	padding-left: 35px;
-	cursor: pointer;
-	display: inline;
-}
-.rg-filter-item-indent-2 {
-	padding-left: 50px;
-	cursor: pointer;
-	display: inline;
-}
-.rg-filter-item-indent-3 {
-	padding-left: 65px;
-	cursor: pointer;
-	display: inline;
-}
-.rg-filter-item-indent-4 {
-	padding-left: 80px;
-	cursor: pointer;
-	display: inline;
-}
-.rg-filter-item-indent-5 {
-	padding-left: 95px;
-	cursor: pointer;
-	display: inline;
-}
-
-.rg-filter-item-collapsed {
-	position: absolute;
-	width: 9px;
-	height: 100%;
-	background: url("./css/images/tree-collapsed.png") no-repeat center;
-	cursor: pointer;
-	display: inline-block;
-}
-.rg-filter-item-expanded {
-	position: absolute;
-	width: 9px;
-	height: 100%;
-	background: url("./css/images/tree-expanded.png") no-repeat center;
-	cursor: pointer;
-	display: inline-block;
-}
-
 
 /** tooltip */
 .rg-tooltip {
@@ -1179,30 +1078,26 @@
 	top:5px;
 }
 .rg-cal-prev-month {
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-image:url("/images/cal-prev.png");
+	background-image:url("./images/cal-prev.png");
 	width:20px;
 	height:20px;
 }
 .rg-cal-prev-month:hover {
-	background-image:url("./css/images/cal-prev-hover.png");
+	background-image:url("./images/cal-prev-hover.png");
 }
 .rg-cal-prev-month:active {
-	background-image:url("./css/images/cal-prev-active.png");
+	background-image:url("./images/cal-prev-active.png");
 }
 .rg-cal-next-month {
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-image:url("./css/images/cal-next.png");
+	background-image:url("./images/cal-next.png");
 	width:20px;
 	height:20px;
 }
 .rg-cal-next-month:hover {
-	background-image:url("./css/images/cal-next-hover.png");
+	background-image:url("./images/cal-next-hover.png");
 }
 .rg-cal-next-month:active {
-	background-image:url("./css/images/cal-next-active.png");
+	background-image:url("./images/cal-next-active.png");
 }
 .rg-cal-today-button {
 	padding: 2px;
@@ -1218,26 +1113,22 @@
 }
 
 .rg-cal-next-year {
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-image:url("./css/images/cal-up.png");
+	background-image:url("./images/cal-up.png");
 }
 .rg-cal-next-year:hover{
-	background-image:url("./css/images/cal-up-hover.png");
+	background-image:url("./images/cal-up-hover.png");
 }
 .rg-cal-next-year:active{
-	background-image:url("./css/images/cal-up-active.png");
+	background-image:url("./images/cal-up-active.png");
 }
 .rg-cal-prev-year {
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-image:url("./css/images/cal-down.png");
+	background-image:url("./images/cal-down.png");
 }
 .rg-cal-prev-year:hover{
-	background-image:url("./css/images/cal-down-hover.png");
+	background-image:url("./images/cal-down-hover.png");
 }
 .rg-cal-prev-year:active{
-	background-image:url("./css/images/cal-down-active.png");
+	background-image:url("./images/cal-down-active.png");
 }
 .rg-cal-weeks {
 	color:black;
@@ -1318,7 +1209,6 @@
 	box-shadow: rgba(0, 0, 0, 0.8) 1px 2px 5px;
 	padding: 0px;
 	margin: 0px;
-	font-size: 12px;
 }
 .rg-multicheck-button {
 	text-align: center;
@@ -1374,7 +1264,7 @@
 	width: 16px;
 	height: 16px;
 	border: none;
-	background: url(./css/images/expander-expanded.png) no-repeat center;
+	background: url("./images/expander-expanded.png") no-repeat center;
     vertical-align: middle;
 }
 
@@ -1383,10 +1273,9 @@
 	width: 16px;
 	height: 16px;
 	border: none;
-    background: url(./css/images/expander-collapsed.png) no-repeat center;
+    background: url("./images/expander-collapsed.png") no-repeat center;
     vertical-align: middle;
 }
-
 .rg-editor-container {
 	box-sizing: border-box;
 	overflow: hidden;
@@ -1398,7 +1287,7 @@
 
 .rg-editor-container > input,  .rg-editor-container > textarea {
 	background-color: rgb(255, 255, 255);
-	font-family: 'Malgun Gothic', '맑은 고딕', AppleSDGothicNeo-Light,	sans-serif; 
+	font-family: 'Malgun Gothic', 'ë§‘ì€ ê³ ë”•', AppleSDGothicNeo-Light,	sans-serif; 
 	font-style: normal; 
 	font-variant: normal; 
 	font-weight: normal; 
