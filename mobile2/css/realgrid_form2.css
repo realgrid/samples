@@ -18,7 +18,7 @@
 .rg-form-root .rg-form-table, .rg-form-root .rg-form-table tr, .rg-form-root .rg-form-table td {
   position: relative;
   margin: 0 !important;
-  padding: 5px !important;
+  padding: 5px 5px !important;
   border-spacing: 0 !important;
   border-collapse: separate !important;
   box-sizing: border-box !important;
