@@ -36,7 +36,6 @@
 	//dataType이 text가 아닌경우 tag속성에 지정
 	var columns_01 = [{
 	    "name": "Country",
-	    "fieldName": "Country",
 	    "type": "data",
 	    "width": "100",
 	    "header": {
@@ -44,7 +43,6 @@
 	    }
 	}, {
 	    "name": "CompanyName",
-	    "fieldName": "CompanyName",
 	    "type": "data",
 	    "width": "120",
 	    "styleName": "blue-column",
@@ -53,7 +51,6 @@
 	    }
 	}, {
 	    "name": "CustomerID",
-	    "fieldName": "CustomerID",
 	    "type": "data",
 	    "width": "70",
 	    "header": {
@@ -61,7 +58,6 @@
 	    }
 	}, {
 	    "name": "OrderDate",
-	    "fieldName": "OrderDate",
 	    "type": "data",
 	    "width": "130",
 	    "styles": {
@@ -72,7 +68,6 @@
 	    }
 	}, {
 	    "name": "Phone",
-	    "fieldName": "Phone",
 	    "type": "data",
 	    "width": "120",
 	    "styles": {
@@ -83,7 +78,6 @@
 	    }
 	}, {
 	    "name": "ProductName",
-	    "fieldName": "ProductName",
 	    "type": "data",
 	    "width": "200",
 	    "styles": {
@@ -94,7 +88,6 @@
 	    }
 	}, {
 	    "name": "Quantity",
-	    "fieldName": "Quantity",
 	    "type": "data",
 	    "width": "100",
         "tag": {"dataType": "number"},    //dataType이 text가 아닌경우 tag속성에 지정
@@ -110,7 +103,6 @@
 	    "numberFormat": "#,##0"
 	}, {
 	    "name": "UnitPrice",
-	    "fieldName": "UnitPrice",
 	    "type": "data",
 	    "width": "100",
         "tag": {"dataType": "number"},
@@ -169,14 +161,12 @@
 
     //필드,컬럼 동적 생성
     function setFieldsNColumns(provider, grid, columnInfo) {
-        grid.setColumns(columnInfo);
-
-        var columnNames = grid.getColumnNames();
         var fields = [];
-        var formFields = [];
 
-        columnNames.forEach(function (obj, idx, objs) {
-            var col = grid.columnByName(obj);
+        for (var key in columnInfo) {
+            var col = columnInfo[key];
+
+			if (!col.fieldName) col.fieldName = col.name;
             if (col && (!col.items)) {
                 //field 구성
                 var f = {};
@@ -185,9 +175,8 @@
 
                 fields
                 fields.push(f);
-
             };
-        });
+        };
 
         provider.setFields(fields);
         grid.setColumns(columnInfo);
