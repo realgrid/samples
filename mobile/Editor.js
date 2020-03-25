@@ -62,7 +62,8 @@ function setColumns(grid) {
         type : "data",
         width : 90*2,
         styles : {
-            textAlignment : "text"
+            textAlignment : "text",
+            font: "Consolas"
         },
         header : {
             text : "Text editor"
