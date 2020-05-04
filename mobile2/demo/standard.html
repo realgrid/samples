@@ -37,9 +37,6 @@
 		<!-- Java Scruipt Code -->
 
 	<script>
-    $( "#formgrid" ).click(function() {
-        gridView._view.container.formView.visible = !gridView._view.container.formView.visible
-    });
 
 	var dataProvider, gridView, form;
 	var rows;
@@ -147,7 +144,7 @@
 	    gridView = new RealGrid.GridView("realgrid");
 	    gridView.setDataSource(dataProvider);
 	    
-        setFieldsNColumns(dataProvider, gridView, columns_01, form);
+        setFieldsNColumns(dataProvider, gridView, columns_01);
 
 	    dataProvider.setRows(testJsonRows);
 		setTimeout(function(){
@@ -242,8 +239,7 @@
         grid.setColumns(columnInfo);
 
 
-        console.log("aaasdfaksdjhflaksdjflasfalksdjfhaldsfa");
-        console.log(formFields);
+		/*
         //폼그리드 처리.
         if (arguments.length > 3) {
             form = grid._view.container.formView;
@@ -251,12 +247,8 @@
             form.form.load({
                 items: formFields
             });
-
-            /*
-            form.focusedIndex = 0;
-            grid.setFocus();
-            */
         }
+		*/
     };
 
 </script>

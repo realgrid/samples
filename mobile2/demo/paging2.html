@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>기본</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            .ui-select {
+                display:inline;
+                position: relative;
+            }
+        </style>
+	</head>
+<body>
+	<div id="page" data-role="page" data-theme="a" >
+		<div data-role="header"  style="margin-bottom: 10px">
+			<h1>기본</h1>
+			<a href="../indexdemo.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+		</div>
+		<!-- HTML table Definition -->
+		<div data-role="content">
+			<div id="realgrid" style="height:100%;"></div>
+        </div>
+        <div id="wrapper" style="display: inline-table; padding-left: 20px; padding-bottom: 10px;">
+            <div id="paging" style="display: table-cell; vertical-align: middle; padding-left: 20px; padding-bottom: 20px;"></div>
+            <div id="aa" style="padding-left: 50px;">
+                <select name="selBox" id="selBox" data-mini="true" style="height: 25px;"></select>
+                <label for="selBox">페이지 이동 </label>
+            </div>
+        </div>
+
+
+		<!-- Java Script Code -->
+
+	<script>
+	var dataProvider, gridView;
+	var rows;
+	var fields_01 = [{
+	    "fieldName": "OrderID",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "CustomerID",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "EmployeeID",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "OrderDate",
+	    "dataType": "datetime",
+	    "datetimeFormat": "yyyy-MM-dd",
+	    "amText": "오전",
+	    "pmText": "오후"
+	},
+	{
+	    "fieldName": "CompanyName",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "Country",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "Phone",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "ProductName",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "QuantityPerUnit",
+	    "dataType": "text"
+	},
+	{
+	    "fieldName": "Quantity",
+	    "dataType": "number"
+	},
+	{
+	    "fieldName": "UnitPrice",
+	    "dataType": "number"
+	}];
+
+	var columns_01 = [{
+	    "name": "Country",
+	    "fieldName": "Country",
+	    "type": "data",
+	    "width": "100",
+	    "header": {
+	        "text": "Country"
+	    }
+	}, {
+	    "name": "CompanyName",
+	    "fieldName": "CompanyName",
+	    "type": "data",
+	    "width": "120",
+	    "styleName": "blue-column",
+	    "header": {
+	        "text": "Company Name"
+	    }
+	}, {
+	    "name": "UnitPrice2",
+	    "fieldName": "UnitPrice",
+	    "type": "data",
+	    "width": "100",
+	    "renderer": {
+	        "type": "bar",
+	        "origin": "left",
+	        "barWidth": "80%"
+	    },
+	    "suffix": " $",
+	    "header": {
+	        "text": "Bar"
+	    },
+	    "footer": {
+	        "expression": "sum"
+	    },
+	    "visible": false
+	}, {
+	    "name": "CustomerID",
+	    "fieldName": "CustomerID",
+	    "type": "data",
+	    "width": "70",
+	    "header": {
+	        "text": "CustomerID"
+	    },
+	    "visible": false
+	}, {
+	    "name": "CustomerID",
+	    "fieldName": "CustomerID",
+	    "type": "data",
+	    "width": "150",
+	    "renderer": {
+	        "type": "code39"
+	    },
+	    "header": {
+	        "text": "Code 39"
+	    },
+	    "visible":false,
+	    "footer": {
+	        "expression": "max",
+	        "groupExpression": "max"
+	    }
+	}, {
+	    "name": "CustomerID",
+	    "fieldName": "CustomerID",
+	    "type": "data",
+	    "width": "200",
+	    "renderer": {
+	        "type": "code128"
+	    },
+	    "header": {
+	        "text": "Code 128"
+	    },
+	    "visible": false
+	}, {
+	    "name": "EmployeeID",
+	    "fieldName": "EmployeeID",
+	    "type": "data",
+	    "width": "110",
+	    "header": {
+	        "text": "Employee ID"
+	    },
+	    "footer": {
+	        "expression": "min",
+	        "groupExpression": "min"
+	    },
+	    "visible": false
+	}, {
+	    "name": "OrderDate",
+	    "fieldName": "OrderDate",
+	    "type": "data",
+	    "width": "130",
+	    "styles": {
+	        "textAlignment": "center"
+	    },
+	    "header": {
+	        "text": "Order Date"
+	    }
+	}, {
+	    "name": "Phone",
+	    "fieldName": "Phone",
+	    "type": "data",
+	    "width": "120",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Phone"
+	    }
+	}, {
+	    "name": "ProductName",
+	    "fieldName": "ProductName",
+	    "type": "data",
+	    "width": "200",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Product Name"
+	    },
+	    "visible": false
+	}, {
+	    "name": "QuantityPerUnit",
+	    "fieldName": "QuantityPerUnit",
+	    "type": "data",
+	    "width": "100",
+	    "styles": {
+	        "textAlignment": "near"
+	    },
+	    "header": {
+	        "text": "Quantity / Unit"
+	    },
+	    "visible": false
+	}, {
+	    "name": "Quantity",
+	    "fieldName": "Quantity",
+	    "type": "data",
+	    "width": "100",
+	    "styles": {
+	        "textAlignment": "far"
+	    },
+	    "header": {
+	        "text": "Quantity"
+	    },
+	    "footer": {
+	        "expression": "sum",
+	    },
+	    "numberFormat": "#,##0"
+	}, {
+	    "name": "UnitPrice",
+	    "fieldName": "UnitPrice",
+	    "type": "data",
+	    "width": "100",
+	    "styles": {
+	        "textAlignment": "far"
+	    },
+	    "header": {
+	        "text": "Unit Price"
+	    },
+	    "footer": {
+	        "expression": "avg",
+	        "groupExpression": "max",
+	        "styles": {
+	            "textAlignment": "far",
+	            "numberFormat": "0.00",
+	            "prefix": "AVG = "
+	        }
+	    },
+	    "visible": false
+	}]
+
+	$(document).ready( function() {
+		$(document).on( "pagecontainershow", function(){
+            ScaleContentToDevice();        
+        });
+
+        $(window).on("resize orientationchange", function(){
+            ScaleContentToDevice();
+        });
+
+	    dataProvider = new RealGrid.LocalDataProvider();
+	    dataProvider.setFields(fields_01);
+	    
+	    gridView = new RealGrid.GridView("realgrid");
+	    gridView.setDataSource(dataProvider);
+	    gridView.setColumns(columns_01);
+
+	    dataProvider.setRows(testJsonRows);
+		setTimeout(function(){
+			    gridView.refresh();
+		},200);
+
+        var totalData = dataProvider.getRowCount();    // 총 데이터 수
+        var dataPerPage = 10;    // 한 페이지에 나타낼 데이터 수
+        var pageCount = 5;        // 한 화면에 나타낼 페이지 수
+
+        setPageSelbox(totalData, dataPerPage);
+		gridView.setPaging(true, dataPerPage);
+        paging(totalData, dataPerPage, pageCount, 1);
+
+
+		//gridView.displayOptions.fitStyle = "evenFill";
+
+		gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+		gridView.header.height = 50;
+		gridView.displayOptions.rowHeight = 40;
+		gridView.footer.height = 50;
+		gridView.stateBar.width = 20;
+
+		function ScaleContentToDevice(){
+			var url = window.location.href
+			if(url.indexOf("indexdemo.html") == -1){
+		        scroll(0, 0);
+		        var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height() -97;
+		        $(".ui-content").height(content);
+		        gridView.refresh();
+		    }else {
+		    	var content = $.mobile.getScreenHeight() - $(".ui-header").outerHeight() - $(".ui-footer").outerHeight() - $(".ui-content").outerHeight() + $(".ui-content").height();
+		        $(".ui-content").height(content);
+		    }
+        }
+
+    });
+    
+
+    
+    function paging(totalData, dataPerPage, pageCount, currentPage){
+        
+        console.log("currentPage : " + currentPage);
+        
+        var totalPage = Math.ceil(totalData/dataPerPage);    // 총 페이지 수
+        var pageGroup = Math.ceil(currentPage/pageCount);    // 페이지 그룹
+        
+        console.log("pageGroup : " + pageGroup);
+        
+        var last = pageGroup * pageCount;    // 화면에 보여질 마지막 페이지 번호
+        if(last > totalPage)
+            last = totalPage;
+        var first = last - (pageCount-1);    // 화면에 보여질 첫번째 페이지 번호
+        var next = last+1;
+        var prev = first-1;
+        
+        console.log("last : " + last);
+        console.log("first : " + first);
+        console.log("next : " + next);
+        console.log("prev : " + prev);
+ 
+        var $pingingView = $("#paging");
+        
+        var html = "";
+
+        if(prev == 0) {
+            html += "<a href=# id='first' class='ui-disabled'>|<</a> ";
+            html += "<a href=# id='prev' class='ui-disabled'><</a> ";
+        } else {
+            html += "<a href=# id='first'>|<</a> ";
+            html += "<a href=# id='prev'><</a> ";         
+        }
+        
+        
+        for(var i=first; i <= last; i++){
+            html += "<a href='#' style='width: 50px' id=" + i + ">" + i + "</a> ";
+        }
+        
+        if(last < totalPage) {
+            html += "<a href=# id='next'>></a>";
+            html += "<a href=# id='last'>>|</a>";
+        } else {
+            html += "<a href=# id='next' class='ui-disabled'>></a>";
+            html += "<a href=# id='last' class='ui-disabled'>>|</a>";
+        }
+        
+        $("#paging").html(html);    // 페이지 목록 생성
+        
+        $("#paging a").css({"color": "black",
+                            "padding-left": "10px"});
+                            
+        $("#paging a#" + currentPage).css({"text-decoration":"none", 
+                                           "color":"red", 
+                                           "font-weight":"bold"});    // 현재 페이지 표시
+                                           
+        $("#paging a").click(function(){
+            
+            var $item = $(this);
+            var $id = $item.attr("id");
+            var selectedPage = $item.text();
+            
+
+            if($id == "first")   selectedPage = 1;
+            if($id == "next")    selectedPage = next;
+            if($id == "prev")    selectedPage = prev;
+            if($id == "last")    selectedPage = totalPage;
+            
+            gridView.setPage(selectedPage-1);
+            paging(totalData, dataPerPage, pageCount, selectedPage);
+        });
+                                           
+    }
+
+    function setPageSelbox(totalData, dataPerPage){
+        var totalPage = Math.ceil(totalData/dataPerPage);    // 총 페이지 수
+
+        for (var i=1; i <= totalPage; i++) {
+            var optStr = "<option value=" + i + ">" + i + "</option>"
+            console.log(optStr);
+            $("#selBox").append(optStr);
+        }
+
+        $("#selBox").change(function() {
+            var totalData = dataProvider.getRowCount();    // 총 데이터 수
+            var dataPerPage = 10;    // 한 페이지에 나타낼 데이터 수
+            var pageCount = 5;        // 한 화면에 나타낼 페이지 수
+            var selectedPage = $(this).val();
+
+            gridView.setPage(selectedPage-1);
+            paging(totalData, dataPerPage, pageCount, selectedPage);
+        })
+    }
+
+</script>
+		
+	</div>
+</body>
+</html>
