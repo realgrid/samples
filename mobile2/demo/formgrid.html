@@ -298,15 +298,18 @@
             })
             // grid.header.showTooltip = true;
 
+            /*
             grid.setRowStyleCallback(function (grid, item) {
                 if (item.index % 2 == 0) {
                     return "alternate-row";
                 }
             });
 
+            
             grid.setButtonClickCallback(function (grid, index) {
                 alert("Cell Button: " + index.getValue());    
             });
+            */
 
             grid.onShowTooltip = function(grid, index, value) {
                 return value;
