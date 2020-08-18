@@ -1,4 +1,5 @@
 var grdMain, dataProvider;
+var realGridJsLic = 'upVcPE+wPOksRHztag2HLt+UVTCvO3is+83EYTz6U/sTXJR8Yw8Y0WXyjOMqbrgvr3+iyFPC2UvIbpdiuDhvbSHjHCDcCwXA0aVPjzT4Z9Q5MpDMyxlokKh7O7IL45Q/NQv5eRtXoqpb/8h86IWwapmQNXlT5dB6SpvdvcqGtl9Y4XlPo9n8Dqy98bE0bgIZ+6ZGVxDxR7Q=';
 
 $(document).ready(function() {
     $("html, body").css({
@@ -43,6 +44,12 @@ function setFields(provider) {
         fieldName : "CompanyName"
     }, {
         fieldName: "Quantity",
+        dataType: "number"
+    }, {
+        fieldName: "field1",
+        dataType: "number"
+    }, {
+        fieldName: "field2",
         dataType: "number"
     }];
 
@@ -116,6 +123,18 @@ function setColumns(grid) {
             text: "Multiline Edit"
         }
     }, {
+        fieldName: "field1",
+        name: "column1",
+        editor: { editFormat: "#,##0.00;.;,;f" },
+        styles: { numberFormat: "#,##0.00;.;,;f" },
+
+    }, {
+        fieldName: "field2",
+        name: "column2",
+        editor: { editFormat: "#,##0.00;.;,;f" },
+        styles: { numberFormat: "#,##0.00;.;,;f" },
+        editable: false
+    }, {
         nam: "Quantity",
         fieldName: "Quantity",
         width: 100*2,
@@ -132,6 +151,7 @@ function setColumns(grid) {
         header: {
             text: "Number Edit"
         }
+
     }];
 
     grid.setColumns(columns);
