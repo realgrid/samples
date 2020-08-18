@@ -68,12 +68,26 @@ function setColumns(grid) {
         fieldName : "OrderID",
         type : "data",
         width : 90*2,
+        editable: true,
         styles : {
             textAlignment : "text",
             font: "Consolas"
         },
         header : {
             text : "Text editor"
+        }
+    }, {
+        name : "OrderID1",
+        fieldName : "OrderID",
+        type : "data",
+        width : 90*2,
+        editable: false,
+        styles : {
+            textAlignment : "text",
+            font: "Consolas"
+        },
+        header : {
+            text : "Text editor 1"
         }
     }, {
         name : "CustomerID",
