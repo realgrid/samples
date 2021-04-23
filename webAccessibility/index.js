@@ -215,7 +215,8 @@ function createMasterGrid() {
   masterGrid.displayOptions.rowHeight = 36;
   masterGrid.header.height = 40;
   masterGrid.footer.height = 40;
-  masterGrid.stateBar.width = 10;
+  masterGrid.checkBar.exclusive = true;
+  masterGrid.stateBar.visible = false;
   masterGrid.editOptions.exitGridWhenTab = "row";
   //masterGrid.editOptions.exitGridWhenTab = "grid";
 
@@ -240,8 +241,11 @@ function createMasterGrid() {
 
   masterGrid.setColumnLayout(layout);
 
+  masterGrid.onItemChecked = function (grid, itemIndex, checked) {
+    detailGet(itemIndex);
+  };
   masterGrid.onCurrentRowChanged = function (grid, oldRow, newRow) {
-    detailGet(newRow);
+    
   };
 
   masterProvider.setRows(masterData);
@@ -262,6 +266,8 @@ function createDetailGrid() {
   detailGrid.header.height = 40;
   detailGrid.footer.height = 40;
   detailGrid.stateBar.width = 10;
+  detailGrid.checkBar.visible = false;
+  detailGrid.stateBar.visible = false;
   detailGrid.editOptions.crossWhenExitLast = true;
 
   detailGrid.editOptions.exitGridWhenTab = "grid";
@@ -283,6 +289,7 @@ function createDetailGrid() {
         text: "담당자정보"
       }
     },
+    "column8"
   ]
 
   detailGrid.setColumnLayout(layout);
@@ -292,8 +299,10 @@ function createDetailGrid() {
 function detailGet(masterRow) {
   detailProvider.clearRows();
 
+  console.log("aaa");
+
   if (masterRow >= 0) {
-      var mstKey = masterProvider.getValue(masterRow, "id");
+      var mstKey = masterGrid.getValue(masterRow, "id");
 
       // detailData 배열에서 자료추출. DB대용
       var datas = detailData.filter(function (element) {
