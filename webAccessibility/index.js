@@ -206,20 +206,23 @@ var masterProvider,masterGrid, detailProvider, detailGrid;
 function createMasterGrid() {
   masterProvider = new RealGrid.LocalDataProvider();
   masterGrid = new RealGrid.GridView("realgrid_master", true);
-
+  
   masterGrid.setDataSource(masterProvider);
   masterProvider.setFields(fields);
   masterGrid.setColumns(columns);
-
+  
   masterGrid.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
   masterGrid.displayOptions.rowHeight = 36;
   masterGrid.header.height = 40;
   masterGrid.footer.height = 40;
   masterGrid.checkBar.exclusive = true;
+  masterGrid.checkBar.visible = false;
   masterGrid.stateBar.visible = false;
   masterGrid.editOptions.exitGridWhenTab = "row";
+  masterGrid.editOptions.editable = false;
+  masterGrid.displayOptions.selectionStyle = "singleRow";
   //masterGrid.editOptions.exitGridWhenTab = "grid";
-
+  
   var layout = [
     "column1",
     "column2",
@@ -238,29 +241,34 @@ function createMasterGrid() {
     "column6",
     "column7"
   ]
-
+  
   masterGrid.setColumnLayout(layout);
 
-  masterGrid.onItemChecked = function (grid, itemIndex, checked) {
-    detailGet(itemIndex);
-  };
+  masterGrid.onKeyUp = function (grid, event) {
+    
+    if (event.code == 'Space') {
+      var itemIndex = grid.getCurrent().itemIndex;
+      detailGet(itemIndex);
+    }
+}
+
   masterGrid.onCurrentRowChanged = function (grid, oldRow, newRow) {
     
   };
-
+  
   masterProvider.setRows(masterData);
   
-
+  
 }
 
 function createDetailGrid() {
   detailProvider = new RealGrid.LocalDataProvider();
   detailGrid = new RealGrid.GridView("realgrid_detail", true);
-
+  
   detailGrid.setDataSource(detailProvider);
   detailProvider.setFields(fields1);
   detailGrid.setColumns(columns1);
-
+  
   detailGrid.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
   detailGrid.displayOptions.rowHeight = 36;
   detailGrid.header.height = 40;
@@ -269,9 +277,11 @@ function createDetailGrid() {
   detailGrid.checkBar.visible = false;
   detailGrid.stateBar.visible = false;
   detailGrid.editOptions.crossWhenExitLast = true;
-
+  detailGrid.editOptions.editable = false;
+  detailGrid.displayOptions.selectionStyle = "singleRow";
+  
   detailGrid.editOptions.exitGridWhenTab = "grid";
-
+  
   var layout = [
     "column1",
     "column2",
@@ -298,8 +308,6 @@ function createDetailGrid() {
 
 function detailGet(masterRow) {
   detailProvider.clearRows();
-
-  console.log("aaa");
 
   if (masterRow >= 0) {
       var mstKey = masterGrid.getValue(masterRow, "id");
