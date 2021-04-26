@@ -246,7 +246,7 @@ function createMasterGrid() {
 
   masterGrid.onKeyUp = function (grid, event) {
     
-    if (event.code == 'Space') {
+    if (event.keyCode == 32) {
       var itemIndex = grid.getCurrent().itemIndex;
       detailGet(itemIndex);
     }
@@ -276,11 +276,11 @@ function createDetailGrid() {
   detailGrid.stateBar.width = 10;
   detailGrid.checkBar.visible = false;
   detailGrid.stateBar.visible = false;
-  detailGrid.editOptions.crossWhenExitLast = true;
+  //detailGrid.editOptions.crossWhenExitLast = true;
   detailGrid.editOptions.editable = false;
   detailGrid.displayOptions.selectionStyle = "singleRow";
   
-  detailGrid.editOptions.exitGridWhenTab = "grid";
+  detailGrid.editOptions.exitGridWhenTab = "row";
   
   var layout = [
     "column1",
