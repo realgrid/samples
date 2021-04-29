@@ -242,15 +242,16 @@ function createMasterGrid() {
     "column7"
   ]
   
- masterGrid.setColumnLayout(layout);
+  masterGrid.setColumnLayout(layout);
 
-//   masterGrid.onKeyUp = function (grid, event) {
+  masterGrid.onKeyUp = function (grid, event) {
     
-//     if (event.keyCode == 32) {
-//       var itemIndex = grid.getCurrent().itemIndex;
-//       detailGet(itemIndex);
-//     }
-// }
+    if (event.keyCode == 32) {
+      var itemIndex = grid.getCurrent().itemIndex;
+      grid.checkItem(grid.getCheckedItems()[0], false);
+      grid.checkItem(itemIndex, true);
+    }
+}
 
   masterGrid.onItemChecked = function (grid, itemIndex, checked) {
     detailGet(itemIndex);
