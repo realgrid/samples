@@ -205,7 +205,7 @@ var masterProvider,masterGrid, detailProvider, detailGrid;
 
 function createMasterGrid() {
   masterProvider = new RealGrid.LocalDataProvider();
-  masterGrid = new RealGrid.GridView("realgrid_master", true);
+  masterGrid = new RealGrid.GridView("realgrid_master", true, {checkItemCallback: function() {detailGrid.shadowDom.setFocus();} });
   
   masterGrid.setDataSource(masterProvider);
   masterProvider.setFields(fields);
@@ -216,7 +216,7 @@ function createMasterGrid() {
   masterGrid.header.height = 40;
   masterGrid.footer.height = 40;
   masterGrid.checkBar.exclusive = true;
-  masterGrid.checkBar.visible = false;
+  masterGrid.checkBar.visible = true;
   masterGrid.stateBar.visible = false;
   masterGrid.editOptions.exitGridWhenTab = "row";
   masterGrid.editOptions.editable = false;
@@ -242,15 +242,20 @@ function createMasterGrid() {
     "column7"
   ]
   
-  masterGrid.setColumnLayout(layout);
+ masterGrid.setColumnLayout(layout);
 
-  masterGrid.onKeyUp = function (grid, event) {
+//   masterGrid.onKeyUp = function (grid, event) {
     
-    if (event.keyCode == 32) {
-      var itemIndex = grid.getCurrent().itemIndex;
-      detailGet(itemIndex);
-    }
-}
+//     if (event.keyCode == 32) {
+//       var itemIndex = grid.getCurrent().itemIndex;
+//       detailGet(itemIndex);
+//     }
+// }
+
+  masterGrid.onItemChecked = function (grid, itemIndex, checked) {
+    detailGet(itemIndex);
+
+  }
 
   masterGrid.onCurrentRowChanged = function (grid, oldRow, newRow) {
     
