@@ -361,7 +361,7 @@ THEME : Realgrid light(Default)
     border-left: none;
     height: 0px; }
     .rg-body .rg-table tr td:hover, .rg-fixed-body .rg-table tr td:hover {
-      background: #ebebeb; }
+      }
 
 .rg-data-row {
   background: none; }
