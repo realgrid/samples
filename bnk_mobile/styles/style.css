@@ -1,0 +1,24 @@
+#realgrid {
+  width: 100%;
+  height: calc(100% - 50px - 10px); /* 10px는 margin */
+  height: -moz-calc(100% - 50px - 10px); /* for Firefox */
+  height: -webkit-calc(100% - 50px - 10px); /* for WebKit */
+  height: -o-calc(100% - 50px - 10px); /* for Opera */
+  height: expression(100% - 50px - 10px); /* IE Old */
+}
+
+.left-column {
+  text-align: left !important;
+}
+
+.right-column {
+  text-align: right !important;
+}
+
+.multiline-column {
+  white-space: pre-line !important;
+}
+
+.gray-color {
+  color: gray;
+}
