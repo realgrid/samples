@@ -35,7 +35,7 @@ var columns = [
         type: "image",
         imageCallback: function (grid, cell) {
             var cardName = grid.getValue(cell.item.index, "field1");
-            return "/images/" + cardName + ".jpg";
+            return "./images/" + cardName + ".jpg";
         },
         imageHeight: 60
     }
