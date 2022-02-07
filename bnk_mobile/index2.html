@@ -95,8 +95,8 @@ $(function () {
   gridView.displayOptions.rowHeight = 50;
   gridView.displayOptions.fitStyle = "evenFill";
   //gridView.displayOptions.vscrollBar = false;
-  gridView.displayOptions.selectionStyle = "singleRow"
-  gridView.mobileOptions.grid.displayOptions.rowFocusType = "singleRow"
+  gridView.mobileOptions.grid.displayOptions.rowFocusType = "row";
+  gridView.displayOptions.focusVisible = false;
 
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
