@@ -94,7 +94,8 @@ $(function () {
   //gridView.editOptions.editable = true;
   gridView.displayOptions.rowHeight = 50;
   gridView.displayOptions.fitStyle = "evenFill";
-  gridView.displayOptions.vscrollBar = false;
+  //gridView.displayOptions.vscrollBar = false;
+  gridView.displayOptions.selectionStyle = "singleRow"
 
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
