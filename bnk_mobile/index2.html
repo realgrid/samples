@@ -119,7 +119,33 @@ $(function () {
 </head>
 <body>
   <h2>이체/거래내역조회</h2>
-  <br/><br/>
+  <button type="button" style="background-color: white;width:50px;height:50px;color:white;border: none"><span style='font-size:2em;color:black'><</span></button>
+  <span style='font-size:1.5em;color:black'>거래내역조회</span><br/><br/>
+
+<div>
+  &nbsp;&nbsp; 생활비통장<br/>
+  &nbsp;&nbsp; 1234-5678-9123-45<br/><br/>
+  &nbsp;&nbsp; 거래확인증  100,000,000원<br/><br/>
+</div>
+  
+  <div style="border: 0px solid gold; float: left; width: 50%;">
+  <input type='button' 
+         value='이체' 
+         style="background-color: red;width:100%;height:50px;color:white;border: none"
+         onclick='alert("")'/>
+  </div>
+  <div style="border: 0px solid red; float: left; width: 50%;">
+    <input type='button' 
+           value='ATM출금' 
+           style="background-color: red;width:100%;height:50px;color:white;border: none"
+           onclick='alert("")'/>
+  </div>
+
+  <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 55%;height:30px; text-align: center;">2018.12.15 ~ 2019.01.14</div>
+  <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">1개월</div>
+  <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">최신순</div>
+  <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">전체</div>
+
   <div id="realgrid" style="width: 100%; height: 450px;"></div>
 </body>
 </html>
