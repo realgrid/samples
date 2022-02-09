@@ -24,6 +24,8 @@ var fields = [
     fieldName: "field4"
   },{
     fieldName: "field5"
+  },{
+    fieldName: "field6"
   }
 ];
 var columns = [
@@ -59,18 +61,26 @@ var columns = [
         var str = "";
 
         if(field3Value == "갱신가능"){
-          field3Value = "<span style='font-size:1em;color:red' > 갱신가능</span>"
+          field3Value = '<img src="./images/renewalY.png" alt="My Image">'
         }else if(field3Value == "갱신불가"){
-          field3Value = "<span style='font-size:1em;color:blue' > 갱신불가</span>"
-        }else {
-          field3Value = "<span style='font-size:1em;color:gray' > " + field3Value + "</span>"
+          field3Value = '<img src="./images/renewalN.png" alt="My Image">'
+        }else{
+          if(field3Value.indexOf("분실") > -1){
+            field3Value = "<span style='font-size:1em;color:gray' >휴면 ,</span>" + "<span style='font-size:1em;color:blue' >분실</span>"
+          }else{
+            field3Value = "<span style='font-size:1em;color:gray' > " + field3Value + "</span>"
+          }
         }
 
-        str = str + cell.value + field3Value + "<span style='font-size:1em;color:gray' >\n" + field4Value + "</span>" + "<span style='font-size:1em;color:blue' >\n" + field5Value + "</span>"
+        str = str + "<span style='font-weight: bold; font-size: 1.5em'>" + cell.value + " </span>" + field3Value + "<span style='font-size:1em;color:gray' >\n" + field4Value + "</span>" + "<span style='font-size:1em;color:blue' >\n" + field5Value + "</span>"
 
-        return str;
+        return "<br/>" + str + "<br/><br/>";
       }
     }
+  }, {
+    name: "col6",
+    fieldName: "field6",
+    visible: false
   }
 ];
 
@@ -88,7 +98,7 @@ $(function () {
   gridView.checkBar.visible = false;
   gridView.stateBar.visible = false;
   //gridView.editOptions.editable = true;
-  gridView.displayOptions.rowHeight = 100;
+  gridView.displayOptions.rowHeight = -1;
   gridView.displayOptions.fitStyle = "evenFill";
   //gridView.displayOptions.vscrollBar = false;
   gridView.mobileOptions.grid.displayOptions.rowFocusType = "row";
@@ -98,37 +108,43 @@ $(function () {
   gridView.setColumns(columns);
 
   var datas = [
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "휴먼, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)"],
-    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)"]
+    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "신용카드"],
+    ["card02", "썸뱅크신용카드", "휴면, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)", "신용카드"],
+    ["card01", "썸뱅크신용카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)", "신용카드"],
+    ["card02", "썸뱅크체크카드", "휴면, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card02", "온라인쇼핑카드", "휴면, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card02", "온라인쇼핑카드", "휴면, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+    ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"]
   ];
   dataProvider.setRows(datas);
+
   
-  
+  setTimeout(function(){  
+    gridView.groupBy(["field6"]);
+    gridView.rowGroup.headerStatement = "${groupValue}  ${rowCount}";
+    gridView.setRowGroup({
+      expandedAdornments: "header"
+    });
+  },100);
 });
 
 </script>
 </head>
 <body>
   <h2>계좌(이미지)리스트</h2>
-  <br/><br/>
+  <button type="button" style="background-color: white;width:50px;height:50px;color:white;border: none"><span style='font-size:2em;color:black'><</span></button>
+  <span style='font-size:1.5em;color:black'>보유카드</span>
   <div id="realgrid" style="width: 100%; height: 450px;"></div>
+  <input type='button' 
+         value='카드발급신청' 
+         style="background-color: red;width:100%;height:50px;color:white;border: none"
+         onclick='alert("안녕하세요")'/>
 </body>
 </html>
