@@ -35,7 +35,11 @@ background: #ccc1;
 <script>
 var fields = [
   {
-    fieldName: "field1"
+    fieldName: "field0"
+  },{
+    fieldName: "field1",
+    dataType: "datetime",
+    datetimeFormat: "yyyy.MM.dd"
   },{
     fieldName: "field2"
   },{
@@ -48,12 +52,16 @@ var fields = [
     dataType: "number"
   }
 ];
-var columns = [
+var columns = [{
+  fieldName:"field0",
+  visible: false
+},
   {
     name: "col1",
     fieldName: "field1",
     width: 100,
-    styleName: "gray-color multiline-column"
+    styleName: "gray-color multiline-column",
+    datetimeFormat: "MM.dd"
   },{
     name: "col2",
     fieldName: "field2",
@@ -123,18 +131,57 @@ $(function () {
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
 
-
   var datas = [
-    ["01.10", "KB카드결제", "카드결제", -678000, 3360520],
-    ["2018"],
-    ["12.31", "김미선", "타행입금", 100000, 4038520],
-    ["12.02", "삼성화04100", "CMS자동이체", -79160, 3938520]
+    ["2022","2022.02.10", "KB카드결제", "카드결제", -100000, 2500000],
+    ["2022","2022.01.16", "KB카드결제", "카드결제", -100000, 2600000],
+    ["2022","2022.01.03", "KB카드결제", "카드결제", -100000, 2700000],
+    ["2021","2021.12.31", "김미선", "타행입금", 100000, 2800000],
+    ["2021","2021.12.02", "삼성화04100", "CMS자동이체", -100000, 2700000],
+    ["2021","2021.11.25", "KB카드결제", "카드결제", -100000, 2800000],
+    ["2021","2021.11.17", "KB카드결제", "카드결제", -100000, 2900000]
+  ];
 
-  ]
-  dataProvider.setRows(datas)
-  
-  
+  dataProvider.setRows(datas);
+
+  gridView.onDataLoadComplated = function(grid){
+    gridView.setColumnFilters("col1",[{name:"1개월", tag:1, callback:function(ds, dataRow, level, field, filter, value) {
+       return dateFilters(value, filter.tag);
+    }},{name:"2개월", tag:2, callback:function(ds, dataRow, level, field, filter, value) {
+       return dateFilters(value, filter.tag);
+    }},{name:"3개월", tag:3, callback:function(ds, dataRow, level, field, filter, value) {
+       return dateFilters(value, filter.tag);
+    }}]);
+
+    gridView.groupBy(["field0"]);
+    gridView.setRowGroup({
+      expandedAdornments:"header",
+      headerStatement: "${groupValue}"
+    });
+
+    gridView.orderBy(["field0","field1"],["descending","descending"]);
+  }
 });
+
+function dateFilters(value, month){
+  var now = new Date();
+      
+  if(value > new Date(now.setMonth(now.getMonth() - month))){
+      return true;
+  }
+}
+
+function setSorting(){
+  if(document.getElementById("sorting").value == "descending"){
+    gridView.orderBy(["field0","field1"],["descending","descending"])
+  }else{
+    gridView.orderBy(["field0","field1"],["ascending","ascending"])
+  }
+}
+
+function setFiltering(){
+  gridView.activateAllColumnFilters('col1', false);
+  gridView.activateColumnFilters('col1', [document.getElementById("month").value + "개월"], true);
+}
 
 </script>
 </head>
@@ -149,11 +196,11 @@ $(function () {
     &nbsp;&nbsp; 생활비통장<br/>
     &nbsp;&nbsp; <span style='font-size:1em;color:black;font-weight:bold;'>1234-5678-9123-45</span><br/><br/>
 
-    <div style="border: 0px solid gold; float: left; background-color: #fff; width: 50%;height:30px; text-align: left;">
-      &nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="거래확인증" id="btn2">
+    <div style="border: 0px solid gold; float: left; background-color: #fff; width: 40%;height:30px; text-align: left;">
+      &nbsp;&nbsp;&nbsp;<input type="button" value="거래확인증" id="btn2">
     </div>
-    <div style="border: 0px solid gold; float: left; background-color: #fff; width: 50%;height:30px; text-align: right;">
-      <span style='font-size:1.7em;color:black;font-weight:bold;'>100,000,000원</span>
+    <div style="border: 0px solid gold; float: left; background-color: #fff; width: 60%;height:30px; text-align: right;">
+      <span style='font-size:1.7em;color:black;font-weight:bold;padding-right:10px;'>100,000,000원</span>
     </div>
   </div><br/><br/><br/>
   
@@ -170,16 +217,16 @@ $(function () {
            onclick='alert("")'/>
   </div>
 
-  <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 55%;height:30px; text-align: center;">2018.12.15~2019.01.14</div>
+  <div id="dateContainer" style="border: 0px solid gold; float: left; background-color: #ccc7; width: 55%;height:30px; text-align: center;">2021.11.10~2022.02.22</div>
   <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">
-    <select name="month" id="month">
+    <select name="month" id="month" onchange="setFiltering()">
       <option value="1">1개월</option>
       <option value="2">2개월</option>
       <option value="3">3개월</option>
     </select>
   </div>
   <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">
-    <select name="sorting" id="sorting">
+    <select name="sorting" id="sorting" onchange="setSorting()">
       <option value="descending">최신순</option>
       <option value="ascending">마지막</option>
     </select>
