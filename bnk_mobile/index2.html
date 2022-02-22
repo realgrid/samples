@@ -132,6 +132,9 @@ $(function () {
   gridView.displayOptions.focusVisible = false;
   gridView.displayOptions.wheelEventPropagate = false;
 
+  document.getElementById("realgrid").style.height = (document.body.offsetHeight - 360) + "px"
+  gridView.resetSize();
+
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
 
@@ -167,9 +170,6 @@ $(function () {
     });
 
     gridView.orderBy(["field0","field1"],["descending","descending"]);
-
-    document.getElementById("realgrid").style.height = (document.body.offsetHeight - 360) + "px"
-    gridView.resetSize();
   }
 });
 
@@ -243,9 +243,6 @@ function setFiltering(){
     </select>
   </div>
   <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">전체</div>
-
-<div class="h-div">
-    <div id="realgrid" style="width: 100%; height: 100%;"></div>
-</div>
+  <div id="realgrid" style="width: 100%; height: 400px;"></div>
 </body>
 </html>
