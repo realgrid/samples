@@ -23,6 +23,9 @@ appearance: none;
 border: 0px;
 background: #ccc1;
 }
+
+html, body { height:100%; overflow:hidden } 
+.h-div {height:50%; border:0px #fff solid}
 </style>
 
 <script src="./scripts/jquery-3.1.1.min.js"></script>
@@ -78,7 +81,7 @@ var columns = [{
         }
         var multilineValue = dataProvider.getValue(cell.index.dataRow, "field3")
         var str = "";
-        str = str + cell.value + "<span style='font-size:0.8em;color:gray' > \n" + multilineValue + "</span>"
+        str = str + "<span style='font-weight:bold'>" + cell.value + "</span>" + "<span style='font-size:0.8em;color:gray' > \n" + multilineValue + "</span>"
 
         return str;
       }
@@ -164,6 +167,9 @@ $(function () {
     });
 
     gridView.orderBy(["field0","field1"],["descending","descending"]);
+
+    document.getElementById("realgrid").style.height = (document.body.offsetHeight - 360) + "px"
+    gridView.resetSize();
   }
 });
 
@@ -238,6 +244,8 @@ function setFiltering(){
   </div>
   <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">전체</div>
 
-  <div id="realgrid" style="width: 100%; height: 450px;"></div>
+<div class="h-div">
+    <div id="realgrid" style="width: 100%; height: 100%;"></div>
+</div>
 </body>
 </html>
