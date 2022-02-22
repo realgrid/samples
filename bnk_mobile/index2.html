@@ -127,6 +127,7 @@ $(function () {
   //gridView.displayOptions.vscrollBar = false;
   gridView.mobileOptions.grid.displayOptions.rowFocusType = "row";
   gridView.displayOptions.focusVisible = false;
+  gridView.displayOptions.wheelEventPropagate = false;
 
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
@@ -138,7 +139,11 @@ $(function () {
     ["2021","2021.12.31", "김미선", "타행입금", 100000, 2800000],
     ["2021","2021.12.02", "삼성화04100", "CMS자동이체", -100000, 2700000],
     ["2021","2021.11.25", "KB카드결제", "카드결제", -100000, 2800000],
-    ["2021","2021.11.17", "KB카드결제", "카드결제", -100000, 2900000]
+    ["2021","2021.11.17", "KB카드결제", "카드결제", -100000, 2900000],
+    ["2021","2021.11.15", "KB카드결제", "카드결제", -100000, 3000000],
+    ["2021","2021.11.12", "KB카드결제", "카드결제", -100000, 3100000],
+    ["2021","2021.11.11", "KB카드결제", "카드결제", -100000, 3200000],
+    ["2021","2021.11.10", "KB카드결제", "카드결제", -100000, 3300000]
   ];
 
   dataProvider.setRows(datas);

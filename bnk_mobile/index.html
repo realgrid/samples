@@ -103,6 +103,7 @@ $(function () {
   //gridView.displayOptions.vscrollBar = false;
   gridView.mobileOptions.grid.displayOptions.rowFocusType = "row";
   gridView.displayOptions.focusVisible = false;
+  gridView.displayOptions.wheelEventPropagate = false;
 
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
