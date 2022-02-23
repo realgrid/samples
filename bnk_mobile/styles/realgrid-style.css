@@ -480,6 +480,7 @@ THEME : Realgrid light(Default)
   font-weight: bold;
   background: #e4e7eb; }
   .rg-rowgroup-head .rg-table tr td {
+    background: #fff;
     border-top: none;
     border-right: 1px solid #bcc0c8;
     border-bottom: 1px solid #bcc0c8;
@@ -505,6 +506,7 @@ THEME : Realgrid light(Default)
   text-align: center; }
 
 .rg-rowgroup-bar-cell {
+  background: #fff;
   text-align: center;
   vertical-align: top;
   padding-top: 2px; }
