@@ -22,3 +22,8 @@
 .gray-color {
   color: gray;
 }
+
+.boldFont {
+  color: #333333;
+  font-weight: bold !important;
+}

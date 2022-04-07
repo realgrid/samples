@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>realgrid2</title>
+<style>
+html, body { height:100%; overflow:hidden } 
+</style>
+
+<script src="./scripts/jquery-3.1.1.min.js"></script>
+<link href="./styles/style.css" rel="stylesheet" />
+<link href="./styles/realgrid-style3.css" rel="stylesheet" />
+<script src="./scripts/realgrid-lic.js"></script>
+<script src="./scripts/realgrid.2.5.1.min.js"></script>
+<script src="./scripts/jszip.min.js"></script>
+
+<script>
+var ds, gridContainer, grid;
+var rows;
+
+var fields = [
+    { fieldName: "구분",         dataType: "text"},
+    { fieldName: "조사년도",     dataType: "text"},
+    { fieldName: "소속기관명",   dataType: "text"},
+    { fieldName: "시설명",       dataType: "text"},
+    { fieldName: "계측가능여부", dataType: "text"},
+    { fieldName: "임차여부",     dataType: "text"},
+    { fieldName: "연료명",       dataType: "text"},
+    { fieldName: "A01월",        dataType: "number" },
+    { fieldName: "A02월",        dataType: "number" },
+    { fieldName: "A03월",        dataType: "number" },
+    { fieldName: "A04월",        dataType: "number" },
+    { fieldName: "A05월",        dataType: "number" },
+    { fieldName: "A06월",        dataType: "number" },
+    { fieldName: "A07월",        dataType: "number" },
+    { fieldName: "A08월",        dataType: "number" },
+    { fieldName: "A09월",        dataType: "number" },
+    { fieldName: "A10월",        dataType: "number" },
+    { fieldName: "A11월",        dataType: "number" },
+    { fieldName: "A12월",        dataType: "number" },
+    { fieldName: "조직코드",     dataType: "text"},
+    { fieldName: "대상기관명",   dataType: "text"},
+    { fieldName: "시설일련번호", dataType: "text"},
+    { fieldName: "단위",         dataType: "text"}
+];
+
+var columns = [
+    { fieldName: "구분", name: "구분", type: "data", width: 80, visible: false, header:{ text: "구분"},visible: false },
+    { fieldName: "조사년도", name: "조사년도", type: "data", width: 80, header:{ text: "조사년도"},visible: false },
+    { fieldName: "소속기관명", name: "소속기관명", type: "data", width: 80, header:{ text: "소속기관명"},visible: false },
+    { fieldName: "시설명", name: "시설명", type: "data", width: 80, header:{ text: "시설명"},visible: false },
+    { fieldName: "계측가능여부", name: "계측가능여부", type: "data", width: 80, header:{ text: "계측가능여부"},visible: false },
+    { fieldName: "임차여부", name: "임차여부", type: "data", width: 80, header:{ text: "임차여부"},visible: false },
+    { fieldName: "연료명", name: "연료명", type: "data", width: 80, header:{ text: "연료명"} },
+    {
+        name: "그래프",
+        type: "series",
+        fieldNames: "A01월..A12월",
+        renderer: {
+          type: "sparkcolumn"
+        },
+        width: 170,
+        header: {
+          text: "그래프"         
+        }
+    },
+    { fieldName: "A01월", name: "01월", header: { text: "01월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A02월", name: "02월", header: { text: "02월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A03월", name: "03월", header: { text: "03월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A04월", name: "04월", header: { text: "04월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A05월", name: "05월", header: { text: "05월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A06월", name: "06월", header: { text: "06월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A07월", name: "07월", header: { text: "07월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A08월", name: "08월", header: { text: "08월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A09월", name: "09월", header: { text: "09월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A10월", name: "10월", header: { text: "10월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A11월", name: "11월", header: { text: "11월" }, width: 80, styleName: "right-column"},
+    { fieldName: "A12월", name: "12월", header: { text: "12월" }, width: 80, styleName: "right-column"},
+    { fieldName: "조직코드", name: "조직코드", type: "data", width: 80, header:{ text: "조직코드"} },
+    { fieldName: "대상기관명", name: "대상기관명", type: "data", width: 80, header:{ text: "대상기관명"} },
+    { fieldName: "시설일련번호", name: "시설일련번호", type: "data", width: 100, header:{ text: "시설일련번호"} },
+    { fieldName: "단위", name: "단위", type: "data", width: 80, header:{ text: "단위"},visible: false }
+];  
+$(function () {
+    ds = new RealGrid.LocalDataProvider();
+    ds.setFields(fields);
+    
+    grid = new RealGrid.GridView("realgrid");
+    grid.setDataSource(ds);
+    grid.setColumns(columns);
+
+    // ds 커밋 이후에 undo 할 수 있다.
+    ds.restoreMode = "explicit";
+    ds.setOptions({
+        undoable: true
+    });
+
+    grid.filteringOptions.selector.showButtons = true;
+    grid.displayOptions.refreshMode = "visibleOnly";
+    grid.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+    grid.sortingOptions.showSortOrder = true;
+    grid.sortingOptions.style = "reverse";
+    grid.displayOptions.rowHoverType = "row";    
+    grid.displayOptions.rowResizable = true;
+    // 셀 단위로 커밋한다.
+    grid.commitByCell = true;    
+    // 셀 수정 상태를 마커로 표시한다.
+    grid.displayOptions.showChangeMarker = true;
+    grid.fixedOptions.colCount = 2;
+    grid.checkBar.visible = false;
+    grid.rowIndicator.visible = false;
+    grid.stateBar.visible = false;
+    grid.displayOptions.rowHeight = 33;
+    grid.header.height = 33;
+    grid.footer.height = 33;
+
+    loadData(ds);
+    
+    //grid.columnByField("연료명").autoFilter = true;
+ 
+
+    grid.setEditOptions({
+        insertable: true,
+        appendable : true
+    });
+
+    grid.setEditorOptions({
+        viewGridInside: true
+    })
+
+});
+
+function StrToFloat(numText) {
+    if (!numText) {
+        return 0;
+    };
+    return parseFloat(numText.replace(/,/g, ""));
+}
+
+function loadData(provider) {
+    $.ajax({
+        type: "GET",
+        url: "/datas/co2data.json",
+        success: function (data) {
+            //data = JSON.parse(data);
+            for (var i = 0; i <= data.records.length - 1; i++) {
+                if (!data.records[i]["대상기관명"]) {
+                    data.records[i]["단위"] = data.records[i]["A01월"];
+                    data.records[i]["A01월"] = data.records[i]["A02월"];
+                    data.records[i]["A02월"] = data.records[i]["A03월"];
+                    data.records[i]["A03월"] = data.records[i]["A04월"];
+                    data.records[i]["A04월"] = data.records[i]["A05월"];
+                    data.records[i]["A05월"] = data.records[i]["A06월"];
+                    data.records[i]["A06월"] = data.records[i]["A07월"];
+                    data.records[i]["A07월"] = data.records[i]["A08월"];
+                    data.records[i]["A08월"] = data.records[i]["A09월"];
+                    data.records[i]["A09월"] = data.records[i]["A10월"];
+                    data.records[i]["A10월"] = data.records[i]["A11월"];
+                    data.records[i]["A11월"] = data.records[i]["A12월"];
+                    data.records[i]["A12월"] = data.records[i]["조직코드"];
+                    data.records[i]["조직코드"] = "";
+                };
+                data.records[i]["A01월"] = StrToFloat(data.records[i]["A01월"]);
+                data.records[i]["A02월"] = StrToFloat(data.records[i]["A02월"]);
+                data.records[i]["A03월"] = StrToFloat(data.records[i]["A03월"]);
+                data.records[i]["A04월"] = StrToFloat(data.records[i]["A04월"]);
+                data.records[i]["A05월"] = StrToFloat(data.records[i]["A05월"]);
+                data.records[i]["A06월"] = StrToFloat(data.records[i]["A06월"]);
+                data.records[i]["A07월"] = StrToFloat(data.records[i]["A07월"]);
+                data.records[i]["A08월"] = StrToFloat(data.records[i]["A08월"]);
+                data.records[i]["A09월"] = StrToFloat(data.records[i]["A09월"]);
+                data.records[i]["A10월"] = StrToFloat(data.records[i]["A10월"]);
+                data.records[i]["A11월"] = StrToFloat(data.records[i]["A11월"]);
+                data.records[i]["A12월"] = StrToFloat(data.records[i]["A12월"]);
+            };
+
+            provider.fillJsonData(data, {rows: "records"})
+
+        },
+        error: function (xhr, status, error) {
+            if (onFailed)
+                onFailed(provider, xhr + ', ' + status + ', ' + error);
+        },
+        complete: function (data) {
+        }
+    });
+};
+
+function setActions(actionContainer) {
+    createCheckBox(actionContainer, "CommitByCell", function (e) {
+        grid.setEditOptions({
+            commitByCell: e.currentTarget.checked
+        });
+    });
+    createCheckBox(actionContainer, "CommitWhenLeave", function (e) {
+        grid.setEditOptions({
+            commitWhenLeave: e.currentTarget.checked
+        });
+    });
+}
+
+</script>
+</head>
+<body>
+  온실가스배출
+  <div id="realgrid" style="width: 100%; height: 600px;"></div>
+</body>
+</html>
