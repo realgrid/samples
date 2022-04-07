@@ -63,7 +63,7 @@ var columns = [
         renderer: {
           type: "sparkcolumn"
         },
-        width: 170,
+        width: 100,
         header: {
           text: "그래프"         
         }
@@ -144,7 +144,7 @@ function StrToFloat(numText) {
 function loadData(provider) {
     $.ajax({
         type: "GET",
-        url: "/datas/co2data.json",
+        url: "./datas/co2data.json",
         success: function (data) {
             //data = JSON.parse(data);
             for (var i = 0; i <= data.records.length - 1; i++) {
