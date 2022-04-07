@@ -1,0 +1,20 @@
+.left-column {
+  text-align: left !important;
+}
+
+.right-column {
+  text-align: right !important;
+}
+
+.multiline-column {
+  white-space: pre-line !important;
+}
+
+.gray-color {
+  color: gray;
+}
+
+.boldFont {
+  color: #333333;
+  font-weight: bold !important;
+}
