@@ -53,6 +53,8 @@ var columns = [
     editor: {
       type: "multiline"
     },
+    renderer: "renderer_callback",
+    /*
     renderer:{
       type:"html",
       callback: function(grid, cell, w, h) {
@@ -80,7 +82,7 @@ var columns = [
 
         return "<br/>" + str + "<br/><br/>";
       }
-    }
+    }*/
   }, {
     name: "col6",
     fieldName: "field6",
@@ -140,6 +142,51 @@ $(function () {
       expandedAdornments: "header"
     });
   },100);
+
+
+  gridView.registerCustomRenderer("renderer_callback", {
+    initContent : function (parent) {
+        var span = this._span = document.createElement("span");
+        span.className = "custom_render_span"
+        parent.appendChild(span);
+    },
+
+    canClick : function() {
+    },
+
+    clearContent : function(parent) {
+      parent.innerHTML = "";    
+    },
+
+    render : function(grid, model, width, height, info) {
+        info = info || {};
+        var span = this._span;
+
+        var field3Value = dataProvider.getValue(model.index.dataRow, "field3")
+        var field4Value = dataProvider.getValue(model.index.dataRow, "field4")
+        var field5Value = dataProvider.getValue(model.index.dataRow, "field5")
+        var str = "";
+
+        if(field3Value == "갱신가능"){
+          field3Value = '<img src="./images/renewalY.png" alt="My Image">'
+        }else if(field3Value == "갱신불가"){
+          field3Value = '<img src="./images/renewalN.png" alt="My Image">'
+        }else{
+          if(field3Value.indexOf("분실") > -1){
+            field3Value = "<span style='font-size:1em;color:gray' >휴면 ,</span>" + "<span style='font-size:1em;color:blue' >분실</span>"
+          }else{
+            field3Value = "<span style='font-size:1em;color:gray' > " + field3Value + "</span>"
+          }
+        }
+
+        str = str + "<span style='font-weight: bold; font-size: 1.5em'>" + model.value + " </span>" + field3Value + "<span style='font-size:1em;color:gray' >\n" + field4Value + "</span>" + "<span style='font-size:1em;color:blue' >\n" + field5Value + "</span>"
+
+        span.innerHTML = "<br/>" + str + "<br/><br/>";
+    },
+
+    click : function(event) {
+    }
+  });
 });
 
 </script>
