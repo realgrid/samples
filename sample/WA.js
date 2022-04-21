@@ -1,9 +1,9 @@
 var grdMain;
 var dataProvider;
 RealGridJS.setRootContext("../lib");
- 
+
 $(document).ready(function () {
-  //  RealGridJS.setDebug(true);
+ //   RealGridJS.setDebug(true);
 
 	dataProvider = new RealGridJS.LocalDataProvider();
   grdMain = new RealGridJS.GridView("container", true);
@@ -15,8 +15,11 @@ $(document).ready(function () {
   setSkin();
   setStyles(grdMain);
 
-	loadData(dataProvider);
-    
+  setTimeout(function() {
+    loadData(dataProvider);
+
+  }, 100)
+	    
   grdMain.onLinkableCellClicked = function (grid, index, url) {
     alert(url + "  페이지를 띄웁니다.");
     window.open(url, '_newtab');
@@ -218,7 +221,7 @@ function setOptions(grid) {
         },
         edit: {
             appendable: true,
-            forceAppend: false
+       //     editable: false
         }
     })
 }
