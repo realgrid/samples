@@ -4,7 +4,7 @@ RealGridJS.setRootContext("../lib");
 
 $(document).ready(function () {
 
-  //RealGridJS.setDebug(true);
+  RealGridJS.setDebug(true);
 
   dataProvider = new RealGridJS.LocalDataProvider();
   grdMain = new RealGridJS.GridView("container", true);
