@@ -23,7 +23,6 @@ border: 0px;
 background: #ccc1;
 }
 
-html, body { height:100%; overflow:hidden } 
 .h-div {height:50%; border:0px #fff solid}
 </style>
 
@@ -31,7 +30,7 @@ html, body { height:100%; overflow:hidden }
 <link href="./styles/style.css" rel="stylesheet" />
 <link href="./styles/realgrid-style.css" rel="stylesheet" />
 <script src="./scripts/realgrid-lic.js"></script>
-<script src="./scripts/realgrid.2.5.1.min.js"></script>
+<script src="./scripts/realgrid.2.5.2.min.js"></script>
 <script src="./scripts/jszip.min.js"></script>
 
 <script>
@@ -129,7 +128,10 @@ $(function () {
   //gridView.displayOptions.vscrollBar = false;
   gridView.mobileOptions.grid.displayOptions.rowFocusType = "row";
   gridView.displayOptions.focusVisible = false;
-  gridView.displayOptions.wheelEventPropagate = false;
+  gridView.displayOptions.syncGridHeight = "always";
+
+  gridView.displayOptions.showEmptyMessage = true;
+  //gridView.displayOptions.emptyMessage = "";
 
   document.getElementById("realgrid").style.height = (document.body.offsetHeight - 255) + "px"
   gridView.resetSize();
@@ -147,8 +149,17 @@ $(function () {
     ["2021","2021.11.17", "KB카드결제", "카드결제", -100000, 2900000],
     ["2021","2021.11.15", "KB카드결제", "카드결제", -100000, 3000000],
     ["2021","2021.11.12", "KB카드결제", "카드결제", -100000, 3100000],
-    ["2021","2021.11.11", "KB카드결제", "카드결제", -100000, 3200000],
-    ["2021","2021.11.10", "KB카드결제", "카드결제", -100000, 3300000]
+    ["2021","2021.11.11", "KB카드결제", "카드결제", -200000, 3200000],
+    ["2021","2021.10.19", "KB카드결제", "카드결제", -200000, 3400000],
+    ["2021","2021.10.07", "KB카드결제", "카드결제", -300000, 3600000],
+    ["2021","2021.10.09", "KB카드결제", "카드결제", -300000, 3900000],
+    ["2021","2021.10.08", "KB카드결제", "카드결제", -300000, 4200000],
+    ["2021","2021.09.10", "KB카드결제", "카드결제", -100000, 4500000],
+    ["2021","2021.09.01", "KB카드결제", "카드결제", -100000, 4600000],
+    ["2021","2021.09.01", "KB카드결제", "카드결제", -100000, 4700000],
+    ["2021","2021.08.23", "KB카드결제", "카드결제", -100000, 4800000],
+    ["2021","2021.08.17", "KB카드결제", "카드결제", -100000, 4900000],
+    ["2021","2021.08.10", "KB카드결제", "카드결제", -100000, 5000000]
   ];
 
   dataProvider.setRows(datas);
@@ -159,6 +170,12 @@ $(function () {
     }},{name:"2개월", tag:2, callback:function(ds, dataRow, level, field, filter, value) {
        return dateFilters(value, filter.tag);
     }},{name:"3개월", tag:3, callback:function(ds, dataRow, level, field, filter, value) {
+       return dateFilters(value, filter.tag);
+    }},{name:"4개월", tag:4, callback:function(ds, dataRow, level, field, filter, value) {
+       return dateFilters(value, filter.tag);
+    }},{name:"5개월", tag:5, callback:function(ds, dataRow, level, field, filter, value) {
+       return dateFilters(value, filter.tag);
+    }},{name:"6개월", tag:6, callback:function(ds, dataRow, level, field, filter, value) {
        return dateFilters(value, filter.tag);
     }}]);
 
@@ -228,12 +245,15 @@ function setFiltering(){
     <div style="height:5px"></div>
   </div>
 
-  <div id="dateContainer" style="border: 0px solid gold; float: left; background-color: #ccc7; width: 55%;height:30px; text-align: center;">2021.11.10~2022.02.22</div>
+  <div id="dateContainer" style="border: 0px solid gold; float: left; background-color: #ccc7; width: 55%;height:30px; text-align: center;">2021.08.10~2022.02.22</div>
   <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">
     <select name="month" id="month" onchange="setFiltering()">
       <option value="1">1개월</option>
       <option value="2">2개월</option>
       <option value="3">3개월</option>
+      <option value="4">4개월</option>
+      <option value="5">5개월</option>
+      <option value="6">6개월</option>
     </select>
   </div>
   <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">
@@ -243,6 +263,6 @@ function setFiltering(){
     </select>
   </div>
   <div style="border: 0px solid gold; float: left; background-color: #ccc7; width: 15%;height:30px; text-align: center;">전체</div>
-  <div id="realgrid" style="width: 100%; height: 400px;"></div>
+  <div id="realgrid" style="width: 100%; height: 300px;"></div>
 </body>
 </html>
