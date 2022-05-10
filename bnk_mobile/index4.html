@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>realgrid2</title>
+<style>
+.h-div {height:50%; border:0px #fff solid}
+</style>
+
+<script src="./scripts/jquery-3.1.1.min.js"></script>
+<link href="./styles/style.css" rel="stylesheet" />
+<link href="./styles/realgrid-style.css" rel="stylesheet" />
+<script src="./scripts/realgrid-lic.js"></script>
+<script src="./scripts/realgrid.2.5.2.min.js"></script>
+<script src="./scripts/jszip.min.js"></script>
+
+<script>
+var fields = [
+  {
+    fieldName: "field1"
+  },{
+    fieldName: "field2"
+  },{
+    fieldName: "field3"
+  },{
+    fieldName: "field4"
+  },{
+    fieldName: "field5"
+  },{
+    fieldName: "field6"
+  }
+];
+var columns = [
+  {
+    name: "col1",
+    fieldName: "field1",
+    width: 100,
+    renderer: {
+        type: "image",
+        imageCallback: function (grid, cell) {
+            var cardName = grid.getValue(cell.item.index, "field1");
+            return "./images/" + cardName + ".jpg";
+        },
+        imageHeight: 60
+    }
+  },{
+    name: "col2",
+    fieldName: "field2",
+    width: 200,
+    styleName: "left-column multiline-column",
+    editor: {
+      type: "multiline"
+    },
+    renderer: "renderer_callback",
+    /*
+    renderer:{
+      type:"html",
+      callback: function(grid, cell, w, h) {
+        if(cell.value == undefined){
+          return "";
+        }
+        var field3Value = dataProvider.getValue(cell.index.dataRow, "field3")
+        var field4Value = dataProvider.getValue(cell.index.dataRow, "field4")
+        var field5Value = dataProvider.getValue(cell.index.dataRow, "field5")
+        var str = "";
+
+        if(field3Value == "갱신가능"){
+          field3Value = '<img src="./images/renewalY.png" alt="My Image">'
+        }else if(field3Value == "갱신불가"){
+          field3Value = '<img src="./images/renewalN.png" alt="My Image">'
+        }else{
+          if(field3Value.indexOf("분실") > -1){
+            field3Value = "<span style='font-size:1em;color:gray' >휴면 ,</span>" + "<span style='font-size:1em;color:blue' >분실</span>"
+          }else{
+            field3Value = "<span style='font-size:1em;color:gray' > " + field3Value + "</span>"
+          }
+        }
+
+        str = str + "<span style='font-weight: bold; font-size: 1.5em'>" + cell.value + " </span>" + field3Value + "<span style='font-size:1em;color:gray' >\n" + field4Value + "</span>" + "<span style='font-size:1em;color:blue' >\n" + field5Value + "</span>"
+
+        return "<br/>" + str + "<br/><br/>";
+      }
+    }*/
+  }, {
+    name: "col6",
+    fieldName: "field6",
+    visible: false
+  }
+];
+
+var datas = [
+  ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "신용카드"],
+  ["card02", "썸뱅크신용카드", "휴면, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)", "신용카드"],
+  ["card01", "썸뱅크신용카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)", "신용카드"],
+  ["card02", "썸뱅크체크카드", "휴면, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+  ["card01", "온라인쇼핑카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+  ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+  ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+  ["card02", "온라인쇼핑카드", "휴면, 분실", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+  ["card01", "온라인쇼핑카드", "갱신가능", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"],
+  ["card01", "온라인쇼핑카드", "갱신불가", "1234-****-****-5678", "유효시간 2020.07(D-30)", "체크카드"]
+];
+
+var dataProvider, gridView;
+
+$(function () {
+  dataProvider = new RealGrid.LocalDataProvider();
+  gridView = new RealGrid.GridView("realgrid");
+  gridView.setDataSource(dataProvider);
+
+  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.header.visible = false;
+  gridView.footer.visible = false;
+  gridView.rowIndicator.visible = false;
+  gridView.checkBar.visible = false;
+  gridView.stateBar.visible = false;
+  //gridView.editOptions.editable = true;
+  gridView.displayOptions.rowHeight = -1;
+  gridView.displayOptions.fitStyle = "evenFill";
+  //gridView.displayOptions.vscrollBar = false;
+  gridView.mobileOptions.grid.displayOptions.rowFocusType = "row";
+  gridView.displayOptions.focusVisible = false;
+  gridView.displayOptions.syncGridHeight = "always";
+
+  document.getElementById("realgrid").style.height = (document.body.offsetHeight - 180) + "px"
+  gridView.resetSize();
+
+  dataProvider.setFields(fields);
+  gridView.setColumns(columns);
+
+  dataProvider.setRows(datas);
+  /*
+  setTimeout(function(){  
+    gridView.groupBy(["field6"]);
+    gridView.rowGroup.headerStatement = "${groupValue} ${rowCount}";
+    gridView.setRowGroup({
+      expandedAdornments: "header"
+    });
+  },100);
+  */
+
+
+  gridView.registerCustomRenderer("renderer_callback", {
+    initContent : function (parent) {
+        var span = this._span = document.createElement("span");
+        span.className = "custom_render_span"
+        parent.appendChild(span);
+    },
+
+    canClick : function() {
+    },
+
+    clearContent : function(parent) {
+      parent.innerHTML = "";    
+    },
+
+    render : function(grid, model, width, height, info) {
+        info = info || {};
+        var span = this._span;
+
+        var field3Value = dataProvider.getValue(model.index.dataRow, "field3")
+        var field4Value = dataProvider.getValue(model.index.dataRow, "field4")
+        var field5Value = dataProvider.getValue(model.index.dataRow, "field5")
+        var str = "";
+
+        if(field3Value == "갱신가능"){
+          field3Value = '<img src="./images/renewalY.png" alt="My Image">'
+        }else if(field3Value == "갱신불가"){
+          field3Value = '<img src="./images/renewalN.png" alt="My Image">'
+        }else{
+          if(field3Value.indexOf("분실") > -1){
+            field3Value = "<span style='font-size:1em;color:gray' >휴면 ,</span>" + "<span style='font-size:1em;color:blue' >분실</span>"
+          }else{
+            field3Value = "<span style='font-size:1em;color:gray' > " + field3Value + "</span>"
+          }
+        }
+
+        str = str + "<span style='font-weight: bold; font-size: 1.5em'>" + model.value + " </span>" + field3Value + "<span style='font-size:1em;color:gray' >\n" + field4Value + "</span>" + "<span style='font-size:1em;color:blue' >\n" + field5Value + "</span>"
+
+        span.innerHTML = "<br/>" + str + "<br/><br/>";
+    },
+
+    click : function(event) {
+    }
+  });
+
+  var scroll = true;
+  //데이터 추가
+  $(window).scroll(function() {
+    /*
+   if(Math.round($(window).scrollTop() + $(window).height()) >= $(document).height()-2) {
+      let scrollTop = $(document).scrollTop();
+      setTimeout(function(){
+        dataProvider.fillJsonData(datas,{fillMode:"append"});
+      },500);
+      gridView.onDataLoadComplated = function() {
+        $(document).scrollTop(scrollTop);
+      }
+    }
+    */
+
+    var scrollT = $(this).scrollTop(); //스크롤바의 상단위치
+    var scrollH = $(this).height(); //스크롤바를 갖는 div의 높이
+    var contentH = $('#realgrid').height(); //문서 전체 내용을 갖는 div의 높이
+
+    if((scrollT + scrollH +1 >= contentH) && scroll) { // 스크롤바가 아래 쪽에 위치할 때
+      scroll = false;
+      setTimeout(function(){
+        let scrollTop = $(document).scrollTop();
+        dataProvider.fillJsonData(datas,{fillMode:"append"});
+
+        gridView.onDataLoadComplated = function() {
+          $(document).scrollTop(scrollTop);
+          scroll = true;
+        }
+      },500);   
+    }
+  })
+
+});
+
+</script>
+</head>
+<body>
+  <h2>계좌(이미지)리스트</h2>
+  <button type="button" style="background-color: white;width:50px;height:50px;color:white;border: none"><span style='font-size:2em;color:black'><</span></button>
+  <span style='font-size:1.5em;color:black'>보유카드</span>
+  <div id="realgrid" style="width: 100%; height: 400px;"></div>
+  <div style="height:5px"></div>
+  <!--
+  <input type='button' 
+         value='카드발급신청' 
+         style="background-color: red;width:100%;height:50px;color:white; font-weight: bold;"
+         onclick='alert("")'/>
+  -->
+</body>
+</html>
