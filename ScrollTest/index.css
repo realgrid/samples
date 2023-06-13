@@ -1,0 +1,86 @@
+@charset "UTF-8";
+html {
+	height: 100%;
+	margin: 5px 5px 0px 5px;
+	overflow: hidden;
+}
+body {
+	height: 100%;
+	margin: 0px 0px 0px 0px;
+	overflow: hidden;
+}
+#actions {
+	/* height: 50px; */
+}
+#realgrid {
+	width: 100%;
+	height: calc(100% - 50px - 10px); /* 10px는 margin */
+	height: -moz-calc(100% - 50px - 10px); /* for Firefox */
+	height: -webkit-calc(100% - 50px - 10px); /* for WebKit */
+	height: -o-calc(100% - 50px - 10px); /* for Opera */
+	height: expression(100% - 50px - 10px); /* IE Old */
+}
+
+	.rg-focused-cell {
+		background: red;
+	}
+	.rg-focused-row {
+		background: rgba(65, 255, 255, 0.4) !important;
+	}
+
+
+		.test-column {
+			font-size:16px;
+		}
+		.yellow {
+			background-color: yellow;
+		}
+		.green {
+			background-color: green;
+		}
+		.Sat-header {
+			color: blue
+		}
+		.Sun-header {
+			color : red
+		}
+		.tot-header {
+			background-color: yellow;
+		}
+		.pre-header {
+			background-color: orange;
+		}
+
+		.left-column {
+			text-align: left;
+		}
+
+		.number-column {
+			text-align: right;
+		}
+
+		.white-column {
+			background-color: white;
+		}
+
+		.measure-column {
+			background-color: white;
+			text-align: left;
+		}
+
+		.rg-body > table {
+			background-color: aliceblue
+		}
+
+		.msp-data {
+			background-color : white
+		}
+
+		.bal-data {
+			background-color : bisque
+		}
+
+		.small-font {
+			font-size: 10px;
+			color: blue;
+		}

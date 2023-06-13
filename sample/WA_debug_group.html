@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+ 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>RealGridJS</title>
+  	<script type="text/javascript" src="../jquery/jquery-1.11.1.min.js"></script>
+  	<script type="text/javascript" src="../lib/realgridjs-lic.js"></script>
+  	<script type="text/javascript" src="../lib/realgridjs_eval.1.1.32.min.js"></script>
+  	<script type="text/javascript" src="../lib/realgridjs-api.1.1.32.js"></script>
+  	<script type="text/javascript" src="../lib/jszip.min.js"></script>
+  	<script type="text/javascript" src="domutils.js"></script>
+    <script type="text/javascript" src="demostyles.js"></script>
+    <script type="text/javascript" src="data/Customers.js"></script>
+    <script type="text/javascript" src="data/CustomerOrders.js"></script>
+    <script type="text/javascript" src="data/CustomerOrders2.js"></script>
+    <script type="text/javascript" src="data/EconomicGrowth.js"></script>
+    <script type="text/javascript" src="WA_debug_group.js"></script>
+</head>
+<body>
+
+  <h3 style="padding-left: 20px;text-decoration: underline">WA<span id="spanVer" style="font-size:8pt;color:gray;padding-left:20px"></span></h3>
+	<div id="scripts"></div>
+
+    <div id="container" style="height:383px;width:900px;position:absolute;">
+    </div>
+    <script type="text/javascript">
+        $("#spanVer").text("v." + RealGridJS.getVersion());
+    </script>
+</body>
+</html>
+
