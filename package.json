@@ -1,0 +1,12 @@
+{
+  "name": "realrid-samples",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.1.1"
+  }
+}

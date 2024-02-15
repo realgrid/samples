@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid.2.7.2/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid.2.7.2/realgrid-lic.js"></script>
+    <script src="/public/realgrid.2.7.2/realgrid.2.7.2.min.js"></script>
+    <script src="/public/realgrid.2.7.2/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <div class="toolbar-group">
+        <button
+          id="globalColumnResizable"
+          onclick="btnToggleGlobalColumnResizable()"
+        >
+          모든 컬럼 크기변경 불가능
+        </button>
+      </div>
+      <div class="toolbar-group">
+        <label>컬럼 선택: </label>
+        <select id="columnList">
+          <option value="KorName">이름</option>
+          <option value="Gender">성별</option>
+          <option value="Age">나이</option>
+          <option value="Phone">전화번호</option>
+        </select>
+        <button onclick="btnToggleColumnResizable()">
+          선택한 컬럼 크기변경 가능 여부 설정
+        </button>
+      </div>
+    </div>
+    <div id="realgrid"></div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+#realgrid {
+  width: 100%;
+  height: 390px;
+}
+
+.rg-root {
+  font-family: "Malgun Gothic", "맑은 고딕", AppleSDGothicNeo-Light, sans-serif;
+  font-size: 12px;
+  color: #000000;
+  background: #ffffff;
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: none;
+  -ms-touch-action: none;
+}
+
+.rg-root .rg-table,
+.rg-root .rg-table tr,
+.rg-root .rg-table td {
+  position: relative;
+  margin: 0 !important;
+  /* 0과 다르면 자동 행 계산 시 틀어진다! content div 전에서 설정할 것!*/
+  padding: 0 !important;
+  /* 0과 다르면 자동 행 계산 시 틀어진다! content div 전에서 설정할 것! */
+  border-spacing: 0 !important;
+  border-collapse: separate !important;
+  box-sizing: border-box !important;
+  line-height: 1.5em;
+}
+
+.rg-root input::-ms-clear {
+  display: none;
+}
+
+.rg-grid {
+  border: 1px solid #6e7786;
+}
+
+.rg-empty-grid {
+  display: table;
+  padding: 10%;
+  background: #ffffff;
+  color: #0000ff;
+  font-size: 32px;
+  text-align: center;
+}
+
+.rg-empty-grid span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.rg-body,
+.rg-fixed-body {
+  background-color: #fff;
+}
