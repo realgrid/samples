@@ -255,7 +255,7 @@ var events = 0;
 function setProvider(filename) {
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = loadData;
-  httpRequest.open("GET", "/public/data/" + filename);
+  httpRequest.open("GET", "https://cdn.wooritech.com/realgrid/data/" + filename);
   httpRequest.send();
 }
 
