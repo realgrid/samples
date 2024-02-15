@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- JQuery -->
+  <script src="/public/js/jquery-3.5.0.min.js"></script>
+
+  <!-- iFrame -->
+  <link href="/public/styles/iframe.css" rel="stylesheet" />
+  
+
+  <!-- RealGrid -->
+  <link href="/public/realgrid.2.7.2/realgrid-style.css" rel="stylesheet" />
+  <script src="/public/realgrid.2.7.2/realgrid-lic.js"></script>
+  <script src="/public/realgrid.2.7.2/realgrid.2.7.2.min.js"></script>
+  <script src="/public/realgrid.2.7.2/libs/jszip.min.js"></script>
+
+  <!-- Custom -->
+  <link href="./index.css" rel="stylesheet" />
+  <script src="./index.js"></script>
+  <script src="/public/js/jquery-3.5.0.min.js"></script>
+</head>
+
+<body>
+  <div class="toolbar">
+    <button onclick="btnClearTextarea()">지우기</button>
+    <br><br>
+    <input type="checkbox" class="edit" id="insertable">insertable   
+    <input type="checkbox" class="edit" id="appendable">appendable   
+    <input type="checkbox" class="edit" id="updatable">updatable   
+    <input type="checkbox" class="edit" id="deletable">deletable   
+    <input type="checkbox" class="edit" id="editable">editable
+    <input type="checkbox" class="edit" id="readOnly">readOnly
+    <br>   
+    <input type="checkbox" class="edit" id="commitByCell">commitByCell   
+    <input type="checkbox" class="edit" id="commitWhenLeave">commitWhenLeave
+    <input type="checkbox" class="edit" id="crossWhenExitLast">crossWhenExitLast
+    <br>
+    <button onclick="insertEmptyRow()">행 삽입(DataProvider)</button>
+    <button onclick="addEmptyRow()">행 추가(DataProvider)</button>
+    <button onclick="beginInsertRow()">행 삽입(GridView)</button>
+    <button onclick="beginAppendRow()">행 추가(GridView)</button>
+    <br>
+    <button onclick="btnBeginUpdateRow()">편집 시작</button>
+    <button onclick="btnUpdateRow()">행 데이터 수정</button>
+    <button onclick="btnUpdateRows()">여러 행 데이터 수정</button>
+    <button onclick="btnUpdateRowsByDataRow()">여러 행(지정) 데이터 수정</button>
+    <button onclick="DPsetValue()">dataProvider.setValue</button>
+    <button onclick="GVsetValue()">gridView.setValue</button>
+    <br><br>
+    <input type="checkbox" class="prod" id="softDeleting">dataProvider.softDeleting
+    <input type="checkbox" class="prod" id="deleteCreated">dataProvider.deleteCreated 
+    <input type="checkbox" class="grid" id="hideDeletedRows">gridView.hideDeletedRows
+    <br>
+    <button onclick="deleteSelection()">선택범위 행 삭제(GridView)</button>
+    <button onclick="removeRow()">행 삭제(DataProvider))</button>
+  </div>
+  <div id="realgrid"></div>
+  <textarea id="eventLog" style="width:100%; height:200px; border: 2px solid #5d8cc9"></textarea>
+</body>
+
+</html>

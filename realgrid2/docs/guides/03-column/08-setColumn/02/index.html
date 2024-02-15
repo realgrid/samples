@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <!-- <link href="/public/realgrid.2.7.2/realgrid-style.css" rel="stylesheet" /> -->
+    <script src="/public/realgrid.2.7.2/realgrid-lic.js"></script>
+    <script src="/public/realgrid.2.7.2/realgrid.2.7.2.min.js"></script>
+    <script src="/public/realgrid.2.7.2/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./fields.js"></script>
+    <script src="./columns.js"></script>
+    <script src="./samples.js"></script>
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <button id="btnAddTextColumn">텍스트 컬럼 추가</button>
+      <button id="btnAddNumberColumn">숫자 컬럼 추가</button>
+      <button id="btnAddDateColumn">날짜 컬럼 추가</button>
+      <button id="btnAddDropdownColumn">드롭다운 컬럼 추가</button>
+      <button id="btnAddBooleanColumn">불리언 컬럼 추가</button>
+      <button id="btnAddObjectColumn">객체 컬럼 추가</button>
+
+      <!-- <button id="btnSetData">데이터 추가</button> -->
+    </div>
+    <div id="realgrid"></div>
+  </body>
+</html>

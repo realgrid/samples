@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid.2.7.2/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid.2.7.2/realgrid-lic.js"></script>
+    <script src="/public/realgrid.2.7.2/realgrid.2.7.2.min.js"></script>
+    <script src="/public/realgrid.2.7.2/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">
+          <input
+            type="text"
+            name="txtSearch"
+            id="txtSearch"
+            value=""
+            data-theme="a"
+          />&nbsp;&nbsp;
+          <button onclick="gridSearch()">검색하기</button>
+        </div>
+      </div>
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">대소문자 구분 설정</div>
+        <label>
+          <input type="radio" name="case" value="case" />대소문자 구분
+        </label>
+        <label>
+          <input type="radio" name="case" value="" checked="checked" />구분하지
+          않음
+        </label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">부분 일치 설정</div>
+        <label>
+          <input type="radio" name="partial" value="partial"  checked="checked" />부분 일치
+        </label>
+        <label>
+          <input type="radio" name="partial" value="" />모두 일치
+        </label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">처음부터 다시 검색</div>
+        <label>
+          <input
+            type="radio"
+            name="wrap"
+            value="wrap"
+            checked="checked"
+          />처음부터 다시 검색
+        </label>
+        <label>
+          <input type="radio" name="wrap" value="" />검색을 종료
+        </label>
+      </div>
+    </div>
+    <div id="realgrid"></div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+    <script src="/public/js/jquery-3.5.0.min.js"></script>
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid.2.7.2/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid.2.7.2/realgrid-lic.js"></script>
+    <script src="/public/realgrid.2.7.2/realgrid.2.7.2.min.js"></script>
+    <script src="/public/realgrid.2.7.2/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">엑셀타입 설정</div>
+        <label>
+          <input type="radio" name="excelType" value=false />MS Excel 2007
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="excelType"
+            value=true
+            checked="checked"
+          />MS Excel
+        </label>
+        <label>
+          <input type="checkbox" id="chkShowProgress" /> 프로그래스 바 표시 여부
+        </label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">indicator 영역</div>
+        <label>
+          <input
+            type="radio"
+            name="indicator"
+            value="default"
+            checked="checked"
+          />default
+        </label>
+        <label>
+          <input type="radio" name="indicator" value="visible" />visible
+        </label>
+        <label>
+          <input type="radio" name="indicator" value="hidden" />hidden
+        </label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">header 영역</div>
+        <label>
+          <input
+            type="radio"
+            name="header"
+            value="default"
+            checked="checked"
+          />default
+        </label>
+        <label>
+          <input type="radio" name="header" value="visible" />visible
+        </label>
+        <label>
+          <input type="radio" name="header" value="hidden" />hidden
+        </label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">footer 영역</div>
+        <label>
+          <input
+            type="radio"
+            name="footer"
+            value="default"
+            checked="checked"
+          />default
+        </label>
+        <label>
+          <input type="radio" name="footer" value="visible" />visible
+        </label>
+        <label>
+          <input type="radio" name="footer" value="hidden" />hidden
+        </label>
+      </div>
+
+      <div class="toolbar-group">
+        <button onclick="excelExport()">엑셀 내보내기</button>
+      </div>
+    </div>
+    <div id="realgrid"></div>
+  </body>
+</html>
