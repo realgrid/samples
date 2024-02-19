@@ -239,7 +239,7 @@ var httpRequest;
 function setProvider(filename) {
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = loadData;
-  httpRequest.open("GET", "https://cdn.wooritech.com/realgrid/data/" + filename);
+  httpRequest.open("GET", "/public/data/" + filename);
   httpRequest.send();
 }
 
@@ -311,7 +311,7 @@ function setScrollToBottom() {
         }
       }
     };
-    httpRequest.open("GET", "https://cdn.wooritech.com/realgrid/data/" + "simple_data200.json");
+    httpRequest.open("GET", "/public/data/" + "simple_data200.json");
     httpRequest.send();
   };
 }
