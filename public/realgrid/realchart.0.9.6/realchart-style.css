@@ -1,0 +1,840 @@
+@charset "UTF-8";
+
+.rct-root {
+    font-family: var(--rct-font-family);
+    font-size: var(--rct-font-size);
+    color: #000;
+    /* background-color: white; */
+    /* word-break: break-all;
+    word-wrap: break-word; */
+    -webkit-touch-callout: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: auto;
+    -ms-touch-action: auto; 
+    text-align: initial;
+}   
+
+.rct-root text {
+    stroke: none;
+}
+
+/** palette */
+.rct-root {
+    --color-1: #6b76f2;
+    --color-2: #00d3e4;
+    --color-3: #fe3ea5;
+    --color-4: #ffd938;
+    --color-5: #8650cc;
+    --color-6: #e30922;
+    --color-7: #00E272;
+    --color-8: #FF7300;
+    --color-9: #5948ff;
+    --color-10: #e700fe;
+    --color-11: #00b8ac;
+    --color-12: #2da0f9;
+}
+.rct-root[data-palette='gray'] {
+    --color-1: #464646;
+    --color-2: #61666A;
+    --color-3: #6F6F6D;
+    --color-4: #82898F;
+    --color-5: #8D8D8B;
+    --color-6: #9EA7A6;
+    --color-7: #ACABA7;
+    --color-8: #BCBCBC;
+    --color-9: #C5C9CA;
+    --color-10: #D9D4CE;
+    --color-11: #DEDEDE;
+    --color-12: #e8ecef;
+}
+.rct-root[data-palette='warm'] {
+    --color-1: #CCAACB;
+    --color-2: #8FC9CA;
+    --color-3: #97C1A9;
+    --color-4: #F3B0C2;
+    --color-5: #FFC7A2;
+    --color-6: #D97872;
+    --color-7: #8BA3C5;
+    --color-8: #DC97AA;
+    --color-9: #9C9CC2;
+    --color-10: #B7CADB;
+    --color-11: #C7C19D;
+    --color-12: #FBE693;
+}
+.rct-root[data-palette='cool'] {
+    --color-1: #EB455F;
+    --color-2: #FFD49C;
+    --color-3: #A4CADD;
+    --color-4: #3E4977;
+    --color-5: #FAAB78;
+    --color-6: #BFACE2;
+    --color-7: #A0BCC2;
+    --color-8: #FF7396;
+    --color-9: #6DC7C9;
+    --color-10: #7895CB;
+    --color-11: #FEA1A1;
+    --color-12: #90C8AC;
+}
+.rct-root[data-palette='forest'] {
+    --color-1: #FFB94A;
+    --color-2: #94CFD3;
+    --color-3: #1B9C85;
+    --color-4: #7FB47E;
+    --color-5: #9AA77B;
+    --color-6: #FBD872;
+    --color-7: #A4C1AD;
+    --color-8: #EAD9A7;
+    --color-9: #7A9083;
+    --color-10: #7FBCAA;
+    --color-11: #B6BA99;
+    --color-12: #4D6166;
+}
+
+/** theme */
+.rct-control {
+    --rct-background: none;
+}
+.rct-control[data-theme='dark'] {
+    --rct-background: black;
+}
+
+.rct-root {
+    --rct-font-family: AppleSDGothicNeo-Light, 'HelveticaNeue', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    --rct-font-size: 16px;
+
+    --rct-focus-border: red;
+    --rct-text-fill: #333;
+
+    --rct-title-fill: #333;
+    --rct-subtitle-fill: #333;
+
+    --rct-plot-background-stroke: #ddd;
+
+    --rct-axis-title-fill: #333;
+    --rct-axis-line-stroke: #aaa;
+    --rct-axis-tick-stroke: #555;
+    --rct-axis-label-fill: #555;
+    --rct-axis-grid-line-stroke: #ddd;
+    --rct-axis-grid-line-stroke-start: none;
+    --rct-axis-grid-line-stroke-end: none;
+    --rct-axis-grid-line-stroke-width: 1px;
+    
+    --rct-legend-background-stroke: none;
+    --rct-legend-item-fill: #333;
+    --rct-legend-item-disabled: #aaa;
+    --rct-legend-item-disabled-decoration: line-through;
+
+    --rct-point-label-font-size: 0.8em;
+    --rct-point-label-font-weight: bold;
+    --rct-point-label-stroke: none;
+    --rct-point-label-fill: #333;
+
+    --rct-credits-fill: #777;
+
+    /* circle gauge */
+    --rct-circle-gauge-back-fill: #e4e4e4;
+    --rct-circle-gauge-inner-fill: none;
+    --rct-circle-gauge-label-fill: #333;
+    /* clock gauge */
+    --rct-clock-gauge-face-fill: white;
+    --rct-clock-gauge-rim-fill: #eee;
+    --rct-clock-gauge-rim-stroke: gray;
+    --rct-clock-gauge-tick-stroke: #333;
+    --rct-clock-gauge-minor-tick-stroke: #555;
+    --rct-clock-gauge-tick-label-fill: #333;
+    --rct-clock-gauge-label-fill: #aaa;
+}
+.rct-root[data-theme='dark'] {
+    --rct-focus-border: yellow;
+    --rct-text-fill: #fff;
+
+    --rct-title-fill: #fff;
+    --rct-subtitle-fill: #fff;
+
+    --rct-plot-background-stroke: #ccc;
+    
+    --rct-axis-title-fill: #fff;
+    --rct-axis-line-stroke: #ddd;
+    --rct-axis-tick-stroke: #fff;
+    --rct-axis-label-fill: #fff;
+    --rct-axis-grid-line-stroke: #ddd;
+    
+    --rct-legend-item-fill: #fff;
+    --rct-legend-item-disabled: #aaa;
+    --rct-legend-item-disabled-decoration: line-through;
+
+    --rct-point-label-fill: #ddd;
+
+    --rct-credits-fill: #999;
+
+    /* circle gauge */
+    --rct-circle-gauge-back-fill: #333;
+    --rct-circle-gauge-label-fill: #eee;
+}
+
+/** control */
+.rct-control {
+    background-color: var(--rct-background);
+}
+
+/** root(svg) */
+/** debug border */
+.rct-debug {
+    fill: none;
+    stroke: #ff000040;
+    pointer-events: none;
+}
+
+/** rich text */
+.rct-text-bold {
+    font-weight: bold;
+}
+.rct-text-italic {
+    font-style: italic;
+}
+
+/** label */
+.rct-label-dark {
+    fill: black;
+}
+.rct-label-bright {
+    fill: white;
+}
+.rct-label-background {
+    fill: lightgray;
+}
+
+/** background */
+.rct-background {
+    fill: none;
+}
+
+/** credits */
+.rct-credits {
+    font-size: 0.7em;
+    fill: var(--rct-credits-fill);
+}
+
+/** title */
+.rct-title {
+    margin-bottom: 5px;
+    font-size: 24px;
+    fill: var(--rct-title-fill);
+}
+.rct-title-background {
+    fill: none;
+}
+.rct-subtitle {
+    margin-bottom: 5px;
+    font-size: 16px;
+    fill: var(--rct-subtitle-fill);
+}
+.rct-subtitle-background {
+    fill: none;
+}
+
+/** legend */
+.rct-legend {
+    stroke: none;
+    fill: none;
+    padding: 4px;
+}
+.rct-legend-background {
+    stroke: var(--rct-legend-background-stroke);
+}
+.rct-legend-item {
+    fill: var(--rct-legend-item-fill);
+}
+.rct-legend-item-label[data-hidden] {
+    fill: var(--rct-legend-item-disabled);
+    text-decoration: var(--rct-legend-item-disabled-decoration)
+}
+/* .rct-legend-item-marker {
+    stroke: none;
+} */
+.rct-legend-item-marker[data-hidden] {
+    fill: #aaa !important;
+}
+
+/** plot area */
+.rct-plot-background {
+    stroke: var(--rct-plot-background-stroke);
+    fill: none;
+}
+.rct-plot-background[data-polar] {
+    stroke: none;
+}
+
+/** axis */
+.rct-axis-title {
+    font-size: 16px;
+    fill: var(--rct-axis-title-fill);
+}
+.rct-axis-title-background {
+    fill: none;
+}
+.rct-axis-line {
+    stroke: var(--rct-axis-line-stroke);
+    stroke-width: 1px;
+}
+.rct-axis-tick {
+    stroke: var(--rct-axis-tick-stroke);
+    stroke-width: 1px;
+}
+.rct-axis-label {
+    font-size: 14px;
+    fill: var(--rct-axis-label-fill);
+}
+/* .rct-axis-grid {
+    stroke: var(--rct-axis-grid-stroke);
+    stroke-width: 1px;
+} */
+.rct-axis-grid-line {
+    stroke: var(--rct-axis-grid-line-stroke);
+    stroke-width: var(--rct-axis-grid-line-stroke-width);
+}
+.rct-axis-break {
+    stroke: #777;
+    fill: white;
+    fill-opacity: 0.9;
+}
+.rct-axis-guide-label {
+    fill: blue;
+}
+.rct-axis-guide-line {
+    stroke: blue;
+    stroke-width: 2px;
+    stroke-dasharray: 4;
+}
+.rct-axis-guide-range {
+    stroke: none;
+    fill: #0088ff40;
+}
+
+/** polar axis */
+.rct-polar-xaxis-line {
+    stroke: #333;
+}
+.rct-polar-xaxis-grid-line {
+    stroke: #ccc;
+}
+.rct-polar-yaxis-line {
+    stroke: red;
+}
+.rct-polar-yaxis-grid-line {
+    stroke: #0000ff20;
+}
+
+/** series */
+.rct-series[data-index="0"] {
+    fill: var(--color-1);
+    stroke: var(--color-1);
+}
+.rct-series[data-index="1"] {
+    fill: var(--color-2);
+    stroke: var(--color-2);
+}
+.rct-series[data-index="2"] {
+    fill: var(--color-3);
+    stroke: var(--color-3);
+}
+.rct-series[data-index="3"] {
+    fill: var(--color-4);
+    stroke: var(--color-4);
+}
+.rct-series[data-index="4"] {
+    fill: var(--color-5);
+    stroke: var(--color-5);
+}
+.rct-series[data-index="5"] {
+    fill: var(--color-6);
+    stroke: var(--color-6);
+}
+.rct-series[data-index="6"] {
+    fill: var(--color-7);
+    stroke: var(--color-7);
+}
+.rct-series[data-index="7"] {
+    fill: var(--color-8);
+    stroke: var(--color-8);
+}
+.rct-series[data-index="8"] {
+    fill: var(--color-9);
+    stroke: var(--color-9);
+}
+.rct-series[data-index="9"] {
+    fill: var(--color-10);
+    stroke: var(--color-10);
+}
+.rct-series[data-index="10"] {
+    fill: var(--color-11);
+    stroke: var(--color-11);
+}
+.rct-series[data-index="11"] {
+    fill: var(--color-12);
+    stroke: var(--color-12);
+}
+
+.rct-series-trendline {
+    stroke: red;
+    stroke-width: 2px;
+    fill: none;
+}
+
+/** data point */
+.rct-series[data-pointcolors] .rct-point[data-index="0"] {
+    fill: var(--color-1);
+    stroke: var(--color-1);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="1"] {
+    fill: var(--color-2);
+    stroke: var(--color-2);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="2"] {
+    fill: var(--color-3);
+    stroke: var(--color-3);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="3"] {
+    fill: var(--color-4);
+    stroke: var(--color-4);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="4"] {
+    fill: var(--color-5);
+    stroke: var(--color-5);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="5"] {
+    fill: var(--color-6);
+    stroke: var(--color-6);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="6"] {
+    fill: var(--color-7);
+    stroke: var(--color-7);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="7"] {
+    fill: var(--color-8);
+    stroke: var(--color-8);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="8"] {
+    fill: var(--color-9);
+    stroke: var(--color-9);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="9"] {
+    fill: var(--color-10);
+    stroke: var(--color-10);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="10"] {
+    fill: var(--color-11);
+    stroke: var(--color-11);
+}
+.rct-series[data-pointcolors] .rct-point[data-index="11"] {
+    fill: var(--color-12);
+    stroke: var(--color-12);
+}
+
+/** rct-point 대신 여기에 지정해야 outline에 반영된다. */
+.rct-point-labels {
+    font-size: var(--rct-point-label-font-size);
+    font-weight: var(--rct-point-label-font-weight);
+    stroke: var(--rct-point-label-stroke);
+    fill: var(--rct-point-label-fill);
+}
+.rct-point-label {
+    fill-opacity: 1;
+    opacity: 1;
+}
+.rct-point-label-lines {
+    stroke: #585;
+    fill: none;
+}
+
+/** bar series */
+.rct-bar-series {
+    fill-opacity: 0.85;
+}
+.rct-bar-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+
+/** barrange series */
+.rct-barrange-series {
+    fill-opacity: 0.85;
+}
+.rct-barrange-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+
+/** line series */
+.rct-line-series-line {
+    stroke-width: 1px;
+}
+.rct-line-series .rct-point {
+    stroke-dasharray: none;
+}
+.rct-line-series .rct-point[data-focus] {
+    /* scale: 2; */
+    stroke: var(--rct-focus-border) !important;
+    stroke-width: 2px;
+}
+
+/** area series */
+.rct-area-series-area {
+    fill-opacity: 0.5;
+}
+.rct-area-series .rct-area-series-area {
+    stroke: none;
+}
+
+/** arearange series */
+.rct-arearange-series-area {
+    fill-opacity: 0.5;
+}
+.rct-arearange-series .rct-arearange-series-area {
+    stroke: none;
+}
+
+/** bubble series */
+.rct-bubble-series {
+    fill-opacity: 0.75;
+    stroke-width: 1px;
+}
+
+.rct-bubble-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+
+/** scatter series */
+.rct-scatter-series {
+    fill-opacity: 0.7;
+}
+.rct-scatter-series .data-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+
+/** boxplot series */
+.rct-boxplot-series {
+    stroke-width: 1;
+}
+.rct-boxplot-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+.rct-boxplot-point-min {
+    stroke: #333;
+    stroke-width: 2;
+}
+.rct-boxplot-point-mid {
+    stroke: #333;
+    stroke-width: 2;
+}
+.rct-boxplot-point-max {
+    stroke: #333;
+    stroke-width: 2;
+}
+.rct-boxplot-point-stem {
+    stroke: #333;
+    stroke-dasharray: 2;
+}
+.rct-boxplot-series .rct-point[data-focus] .rct-boxplot-point-stem {
+    stroke: black;
+    stroke-dasharray: none;
+    stroke-width: 2px;
+}
+
+/** candlestick series */
+.rct-candlestick-series {
+    stroke-width: 1;
+    fill-opacity: 0.85;
+}
+.rct-candlestick-series .rct-point[data-focus] {
+    fill-opacity: 0.5;
+}
+.rct-candlestick-point-border {
+    stroke: #333;
+}
+.rct-candlestick-point-wick {
+    stroke: #003;
+}
+.rct-candlestick-point-fall {
+    fill: #008;
+    stroke: #008;
+}
+
+/** ohlc series */
+.rct-ohlc-series {
+    stroke-width: 2;
+}
+.rct-ohlc-point-back {
+    stroke: none;
+}
+/* .rct-ohlc-point-tick {
+    stroke: #003;
+}
+.rct-ohlc-point-bar {
+    stroke: #f00;
+} */
+.rct-ohlc-point-bar-fall {
+    stroke: #00f;
+}
+
+/** waterfall series */
+.rct-waterfall-series {
+    fill-opacity: 0.85;
+}
+.rct-waterfall-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+.rct-waterfall-point-negative {
+    fill: #dd5500;
+    stroke: #dd5500;
+}
+.rct-waterfall-point-sum {
+    fill: #0055cc;
+    stroke: #0055cc;
+}
+.rct-waterfall-series-lines {
+    stroke: #77f;
+    stroke-width: 2;
+    stroke-dasharray: 2;
+}
+
+/** errobar series */
+.rct-errorbar-series .rct-point {
+    stroke: #008;
+    stroke-width: 2px;
+}
+
+/** lollipop series */
+.rct-lollipop-series {
+    stroke-width: 3px;
+}
+.rct-lollipop-point-marker {
+    stroke: none;
+}
+
+/** dumbbell series */
+.rct-dumbbell-series {
+    stroke-width: 2px;
+}
+.rct-dumbbell-point-marker {
+    stroke: none;
+}
+
+/** equalizer series */
+.rct-equalizer-series {
+    fill-opacity: 0.9;
+}
+
+.rct-histogram-series .rct-point {
+    stroke: white;
+}
+
+/** vector series */
+.rct-vector-series {
+    stroke-width: 2px;
+}
+.rct-vector-series .rct-point[data-focus] {
+    stroke-width: 5px;
+}
+
+/** heatmpa series */
+.rct-heatmap-series .rct-point {
+    stroke: none;
+}
+.rct-heatmap-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+
+/** treemap series */
+.rct-treemap-series .rct-point {
+    stroke: white;
+}
+.rct-treemap-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-border);
+    stroke-width: 2px;
+}
+
+/** pie series */
+.rct-pie-series .rct-point {
+    stroke: white;
+}
+.rct-pie-series-inner {
+    font-size: 20px;
+    fill: #557;
+}
+
+/** funnel series */
+.rct-funnel-series .rct-point {
+    stroke: white;
+}
+.rct-funnel-series .rct-point[data-focus] {
+    stroke: red;
+    stroke-width: 2px;
+}
+
+/** gauge */
+.rct-gauge-background {
+    fill: none;
+}
+
+/** circle gauge */
+.rct-circle-gauge-back {
+    fill: var(--rct-circle-gauge-back-fill);
+}
+.rct-circle-gauge-inner {
+    fill: var(--rct-circle-gauge-inner-fill);
+}
+.rct-circle-gauge-value {
+    fill: #008844;
+}
+.rct-circle-gauge-value[data-stroked] {
+    fill: none;
+}
+.rct-circle-gauge-label {
+    font-size: 40px;
+    fill: var(--rct-circle-gauge-label-fill);
+    stroke: none;
+}
+.rct-circle-gauge-label[data-grouped] {
+    font-size: 20px;
+}
+.rct-circle-gauge-pin {
+    fill: white;
+    stroke: #333;
+    stroke-width: 3px;
+}
+.rct-circle-gauge-hand {
+    fill: #333;
+    stroke: none;
+}
+
+/** clock gauge */
+.rct-clock-gauge-face {
+    fill: var(--rct-clock-gauge-face-fill);
+    stroke: none;
+}
+.rct-clock-gauge-rim {
+    fill: var(--rct-clock-gauge-rim-fill);
+    stroke: var(--rct-clock-gauge-rim-stroke);
+}
+.rct-clock-gauge-tick {
+    stroke: var(--rct-clock-gauge-tick-stroke);
+    stroke-width: 2px;
+}
+.rct-clock-gauge-minor-tick {
+    stroke: var(--rct-clock-gauge-minor-tick-stroke);
+    stroke-width: 1px;
+}
+.rct-clock-gauge-tick-label {
+    stroke: none;
+    fill: var(--rct-clock-gauge-tick-label-fill);
+    font-size: 1em;
+}
+.rct-clock-gauge-pin {
+    fill: white;
+    stroke: #333;
+    stroke-width: 3px;
+}
+.rct-clock-gauge-hour {
+    fill: #333;
+}
+.rct-clock-gauge-minute {
+    fill: #333;
+}
+.rct-clock-gauge-second {
+    fill: #c00;
+}
+.rct-clock-gauge-label {
+    fill: var(--rct-clock-gauge-label-fill);
+}
+
+/** gauge scale */
+.rct-gauge-scale-line {
+    stroke: #555;
+    fill: none;
+}
+.rct-gauge-scale-ticks {
+    stroke: #555;
+}
+.rct-gauge-scale-tick-labels {
+    font-size: 0.85em;
+    fill: #333;
+}
+
+/** linear gauge */
+.rct-linear-gauge-background {
+    fill: #eee;
+}
+.rct-linear-gauge-value {
+    fill: green;
+}
+.rct-linear-gauge-band-tick-labels {
+    font-size: 0.85em;
+    fill: #333;
+}
+
+/** bullet gauge */
+.rct-bullet-gauge-background {
+    fill: #eee;
+}
+.rct-bullet-gauge-value {
+    fill: #333;
+}
+.rct-bullet-gauge-target {
+    fill: #338;
+}
+.rct-bullet-gauge-label {
+    font-size: 1em;
+    fill: #333;
+}
+.rct-bullet-gauge-scale-line {
+    stroke: #333;
+}
+.rct-bullet-gauge-scale-ticks {
+    stroke: #333;
+}
+.rct-bullet-gauge-scale-tick-labels {
+    font-size: 0.9em;
+    fill: #333;
+}
+
+/** tooltip */
+.rct-tooltip {
+    pointer-events: none;
+    opacity: 0.9;
+}
+.rct-tooltip-back {
+    fill: white;
+    stroke: #ccc;
+}
+.rct-tooltip-text {
+    fill: #333;
+    stroke: none;
+}
+
+/** crosshair */
+.rct-crosshair-line {
+    fill: none;
+    stroke-width: 1;
+    stroke: #80808080;
+}
+.rct-crosshair-bar {
+    stroke: none;
+    fill: #4488cc18;
+}
+.rct-crosshair-flag {
+    stroke: none;
+    fill: #555;    
+}
+.rct-crosshair-flag-text {
+    stroke: none;
+    fill: #fff;    
+}

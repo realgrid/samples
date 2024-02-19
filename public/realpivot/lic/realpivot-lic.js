@@ -1,0 +1,3 @@
+// localhost,127.0.0.1,*.real-report.com,*.realgrid.com,*.vercel.app 24년 12월
+var realGrid2Lic = 'upVcPE+wPOmtLjqyBIh9RkM/nBOseBrflwxYpzGZyYm9cY8amGDkiMnVeQKUHJDjW2y71jtk+wv50juZqrKKzQ4npiZoGBKqiyNJFvlrikYx1/B3rwdT6JXvS1fQCo3PecSEuKgSNuAO5+/xJSE3LjmvhpfLPxlXkxValpjT3ck=';
+var realPivotLic = 'upVcPE+wPOlpAyL7N9uhT0M/nBOseBrflwxYpzGZyYm9cY8amGDkiMnVeQKUHJDjW2y71jtk+wv50juZqrKKzQ4npiZoGBKqiyNJFvlrikYx1/B3rwdT6JXvS1fQCo3PecSEuKgSNuAO5+/xJSE3LjmvhpfLPxlX0QeIbtyyIEGTFVqWmNPdyQ==';

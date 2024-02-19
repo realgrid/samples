@@ -1,0 +1,1137 @@
+@charset "UTF-8";
+
+.rct-root {
+    font-family: var(--rct-font-family);
+    font-size: var(--rct-font-size);
+    color: #000;
+    /* background-color: white; */
+    /* word-break: break-all;
+    word-wrap: break-word; */
+    -webkit-touch-callout: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: auto;
+    -ms-touch-action: auto; 
+    text-align: initial;
+}   
+
+.rct-root text {
+    stroke: none;
+}
+
+.rct-pattern {
+    stroke: #000;
+}
+
+/** palette */
+.rct-root {
+    --color-1: #0098ff;
+    --color-2: #66d0ff;
+    --color-3: #ff5c35;
+    --color-4: #ff9f00;
+    --color-5: #ffd938;
+    --color-6: #00ac69;
+    --color-7: #91cc39;
+    --color-8: #8fc6a9;
+    --color-9: #c45db9;
+    --color-10: #ef5e99;
+    --color-11: #afa4c6;
+    --color-12: #5b63aa;
+}
+.rct-root[data-palette="gray"] {
+    --color-1: #464646;
+    --color-2: #61666a;
+    --color-3: #6f6f6d;
+    --color-4: #82898f;
+    --color-5: #8d8d8b;
+    --color-6: #9ea7a6;
+    --color-7: #acaba7;
+    --color-8: #bcbcbc;
+    --color-9: #c5c9ca;
+    --color-10: #d9d4ce;
+    --color-11: #dedede;
+    --color-12: #e8ecef;
+}
+.rct-root[data-palette="warm"] {
+    --color-1: #ccaacb;
+    --color-2: #8fc9ca;
+    --color-3: #97c1a9;
+    --color-4: #f3b0c2;
+    --color-5: #ffc7a2;
+    --color-6: #d97872;
+    --color-7: #8ba3c5;
+    --color-8: #dc97aa;
+    --color-9: #9c9cc2;
+    --color-10: #b7cadb;
+    --color-11: #c7c19d;
+    --color-12: #fbe693;
+}
+.rct-root[data-palette="cool"] {
+    --color-1: #eb455f;
+    --color-2: #ffd49c;
+    --color-3: #a4cadd;
+    --color-4: #3e4977;
+    --color-5: #faab78;
+    --color-6: #bface2;
+    --color-7: #a0bcc2;
+    --color-8: #ff7396;
+    --color-9: #6dc7c9;
+    --color-10: #7895cb;
+    --color-11: #fea1a1;
+    --color-12: #90c8ac;
+}
+.rct-root[data-palette="forest"] {
+    --color-1: #666d4d;
+    --color-2: #7f736c;
+    --color-3: #a9a389;
+    --color-4: #d0b081;
+    --color-5: #8da34e;
+    --color-6: #4f5d3a;
+    --color-7: #9d7448;
+    --color-8: #a7afa2;
+    --color-9: #9fa871;
+    --color-10: #656146;
+    --color-11: #8d877b;
+    --color-12: #422c1e;
+}
+
+.rct-root[data-palette='vintage'] {
+	--color-1: #2a9d8f;
+	--color-2: #ff9a00;
+	--color-3: #e76f51;
+	--color-4: #ffd68d;
+	--color-5: #69b85f;
+	--color-6: #6397c1;
+	--color-7: #c068a8;
+	--color-8: #8dd8a3;
+	--color-9: #f0d9be;
+	--color-10: #c2b1e3;
+	--color-11: #fc9390;
+	--color-12: #f4d470;
+}
+.rct-root[data-palette='unicorn'] {
+	--color-1: #00d6a3;
+	--color-2: #2196f3;
+	--color-3: #fe3ea5;
+	--color-4: #ffd938;
+	--color-5: #45dcff;
+	--color-6: #ff773b;
+	--color-7: #80f9c5;
+	--color-8: #f21170;
+	--color-9: #c355f5;
+	--color-10: #b2fcff;
+	--color-11: #fffde1;
+	--color-12: #98a8f8;
+}
+
+/** theme */
+.rct-control {
+    --rct-background: none;
+}
+.rct-control[data-theme="dark"] {
+    --rct-background: #262626;
+}
+.rct-control[data-theme='real'] {
+	--rct-background: #264653;
+}
+.rct-root {
+    --rct-font-family: AppleSDGothicNeo-Light, "HelveticaNeue", "Malgun Gothic", "맑은 고딕", sans-serif;
+    --rct-font-size: 16px;
+
+    --rct-focus-stroke: black;
+    --rct-focus-stroke-width: 2px;
+    --rct-text-fill: #333;
+
+    --rct-title-fill: #333;
+    --rct-subtitle-fill: #333;
+
+    --rct-body-background-stroke: none;
+
+    --rct-axis-title-fill: #333;
+    --rct-axis-line-stroke: #aaa;
+    --rct-axis-baseline-stroke: #333;
+    --rct-axis-tick-stroke: #555;
+    --rct-axis-label-fill: #555;
+    --rct-axis-grid-line-stroke: #ddd;
+    --rct-axis-grid-line-stroke-start: none;
+    --rct-axis-grid-line-stroke-end: none;
+    --rct-axis-grid-line-stroke-width: 1px;
+    --rct-axis-scrollbar-track-fill: #fdfdfd;
+    --rct-axis-scrollbar-track-stroke: #aaa;
+    --rct-axis-scrollbar-thumb-fill: lightgray;
+    --rct-axis-scrollbar-rx: 4px;
+    
+    --rct-legend-background: none;
+	--rct-legend-background-stroke: none;
+    --rct-legend-background-stroke: none;
+    --rct-legend-fill: #333;
+    --rct-legend-item-disabled: #aaa;
+    --rct-legend-item-disabled-decoration: line-through;
+
+    --rct-point-label-font-size: 0.8em;
+    --rct-point-label-font-weight: bold;
+    --rct-point-label-stroke: none;
+    --rct-point-label-fill: #333;
+
+    --rct-credits-fill: #777;
+
+    /* polar */
+    --rct-polar-xaxis-grid-line-stroke: #ccc;
+    --rct-polar-yaxis-grid-line-stroke: #ccc;
+    --rct-polar-axis-labels-fill: #555;
+
+    /* linear gauge */
+    --rct-linear-gauge-background-fill: #eee;
+    --rct-linear-gauge-value-fill: green;
+    --rct-linear-gauge-band-tick-labels-stroke: #333;
+    --rct-linear-gauge-group-label-fill: #333;
+    /** bullet gauge */
+    --rct-bullet-gauge-background-fill: #eee;
+    --rct-bullet-gauge-value-fill: #333;
+    --rct-bullet-gauge-target-fill: #333;
+    --rct-bullet-gauge-label-fill: #333;
+    --rct-bullet-gauge-scale-line-stroke: #333;
+    --rct-bullet-gauge-scale-ticks-stroke: #333;
+    --rct-bullet-gauge-scale-tick-labels-stroke: #333;
+    /* circle gauge */
+    --rct-circle-gauge-rim-fill: #ededed;
+    --rct-circle-gauge-inner-fill: none;
+    --rct-circle-gauge-label-fill: #000;
+    --rct-gauge-scale-line: #555;
+    --rct-gauge-scale-tick: #555;
+    --rct-gauge-scale-tick-labels-stroke: #333;
+    /* clock gauge */
+    --rct-clock-gauge-face-fill: white;
+    --rct-clock-gauge-rim-fill: #eee;
+    --rct-clock-gauge-rim-stroke: gray;
+    --rct-clock-gauge-tick-stroke: #333;
+    --rct-clock-gauge-minor-tick-stroke: #555;
+    --rct-clock-gauge-tick-label-fill: #333;
+    --rct-clock-gauge-label-fill: #aaa;
+    /** zoom tracker */
+    --rct-zoom-tracker-fill: #0044ff30;
+    /** series navigator */
+    --rct-navigator-handle-color: #0098ff; 
+    --rct-navigator-handle-hover-color: #55c;
+    --rct-navigator-track-fill: lightgray;
+    --rct-navigator-thumb-fill:#0098ff;
+}
+.rct-root[data-theme='dark'] {
+    --rct-focus-stroke: yellow;
+    --rct-text-fill: #fff;
+
+    --rct-title-fill: #fff;
+    --rct-subtitle-fill: #fff;
+
+    --rct-body-background-stroke: none;
+    
+    --rct-axis-title-fill: #fff;
+    --rct-axis-line-stroke: #fff;
+    --rct-axis-baseline-stroke: #fff;
+    --rct-axis-tick-stroke: #fff;
+    --rct-axis-label-fill: #fff;
+    --rct-axis-grid-line-stroke: #fff;
+    
+    --rct-legend-background: none;
+	--rct-legend-background-stroke: none;
+    --rct-legend-fill: #fff;
+    --rct-legend-item-disabled: #707070;
+    --rct-legend-item-disabled-decoration: line-through;
+
+    --rct-point-label-fill: #ddd;
+
+    --rct-credits-fill: #999;
+
+    /* polar */
+    --rct-polar-xaxis-grid-line-stroke: #ccc;
+    --rct-polar-yaxis-grid-line-stroke: #fff;
+    --rct-polar-axis-labels-fill: #fff;
+
+    /* linear gauge */
+    --rct-linear-gauge-group-label-fill: #eee;
+    /* circle gauge */
+    --rct-circle-gauge-rim-fill: #515151;
+    --rct-circle-gauge-label-fill: #fff;
+    --rct-gauge-scale-line: #fff;
+    --rct-gauge-scale-tick: #fff;
+    --rct-gauge-scale-tick-labels-stroke: #fff;
+
+    /** zoom tracker */
+    --rct-zoom-tracker-fill: #efefef40;
+}
+.rct-root[data-theme='real'] {
+    --rct-focus-stroke: yellow;
+    --rct-text-fill: #f0d9be;
+
+    --rct-title-fill: #f0d9be;
+    --rct-subtitle-fill: #f0d9be;
+
+    --rct-body-background-stroke: none;
+    
+    --rct-axis-title-fill: #f0d9be;
+    --rct-axis-line-stroke: #f0d9be;
+    --rct-axis-tick-stroke: #f0d9be;
+    --rct-axis-label-fill: #f0d9be;
+    --rct-axis-grid-line-stroke: #f0d9be;
+    
+    --rct-legend-background: none;
+	--rct-legend-background-stroke: none;
+    --rct-legend-fill: #f0d9be;
+    --rct-legend-item-disabled: #4e7b82;
+    --rct-legend-item-disabled-decoration: line-through;
+
+    --rct-point-label-fill: #ddd;
+
+    --rct-credits-fill: #999;
+
+    /* polar */
+    --rct-polar-xaxis-grid-line-stroke: #ccc;
+    --rct-polar-yaxis-grid-line-stroke: #f0d9be;
+    --rct-polar-axis-labels-fill: #f0d9be;
+
+    /* circle gauge */
+    --rct-circle-gauge-rim-fill: #515151;
+    --rct-circle-gauge-label-fill: #fff;
+    --rct-gauge-scale-line: #fff;
+    --rct-gauge-scale-tick: #fff;
+    --rct-gauge-scale-tick-labels-stroke: #fff;
+
+    /** zoom tracker */
+    --rct-zoom-tracker-fill: #efefef40;
+}
+
+/** control */
+.rct-control {
+    background-color: var(--rct-background);
+}
+
+/** root */
+.rct-root {
+    padding: 20px;
+}
+
+/** debug border */
+.rct-debug {
+    fill: none;
+    stroke: #ff000040;
+    pointer-events: none;
+}
+
+/** rich text */
+.rct-text-bold {
+    font-weight: bold;
+}
+.rct-text-italic {
+    font-style: italic;
+}
+
+/** label */
+.rct-label-dark {
+    fill: black;
+}
+.rct-label-light {
+    fill: white;
+}
+.rct-label-background {
+    fill: lightgray;
+}
+
+/** button */
+.rct-button-background {
+    padding: 2px 4px;
+    rx: 5px;
+    fill: #e0e0e0;
+    stroke: #c0c0c0;
+}
+.rct-button {
+    fill: #333;
+    font-size: 0.9em;
+}
+
+/** background */
+.rct-background {
+    fill: none;
+}
+
+/** credits */
+.rct-credits {
+    font-size: 0.7em;
+    fill: var(--rct-credits-fill);
+}
+
+/** title */
+.rct-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    fill: var(--rct-title-fill);
+}
+.rct-title-background {
+    fill: none;
+}
+.rct-subtitle {
+    margin-bottom: 10px;
+    font-size: 16px;
+    fill: var(--rct-subtitle-fill);
+}
+.rct-subtitle-background {
+    fill: none;
+}
+
+/** legend */
+.rct-legend {
+    fill: var(--rct-legend-fill);
+    stroke: none;
+    padding: 3px 6px;
+}
+.rct-legend-background {
+    fill: var(--rct-legend-background);
+    rx: 7px;
+    stroke: var(--rct-legend-background-stroke);
+}
+.rct-legend-item-label[data-hidden] {
+    fill: var(--rct-legend-item-disabled);
+    text-decoration: var(--rct-legend-item-disabled-decoration)
+}
+/* .rct-legend-item-marker {
+    stroke: none;
+} */
+.rct-legend-item-marker[data-hidden] {
+    fill: #aaa !important;
+    stroke: #aaa !important;
+}
+
+/** plot area */
+.rct-body-background {
+    stroke: var(--rct-body-background-stroke);
+    fill: none;
+}
+.rct-body-background[data-polar] {
+    stroke: none;
+}
+
+/** axis */
+.rct-axis-title {
+    font-size: 16px;
+    fill: var(--rct-axis-title-fill);
+}
+.rct-axis-title-background {
+    fill: none;
+}
+.rct-axis-line {
+    stroke: var(--rct-axis-line-stroke);
+    stroke-width: 1px;
+}
+.rct-axis-baseline {
+    stroke: var(--rct-axis-baseline-stroke);
+    stroke-width: 1px;
+}
+.rct-axis-tick {
+    stroke: var(--rct-axis-tick-stroke);
+    stroke-width: 1px;
+}
+.rct-axis-labels {
+    font-size: 14px;
+    fill: var(--rct-axis-label-fill);
+}
+/* .rct-axis-grid {
+    stroke: var(--rct-axis-grid-stroke);
+    stroke-width: 1px;
+} */
+.rct-axis-grid-line {
+    stroke: var(--rct-axis-grid-line-stroke);
+    stroke-width: var(--rct-axis-grid-line-stroke-width);
+}
+.rct-axis-break {
+    stroke: #aaa;
+    fill: white;
+    fill-opacity: 0.9;
+}
+.rct-axis-guide-label {
+    fill: #555;
+}
+.rct-axis-guide-line {
+    stroke: #555;
+    stroke-width: 2px;
+}
+.rct-axis-guide-range {
+    stroke: none;
+    fill: #0088ff;
+    fill-opacity: 0.2;
+}
+.rct-axis-scrollbar-track {
+    fill: var(--rct-axis-scrollbar-track-fill);
+    stroke: var(--rct-axis-scrollbar-track-stroke);
+    rx: var(--rct-axis-scrollbar-rx);
+}
+.rct-axis-scrollbar-thumb {
+    fill: var(--rct-axis-scrollbar-thumb-fill);
+    rx: var(--rct-axis-scrollbar-rx);
+}
+
+/** polar axis */
+.rct-polar-xaxis-line {
+    stroke: #333;
+}
+.rct-polar-xaxis-sector-line {
+    stroke: #555;
+}
+.rct-polar-xaxis-grid-line {
+    stroke: var(--rct-polar-xaxis-grid-line-stroke)
+}
+.rct-polar-yaxis-line {
+    stroke: #afafaf;
+}
+.rct-polar-yaxis-grid-line {
+    stroke: var(--rct-polar-yaxis-grid-line-stroke)
+}
+.rct-polar-axis-labels {
+    fill: var(--rct-polar-axis-labels-fill)
+}
+
+/** series */
+.rct-series[data-index="0"] {
+    fill: var(--color-1);
+    stroke: var(--color-1);
+}
+.rct-series[data-index="1"] {
+    fill: var(--color-2);
+    stroke: var(--color-2);
+}
+.rct-series[data-index="2"] {
+    fill: var(--color-3);
+    stroke: var(--color-3);
+}
+.rct-series[data-index="3"] {
+    fill: var(--color-4);
+    stroke: var(--color-4);
+}
+.rct-series[data-index="4"] {
+    fill: var(--color-5);
+    stroke: var(--color-5);
+}
+.rct-series[data-index="5"] {
+    fill: var(--color-6);
+    stroke: var(--color-6);
+}
+.rct-series[data-index="6"] {
+    fill: var(--color-7);
+    stroke: var(--color-7);
+}
+.rct-series[data-index="7"] {
+    fill: var(--color-8);
+    stroke: var(--color-8);
+}
+.rct-series[data-index="8"] {
+    fill: var(--color-9);
+    stroke: var(--color-9);
+}
+.rct-series[data-index="9"] {
+    fill: var(--color-10);
+    stroke: var(--color-10);
+}
+.rct-series[data-index="10"] {
+    fill: var(--color-11);
+    stroke: var(--color-11);
+}
+.rct-series[data-index="11"] {
+    fill: var(--color-12);
+    stroke: var(--color-12);
+}
+
+.rct-series-trendline {
+    stroke: red;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+/** data point */
+.rct-series[data-pointcolors="a"] .rct-point[data-index="0"] {
+    fill: var(--color-1);
+    stroke: var(--color-1);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="1"] {
+    fill: var(--color-2);
+    stroke: var(--color-2);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="2"] {
+    fill: var(--color-3);
+    stroke: var(--color-3);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="3"] {
+    fill: var(--color-4);
+    stroke: var(--color-4);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="4"] {
+    fill: var(--color-5);
+    stroke: var(--color-5);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="5"] {
+    fill: var(--color-6);
+    stroke: var(--color-6);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="6"] {
+    fill: var(--color-7);
+    stroke: var(--color-7);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="7"] {
+    fill: var(--color-8);
+    stroke: var(--color-8);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="8"] {
+    fill: var(--color-9);
+    stroke: var(--color-9);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="9"] {
+    fill: var(--color-10);
+    stroke: var(--color-10);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="10"] {
+    fill: var(--color-11);
+    stroke: var(--color-11);
+}
+.rct-series[data-pointcolors="a"] .rct-point[data-index="11"] {
+    fill: var(--color-12);
+    stroke: var(--color-12);
+}
+
+.rct-series[data-pointcolors="f"] .rct-point[data-index="0"] {
+    fill: var(--color-1);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="1"] {
+    fill: var(--color-2);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="2"] {
+    fill: var(--color-3);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="3"] {
+    fill: var(--color-4);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="4"] {
+    fill: var(--color-5);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="5"] {
+    fill: var(--color-6);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="6"] {
+    fill: var(--color-7);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="7"] {
+    fill: var(--color-8);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="8"] {
+    fill: var(--color-9);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="9"] {
+    fill: var(--color-10);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="10"] {
+    fill: var(--color-11);
+}
+.rct-series[data-pointcolors="f"] .rct-point[data-index="11"] {
+    fill: var(--color-12);
+}
+
+/** series */
+.rct-series {
+    opacity: inherit;
+    transition-property: opacity;
+    transition-duration: 0.7s;
+}
+.rct-series[data-unfocus] {
+    opacity: 0.2;
+}
+.rct-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-stroke) !important;
+    stroke-width: var(--rct-focus-stroke-width);
+    filter: brightness(115%);
+}
+.rct-point-labels {
+    opacity: inherit;
+    transition-property: opacity;
+    transition-duration: 0.7s;
+}
+.rct-point-labels[data-unfocus] {
+    opacity: 0.3;
+}
+
+/** rct-point 대신 여기에 지정해야 outline에 반영된다. */
+.rct-point-labels {
+    font-size: var(--rct-point-label-font-size);
+    font-weight: var(--rct-point-label-font-weight);
+    stroke: var(--rct-point-label-stroke);
+    fill: var(--rct-point-label-fill);
+}
+.rct-point-label {
+    fill-opacity: 1;
+    opacity: 1;
+}
+.rct-point-label-lines {
+    stroke: #585;
+    fill: none;
+}
+
+/** bar series */
+.rct-bar-series {
+    fill-opacity: 1;
+}
+
+/** circlebar series */
+.rct-circlebar-series .rct-point {
+    stroke: white;
+}
+
+/** barrange series */
+.rct-barrange-series {
+    fill-opacity: 0.85;
+}
+
+/** line series */
+.rct-line-series-line {
+    stroke-width: 1px;
+}
+.rct-line-series .rct-point {
+    stroke-dasharray: none;
+}
+.rct-line-series .rct-point[data-focus] {
+    stroke: #0088ff20 !important; 
+    stroke-width: 9px !important;
+    opacity: inherit !important;
+    /** TODO: 아래가 적용되지 않고 있다 */
+    transition-property: opacity;
+    transition-duration: 0.7s;
+}
+.rct-line-series-flag {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/** area series */
+.rct-area-series-area {
+    fill-opacity: 0.5;
+}
+.rct-area-series-area[data-polar] {
+    fill-opacity: 0.25;
+}
+.rct-area-series-area[data-simple] {
+    fill-opacity: 0.05;
+}
+.rct-area-series .rct-area-series-area {
+    stroke: none;
+}
+
+/** arearange series */
+.rct-arearange-series-area {
+    fill-opacity: 0.5;
+}
+.rct-arearange-series .rct-arearange-series-area {
+    stroke: none;
+}
+
+/** bubble series */
+.rct-bubble-series {
+    fill-opacity: 0.75;
+    stroke-width: 1px;
+}
+
+/** scatter series */
+.rct-scatter-series {
+    fill-opacity: 0.7;
+}
+
+/** boxplot series */
+.rct-boxplot-series {
+    stroke-width: 1;
+}
+.rct-boxplot-point-min {
+    stroke: #333;
+    stroke-width: 2;
+}
+.rct-boxplot-point-mid {
+    stroke: #333;
+    stroke-width: 2;
+}
+.rct-boxplot-point-max {
+    stroke: #333;
+    stroke-width: 2;
+}
+.rct-boxplot-point-stem {
+    stroke: #333;
+    stroke-dasharray: 2;
+}
+.rct-boxplot-series .rct-point[data-focus] .rct-boxplot-point-stem {
+    stroke: black;
+    stroke-dasharray: none;
+    stroke-width: 2px;
+}
+
+/** candlestick series */
+.rct-candlestick-series {
+    stroke-width: 1;
+    fill-opacity: 0.85;
+}
+.rct-candlestick-series .rct-point[data-focus] {
+    fill-opacity: 0.5;
+}
+.rct-candlestick-series .rct-point[data-decline] {
+    fill: #008;
+    stroke: #008;
+}
+.rct-candlestick-point-border {
+    stroke: #333;
+}
+.rct-candlestick-point-wick {
+    stroke: #003;
+}
+
+/** ohlc series */
+.rct-ohlc-series {
+    stroke-width: 2;
+}
+.rct-ohlc-series .rct-point[data-decline] {
+    stroke: #00f;
+}
+.rct-ohlc-series .rct-point[data-focus] .rct-ohlc-point-back {
+    fill: #0088ff20 !important;
+}
+.rct-ohlc-point-back {
+    stroke: none;
+}
+
+/** waterfall series */
+.rct-waterfall-series {
+    fill-opacity: 0.85;
+}
+.rct-waterfall-point-negative {
+    fill: #dd5500;
+    stroke: #dd5500;
+}
+.rct-waterfall-point-sum {
+    fill: #0055cc;
+    stroke: #0055cc;
+}
+.rct-waterfall-series-lines {
+    stroke: #77f;
+    stroke-width: 2;
+    stroke-dasharray: 2;
+}
+
+/** errobar series */
+.rct-errorbar-series .rct-point {
+    stroke: #008;
+    stroke-width: 2px;
+}
+.rct-errorbar-series .rct-point[data-focus] .rct-errorbar-point-back {
+    fill: #0088ff20 !important;
+}
+
+/** lollipop series */
+.rct-lollipop-series {
+    stroke-width: 3px;
+}
+.rct-lollipop-point-marker {
+    stroke: none;
+}
+.rct-lollipop-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-stroke);
+    stroke-width: inherit;
+}
+.rct-lollipop-series .rct-point[data-focus] .rct-lollipop-point-marker {
+    stroke: var(--rct-focus-stroke);
+    stroke-width: var(--rct-focus-stroke-width);
+}
+
+/** dumbbell series */
+.rct-dumbbell-series {
+    stroke-width: 3px;
+}
+.rct-dumbbell-point-marker {
+    stroke: none;
+}
+.rct-dumbbell-series .rct-point[data-focus] {
+    stroke: var(--rct-focus-stroke);
+    stroke-width: inherit;
+}
+.rct-dumbbell-series .rct-point[data-focus] .rct-dumbbell-point-marker {
+    stroke: var(--rct-focus-stroke);
+    stroke-width: var(--rct-focus-stroke-width);
+}
+
+/** equalizer series */
+.rct-equalizer-series {
+    fill-opacity: 0.9;
+}
+.rct-equalizer-series .rct-point[data-focus] {
+    filter: brightness(120%);
+}
+
+/** histogram */
+.rct-histogram-series .rct-point {
+    stroke: white;
+}
+
+/** vector series */
+.rct-vector-series {
+    stroke-width: 2px;
+}
+.rct-vector-series .rct-point[data-focus] {
+    stroke-width: 5px;
+}
+
+/** heatmpa series */
+.rct-heatmap-series .rct-point {
+    stroke: none;
+}
+
+/** treemap series */
+.rct-treemap-series .rct-point {
+    stroke: white;
+}
+
+/** pie series */
+.rct-pie-series .rct-point {
+    stroke: white;
+}
+.rct-pie-series-inner {
+    font-size: 20px;
+    fill: #557;
+}
+
+/** funnel series */
+.rct-funnel-series .rct-point {
+    stroke: white;
+}
+.rct-funnel-series .rct-point[data-focus] {
+    stroke: black;
+    stroke-width: 2px;
+}
+
+/** gauge */
+.rct-gauge-pane {
+    fill: none;
+}
+
+/** gauge group */
+.rct-gauge-group {
+    padding: 10px;
+}
+
+/** circle gauge */
+.rct-circle-gauge-rim {
+    fill: var(--rct-circle-gauge-rim-fill);
+}
+.rct-circle-gauge-inner {
+    fill: var(--rct-circle-gauge-inner-fill);
+}
+.rct-circle-gauge-value {
+    fill: #0098ff;
+}
+.rct-circle-gauge-value[data-stroked] {
+    fill: none;
+}
+.rct-circle-gauge-label {
+    font-size: 40px;
+    fill: var(--rct-circle-gauge-label-fill);
+    stroke: none;
+}
+.rct-circle-gauge-label[data-grouped] {
+    font-size: 20px;
+}
+.rct-circle-gauge-pin {
+    fill: white;
+    stroke: #333;
+    stroke-width: 3px;
+}
+.rct-circle-gauge-hand {
+    fill: #333;
+    stroke: none;
+}
+
+/** clock gauge */
+.rct-clock-gauge-face {
+    fill: var(--rct-clock-gauge-face-fill);
+    stroke: none;
+}
+.rct-clock-gauge-rim {
+    fill: var(--rct-clock-gauge-rim-fill);
+    stroke: var(--rct-clock-gauge-rim-stroke);
+}
+.rct-clock-gauge-tick {
+    stroke: var(--rct-clock-gauge-tick-stroke);
+    stroke-width: 2px;
+}
+.rct-clock-gauge-minor-tick {
+    stroke: var(--rct-clock-gauge-minor-tick-stroke);
+    stroke-width: 1px;
+}
+.rct-clock-gauge-tick-label {
+    stroke: none;
+    fill: var(--rct-clock-gauge-tick-label-fill);
+    font-size: 1em;
+}
+.rct-clock-gauge-pin {
+    fill: white;
+    stroke: #333;
+    stroke-width: 3px;
+}
+.rct-clock-gauge-hour {
+    fill: #333;
+}
+.rct-clock-gauge-minute {
+    fill: #333;
+}
+.rct-clock-gauge-second {
+    fill: #c00;
+}
+.rct-clock-gauge-label {
+    fill: var(--rct-clock-gauge-label-fill);
+}
+
+/** gauge scale */
+.rct-gauge-scale-line {
+    stroke: var(--rct-gauge-scale-line);
+    fill: none;
+}
+.rct-gauge-scale-ticks {
+    stroke: #555;
+    stroke: var(--rct-gauge-scale-tick);
+}
+.rct-gauge-scale-tick-labels {
+    font-size: 0.85em;
+    fill: var(--rct-gauge-scale-tick-labels-stroke);
+}
+
+/** linear gauge */
+.rct-linear-gauge-background {
+    fill: var(--rct-linear-gauge-background-fill);
+}
+.rct-linear-gauge-value {
+    fill: var(--rct-linear-gauge-value-fill);
+}
+.rct-linear-gauge-band-tick-labels {
+    font-size: 0.85em;
+    fill: var(--rct-linear-gauge-band-tick-labels-stroke);
+}
+
+/** linear gauge group */
+.rct-linear-gauge-group-label {
+    fill: var(--rct-linear-gauge-group-label-fill);
+    font-size: 1.5em;
+}
+
+/** bullet gauge */
+.rct-bullet-gauge-background {
+    fill: var(--rct-bullet-gauge-background-fill);
+}
+.rct-bullet-gauge-value {
+    fill: var(--rct-bullet-gauge-value-fill);
+}
+.rct-bullet-gauge-target {
+    fill: var(--rct-bullet-gauge-target-fill);
+}
+.rct-bullet-gauge-label {
+    font-size: 1em;
+    fill: var(--rct-bullet-gauge-label-fill);
+}
+.rct-bullet-gauge-scale-line {
+    stroke: var(--rct-bullet-gauge-scale-line-stroke);
+}
+.rct-bullet-gauge-scale-ticks {
+    stroke: var(--rct-bullet-gauge-scale-ticks-stroke);
+}
+.rct-bullet-gauge-scale-tick-labels {
+    font-size: 0.9em;
+    fill: var(--rct-bullet-gauge-scale-tick-labels-stroke);
+}
+
+/** bullet gauge group */
+.rct-bullet-gauge-group {
+    padding: 10px;
+}
+.rct-bullet-gauge-group-label {
+    font-size: 1.5em;
+}
+
+/** tooltip */
+.rct-tooltip {
+    font-size: 0.8em;
+    pointer-events: none;
+    opacity: 0.9;
+}
+.rct-tooltip-back {
+    fill: white;
+}
+.rct-tooltip-tail {
+    fill: white;
+}
+.rct-tooltip-text {
+    fill: #333;
+    stroke: none;
+}
+
+/** annotation */
+.rct-annotation-background {
+    fill: none;
+    stroke: none;
+}
+.rct-text-annotation {
+    font-size: 20px;
+    stroke: #333;
+    stroke-width: 3px;
+}
+
+/** crosshair */
+.rct-crosshair-line {
+    fill: none;
+    stroke-width: 1;
+    stroke: #80808080;
+}
+.rct-crosshair-bar {
+    stroke: none;
+    fill: #4488cc18;
+}
+.rct-crosshair-flag {
+    stroke: none;
+    fill: #555;    
+}
+.rct-crosshair-flag-text {
+    stroke: none;
+    fill: #fff;    
+}
+
+/** zoom tracker */
+.rct-zoom-tracker {
+    fill: var(--rct-zoom-tracker-fill);
+}
+
+/** series navigator */
+.rct-navigator .rct-axis-line {
+    display: none;
+}
+.rct-navigator-back {
+    fill: white;
+    stroke: #f0f0f0;
+}
+.rct-navigator-mask {
+    fill: #4488cc20;
+    /* stroke: #ccc; */
+}
+.rct-navigator-handle {
+    fill: var(--rct-navigator-handle-color);
+    stroke: var(--rct-navigator-handle-color);
+}
+.rct-navigator-handle[data-select], .rct-navigator-handle:hover {
+    fill: var(--rct-navigator-handle-hover-color);
+    stroke: var(--rct-navigator-handle-hover-color);
+}
+
+.rct-navigator-track {
+    fill: var(--rct-navigator-track-fill);
+    stroke: var(--rct-navigator-track-fill);
+}
+.rct-navigator-thumb {
+    fill: var(--rct-navigator-thumb-fill);
+    stroke: var(--rct-navigator-thumb-fill);
+}
