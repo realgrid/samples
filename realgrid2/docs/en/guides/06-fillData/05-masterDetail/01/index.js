@@ -206,7 +206,7 @@ function createMasterGrid() {
   masterProvider.setFields(fields);
   masterGrid.setColumns(columns);
 
-  masterGrid.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  masterGrid.displayOptions.emptyMessage = "There is no data to display.";
   masterGrid.displayOptions.rowHeight = 36;
   masterGrid.header.height = 40;
   masterGrid.footer.height = 40;
@@ -232,7 +232,7 @@ function createDetailGrid() {
   detailProvider.setFields(fields1);
   detailGrid.setColumns(columns1);
 
-  detailGrid.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  detailGrid.displayOptions.emptyMessage = "There is no data to display.";
   detailGrid.displayOptions.rowHeight = 36;
   detailGrid.header.height = 40;
   detailGrid.footer.height = 40;

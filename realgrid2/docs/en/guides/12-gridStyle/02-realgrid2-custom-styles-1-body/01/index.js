@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   gridView = new RealGrid.GridView('realgrid');
 
   gridView.setDataSource(dataProvider);
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   // dataProvider.setFields(fields);
   // gridView.setColumns(columns);
   // dataProvider.setRows(samples);

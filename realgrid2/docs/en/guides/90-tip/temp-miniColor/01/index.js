@@ -23,7 +23,7 @@ var columns = [
     fieldName: "KorName",
     width: "60",
     header: {
-      text: "이름"
+      text: "Name"
     }
   },
   {
@@ -31,7 +31,7 @@ var columns = [
     fieldName: "Gender",
     width: "40",
     header: {
-      text: "성별"
+      text: "Gender"
     }
   },
   {
@@ -51,7 +51,7 @@ var columns = [
     fieldName: "Age",
     width: "40",
     header: {
-      text: "나이"
+      text: "Age"
     },
     styleName: "right-column"
   },
@@ -60,7 +60,7 @@ var columns = [
     fieldName: "Phone",
     width: "100",
     header: {
-      text: "전화번호"
+      text: "Phone"
     }
   },
   {
@@ -68,7 +68,7 @@ var columns = [
     fieldName: "KorCountry",
     width: "100",
     header: {
-      text: "투자국가"
+      text: "Country"
     }
   },
   {
@@ -76,7 +76,7 @@ var columns = [
     fieldName: "StartDate",
     width: "100",
     header: {
-      text: "최초납입일"
+      text: "Start Date"
     }
   },
   {
@@ -85,7 +85,7 @@ var columns = [
     width: "50",
     numberFormat: "0.00",
     header: {
-      text: "이율"
+      text: "Interest Rate"
     },
     styleName: "right-column"
   },
@@ -95,7 +95,7 @@ var columns = [
     width: "80",
     numberFormat: "#,##0",
     header: {
-      text: "납입금"
+      text: "Payment"
     },
     styleName: "right-column"
   }
@@ -135,7 +135,7 @@ function createGrid(container) {
 
   gridView.setColumns(columns);
 
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.displayOptions.rowHeight = 28;
   gridView.header.height = 40;
   gridView.footer.height = 40;

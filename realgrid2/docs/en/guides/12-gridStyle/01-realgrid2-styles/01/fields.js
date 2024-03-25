@@ -27,8 +27,8 @@ const fields = [
     fieldName: "OrderDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
-    amText: "오전",
-    pmText: "오후"
+    amText: "AM",
+    pmText: "PM"
   },
   {
     fieldName: "CardNumber",
@@ -42,15 +42,15 @@ const fields = [
     fieldName: "StartDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
-    amText: "오전",
-    pmText: "오후"
+    amText: "AM",
+    pmText: "PM"
   },
   {
     fieldName: "EndDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
-    amText: "오전",
-    pmText: "오후"
+    amText: "AM",
+    pmText: "PM"
   },
   {
     fieldName: "ToMonth",

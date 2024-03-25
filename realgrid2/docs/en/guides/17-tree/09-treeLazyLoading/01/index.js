@@ -59,7 +59,7 @@ function createGrid(container) {
   treeProvider.setFields(fields);
   treeView.setColumns(columns);
 
-  treeView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  treeView.displayOptions.emptyMessage = "There is no data to display.";
   treeView.displayOptions.rowHeight = 36;
   treeView.header.height = 40;
   treeView.footer.height = 40;

@@ -30,7 +30,7 @@ var columns = [
     width: "60",
     fillWidth: 1,
     header: {
-      text: "이름"
+      text: "Name"
     }
   },
   {
@@ -39,7 +39,7 @@ var columns = [
     width: "40",
     fillWidth: 1,
     header: {
-      text: "성별"
+      text: "Gender"
     }
   },
   {
@@ -47,7 +47,7 @@ var columns = [
     fieldName: "Age",
     width: "40",
     header: {
-      text: "나이"
+      text: "Age"
     },
     styleName: "right-column"
   },
@@ -56,7 +56,7 @@ var columns = [
     fieldName: "Phone",
     width: "100",
     header: {
-      text: "전화번호"
+      text: "Phone"
     }
   },
   {
@@ -64,7 +64,7 @@ var columns = [
     fieldName: "ProductId",
     width: "120",
     header: {
-      text: "제품번호"
+      text: "Product Code"
     }
   }
 ];
@@ -96,7 +96,7 @@ function createGrid(container) {
   dataProvider.setFields(fields);
 
   gridView = new RealGrid.GridView(container);
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.header.height = 40;
   gridView.displayOptions.rowHeight = 36;
   gridView.footer.height = 40;

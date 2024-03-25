@@ -85,7 +85,7 @@ function createGrid(container) {
   dataProvider.setFields(fields);
 
   gridView = new RealGrid.GridView(container);
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.header.height = 40;
   gridView.displayOptions.rowHeight = 36;
   gridView.footer.height = 40;

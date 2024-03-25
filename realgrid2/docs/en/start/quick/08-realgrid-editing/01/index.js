@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       fieldName: "KorName",
       width: "100",
       header: {
-        text: "이름",
+        text: "Name",
       },
     },
     {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       fieldName: "Gender",
       width: "70",
       header: {
-        text: "성별",
+        text: "Gender",
       },
     },
     {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       width: "60",
       numberFormat: "00",
       header: {
-        text: "나이",
+        text: "Age",
       },
     },
   ]);
