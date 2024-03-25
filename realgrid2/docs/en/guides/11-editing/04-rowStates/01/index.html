@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid/latest/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid/latest/realgrid-lic.js"></script>
+    <script src="/public/realgrid/latest/realgrid.min.js"></script>
+    <script src="/public/realgrid/latest/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <p>
+        <strong>행 상태</strong><br />
+        <input type="radio" name="rbRowState" value="created" checked="checked" />
+        created <input type="radio" name="rbRowState" value="updated" /> updated
+        <input type="radio" name="rbRowState" value="deleted" /> deleted
+        <input type="radio" name="rbRowState" value="createAndDeleted" /> createAndDeleted
+        <input type="radio" name="rbRowState" value="none" /> none
+      </p>
+      <button onclick="btnSetRowState()">setRowState 상태 변경하기</button>
+      <button onclick="btnSetRowStates()">SetRowStates(CheckBar에 체크된 것들)</button>
+      <p>
+        <input
+          type="radio"
+          name="rbRowStateArray"
+          value="all"
+          checked="checked"
+        />
+        all <input type="radio" name="rbRowStateArray" value="created" /> created
+        <input type="radio" name="rbRowStateArray" value="updated" /> updated
+        <input type="radio" name="rbRowStateArray" value="deleted" /> deleted
+        <input type="radio" name="rbRowStateArray" value="createAndDeleted" /> createAndDeleted
+        <input type="radio" name="rbRowStateArray" value="none" /> none
+      </p>
+      <button onclick="btnRowStateArray()">행 인덱스 가져오기</button>
+      <p>
+        <input
+          type="radio"
+          name="rbRowStateCount"
+          value="all"
+          checked="checked"
+        />
+        all <input type="radio" name="rbRowStateCount" value="created" /> created
+        <input type="radio" name="rbRowStateCount" value="updated" /> updated
+        <input type="radio" name="rbRowStateCount" value="deleted" /> deleted
+        <input type="radio" name="rbRowStateCount" value="createAndDeleted" /> createAndDeleted
+        <input type="radio" name="rbRowStateCount" value="none" /> none
+      </p>
+      <button onclick="btnRowStateCount()">카운트 가져오기</button>
+    </div>
+    <div id="realgrid"></div>
+  </body>
+</html>

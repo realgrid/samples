@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid/latest/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid/latest/realgrid-lic.js"></script>
+    <script src="/public/realgrid/latest/realgrid.min.js"></script>
+    <script src="/public/realgrid/latest/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <button
+        onclick="changeCSS('/public/realgrid/latest/realgrid-style.css', 1);"
+      >
+        Light (default)
+      </button>
+      <button
+        onclick="changeCSS('/public/realgrid/latest/realgrid-dark.css', 1);"
+      >
+        Dark
+      </button>
+      <button
+        onclick="changeCSS('/public/realgrid/latest/realgrid-white.css', 1);"
+      >
+        White
+      </button>
+      <button
+        onclick="changeCSS('/public/realgrid/latest/realgrid-sky-blue.css', 1);"
+      >
+        Sky Blue
+      </button>
+      <button
+        onclick="changeCSS('/public/realgrid/latest/realgrid-galaxy-blue.css', 1);"
+      >
+        Galaxy Blue
+      </button>
+      <button
+        onclick="changeCSS('/public/realgrid/latest/realgrid-red-wine.css', 1);"
+      >
+        Red Wine
+      </button>
+      <button
+        onclick="changeCSS('/public/realgrid/latest/realgrid-high-contrast.css', 1);"
+      >
+        High Contrast
+      </button>
+    </div>
+    <div id="realgrid"></div>
+  </body>
+</html>
