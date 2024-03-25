@@ -160,7 +160,7 @@ var httpRequest;
 function setProvider(filename) {
   httpRequest = new XMLHttpRequest();
   httpRequest.onreadystatechange = loadData;
-  httpRequest.open("GET", "/public/data/" + filename);
+  httpRequest.open("GET", "/public/data/en/" + filename);
   httpRequest.send();
 }
 
@@ -177,6 +177,7 @@ function loadData() {
 var dataProvider, gridContainer, grid;
 
 function createGrid(container) {
+  RealGrid.setLocale('en');
   dataProvider = new RealGrid.LocalDataProvider();
   gridView = new RealGrid.GridView(container);
   gridView.setDataSource(dataProvider);

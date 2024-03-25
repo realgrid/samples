@@ -248,7 +248,7 @@ var httpRequest;
 function setProvider(filename) {
     httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = loadData;
-    httpRequest.open("GET", "/public/data/" + filename);
+    httpRequest.open("GET", "/public/data/en/" + filename);
     httpRequest.send();
 }
 
