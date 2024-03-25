@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/* realgrid custom styles */
+
+
+.pink-cell {
+  font-weight: bold;
+  color: pink;
+}
+
+#actions {
+  height: 50px;
+}
+
+#realgrid {
+  width: 100%;
+  height: 450px; /* for WebKit */
+}
+
+.right-column {
+  text-align: right;
+}
+
+.left-column {
+  text-align: left;
+}
+
+.orange-column{
+  background: #ff8b00;
+}
+
+.multi-line-css {
+  white-space: pre;
+  background: #ff8b00;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid/latest/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid/latest/realgrid-lic.js"></script>
+    <script src="/public/realgrid/latest/realgrid.min.js"></script>
+    <script src="/public/realgrid/latest/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">자식들이 `표시`되고 있을 때</div>
+        <input
+          type="radio"
+          name="expanded"
+          value="header"
+          checked="checked"
+          onclick="expandedAdornmentsChange(this.value)"
+        />
+        <label style="vertical-align: middle;">HEADER</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input
+          type="radio"
+          name="expanded"
+          value="both"
+          onclick="expandedAdornmentsChange(this.value)"
+        />
+        <label style="vertical-align: middle;">BOTH</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input
+          type="radio"
+          name="expanded"
+          value="summary"
+          onclick="expandedAdornmentsChange(this.value)"
+        />
+        <label style="vertical-align: middle;">SUMMARY</label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">자식들이 `감춰진 상태`일 때</div>
+        <input
+          type="radio"
+          name="collapsed"
+          value="footer"
+          checked="checked"
+          onclick="collapsedAdornmentsChange(this.value)"
+        />
+        <label style="vertical-align: middle;">FOOTER</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input
+          type="radio"
+          name="collapsed"
+          value="header"
+          onclick="collapsedAdornmentsChange(this.value)"
+        />
+        <label style="vertical-align: middle;">HEADER</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="collapsed" value="both" onclick="collapsedAdornmentsChange(this.value)"/>
+        <label style="vertical-align: middle;">BOTH</label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">Expander 표시</div>
+        <input
+          type="radio"
+          name="expander"
+          value="default"
+          checked="checked"
+          onclick="expanderChange(this.value)"
+        />
+        <label style="vertical-align: middle;">표시</label
+        >&nbsp;&nbsp;&nbsp;&nbsp;
+        <input
+          type="radio"
+          name="expander"
+          value="none"
+          onclick="expanderChange(this.value)"
+        />
+        <label style="vertical-align: middle;">감춤</label>
+      </div>
+    </div>
+    <div id="realgrid"></div>
+  </body>
+</html>

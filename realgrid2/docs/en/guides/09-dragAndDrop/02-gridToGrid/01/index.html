@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid/latest/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid/latest/realgrid-lic.js"></script>
+    <script src="/public/realgrid/latest/realgrid.min.js"></script>
+    <script src="/public/realgrid/latest/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div style="display: inline-block; width: 100%; height: 500px;">
+      <div
+        id="realgrid"
+        style="
+          display: inline-block;
+          margin-left: 1%;
+          width: 45%;
+          height: 100%;
+        "
+      ></div>
+      <div
+        id="realgrid2"
+        style="
+          display: inline-block;
+          margin-left: 3%;
+          width: 45%;
+          height: 100%;
+        "
+      ></div>
+    </div>
+    <font size="2">dropMode</font>
+    <select id="dropMode" onchange="setDropMode()">
+      <option value="copy">copy</option>
+      <option value="move">move</option> </select
+    >&nbsp;&nbsp;
+    <font size="2">DropCallback</font>
+    <input
+      id="checkbox_DropCallback"
+      onchange="setDropCallback()"
+      type="checkbox"
+      value="DropCallback"
+      style="margin: 3px;"
+    />
+  </body>
+</html>

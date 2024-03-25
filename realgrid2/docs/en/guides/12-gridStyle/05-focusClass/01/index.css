@@ -1,0 +1,12 @@
+#realgrid {
+  width: 100%;
+  height: 390px;
+}
+
+.rg-focused-cell{
+  background: rgb(241, 114, 9);
+}
+
+.rg-focused-row{
+  background: #FFFF00;
+}

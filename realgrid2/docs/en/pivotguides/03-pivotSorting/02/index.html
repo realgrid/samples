@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+        <script src="/public/js/jquery-3.5.0.min.js"></script>
+    <script src="/public/js/jszip.min.js"></script>
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid/latest/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid/latest/realgrid-lic.js"></script>
+    <script src="/public/realgrid/latest/realgrid.min.js"></script>
+    <script src="/public/realgrid/latest/libs/jszip.min.js"></script>
+
+    <link href="/public/realpivot/latest/css/default.css" rel="stylesheet" />
+    <script
+      type="text/javascript"
+      src="/public/realpivot/lic/realpivot-lic.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/public/realpivot/latest/messages/realpivot-messages.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/public/realpivot/latest/realpivot_eval.min.js"
+    ></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <button onclick="btnValueSort()">판매수량 값 기준 정렬</button>
+      <div id="actions">
+        <span id="ellapse" style="font-size: 12px;"></span>
+      </div>
+    </div>
+    <div id="realpivot"></div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid/latest/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid/latest/realgrid-lic.js"></script>
+    <script src="/public/realgrid/latest/realgrid.min.js"></script>
+    <script src="/public/realgrid/latest/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+      <span>DropOtherElement</span>
+      <input
+        id="checkbox_DropOther"
+        onchange="setDropOther()"
+        type="checkbox"
+        value="DropOtherElement"
+        style="margin: 3px;"
+        checked
+      />
+    <div style="display: inline-block; width: 100%; height: 500px;">
+      <div
+        id="realgrid"
+        style="
+          display: inline-block;
+          margin-left: 1%;
+          width: 45%;
+          height: 100%;
+        "
+      ></div>
+      <div style="display: inline-block; margin-left: 3%; width: 45%; height: 100%; overflow: hidden;">
+        범위선택 행의 "이름" 데이터 출력
+        <div id="div1" style="display: inline-block; width: 100%; height: 40%;border:1px solid black;box-sizing: border-box;text-align: center;">Drop Div1</div>
+        <div id="dummy" style="display: inline-block; width: 100%; height: 8%;"></div>
+        범위선택 데이터 출력
+        <div id="div2" style="display: inline-block; width: 100%; height: 40%;border:1px solid black;box-sizing: border-box;text-align: center;white-space: pre;">Drop Div2</div>
+      </div>
+    </div>
+  </body>
+</html>

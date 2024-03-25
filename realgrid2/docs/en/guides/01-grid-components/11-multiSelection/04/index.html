@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- iFrame -->
+    <link href="/public/styles/iframe.css" rel="stylesheet" />
+    
+
+    <!-- JQuery -->
+    <script src="/public/js/jquery-3.5.0.min.js"></script>
+
+    <!-- RealGrid -->
+    <link href="/public/realgrid/latest/realgrid-style.css" rel="stylesheet" />
+    <script src="/public/realgrid/latest/realgrid-lic.js"></script>
+    <script src="/public/realgrid/latest/realgrid.min.js"></script>
+    <script src="/public/realgrid/latest/libs/jszip.min.js"></script>
+
+    <!-- Custom -->
+    <link href="./index.css" rel="stylesheet" />
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <div class="toolbar">
+      <button onclick="btnClearTextarea()">지우기</button>
+      <button onclick="btnGetSelectionInfo()">선택영역 정보 가져오기</button>
+    </div>
+    <textarea id="eventLog" style="width:100%; height:200px; border: 2px solid #5d8cc9"></textarea>
+    <div id="realgrid"></div>
+  </body>
+</html>
