@@ -55,6 +55,7 @@ var columns = [{
 var dataProvider, gridView;
 
 function createGrid(container) {
+  RealGrid.setLocale('en');
   dataProvider = new RealGrid.LocalDataProvider();
   dataProvider.setFields(fields);
 
