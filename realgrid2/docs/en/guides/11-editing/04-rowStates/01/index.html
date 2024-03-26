@@ -23,15 +23,15 @@
   <body>
     <div class="toolbar">
       <p>
-        <strong>행 상태</strong><br />
+        <strong>Row Status</strong><br />
         <input type="radio" name="rbRowState" value="created" checked="checked" />
         created <input type="radio" name="rbRowState" value="updated" /> updated
         <input type="radio" name="rbRowState" value="deleted" /> deleted
         <input type="radio" name="rbRowState" value="createAndDeleted" /> createAndDeleted
         <input type="radio" name="rbRowState" value="none" /> none
       </p>
-      <button onclick="btnSetRowState()">setRowState 상태 변경하기</button>
-      <button onclick="btnSetRowStates()">SetRowStates(CheckBar에 체크된 것들)</button>
+      <button onclick="btnSetRowState()">Change setRowState state</button>
+      <button onclick="btnSetRowStates()">SetRowStates (things checked in CheckBar)</button>
       <p>
         <input
           type="radio"
@@ -45,7 +45,7 @@
         <input type="radio" name="rbRowStateArray" value="createAndDeleted" /> createAndDeleted
         <input type="radio" name="rbRowStateArray" value="none" /> none
       </p>
-      <button onclick="btnRowStateArray()">행 인덱스 가져오기</button>
+      <button onclick="btnRowStateArray()">Get row index</button>
       <p>
         <input
           type="radio"
@@ -59,7 +59,7 @@
         <input type="radio" name="rbRowStateCount" value="createAndDeleted" /> createAndDeleted
         <input type="radio" name="rbRowStateCount" value="none" /> none
       </p>
-      <button onclick="btnRowStateCount()">카운트 가져오기</button>
+      <button onclick="btnRowStateCount()">Get Count</button>
     </div>
     <div id="realgrid"></div>
   </body>
