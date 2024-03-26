@@ -4,7 +4,7 @@ const columns = [
     fieldName: "KorName",
     width: "60",
     header: {
-      text: "이름"
+      text: "Name"
     }
   },
   {
@@ -12,7 +12,7 @@ const columns = [
     fieldName: "Gender",
     width: "40",
     header: {
-      text: "성별"
+      text: "Gender"
     },
     "lookupDisplay": true,
     "values": ["남", "여"],
@@ -27,7 +27,7 @@ const columns = [
     fieldName: "Age",
     width: "40",
     header: {
-      text: "나이"
+      text: "Age"
     },
     styleName: "right-column"
   },
@@ -36,7 +36,7 @@ const columns = [
     fieldName: "Phone",
     width: "100",
     header: {
-      text: "전화번호"
+      text: "Phone"
     }
   },
   {
@@ -44,7 +44,7 @@ const columns = [
     fieldName: "KorCountry",
     width: "100",
     header: {
-      text: "투자국가"
+      text: "Country"
     }
   },
   {
@@ -52,7 +52,7 @@ const columns = [
     fieldName: "OrderDate",
     width: "100",
     header: {
-      text: "주문일자"
+      text: "Order Date"
     }
   },
   {
@@ -60,7 +60,7 @@ const columns = [
     fieldName: "CardNumber",
     width: "140",
     header: {
-      text: "카드번호"
+      text: "Card No."
     }
   },
   {
@@ -68,7 +68,7 @@ const columns = [
     fieldName: "Monetary",
     width: "40",
     header: {
-      text: "통화"
+      text: "Monetary"
     }
   },
   {
@@ -76,7 +76,7 @@ const columns = [
     fieldName: "StartDate",
     width: "100",
     header: {
-      text: "최초납입일"
+      text: "Start Date"
     }
   },
   {
@@ -84,7 +84,7 @@ const columns = [
     fieldName: "EndDate",
     width: "100",
     header: {
-      text: "종료일"
+      text: "End Date"
     }
   },
   {
@@ -92,7 +92,7 @@ const columns = [
     fieldName: "ToMonth",
     width: "50",
     header: {
-      text: "납입 횟수"
+      text: "Pay Cnt."
     },
     styleName: "right-column"
   },
@@ -101,7 +101,7 @@ const columns = [
     fieldName: "Month",
     width: "50",
     header: {
-      text: "남은 횟수"
+      text: "Residuum"
     },
     styleName: "right-column"
   },
@@ -111,7 +111,7 @@ const columns = [
     width: "50",
     numberFormat: "0.00",
     header: {
-      text: "이율"
+      text: "Interest Rate"
     },
     styleName: "right-column"
   },
@@ -121,7 +121,7 @@ const columns = [
     width: "80",
     numberFormat: "#,##0",
     header: {
-      text: "납입금"
+      text: "Payment"
     },
     styleName: "right-column"
   },
@@ -131,7 +131,7 @@ const columns = [
     width: "80",
     numberFormat: "#,##0",
     header: {
-      text: "만기금액"
+      text: "Save Maturity"
     },
     styleName: "right-column"
   },
@@ -141,7 +141,7 @@ const columns = [
     width: "80",
     numberFormat: "#,##0",
     header: {
-      text: "현재잔액"
+      text: "Currency Save"
     },
     styleName: "right-column"
   }

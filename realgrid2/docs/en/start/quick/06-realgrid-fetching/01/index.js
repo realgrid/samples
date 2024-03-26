@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
       fieldName: "KorName",
       width: "70",
       header: {
-        text: "이름",
+        text: "Name",
       },
     },
   ]);

@@ -90,7 +90,7 @@ var fields = [
       fieldName: "KorName",
       width: "70",
       header: {
-        text: "이름"
+        text: "Name"
       }
     },
     {
@@ -98,7 +98,7 @@ var fields = [
       fieldName: "Gender",
       width: "55",
       header: {
-        text: "성별"
+        text: "Gender"
       },
       styleCallback: function(grid,dataCell){
         var ret = {}
@@ -117,7 +117,7 @@ var fields = [
       fieldName: "Age",
       width: "55",
       header: {
-        text: "나이"
+        text: "Age"
       }
     },
     {
@@ -125,7 +125,7 @@ var fields = [
       fieldName: "Phone",
       width: "130",
       header: {
-        text: "전화번호"
+        text: "Phone"
       },
       styleName:"orange-column"
     },
@@ -134,7 +134,7 @@ var fields = [
       fieldName: "ProductId",
       width: "150",
       header: {
-        text: "제품번호"
+        text: "Product Code"
       }
     },
     {
@@ -142,7 +142,7 @@ var fields = [
       fieldName: "KorCountry",
       width: "100",
       header: {
-        text: "투자국가",
+        text: "Country",
         styleName: "orange-column"
       }
     },
@@ -151,7 +151,7 @@ var fields = [
       fieldName: "OrderDate",
       width: "100",
       header: {
-        text: "주문일자"
+        text: "Order Date"
       }
     },
     {
@@ -159,7 +159,7 @@ var fields = [
       fieldName: "CardNumber",
       width: "170",
       header: {
-        text: "카드번호"
+        text: "Card No."
       },
       styleName: "blue-column cursor"
     },
@@ -168,7 +168,7 @@ var fields = [
       fieldName: "Monetary",
       width: "40",
       header: {
-        text: "통화"
+        text: "Monetary"
       }
     },
     {
@@ -176,7 +176,7 @@ var fields = [
       fieldName: "StartDate",
       width: "100",
       header: {
-        text: "최초납입일"
+        text: "Start Date"
       }
     },
     {
@@ -184,7 +184,7 @@ var fields = [
       fieldName: "EndDate",
       width: "100",
       header: {
-        text: "종료일"
+        text: "End Date"
       }
     },
     {
@@ -192,7 +192,7 @@ var fields = [
       fieldName: "ToMonth",
       width: "40",
       header: {
-        text: "납입 횟수"
+        text: "Pay Cnt."
       }
     },
     {
@@ -200,7 +200,7 @@ var fields = [
       fieldName: "Month",
       width: "40",
       header: {
-        text: "남은 횟수"
+        text: "Residuum"
       }
     },
     {
@@ -209,7 +209,7 @@ var fields = [
       width: "40",
       numberFormat: "0.00",
       header: {
-        text: "이율"
+        text: "Interest Rate"
       }
     },
     {
@@ -218,7 +218,7 @@ var fields = [
       width: "80",
       numberFormat: "#,##0",
       header: {
-        text: "납입금"
+        text: "Payment"
       }
     },
     {
@@ -227,7 +227,7 @@ var fields = [
       width: "80",
       numberFormat: "#,##0",
       header: {
-        text: "만기금액"
+        text: "Save Maturity"
       }
     },
     {
@@ -236,7 +236,7 @@ var fields = [
       width: "80",
       numberFormat: "#,##0",
       header: {
-        text: "현재잔액"
+        text: "Currency Save"
       }
     }
   ];

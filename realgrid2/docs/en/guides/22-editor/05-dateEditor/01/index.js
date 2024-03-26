@@ -299,7 +299,7 @@ function createGrid(container) {
       grid.fillEditSearchItems(index.column, text, items);
   };
 
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.displayOptions.rowHeight = 36;
   gridView.header.height = 40;
   gridView.footer.height = 40;

@@ -22,7 +22,7 @@ var columns = [
     fieldName: "Gender",
     width: "40",
     header: {
-      text: "성별"
+      text: "Gender"
     }
   },
   {
@@ -30,7 +30,7 @@ var columns = [
     fieldName: "Age",
     width: "40",
     header: {
-      text: "나이"
+      text: "Age"
     },
     styleName: "right-column"
   },
@@ -98,7 +98,7 @@ function createGrid(container) {
 
   gridView.setColumns(columns);
 
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.displayOptions.rowHeight = 120;
   gridView.header.height = 40;
   gridView.footer.height = 40;

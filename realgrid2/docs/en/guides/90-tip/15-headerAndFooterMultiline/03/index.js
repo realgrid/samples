@@ -189,7 +189,7 @@ function createGrid(container) {
   RealGrid.setLocale('en');
   dataProvider = new RealGrid.LocalDataProvider();
   gridView = new RealGrid.GridView(container);
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.displayOptions.rowHeight = 36;
   gridView.footer.height = 40;
   gridView.stateBar.width = 16;

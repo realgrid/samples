@@ -248,7 +248,7 @@ function createGrid(container) {
 
   setProvider("series_data.json");
 
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.displayOptions.rowHeight = 36;
   gridView.header.height = 40;
   gridView.footer.height = 40;
@@ -256,7 +256,7 @@ function createGrid(container) {
   gridView.editOptions.insertable = true;
   gridView.editOptions.appendable = true;
 
-  gridView2.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView2.displayOptions.emptyMessage = "There is no data to display.";
   gridView2.displayOptions.rowHeight = 36;
   gridView2.header.height = 40;
   gridView2.footer.height = 40;

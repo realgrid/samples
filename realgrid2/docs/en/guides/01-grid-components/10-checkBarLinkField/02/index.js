@@ -38,8 +38,8 @@ var fields = [
     fieldName: "OrderDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
-    amText: "오전",
-    pmText: "오후"
+    amText: "AM",
+    pmText: "PM"
   },
   {
     fieldName: "CardNumber",
@@ -53,15 +53,15 @@ var fields = [
     fieldName: "StartDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
-    amText: "오전",
-    pmText: "오후"
+    amText: "AM",
+    pmText: "PM"
   },
   {
     fieldName: "EndDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
-    amText: "오전",
-    pmText: "오후"
+    amText: "AM",
+    pmText: "PM"
   },
   {
     fieldName: "ToMonth",
@@ -99,7 +99,7 @@ var columns = [
     fieldName: "KorName",
     width: "60",
     header: {
-      text: "이름"
+      text: "Name"
     }
   },
   {
@@ -116,7 +116,7 @@ var columns = [
     fieldName: "Gender",
     width: "40",
     header: {
-      text: "성별"
+      text: "Gender"
     }
   },
   {
@@ -124,7 +124,7 @@ var columns = [
     fieldName: "Age",
     width: "40",
     header: {
-      text: "나이"
+      text: "Age"
     },
     styleName: "right-column"
   },
@@ -134,7 +134,7 @@ var columns = [
     width: "100",
     styleName: "right-column",
     header: {
-      text: "전화번호"
+      text: "Phone"
     }
   },
   {
@@ -143,7 +143,7 @@ var columns = [
     width: "120",
     styleName: "right-column",
     header: {
-      text: "제품번호"
+      text: "Product Code"
     }
   },
   {
@@ -152,7 +152,7 @@ var columns = [
     width: "100",
     styleName: "right-column",
     header: {
-      text: "투자국가"
+      text: "Country"
     }
   },
   {
@@ -160,7 +160,7 @@ var columns = [
     fieldName: "OrderDate",
     width: "100",
     header: {
-      text: "주문일자"
+      text: "Order Date"
     }
   },
   {
@@ -168,7 +168,7 @@ var columns = [
     fieldName: "CardNumber",
     width: "140",
     header: {
-      text: "카드번호"
+      text: "Card No."
     }
   },
   {
@@ -176,7 +176,7 @@ var columns = [
     fieldName: "Monetary",
     width: "40",
     header: {
-      text: "통화"
+      text: "Monetary"
     }
   },
   {
@@ -184,7 +184,7 @@ var columns = [
     fieldName: "StartDate",
     width: "100",
     header: {
-      text: "최초납입일"
+      text: "Start Date"
     }
   },
   {
@@ -192,7 +192,7 @@ var columns = [
     fieldName: "EndDate",
     width: "100",
     header: {
-      text: "종료일"
+      text: "End Date"
     }
   },
   {
@@ -200,7 +200,7 @@ var columns = [
     fieldName: "ToMonth",
     width: "50",
     header: {
-      text: "납입 횟수"
+      text: "Pay Cnt."
     },
     styleName: "right-column"
   },
@@ -209,7 +209,7 @@ var columns = [
     fieldName: "Month",
     width: "50",
     header: {
-      text: "남은 횟수"
+      text: "Residuum"
     },
     styleName: "right-column"
   },
@@ -218,7 +218,7 @@ var columns = [
     fieldName: "InterestRate",
     width: "50",
     header: {
-      text: "이율"
+      text: "Interest Rate"
     },
     styleName: "right-column"
   },
@@ -227,7 +227,7 @@ var columns = [
     fieldName: "SaveCost",
     width: "70",
     header: {
-      text: "납입금"
+      text: "Payment"
     },
     styleName: "right-column"
   },
@@ -236,7 +236,7 @@ var columns = [
     fieldName: "SaveMaturity",
     width: "120",
     header: {
-      text: "만기금액"
+      text: "Save Maturity"
     },
     styleName: "right-column"
   },
@@ -245,7 +245,7 @@ var columns = [
     fieldName: "CurrentSave",
     width: "80",
     header: {
-      text: "현재잔액"
+      text: "Currency Save"
     },
     styleName: "right-column"
   }
@@ -281,7 +281,7 @@ function createGrid(container) {
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
 
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.displayOptions.rowHeight = 36;
   gridView.header.height = 40;
   gridView.footer.height = 40;

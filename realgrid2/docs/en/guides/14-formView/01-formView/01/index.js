@@ -13,8 +13,8 @@ var fields = [
     fieldName: "OrderDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
-    amText: "오전",
-    pmText: "오후"
+    amText: "AM",
+    pmText: "PM"
   },
   {
     fieldName: "SaveCost",
@@ -32,7 +32,7 @@ var columns = [
     fieldName: "KorName",
     width: "60",
     header: {
-      text: "이름"
+      text: "Name"
     }
   },
   {
@@ -40,7 +40,7 @@ var columns = [
     fieldName: "Gender",
     width: "40",
     header: {
-      text: "성별"
+      text: "Gender"
     }
   },
   {
@@ -52,7 +52,7 @@ var columns = [
     },
     editButtonVisibility: "always",
     header: {
-      text: "주문일자"
+      text: "Order Date"
     }
   },
   {
@@ -64,7 +64,7 @@ var columns = [
     },
     numberFormat: "#,##0",
     header: {
-      text: "납입금"
+      text: "Payment"
     },
     styleName: "right-column"
   },
@@ -77,7 +77,7 @@ var columns = [
     },
     numberFormat: "#,##0",
     header: {
-      text: "만기금액"
+      text: "Save Maturity"
     },
     styleName: "right-column"
   }
@@ -113,7 +113,7 @@ function createGrid(container) {
   dataProvider.setFields(fields);
   gridView.setColumns(columns);
 
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.displayOptions.rowHeight = 36;
   gridView.header.height = 40;
   gridView.footer.height = 40;

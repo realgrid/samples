@@ -20,14 +20,14 @@ var columns = [{
   name: "col1",
   fieldName: "KorName",
   header: {
-    text: "이름"
+    text: "Name"
   },
   width: 150
 },{
   name: "col2",
   fieldName: "Gender",
   header: {
-    text: "성별"
+    text: "Gender"
   },
   width: 150
 },{
@@ -45,7 +45,7 @@ var columns = [{
   name: "col4",
   fieldName: "Age",
   header: {
-    text: "나이"
+    text: "Age"
   },
   width: 150,
   numberFormat: "##"
@@ -85,7 +85,7 @@ $(function () {
   gridView = new RealGrid.GridView("realgrid");  
   gridView.setDataSource(dataProvider);
 
-  gridView.displayOptions.emptyMessage = "표시할 데이타가 없습니다.";
+  gridView.displayOptions.emptyMessage = "There is no data to display.";
   gridView.header.height = 40;
   gridView.displayOptions.rowHeight = 36;
   gridView.footer.height = 40;
