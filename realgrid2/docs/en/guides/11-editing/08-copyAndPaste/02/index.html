@@ -22,42 +22,42 @@
 
   <body>
     <div class="toolbar">
-      <input type="checkbox" id="chkPasteSingleMode" />singleMode: 포커스를 갖는
-      셀 하나에만 붙여넣기<br />
+      <input type="checkbox" id="chkPasteSingleMode" />singleMode: Having focus
+      Paste only into one cell<br />
       <input type="checkbox" id="chkPasteEnabled" checked="true" />enabled:
-      Paste가능여부 설정<br />
-      <input type="checkbox" id="chkStartEdit" />startEdit: 붙여넣게 될 값이
-      복수 행이 아니고, 붙여넣을 행이 아직 편집 중이 아니면 편집을 시작<br />
-      <input type="checkbox" id="chkCommitEdit" />commitEdit: 복수 행 붙여넣기일
-      때 기존 편집 상태를 commit<br />
-      <input type="checkbox" id="chkEnableAppend" />enableAppend: 붙여넣을 복수
-      행이 기존 행의 범위를 넘어설 때 행을 추가<br />
-      <input type="checkbox" id="chkFillFieldDefaults" />fillFieldDefaults: 행
-      추가시 포함되지 않은 필드의 값을 data field의 기본값으로 채움<br />
-      <input type="checkbox" id="chkFillColumnDefaults" />fillColumnDefaults: 행
-      추가시 포함되지 않은 필드의 값을 컬럼의 기본값으로 채움<br />
+      Paste availability setting<br />
+      <input type="checkbox" id="chkStartEdit" />startEdit: The value to be pasted is
+      If it is not multiple rows and the row you want to paste is not already being edited, start editing<br />
+      <input type="checkbox" id="chkCommitEdit" />commitEdit: Multi-row paste date
+      When commit<br /> existing edit state
+      <input type="checkbox" id="chkEnableAppend" />enableAppend: Multiple to paste
+      Add a row when the row exceeds the range of existing rows<br />
+      <input type="checkbox" id="chkFillFieldDefaults" />fillFieldDefaults: row
+      When adding, fill the values of fields not included with the default value of the data field<br />
+      <input type="checkbox" id="chkFillColumnDefaults" />fillColumnDefaults: row
+      When adding, fill the values of fields not included with the default value of the column<br />
       <input type="checkbox" id="chkForceRowValidation" />forceRowValidation:
-      복수행 붙여 넣기 중 행별로 행 validation을 실행<br />
+      Executing row validation for each row while pasting multiple rows<br />
       <input
         type="checkbox"
         id="chkForceColumnValidation"
-      />forceColumnValidation: 복수행 붙여 넣기 중 행별로 컬럼 validation을
-      실행<br />
-      <input type="checkbox" id="chkSelectionBase" />selectionBase: true면 focus
-      셀이 포함된 선택 영역의 처음 셀부터 붙여넣기 시작<br />
-      <input type="checkbox" id="chkStopOnError" />stopOnError: Validation이
-      실패하거나 형변환이 실패하면 나머지 붙여넣기를 중지하고 예외를 발생<br />
-      <input type="checkbox" id="chkNoEditEvent" />noEditEvent: 단일행을
-      붙여넣기 할때 Cell마다 발생하는 onEditRowChanged가 발생하지 않는다.<br />
-      <input type="checkbox" id="chkEventEachRow" />eventEachRow: 복수행을
-      붙여넣기 할때 각 행마다 onEditRowPasted이벤트가 발생<br />
+      />forceColumnValidation: Column validation for each row while pasting multiple rows.
+      Run<br />
+      <input type="checkbox" id="chkSelectionBase" />selectionBase: If true, focus
+      Start pasting from the first cell in the selection area that contains the cell<br />
+      <input type="checkbox" id="chkStopOnError" />stopOnError: Validation
+      If it fails or the type conversion fails, the rest of the paste stops and an exception is raised.<br />
+      <input type="checkbox" id="chkNoEditEvent" />noEditEvent: Single row
+      When pasting, onEditRowChanged, which occurs for each cell, does not occur.<br />
+      <input type="checkbox" id="chkEventEachRow" />eventEachRow: Multiple rows
+      When pasting, onEditRowPasted event occurs for each row<br />
       <input type="checkbox" id="chkCheckReadOnly" />checkReadOnly:
-      readOnly이거나 editable이 false인 Column은 paste대상에서 제외<br />
+      Columns where readOnly or editable is false are excluded from paste<br />
       <input type="checkbox" id="chkCheckDomainOnly" />checkDomainOnly: DropDown
-      Editor의 domainOnly가 true인 컬럼에 붙여넣기 할때 values에 없는 값은
-      붙여넣기 되지 않음<br />
+      When pasting into a column where the editor's domainOnly is true, values that are not in values are
+      Doesn't paste<br />
       <input type="checkbox" id="chkConvertLookupLabel" />convertLookupLabel:
-      DropDown Editor에 labels값 붙여넣기 시 values값으로 변환<br />
+      When pasting labels into DropDown Editor, they are converted to values.<br />
       <button onclick="btnSetPasteOptions()">setPasteOptions</button>
     </div>
     <div id="realgrid"></div>

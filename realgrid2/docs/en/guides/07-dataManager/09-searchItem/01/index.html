@@ -31,42 +31,42 @@
             value=""
             data-theme="a"
           />&nbsp;&nbsp;
-          <button onclick="gridSearch()">검색하기</button>
+          <button onclick="gridSearch()">Search</button>
         </div>
       </div>
       <div class="toolbar-group">
-        <div class="toolbar-group-title">대소문자 구분 설정</div>
+        <div class="toolbar-group-title">Set case sensitivity</div>
         <label>
-          <input type="radio" name="case" value="case" />대소문자 구분
+          <input type="radio" name="case" value="case" />Case sensitive
         </label>
         <label>
-          <input type="radio" name="case" value="" checked="checked" />구분하지
-          않음
-        </label>
-      </div>
-
-      <div class="toolbar-group">
-        <div class="toolbar-group-title">부분 일치 설정</div>
-        <label>
-          <input type="radio" name="partial" value="partial"  checked="checked" />부분 일치
-        </label>
-        <label>
-          <input type="radio" name="partial" value="" />모두 일치
+          <input type="radio" name="case" value="" checked="checked" />Do not differentiate
+          No
         </label>
       </div>
 
       <div class="toolbar-group">
-        <div class="toolbar-group-title">처음부터 다시 검색</div>
+        <div class="toolbar-group-title">Set partial match</div>
+        <label>
+          <input type="radio" name="partial" value="partial" checked="checked" />Partial match
+        </label>
+        <label>
+          <input type="radio" name="partial" value="" />Match all
+        </label>
+      </div>
+
+      <div class="toolbar-group">
+        <div class="toolbar-group-title">Search again from the beginning</div>
         <label>
           <input
             type="radio"
             name="wrap"
             value="wrap"
             checked="checked"
-          />처음부터 다시 검색
+          />Search again from the beginning
         </label>
         <label>
-          <input type="radio" name="wrap" value="" />검색을 종료
+          <input type="radio" name="wrap" value="" />End search
         </label>
       </div>
     </div>
