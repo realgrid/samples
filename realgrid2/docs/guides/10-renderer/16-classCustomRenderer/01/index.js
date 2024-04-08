@@ -367,3 +367,5 @@ var fields = [
   function start() {
     createGrid("realgrid");
   }
+
+  window.onload = start;
