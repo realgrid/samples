@@ -92,6 +92,7 @@ function loadData() {
 var dataProvider, gridContainer, gridView;
 
 function createGrid(container) {
+    console.log(RealChart)
     dataProvider = new RealGrid.LocalDataProvider();
     dataProvider.setFields(fields);
 
