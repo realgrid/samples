@@ -148,7 +148,7 @@ function setRealChart(provider) {
 
     config = {
         title: {
-            text: "통계청 총생산소득",
+            text: "Statistics Korea's total production income",
         },
         subtitle: {
             text: "www.realgrid.com",
@@ -160,7 +160,7 @@ function setRealChart(provider) {
         yAxis: [
             {
                 title: {
-                    text: "소득 ($)",
+                    text: "income ($)",
                 },
                 label: {
                     suffix: " $",
