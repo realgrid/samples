@@ -105,7 +105,7 @@ var fields = [
         text: "Gender"
       },
       footer: {
-        template: "${footerText} <img src='../../../../../public/images/common/man.png' alt='Gender Image' width='15' height='15'><img src='../../../../../public/images/common/woman.png' alt='Phone Image' width='15' height='15'>",
+        template: "${footerText} <img src='/public/images/common/man.png' alt='Gender Image' width='15' height='15'><img src='/public/images/common/woman.png' alt='Phone Image' width='15' height='15'>",
         values: {"footerText":"성별 이미지표시"},
         styleName: "center-column"
       }

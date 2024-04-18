@@ -109,7 +109,7 @@ var fields = [
             type: "icon",
             iconCallback: function (grid, cell) {
                 var sex = cell.value == '남' ? 'man' : 'woman';
-                return "../../../../../public/images/common/" + sex + ".png";
+                return "/public/images/common/" + sex + ".png";
             },
             iconHeight: 15,
             iconWidth: 15
@@ -126,8 +126,8 @@ var fields = [
         renderer: {
             type: "icon",
             iconMap: {
-                "남": "../../../../../public/images/common/man.png",
-                "여": "../../../../../public/images/common/woman.png"
+                "남": "/public/images/common/man.png",
+                "여": "/public/images/common/woman.png"
             },
             iconHeight: 15,
             iconWidth: 10

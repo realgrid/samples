@@ -159,7 +159,7 @@ function createGrid(container) {
   treeView.stateBar.width = 16;
   treeView.editOptions.movable = true;
 
-  treeView.treeOptions.iconImagesRoot = "../../../../../public/images/flags/";
+  treeView.treeOptions.iconImagesRoot = "/public/images/flags/";
   treeView.treeOptions.iconImages = [
                 "male.png",
                 "female.png",

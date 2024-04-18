@@ -113,7 +113,7 @@ var columns = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png"
+              return "/public/images/common/" + sex + ".png"
           },
           iconHeight: 15,
           iconWidth: 15

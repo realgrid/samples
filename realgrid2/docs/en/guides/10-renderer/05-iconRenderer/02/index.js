@@ -109,7 +109,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "left",
           iconHeight: 15,
@@ -127,7 +127,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "right",
           iconHeight: 15,
@@ -145,7 +145,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "top",
           iconHeight: 15,
@@ -163,7 +163,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "bottom",
           iconHeight: 15,
@@ -181,7 +181,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "leftEdge",
           iconHeight: 15,
@@ -199,7 +199,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "rightEdge",
           iconHeight: 15,
@@ -217,7 +217,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "topEdge",
           iconHeight: 15,
@@ -235,7 +235,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "bottomEdge",
           iconHeight: 15,
@@ -253,7 +253,7 @@ var fields = [
           type: "icon",
           iconCallback: function (grid, cell) {
               var sex = cell.value == '남' ? 'man' : 'woman';
-              return "../../../../../public/images/common/" + sex + ".png";
+              return "/public/images/common/" + sex + ".png";
           },
           iconLocation: "center",
           iconHeight: 15,

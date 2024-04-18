@@ -45,7 +45,7 @@ var columns = [
           type: "image",
           imageCallback: function (grid, cell) {
               var i = cell.index.itemIndex + 1;
-              return "../../../../../public/images/employee/"+ i.toString() +".png";
+              return "/public/images/employee/"+ i.toString() +".png";
           },
           titleField: "KorName",
           imageHeight: 100

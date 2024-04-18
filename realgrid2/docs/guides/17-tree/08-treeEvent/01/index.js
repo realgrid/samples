@@ -59,7 +59,7 @@ function createGrid(container) {
   treeView.footer.height = 40;
   treeView.stateBar.width = 16;
 
-  treeView.treeOptions.iconImagesRoot = "../../../../../public/images/treeImage/";
+  treeView.treeOptions.iconImagesRoot = "/public/images/treeImage/";
   treeView.treeOptions.iconImages = [
       "grd_tree_open.png", "grd_tree_close.png", "grd_treeicon_leaf.png"
   ]

@@ -119,7 +119,7 @@ var fields = [
             type: "image",
             imageCallback: function (grid, cell) {
                 var monetary = grid.getValue(cell.item.index, "Monetary");
-                return "../../../../../public/images/monetaryFlag/" + monetary + ".png";
+                return "/public/images/monetaryFlag/" + monetary + ".png";
             },
             imageHeight: 80
         },
@@ -135,8 +135,8 @@ var fields = [
         renderer: {
             type: "image",
             imageMap: {
-                "EUR": "../../../../../public/images/monetaryFlag/EUR.png",
-                "USD": "../../../../../public/images/monetaryFlag/USD.png"
+                "EUR": "/public/images/monetaryFlag/EUR.png",
+                "USD": "/public/images/monetaryFlag/USD.png"
             },
             imageHeight: 80,
         },

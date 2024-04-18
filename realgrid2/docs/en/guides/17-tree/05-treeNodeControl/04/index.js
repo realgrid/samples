@@ -160,7 +160,7 @@ function createGrid(container) {
   treeView.editOptions.movable = true;
   treeView.editOptions.rowMovable = true;
 
-  treeView.treeOptions.iconImagesRoot = "../../../../../public/images/flags/";
+  treeView.treeOptions.iconImagesRoot = "/public/images/flags/";
   treeView.treeOptions.iconImages = [
                 "male.png",
                 "female.png",

@@ -82,7 +82,7 @@ window.onunload = function() {
 }
 
 function setIcon() {
-  treeView.treeOptions.iconImagesRoot = "../../../../../public/images/treeImage/";
+  treeView.treeOptions.iconImagesRoot = "/public/images/treeImage/";
   treeView.treeOptions.iconImages = [
       "grd_tree_open.png", "grd_tree_close.png", "grd_treeicon_leaf.png"
   ]

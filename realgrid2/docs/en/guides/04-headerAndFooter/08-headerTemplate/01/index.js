@@ -102,7 +102,7 @@ var fields = [
       fieldName: "Gender",
       width: 150,
       header: {
-        template: "${headerText} <img src='../../../../../public/images/common/man.png' alt='Phone Image' width='15' height='15'><img src='../../../../../public/images/common/woman.png' alt='Phone Image' width='15' height='15'>",
+        template: "${headerText} <img src='/public/images/common/man.png' alt='Phone Image' width='15' height='15'><img src='/public/images/common/woman.png' alt='Phone Image' width='15' height='15'>",
         values: { "headerText":"성별 이미지표시"}
       }
     },

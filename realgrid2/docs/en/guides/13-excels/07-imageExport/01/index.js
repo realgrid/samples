@@ -120,7 +120,7 @@ var fields = [
             type: "image",
             imageCallback: function (grid, cell) {
                 var monetary = grid.getValue(cell.item.index, "Monetary");
-                return "../../../../../public/images/monetaryFlag/" + monetary + ".png";
+                return "/public/images/monetaryFlag/" + monetary + ".png";
             },
             imageHeight: 80,
             exportImage: true
@@ -137,8 +137,8 @@ var fields = [
         renderer: {
             type: "image",
             imageMap: {
-                "EUR": "../../../../../public/images/monetaryFlag/EUR.png",
-                "USD": "../../../../../public/images/monetaryFlag/USD.png"
+                "EUR": "/public/images/monetaryFlag/EUR.png",
+                "USD": "/public/images/monetaryFlag/USD.png"
             },
             imageHeight: 80,
             exportImage: true
@@ -167,7 +167,7 @@ var fields = [
         type: "icon",
         iconCallback: function (grid, cell) {
             var sex = cell.value == '남' ? 'man' : 'woman';
-            return "../../../../../public/images/common/" + sex + ".png";
+            return "/public/images/common/" + sex + ".png";
         },
         iconHeight: 15,
         iconWidth: 15
