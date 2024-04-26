@@ -66,25 +66,25 @@
 .custom_search {
 	height: 26px;
 	margin-left: 2px;
-	background: url("../../../../../public/images/btnImages/search_normal.png") center center no-repeat;
+	background: url("/public/images/btnImages/search_normal.png") center center no-repeat;
     flex: 0 0 45px;
 }
 .custom_search:hover {
-	background: url("../../../../../public/images/btnImages/search_hover.png") center center no-repeat;
+	background: url("/public/images/btnImages/search_hover.png") center center no-repeat;
 }
 .custom_search:active {
-	background: url("../../../../../public/images/btnImages/search_click.png") center center no-repeat;
+	background: url("/public/images/btnImages/search_click.png") center center no-repeat;
 }
 
 .custom_popup {
 	height: 26px;
 	margin-left: 2px;
-	background: url("../../../../../public/images/btnImages/popup_normal.png") center center no-repeat;
+	background: url("/public/images/btnImages/popup_normal.png") center center no-repeat;
     flex: 0 0 45px;
 }
 .custom_popup:hover {
-	background: url("../../../../../public/images/btnImages/popup_hover.png") center center no-repeat;
+	background: url("/public/images/btnImages/popup_hover.png") center center no-repeat;
 }
 .custom_popup:active {
-	background: url("../../../../../public/images/btnImages/popup_click.png") center center no-repeat;
+	background: url("/public/images/btnImages/popup_click.png") center center no-repeat;
 }
