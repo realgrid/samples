@@ -43,8 +43,6 @@ THEME : Realgrid sky blue
   .rg-empty-grid span {
     display: table-cell;
     vertical-align: middle; }
-    .rg-empty-grid span:focus-visible {
-      outline: none; }
 
 .rg-scrolltrack {
   background: #e8eef2;
