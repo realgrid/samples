@@ -3,6 +3,8 @@ var dataProvider;
 RealGridJS.setRootContext("../lib");
 
 $(document).ready(function () {
+    
+    RealGridJS.setMobile(true);
 	dataProvider = new RealGridJS.LocalDataProvider();
   setFields(dataProvider);
 
