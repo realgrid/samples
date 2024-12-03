@@ -25,7 +25,8 @@ var columns = [{
   width: "250",
   header: {
     text: "내역사업"
-  }
+  },
+  editable: true
 }, {
   name: "column2",
   fieldName: "column2",
@@ -360,4 +361,8 @@ function btnDetailInfo() {
 
 function exportGrid() {
   masterGrid.exportGrid({type: "excel", target: "local"})
+}
+
+function getVersions() {
+  alert(RealGrid.getVersion())
 }
