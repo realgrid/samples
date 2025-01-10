@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/* realgrid custom styles */
+
+.alternate-row {
+  background: #f8f8f8;
+}
+
+.blue-column {
+  color: blue;
+}
+
+#actions {
+  height: 50px;
+}
+
+#realgrid {
+  width: 100%;
+  height: 450px; /* for WebKit */
+}
+
+.right-column {
+  text-align: right;
+}
+
+.left-column {
+  text-align: left;
+}
+
+.cursor {
+  cursor: crosshair;
+}
+
+.orange-color{
+  background: #ff8b00;
+}
