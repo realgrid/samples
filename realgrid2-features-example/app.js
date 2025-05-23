@@ -56,9 +56,10 @@ $(document).ready(function () {
         stateBar: { visible: false },
         fixed: { colCount: 0 },
         edit: { editable: false }, // Data from API is typically read-only on client
-        sortMode: "exclusive", // Use 'exclusive' for single column sort
+        // sortMode: "exclusive", // This is implicitly handled by sorting.style
         sorting: {
-            enabled: true, // Enable header click for sorting UI, but we'll handle data fetching
+            enabled: true, // Enable header click for sorting UI
+            style: "exclusive", // Ensures single column sort, provides fields/directions to onSorting
             keepFocusedCell: true
         }
     });
@@ -135,32 +136,43 @@ function fetchData(page, limit, sortBy, sortOrder, searchQuery) {
 }
 
 function setupSorting() {
-    // Ensure sorting UI is enabled in options, but we'll control the logic
-    // This was set in gridView.setOptions: sorting: { enabled: true }
+    // Ensure sorting UI is enabled in options
+    // This should be in gridView.setOptions: sorting: { enabled: true, style: "exclusive" }
+    // Individual columns also have `sortable: true`
 
-    gridView.onColumnHeaderClicked = function (grid, column, button, clickData) {
-        console.log("!!! gridView.onColumnHeaderClicked FIRED !!!"); // Prominent log
-        console.log("Clicked column object:", column);
-        console.log("Clicked column fieldName:", column ? column.fieldName : "N/A");
-            
-        // Check if the clicked column is one of our defined data columns that we want to be sortable
-        // This simple check assumes all defined columns are sortable.
-        // You could add more specific logic if some columns aren't sortable.
+    // Remove potentially incorrect handlers from previous attempts
+    if (gridView.onColumnHeaderClicked) {
+        gridView.onColumnHeaderClicked = null;
+    }
+    if (gridView.onSortingChanged) {
+        gridView.onSortingChanged = null;
+    }
+
+    gridView.onSorting = function (grid, fields, directions) {
+        console.log("!!! gridView.onSorting FIRED !!!");
+        console.log("fields:", fields, "directions:", directions);
+
+        if (!fields || fields.length === 0) {
+            return true; // Allow default if no fields to sort by (should not happen in exclusive sort mode on click)
+        }
+
+        // For exclusive sort, we typically care about the first element.
+        const fieldIndex = fields[0]; // This is the index of the column in the getColumns() array
+        const sortDirection = directions[0]; // This should be RealGrid.SortDirection enum value
+
+        // Get the column object using the index
+        const column = grid.getColumns()[fieldIndex];
+
         if (!column || !column.fieldName) {
-            console.log("onColumnHeaderClicked: Column or column.fieldName is undefined. Allowing default behavior.");
-            return true; 
+            console.error("onSorting: Clicked column or its fieldName is undefined. Column index was:", fieldIndex);
+            return true; // Prevent error, allow default (which won't sort without fieldName)
         }
 
-        const clickedFieldName = column.fieldName;
-
-        if (currentSortBy === clickedFieldName) {
-            currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
-        } else {
-            currentSortBy = clickedFieldName;
-            currentSortOrder = 'asc'; // Default to ascending for a new column
-        }
+        currentSortBy = column.fieldName;
+        currentSortOrder = sortDirection === RealGrid.SortDirection.ASCENDING ? 'asc' : 'desc';
 
         // Clear previous sort indicators from all columns
+        // RealGrid might handle this with exclusive sort style, but explicit is safer for clarity
         const allColumns = grid.getColumns();
         for (let i = 0; i < allColumns.length; i++) {
             if (allColumns[i].fieldName !== currentSortBy) {
@@ -169,20 +181,21 @@ function setupSorting() {
         }
         
         // Set sort indicator for the clicked column
-        grid.setColumnProperty(currentSortBy, "sortDirection", currentSortOrder === 'asc' ? RealGrid.SortDirection.ASCENDING : RealGrid.SortDirection.DESCENDING);
+        // The grid might do this automatically if sort is not cancelled,
+        // but explicit control is safer for server-side.
+        grid.setColumnProperty(currentSortBy, "sortDirection", sortDirection);
+        
+        console.log(`Sorting requested: field=${currentSortBy}, order=${currentSortOrder}`);
 
         // Fetch data with new sorting parameters from page 1
         fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery);
         
-        console.log(`Sorting requested: field=${currentSortBy}, order=${currentSortOrder}`);
-        return false; // Prevent default grid sorting action
+        // Reset pagination.js to page 1 (will be re-verified in next plan step)
+        // This relies on fetchData calling setupPagination(1)
+        
+        return false; // IMPORTANT: Prevent default client-side sorting
     };
-
-    // Remove the onSortingChanged handler if it exists from previous attempts
-    if (gridView.onSortingChanged) {
-        gridView.onSortingChanged = null;
-    }
-    console.log("Sorting setup with onColumnHeaderClicked (with diagnostic log).");
+    console.log("Sorting setup with onSorting handler.");
 }
 
 function setupSearch() {
