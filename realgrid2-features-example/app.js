@@ -143,23 +143,54 @@ function fetchData(page, limit, sortBy, sortOrder, searchQuery, initializePagina
 }
 
 function setupSorting() {
-    gridView.onSortingChanged = function (grid, column, sortingOptions) {
-        // RealGrid's default sort will only sort the current page data.
-        // We need to fetch sorted data from the server.
-        // The 'sortingOptions' gives us new sort direction.
-        // 'column.fieldName' gives us the field to sort by.
+    // Ensure sorting UI is enabled in options, but we'll control the logic
+    // This was set in gridView.setOptions: sorting: { enabled: true }
 
-        currentSortBy = column.getFieldName();
-        currentSortOrder = sortingOptions.direction === RealGrid.SortDirection.ASCENDING ? 'asc' : 'desc';
+    gridView.onColumnHeaderClicked = function (grid, column, button, clickData) {
+        // Check if the clicked column is one of our defined data columns that we want to be sortable
+        // This simple check assumes all defined columns are sortable.
+        // You could add more specific logic if some columns aren't sortable.
+        if (!column || !column.fieldName) {
+            return true; // Allow default behavior if it's not a data column click
+        }
+
+        const clickedFieldName = column.fieldName;
+
+        if (currentSortBy === clickedFieldName) {
+            currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSortBy = clickedFieldName;
+            currentSortOrder = 'asc'; // Default to ascending for a new column
+        }
+
+        // Clear previous sort indicators from all columns
+        const allColumns = grid.getColumns();
+        for (let i = 0; i < allColumns.length; i++) {
+            if (allColumns[i].fieldName !== currentSortBy) {
+                grid.setColumnProperty(allColumns[i].fieldName, "sortDirection", null);
+            }
+        }
         
+        // Set sort indicator for the clicked column
+        grid.setColumnProperty(currentSortBy, "sortDirection", currentSortOrder === 'asc' ? RealGrid.SortDirection.ASCENDING : RealGrid.SortDirection.DESCENDING);
+
         // Fetch data with new sorting parameters from page 1
         fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery, false);
-        // After data is fetched, pagination will be updated to show page 1.
-        // We need to make sure pagination.js also resets to page 1.
+        
+        // Reset pagination.js to page 1
         if ($('#pagination-container').data('pagination')) {
             $('#pagination-container').pagination('go', 1);
         }
+        
+        console.log(`Sorting requested: field=${currentSortBy}, order=${currentSortOrder}`);
+        return false; // Prevent default grid sorting action
     };
+
+    // Remove the onSortingChanged handler if it exists from previous attempts
+    if (gridView.onSortingChanged) {
+        gridView.onSortingChanged = null;
+    }
+    console.log("Sorting setup with onColumnHeaderClicked.");
 }
 
 function setupSearch() {
