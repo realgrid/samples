@@ -1,0 +1,117 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.controls {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls input[type="text"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    flex-grow: 1; /* Allows input to take available space */
+}
+
+.controls button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+#realgrid {
+    background-color: #fff; /* Ensure grid background is white */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.pagination {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 8px 15px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pagination button:hover {
+    background-color: #545b62;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination #pageInfo {
+    font-size: 14px;
+    color: #555;
+    margin: 0 10px; /* Add some spacing around page info */
+}
+
+/* Basic RealGrid header styling adjustment if needed - often themes handle this well */
+/*
+.rg-header {
+    background-color: #f8f9fa;
+}
+.rg-header-cell-text {
+    font-weight: bold;
+    color: #333;
+}
+*/
+
+/* Styles for pagination.js container wrapper */
+.pagination-container-wrapper {
+    margin-top: 20px;
+    text-align: center; /* Centers the pagination block if it's inline-block */
+}
+
+/* pagination.js itself often uses inline-block for its container */
+/* This ensures the wrapper truly centers it. */
+/* Alternatively, if pagination-container is block, use margin: 0 auto; */
+/* No specific styles for #pagination-container itself unless overriding pagination.js defaults */
+
+/* Ensure grid height is properly handled */
+#realgrid {
+    height: 500px; /* Already set in HTML, but good to have in CSS too */
+    /* width: 100%; /* Already set in HTML */
+}
