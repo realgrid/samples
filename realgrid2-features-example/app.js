@@ -29,10 +29,10 @@ $(document).ready(function () {
 
     // Define Columns
     const columns = [
-        { name: "id", fieldName: "id", width: "50", header: { text: "ID" }, editor: { type: "number", readOnly: true} },
-        { name: "title", fieldName: "title", width: "250", header: { text: "제목" }, styleName: "left-column" },
-        { name: "body", fieldName: "body", width: "400", header: { text: "내용" }, styleName: "left-column" },
-        { name: "userId", fieldName: "userId", width: "70", header: { text: "사용자ID" } },
+        { name: "id", fieldName: "id", width: "50", header: { text: "ID" }, editor: { type: "number", readOnly: true}, sortable: true },
+        { name: "title", fieldName: "title", width: "250", header: { text: "제목" }, styleName: "left-column", sortable: true },
+        { name: "body", fieldName: "body", width: "400", header: { text: "내용" }, styleName: "left-column", sortable: true },
+        { name: "userId", fieldName: "userId", width: "70", header: { text: "사용자ID" }, sortable: true },
         { 
             name: "tags", 
             fieldName: "tags", 
@@ -40,9 +40,10 @@ $(document).ready(function () {
             header: { text: "태그" },
             valueCallback: function (grid, item, fieldName, index, value) {
                 return Array.isArray(value) ? value.join(', ') : '';
-            }
+            },
+            sortable: true // Assuming tags can be sorted by their string representation
         },
-        { name: "reactions", fieldName: "reactions", width: "80", header: { text: "반응 수" } }
+        { name: "reactions", fieldName: "reactions", width: "80", header: { text: "반응 수" }, sortable: true }
     ];
     gridView.setColumns(columns);
 
@@ -76,10 +77,10 @@ $(document).ready(function () {
 function fetchDataAndInitializePagination() {
     // Fetch initial data to get total count for pagination.js
     // currentSearchQuery, currentSortBy, currentSortOrder should be used
-    fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery, true);
+    fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery);
 }
 
-function fetchData(page, limit, sortBy, sortOrder, searchQuery, initializePagination = false) {
+function fetchData(page, limit, sortBy, sortOrder, searchQuery) {
     currentPage = page; // Update global current page
 
     let url = 'https://dummyjson.com/posts';
@@ -111,30 +112,21 @@ function fetchData(page, limit, sortBy, sortOrder, searchQuery, initializePagina
         success: function (response) {
             if (response && response.posts) {
                 dataProvider.fillJsonData(response.posts, { fillMode: "set" });
-                totalRecords = response.total; // Total records from API
-
-                if (initializePagination) {
-                    setupPagination(); // Initialize pagination.js after first load
-                }
-                // Update pagination if it's already initialized (e.g., after search)
-                if ($('#pagination-container').data('pagination')) {
-                     $('#pagination-container').pagination('updateItems', totalRecords);
-                     $('#pagination-container').pagination('drawPage', currentPage);
-
-                }
-                gridView.setFocus(); // Return focus to grid
+                totalRecords = response.total;
+                setupPagination(currentPage); // Re-initialize/update pagination with new total and current page
+                gridView.setFocus();
             } else {
                 console.error("API response format error:", response);
                 dataProvider.clearRows();
                 totalRecords = 0;
-                 if (initializePagination) setupPagination(); // still setup pagination with 0 items
+                setupPagination(currentPage); // Still update pagination (will clear it if totalRecords is 0)
             }
         },
         error: function (xhr, status, error) {
             console.error("Error fetching data: ", status, error);
             dataProvider.clearRows();
             totalRecords = 0;
-            if (initializePagination) setupPagination(); // still setup pagination with 0 items
+            setupPagination(currentPage); // Update pagination to show no data
         },
         complete: function () {
             gridView.hideLoading(); // Hide loading indicator
@@ -147,11 +139,16 @@ function setupSorting() {
     // This was set in gridView.setOptions: sorting: { enabled: true }
 
     gridView.onColumnHeaderClicked = function (grid, column, button, clickData) {
+        console.log("!!! gridView.onColumnHeaderClicked FIRED !!!"); // Prominent log
+        console.log("Clicked column object:", column);
+        console.log("Clicked column fieldName:", column ? column.fieldName : "N/A");
+            
         // Check if the clicked column is one of our defined data columns that we want to be sortable
         // This simple check assumes all defined columns are sortable.
         // You could add more specific logic if some columns aren't sortable.
         if (!column || !column.fieldName) {
-            return true; // Allow default behavior if it's not a data column click
+            console.log("onColumnHeaderClicked: Column or column.fieldName is undefined. Allowing default behavior.");
+            return true; 
         }
 
         const clickedFieldName = column.fieldName;
@@ -175,12 +172,7 @@ function setupSorting() {
         grid.setColumnProperty(currentSortBy, "sortDirection", currentSortOrder === 'asc' ? RealGrid.SortDirection.ASCENDING : RealGrid.SortDirection.DESCENDING);
 
         // Fetch data with new sorting parameters from page 1
-        fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery, false);
-        
-        // Reset pagination.js to page 1
-        if ($('#pagination-container').data('pagination')) {
-            $('#pagination-container').pagination('go', 1);
-        }
+        fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery);
         
         console.log(`Sorting requested: field=${currentSortBy}, order=${currentSortOrder}`);
         return false; // Prevent default grid sorting action
@@ -190,17 +182,14 @@ function setupSorting() {
     if (gridView.onSortingChanged) {
         gridView.onSortingChanged = null;
     }
-    console.log("Sorting setup with onColumnHeaderClicked.");
+    console.log("Sorting setup with onColumnHeaderClicked (with diagnostic log).");
 }
 
 function setupSearch() {
     $('#searchButton').on('click', function () {
         currentSearchQuery = $('#searchInput').val();
         // Fetch data with search query, reset to page 1
-        fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery, false); 
-        if ($('#pagination-container').data('pagination')) {
-            $('#pagination-container').pagination('go', 1);
-        }
+        fetchData(1, pageSize, currentSortBy, currentSortOrder, currentSearchQuery);
     });
 
     $('#searchInput').on('keypress', function (e) {
@@ -210,53 +199,36 @@ function setupSearch() {
     });
 }
 
-function setupPagination() {
-    if (totalRecords === 0 && !currentSearchQuery) { // Only show limited pages if no records initially
-        // This case might happen if API fails on first load
-         $('#pagination-container').pagination({
-            dataSource: function(done){ // Provide a dummy source for structure
-                var result = [];
-                for(var i = 1; i <= 0; i++) result.push(i);
-                done(result);
-            },
-            totalNumber: 0,
-            pageSize: pageSize,
-            callback: function (data, pagination) {
-                // This won't be called if totalNumber is 0
-            }
-        });
+function setupPagination(targetPage) {
+    // If a previous instance exists, destroy it to prevent conflicts or duplicate paginators
+    if ($('#pagination-container').data('pagination')) {
+        $('#pagination-container').pagination('destroy');
+    }
+
+    if (totalRecords <= 0) { // Also check for <= 0
+        $('#pagination-container').html(''); // Clear the container if no records
+        console.log("Pagination: No records to display.");
         return;
     }
 
     $('#pagination-container').pagination({
-        dataSource: function(done) {
-            // This function is just to satisfy pagination.js if it needs a dataSource.
-            // We are driving data loading externally via fetchData.
-            // Create a dummy array based on totalRecords for pagination.js to calculate pages.
+        dataSource: function(done) { // Still provide a dummy dataSource for structure if library requires it
             let dummyData = [];
-            for (let i = 1; i <= totalRecords; i++) {
-                dummyData.push(i);
-            }
+            for (let i = 1; i <= totalRecords; i++) dummyData.push(i);
             done(dummyData);
         },
-        locator: 'items', // Not strictly needed as we handle data via callback
         totalNumber: totalRecords,
         pageSize: pageSize,
-        pageNumber: currentPage,
+        pageNumber: targetPage || currentPage, // Set the initial page number
         showPrevious: true,
         showNext: true,
-        ajax: { // We don't use pagination.js internal ajax, but callback is key
-            beforeSend: function() {
-                // Can show a loader here if needed, but fetchData handles it
-            }
-        },
-        callback: function (data, pagination) {
-            // This callback provides `pagination.pageNumber` which is the new page.
-            // `data` here would be the slice from the dummyData if dataSource was used directly.
-            // We ignore `data` and use `pagination.pageNumber`.
-            if (currentPage !== pagination.pageNumber) { // Avoid re-fetching if page hasn't changed
-                 fetchData(pagination.pageNumber, pageSize, currentSortBy, currentSortOrder, currentSearchQuery, false);
+        callback: function (data, pagination) { // data is from dataSource, pagination is the state
+            // Check if the page number from the callback is different from our global currentPage
+            // This prevents re-fetching if we programmatically set the page which then triggers callback
+            if (currentPage !== pagination.pageNumber) {
+                 fetchData(pagination.pageNumber, pageSize, currentSortBy, currentSortOrder, currentSearchQuery);
             }
         }
     });
+    console.log(`Pagination setup/updated: total=${totalRecords}, current page=${targetPage || currentPage}`);
 }
