@@ -202,3 +202,9 @@ function setMobileOptions() {
         showEditCommander: false
     })
 }
+
+function btnDblClick() {
+    grdMain.setEditOptions({
+        editWhenFocused: true
+    });
+}
