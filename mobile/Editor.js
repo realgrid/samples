@@ -198,6 +198,7 @@ function setMobileOptions() {
     grdMain.setEditOptions({editable: true})
     grdMain.setMobileOptions({
         longTapDuration: 300,
-        doubleTapInterval: 300
+        doubleTapInterval: 300,
+        showEditCommander: false
     })
 }
