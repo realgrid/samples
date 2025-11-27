@@ -104,41 +104,11 @@ var columns = [
     fieldName: "checkField",
     width: "60",
     editable: false,
-    renderer: {
-      type: "check",
-      //*** 선택/해제 했을때 값을 읽어주도록 처리
-      ariaLabelCallback: function(grid, model) {
-        let val = model.value;
-        let s = val == 'Y' ? "선택" : "해제";
-
-        return s
-      },
-      trueValues: "Y",
-      falseValues: "N"
-    },
+    renderer: "custom_check",
     header: {
       text: " ",
       styleName: "orange-column",
-      checkLocation: "left"
-    }
-  },
-  {
-    name: "Monetary",
-    fieldName: "Monetary",
-    width: "40",
-    header: {
-      text: "통화"
-    },
-    renderer: {
-      type: "button",
-      enterKey: true,
-      spaceKey: true,
-      //*** 버튼값을 읽어주도록 처리
-      ariaLabelCallback: function(grid, model) {
-        let s = model.value + "버튼";
-
-        return s
-      }
+      // checkLocation: "left"
     }
   },
   {
@@ -193,7 +163,14 @@ var columns = [
       text: "카드번호"
     }
   },
-
+  {
+    name: "Monetary",
+    fieldName: "Monetary",
+    width: "40",
+    header: {
+      text: "통화"
+    }
+  },
   {
     name: "StartDate",
     fieldName: "StartDate",
@@ -280,6 +257,7 @@ function loadData() {
     if (httpRequest.status === 200) {
       var data = JSON.parse(httpRequest.responseText);
       dataProvider.setRows(data);
+      dataProvider.setRowCount(5);
       gridView.refresh();
     }
   }
@@ -288,6 +266,22 @@ function loadData() {
 var dataProvider, gridContainer, grid;
 
 function createGrid(container) {
+
+  const oldCreate = RealGrid.GridView.prototype._createView;
+
+  RealGrid.GridView.prototype._createView = function (t, e, i) {
+    const view =  oldCreate.call(this, t, e, i);
+    const oldFireCurrentRowChanged = view._fireCurrentRowChanged;
+
+    view._fireCurrentRowChanged =  function (oldRow, newRow) {
+      console.log("newRow " + newRow);
+      var r = oldFireCurrentRowChanged.call(this, oldRow,newRow);
+      
+      return r;
+    };
+
+    return view;
+  };
 
   let waiOptions = {
     title: "리얼그리드 테이블 (테이블에서 엔터키로 버튼 링크등의 기능이 실행됩니다)",
@@ -309,23 +303,89 @@ function createGrid(container) {
   gridView.editOptions.insertable = true;
   gridView.editOptions.appendable = true;
 
-  gridView.editOptions.editable = false;
+  gridView.editOptions.editable = true;
 
-  //*** 그리드의 editable이 false 이더라도 컬럼에 지정한 editable 이 우선 적용된다.
-  //*** checkField 컬럼은 특수한 경우이니 컬럼의 editable: false는 그대로 두세요.
-  gridView.editOptions.columnEditableFirst = true;
 
-  //*** 체크바와 checkField 컬럼 연동
-  gridView.checkBar.fieldName = "checkField";   
+  gridView.checkBar.exclusive = true;
+  //*** 편집시 바로 commit 하도록 처리 
+  gridView.editOptions.commitByCell = true
+  gridView.editOptions.commitWhenLeave = true
+  
 
-    //*** 개별행 체크와 헤드의 sync 
-  gridView.checkBar.syncHeadCheck = true;
+  //*** 커스텀 체크렌더러 등록
+  gridView.registerCustomRenderer("custom_check", {
+    // 화살표 함수는 사용할수 없다.
+    _changeHandler: function(e) {
+        // 편집상태를 취소한다.
+        this.grid.cancel();
+        //*** 라디오 설정 */
+        this.grid.checkItem(this.index.itemIndex, e.target.checked, true, true);      
+    },
+    initContent: function(parent) {
+        const check = this._check = document.createElement("input");
+        check.tabIndex = -1;
+        this._impl["changeHandler"] = this._impl._changeHandler.bind(this);
+        check.addEventListener("change", this._impl.changeHandler);
+        parent.appendChild(check);
 
-  //*** 전체 체크 되었을때의 이벤트 처리 */
-  gridView.onColumnCheckedChanged =  function (grid, column, checked) {
-    grid.commit(true);
-    grid.checkAll(checked, false, false, false);
-  };
+        //*** 라디오 설정 */
+        check.type = "radio";
+     
+    },
+
+    // 더이상 사용되지 않을때 생성된 것들을 제거해주어야 메모리 누수를 막을수 있다.
+    clearContent: function(parent ) {
+        console.log("clearContent");
+        this._check.removeEventListener("change", this._impl["changeHandler"])
+        this._impl["changeHandler"] = null;
+        // 간혹 브라우저에 따라서 parent의 하위 element가 아닌 것을 remove하려고 하면 오류가 발생하는 경우가 있다.
+        this._check.parentElement && this._check.parentElement.removeChild(this._check);
+        parent.innerHTML = "";
+    },
+
+    render: function(grid, model, w, h) {
+        // ariaLabelCallback에서 처리하기 힘든경우 여기서 처리할수도 있다.
+        // this._dom.parentElement가 HTMLTableCellElement이다.
+        const rowNum = model.index.itemIndex + 2;
+        this._check.checked = grid.isCheckedItem(model.index.itemIndex);
+        this._dom.parentElement.setAttribute("aria-label", this._check.checked ? "선택" + rowNum + "행" : "해제" + rowNum + "행" );
+    },
+
+    // 클릭시 편집상태로 변경되고 commitByCell인 경우 commit을 하도록 하지만 여기서는 dataRowState를 변경해서는 안되기 때문에 막아준다.
+    editClick: function(index, event, result) {
+        // 그리드 내부 commit을 막아준다.
+        result.commit = false;
+        return !!result;
+    },
+
+    // 특정 element가 click되었을때 편집상태로 변경되도록 한다.
+    // 편집상태가 되지 않으면 click이벤트를 preventDefault처리하기 때문에 true를 return해줘야 한다.
+    canEditClickAt: function(event) {
+        return event.target instanceof HTMLInputElement;
+    },
+
+    // 해당 셀의 편집가능 여부.
+    canEdit: function() {
+        return true;
+    },
+
+    // true를 return하면 그리드 기본동작을 하지 않는다.
+    // 센스리더는 특정한 키가 입력되면 element를 다시 읽는 동작을 하다. space의 경우 대부분 선택/해제를 toggle하는 걸로 판단해서 다시 읽어준다.
+    // 다른 단축키와 충돌이 발생하는지 항상 조심해야 한다.
+    // space키와 ctrl, shift, alt키의 조합은 단축키로 사용될 가능성이 많은 것들이어서 사용에 주의해야 한다.
+    canEditKey: function(e) {
+      //*** 라디오 설정 */  
+      if (e.key === " ") {
+            // return true;
+            this._check.checked = !this._check.checked;
+            
+            this.grid.checkItem(this.index.itemIndex, this._check.checked, true, true);
+            e.preventDefault();
+            return true;
+        }
+        return false;
+    }
+})   
 
   setProvider("simple_data_check.json");
 }

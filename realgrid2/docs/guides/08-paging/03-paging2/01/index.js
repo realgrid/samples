@@ -3,85 +3,85 @@
 var fields = [
   {
     fieldName: "KorName",
-    dataType: "text"
+    dataType: "text",
   },
   {
     fieldName: "Gender",
-    dataType: "text"
+    dataType: "text",
   },
   {
     fieldName: "Age",
-    dataType: "number"
+    dataType: "number",
   },
   {
     fieldName: "Phone",
-    dataType: "text"
+    dataType: "text",
   },
   {
     fieldName: "ProductId",
-    dataType: "text"
+    dataType: "text",
   },
   {
     fieldName: "KorCountry",
-    dataType: "text"
+    dataType: "text",
   },
   {
     fieldName: "OrderDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
     amText: "오전",
-    pmText: "오후"
+    pmText: "오후",
   },
   {
     fieldName: "CardNumber",
-    dataType: "text"
+    dataType: "text",
   },
   {
     fieldName: "Monetary",
-    dataType: "text"
+    dataType: "text",
   },
   {
     fieldName: "StartDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
     amText: "오전",
-    pmText: "오후"
+    pmText: "오후",
   },
   {
     fieldName: "EndDate",
     dataType: "datetime",
     datetimeFormat: "yyyy-MM-dd",
     amText: "오전",
-    pmText: "오후"
+    pmText: "오후",
   },
   {
     fieldName: "ToMonth",
-    dataType: "number"
+    dataType: "number",
   },
   {
     fieldName: "Month",
-    dataType: "number"
+    dataType: "number",
   },
   {
     fieldName: "Year",
-    dataType: "number"
+    dataType: "number",
   },
   {
     fieldName: "InterestRate",
-    dataType: "number"
+    dataType: "number",
   },
   {
     fieldName: "SaveCost",
-    dataType: "number"
+    dataType: "number",
   },
   {
     fieldName: "SaveMaturity",
-    dataType: "number"
+    dataType: "number",
   },
   {
     fieldName: "CurrentSave",
-    dataType: "number"
-  }
+    dataType: "number",
+  },
 ];
 
 var columns = [
@@ -90,99 +90,99 @@ var columns = [
     fieldName: "KorName",
     width: "60",
     header: {
-      text: "이름"
-    }
+      text: "이름",
+    },
   },
   {
     name: "Gender",
     fieldName: "Gender",
     width: "40",
     header: {
-      text: "성별"
-    }
+      text: "성별",
+    },
   },
   {
     name: "Age",
     fieldName: "Age",
     width: "40",
     header: {
-      text: "나이"
+      text: "나이",
     },
-    styleName: "right-column"
+    styleName: "right-column",
   },
   {
     name: "Phone",
     fieldName: "Phone",
     width: "100",
     header: {
-      text: "전화번호"
-    }
+      text: "전화번호",
+    },
   },
   {
     name: "KorCountry",
     fieldName: "KorCountry",
     width: "100",
     header: {
-      text: "투자국가"
-    }
+      text: "투자국가",
+    },
   },
   {
     name: "OrderDate",
     fieldName: "OrderDate",
     width: "100",
     header: {
-      text: "주문일자"
-    }
+      text: "주문일자",
+    },
   },
   {
     name: "CardNumber",
     fieldName: "CardNumber",
     width: "140",
     header: {
-      text: "카드번호"
-    }
+      text: "카드번호",
+    },
   },
   {
     name: "Monetary",
     fieldName: "Monetary",
     width: "40",
     header: {
-      text: "통화"
-    }
+      text: "통화",
+    },
   },
   {
     name: "StartDate",
     fieldName: "StartDate",
     width: "100",
     header: {
-      text: "최초납입일"
-    }
+      text: "최초납입일",
+    },
   },
   {
     name: "EndDate",
     fieldName: "EndDate",
     width: "100",
     header: {
-      text: "종료일"
-    }
+      text: "종료일",
+    },
   },
   {
     name: "ToMonth",
     fieldName: "ToMonth",
     width: "50",
     header: {
-      text: "납입 횟수"
+      text: "납입 횟수",
     },
-    styleName: "right-column"
+    styleName: "right-column",
   },
   {
     name: "Month",
     fieldName: "Month",
     width: "50",
     header: {
-      text: "남은 횟수"
+      text: "남은 횟수",
     },
-    styleName: "right-column"
+    styleName: "right-column",
   },
   {
     name: "InterestRate",
@@ -190,9 +190,9 @@ var columns = [
     width: "50",
     numberFormat: "0.00",
     header: {
-      text: "이율"
+      text: "이율",
     },
-    styleName: "right-column"
+    styleName: "right-column",
   },
   {
     name: "SaveCost",
@@ -200,9 +200,9 @@ var columns = [
     width: "80",
     numberFormat: "#,##0",
     header: {
-      text: "납입금"
+      text: "납입금",
     },
-    styleName: "right-column"
+    styleName: "right-column",
   },
   {
     name: "SaveMaturity",
@@ -210,9 +210,9 @@ var columns = [
     width: "80",
     numberFormat: "#,##0",
     header: {
-      text: "만기금액"
+      text: "만기금액",
     },
-    styleName: "right-column"
+    styleName: "right-column",
   },
   {
     name: "CurrentSave",
@@ -220,10 +220,10 @@ var columns = [
     width: "80",
     numberFormat: "#,##0",
     header: {
-      text: "현재잔액"
+      text: "현재잔액",
     },
-    styleName: "right-column"
-  }
+    styleName: "right-column",
+  },
 ];
 
 var httpRequest;
@@ -263,8 +263,6 @@ function createGrid(container) {
   gridView.editOptions.insertable = true;
   gridView.editOptions.appendable = true;
 
-
-
   setProvider("simple_data300.json");
 }
 
@@ -276,7 +274,7 @@ function start() {
 window.onload = start;
 // domloaded를 대신 써도 됩니다.
 
-window.onunload = function() {
+window.onunload = function () {
   dataProvider.clearRows();
 
   gridView.destroy();
@@ -287,21 +285,18 @@ window.onunload = function() {
 };
 
 function pagination() {
-  let container = $('#page');
+  let container = $("#page");
   container.pagination({
-      dataSource: dataProvider.getJsonRows(),
-      pageSize : 8,
-      callback: function (data, pagination) {
-        gridView.setPage(pagination.pageNumber-1)
-      }
-  })
+    dataSource: dataProvider.getJsonRows(),
+    pageSize: 8,
+    callback: function (data, pagination) {
+      gridView.setPage(pagination.pageNumber - 1);
+    },
+  });
 }
 
-function setPaging(){
-  var dataPerPage = 8;    // 한 페이지에 나타낼 데이터 수
+function setPaging() {
+  var dataPerPage = 8; // 한 페이지에 나타낼 데이터 수
   gridView.setPaging(true, dataPerPage);
-  pagination()
+  pagination();
 }
-
-
-
