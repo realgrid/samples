@@ -92,14 +92,6 @@ var fields = [
 
 var columns = [
   {
-    name: "Gender",
-    fieldName: "Gender",
-    width: "40",
-    header: {
-      text: "성별"
-    }
-  },
-  {
     name: "checkField",
     fieldName: "checkField",
     width: "60",
@@ -123,43 +115,6 @@ var columns = [
     }
   },
   {
-    name: "Monetary",
-    fieldName: "Monetary",
-    width: "40",
-    header: {
-      text: "통화"
-    },
-    renderer: {
-      type: "button",
-      enterKey: true,
-      spaceKey: true,
-      //*** 버튼값을 읽어주도록 처리
-      ariaLabelCallback: function(grid, model) {
-        let s = model.value + "버튼";
-
-        return s
-      }
-    }
-  },
-  {
-    name: "Age",
-    fieldName: "Age",
-    width: "40",
-    header: {
-      text: "나이"
-    },
-    styleName: "right-column"
-  },
-  {
-    name: "Phone",
-    fieldName: "Phone",
-    width: "100",
-    styleName: "right-column",
-    header: {
-      text: "전화번호"
-    }
-  },
-  {
     name: "ProductId",
     fieldName: "ProductId",
     width: "120",
@@ -176,93 +131,6 @@ var columns = [
     header: {
       text: "투자국가"
     }
-  },
-  {
-    name: "OrderDate",
-    fieldName: "OrderDate",
-    width: "100",
-    header: {
-      text: "주문일자"
-    }
-  },
-  {
-    name: "CardNumber",
-    fieldName: "CardNumber",
-    width: "140",
-    header: {
-      text: "카드번호"
-    }
-  },
-
-  {
-    name: "StartDate",
-    fieldName: "StartDate",
-    width: "100",
-    header: {
-      text: "최초납입일"
-    }
-  },
-  {
-    name: "EndDate",
-    fieldName: "EndDate",
-    width: "100",
-    header: {
-      text: "종료일"
-    }
-  },
-  {
-    name: "ToMonth",
-    fieldName: "ToMonth",
-    width: "50",
-    header: {
-      text: "납입 횟수"
-    },
-    styleName: "right-column"
-  },
-  {
-    name: "Month",
-    fieldName: "Month",
-    width: "50",
-    header: {
-      text: "남은 횟수"
-    },
-    styleName: "right-column"
-  },
-  {
-    name: "InterestRate",
-    fieldName: "InterestRate",
-    width: "50",
-    header: {
-      text: "이율"
-    },
-    styleName: "right-column"
-  },
-  {
-    name: "SaveCost",
-    fieldName: "SaveCost",
-    width: "70",
-    header: {
-      text: "납입금"
-    },
-    styleName: "right-column"
-  },
-  {
-    name: "SaveMaturity",
-    fieldName: "SaveMaturity",
-    width: "120",
-    header: {
-      text: "만기금액"
-    },
-    styleName: "right-column"
-  },
-  {
-    name: "CurrentSave",
-    fieldName: "CurrentSave",
-    width: "80",
-    header: {
-      text: "현재잔액"
-    },
-    styleName: "right-column"
   }
 ];
 
@@ -280,6 +148,7 @@ function loadData() {
     if (httpRequest.status === 200) {
       var data = JSON.parse(httpRequest.responseText);
       dataProvider.setRows(data);
+      dataProvider.setRowCount(5);
       gridView.refresh();
     }
   }
@@ -290,7 +159,7 @@ var dataProvider, gridContainer, grid;
 function createGrid(container) {
 
   let waiOptions = {
-    title: "리얼그리드 테이블 (테이블에서 엔터키로 버튼 링크등의 기능이 실행됩니다)",
+    title: "리얼그리드 테이블 (테이블에서 전체선택 시 Ctrl + Shift + Z 를 입력하세요)",
     description: "${columns} 열로 이루어진 데이터 테이블입니다.",
   };
   dataProvider = new RealGrid.LocalDataProvider();
@@ -309,23 +178,63 @@ function createGrid(container) {
   gridView.editOptions.insertable = true;
   gridView.editOptions.appendable = true;
 
-  gridView.editOptions.editable = false;
+  gridView.editOptions.editable = true;
+
+    //*** 편집시 바로 commit 하도록 처리 
+  gridView.editOptions.commitByCell = true
+  gridView.editOptions.commitWhenLeave = true
+
+  gridView.checkBar.visible = false;
+  gridView.stateBar.visible = false;
 
   //*** 그리드의 editable이 false 이더라도 컬럼에 지정한 editable 이 우선 적용된다.
   //*** checkField 컬럼은 특수한 경우이니 컬럼의 editable: false는 그대로 두세요.
   gridView.editOptions.columnEditableFirst = true;
 
+    //*** 그리드의 마지막이나 처음에 있을때 tab키 입력시 외부 엘리먼트로 이동
+  gridView.editOptions.exitGridWhenTab = "grid";
+
   //*** 체크바와 checkField 컬럼 연동
   gridView.checkBar.fieldName = "checkField";   
-
-    //*** 개별행 체크와 헤드의 sync 
-  gridView.checkBar.syncHeadCheck = true;
 
   //*** 전체 체크 되었을때의 이벤트 처리 */
   gridView.onColumnCheckedChanged =  function (grid, column, checked) {
     grid.commit(true);
     grid.checkAll(checked, false, false, false);
   };
+
+    ///*** 체크바 헤드 연동 처리 */
+  gridView.onItemAllChecked = function (grid, checked) {
+    console.log("onItemAllChecked");
+    grid.columnByName("checkField").checked = checked;
+  };
+
+  gridView.onCellEdited = function (grid, itemIndex, row, field) {
+      let dp = grid.getDataSource();
+      //debugger;
+      if (dp.getOrgFieldName(field) == 'checkField') {
+        console.log("onCellEdited");
+        const checkCnt = grid.getCheckedItems().length;
+        const itemCnt = grid.getItemCount();
+
+        grid.columnByName("checkField").checked = checkCnt == itemCnt;
+      }
+      console.log(field);
+  }
+
+  //*** 개별행 체크와 헤드의 sync 
+  gridView.checkBar.syncHeadCheck = true;
+
+  gridView.onKeyUp = function (grid, event) {
+    console.log(event);
+    if (event.shiftKey && event.ctrlKey && (event.code == 'KeyZ' || key == 'Z')) {
+      let checked = grid.isAllChecked();
+      //console.log(checked);
+      grid.checkAll(!checked, false, false, true);
+      
+    }
+  }
+
 
   setProvider("simple_data_check.json");
 }
