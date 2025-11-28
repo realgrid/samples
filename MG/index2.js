@@ -179,7 +179,7 @@ function createGrid(container) {
 
   gridView.stateBar.visible = false;
   gridView.checkBar.visible = false;
-
+  gridView.editOptions.crossWhenExitLast = true;
 
   gridView.editOptions.editable = true;
 

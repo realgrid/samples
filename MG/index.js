@@ -180,6 +180,8 @@ function createGrid(container) {
 
   gridView.editOptions.editable = true;
 
+  gridView.editOptions.crossWhenExitLast = true;
+
     //*** 편집시 바로 commit 하도록 처리 
   gridView.editOptions.commitByCell = true
   gridView.editOptions.commitWhenLeave = true
