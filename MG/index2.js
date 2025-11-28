@@ -174,8 +174,8 @@ function createGrid(container) {
   gridView.header.height = 40;
   gridView.footer.height = 40;
   gridView.stateBar.width = 16;
-  gridView.editOptions.insertable = true;
-  gridView.editOptions.appendable = true;
+  gridView.editOptions.insertable = false;
+  gridView.editOptions.appendable = false;
 
   gridView.stateBar.visible = false;
   gridView.checkBar.visible = false;
@@ -219,7 +219,7 @@ function createGrid(container) {
 
   gridView.onKeyUp = function (grid, event) {
     console.log(event);
-    if (event.shiftKey && event.ctrlKey && (event.code == 'KeyZ' || key == 'Z')) {
+    if (event.shiftKey && event.ctrlKey && (event.code == 'KeyZ' || event.key == 'Z')) {
       let checked = grid.isAllChecked();
       //console.log(checked);
       grid.checkAll(!checked, false, false, true);
