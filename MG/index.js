@@ -100,8 +100,16 @@ var columns = [
       type: "check",
       //*** 선택/해제 했을때 값을 읽어주도록 처리
       ariaLabelCallback: function(grid, model) {
+        let allChecked = grid.columnByName("checkField").checked;
         let val = model.value;
-        let s = val == 'Y' ? "선택" : "해제";
+        let itemIndex = model.item.itemIndex;
+        let s = ''
+        if (allChecked) {
+          s = val == 'Y' ? (itemIndex+1).toString() + "행 선택, 전체 선택되어있습니다." : (itemIndex+1).toString() + "행 해제, 전체 선택되어있습니다.";
+        }
+        else {
+          s = val == 'Y' ? (itemIndex+1).toString() + "행 선택" : (itemIndex+1).toString() + "행 해제";
+        } 
 
         return s
       },
@@ -159,7 +167,7 @@ var dataProvider, gridContainer, grid;
 function createGrid(container) {
 
   let waiOptions = {
-    title: "리얼그리드 테이블 (테이블에서 전체선택 시 Ctrl + Shift + Z 를 입력하세요)",
+    title: "리얼그리드 테이블 (테이블에서 전체선택 시 Shift + Space 를 입력하세요)",
     description: "${columns} 열로 이루어진 데이터 테이블입니다.",
   };
   dataProvider = new RealGrid.LocalDataProvider();
@@ -229,7 +237,7 @@ function createGrid(container) {
 
   gridView.onKeyUp = function (grid, event) {
     console.log(event);
-    if (event.shiftKey && event.ctrlKey && (event.code == 'KeyZ' || event.key == 'Z')) {
+    if (event.shiftKey &&  event.key == ' ') {
       let checked = grid.isAllChecked();
       //console.log(checked);
       grid.checkAll(!checked, false, false, true);
