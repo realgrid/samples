@@ -17,7 +17,13 @@
   </head>
 
   <body>
-    <input type="button" onclick="getVersions()" value="버전확인"/>
-    <div id="realgrid"></div>
+    <input type="button" onclick="getVersions()" value="버전확인"/><br/>
+    selectorDataOrder를 사용하기 위해서는 filteredDataOnly를 필수로 true로 설정해야 합니다.<br/>
+    selectorDataOrder 속성은 "none" 과 "order" 두가지 입니다.<br/>
+    아래 그리드는 selectorDataOrder가 "order"로 설정된 예제입니다.<br/>
+    "order" 로 적용시 화면에 보여지고 있는 컬럼 순서대로 앞 컬럼의 필터 값을 기준으로 필터 가능한 목록이 구성됩니다.<br/><br/>
+    <div id="realgrid"></div><br/>
+    gridView.filteringOptions.automating.filteredDataOnly = true;<br/>
+    gridView.filteringOptions.automating.selectorDataOrder = "order";<br/>
   </body>
 </html>
