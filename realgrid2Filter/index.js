@@ -126,7 +126,7 @@ function createGrid(container) {
   gridView.editOptions.appendable = true;
 
   gridView.filteringOptions.automating.filteredDataOnly = true
-  gridView.filteringOptions.automating.selectorDataOrder = "order";
+  gridView.filteringOptions.automating.selectorDataOrder = "selectionExcludeCurrent";
 
   dataProvider.fillJsonData(datas);
 }
